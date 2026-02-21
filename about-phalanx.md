@@ -1,13 +1,13 @@
 ---
-title: About Phalanx Duel
-description: What Phalanx Duel is, who it is for, and how the game is being developed.
+title: "About Phalanx: Duel"
+description: "What Phalanx: Duel is, who it is for, and how the game is being developed."
 ---
 
-# About Phalanx Duel
+# About Phalanx: Duel
 
 <section class="card">
   <h2>What It Is</h2>
-  <p>Phalanx Duel is a tactical two-player card duel built on standard playing cards and formalized into a deterministic digital game engine.</p>
+  <p>Phalanx: Duel is a tactical two-player card duel built on standard playing cards and formalized into a deterministic digital game engine.</p>
 </section>
 
 <section class="card">
@@ -31,7 +31,7 @@ description: What Phalanx Duel is, who it is for, and how the game is being deve
 
 <section class="card">
   <h2>Current State</h2>
-  <p>Phalanx Duel is in pre-alpha active development. Core gameplay is playable now, while reliability and polish continue to improve.</p>
+  <p>Phalanx: Duel is in pre-alpha active development. Core gameplay is playable now, while reliability and polish continue to improve.</p>
   <p><a href="{{ '/status/' | relative_url }}">See current status.</a></p>
 </section>
 

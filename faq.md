@@ -7,7 +7,7 @@ description: Frequently asked questions about decks, players, phase status, and 
 
 <details>
   <summary>Do I need a custom deck to play?</summary>
-  <p>No. Phalanx Duel is designed around standard suited playing cards.</p>
+  <p>No. Phalanx: Duel is designed around standard suited playing cards.</p>
 </details>
 
 <details>

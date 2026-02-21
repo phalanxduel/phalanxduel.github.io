@@ -1,15 +1,15 @@
 ---
 title: Rules of Engagement
-description: The core rules for Phalanx Duel, the tactical 1v1 card duel.
+description: "The core rules for Phalanx: Duel, the tactical 1v1 card duel."
 ---
 
 # The Rules of Engagement
 
-<p class="small-note">This document provides a scannable overview of Phalanx Duel’s mechanical framework.</p>
+<p class="small-note">This document provides a scannable overview of Phalanx: Duel’s mechanical framework.</p>
 
 <section class="hero">
   <h2>Your Objective</h2>
-  <p>Your goal in Phalanx Duel is to overwhelm your opponent. You'll deploy cards into a tactical formation and attack in columns, aiming to break through their lines and reduce their Life Points (LP) to zero. Victory can also be claimed if your opponent cannot draw or reinforce, running out of cards completely.</p>
+  <p>Your goal in Phalanx: Duel is to overwhelm your opponent. You'll deploy cards into a tactical formation and attack in columns, aiming to break through their lines and reduce their Life Points (LP) to zero. Victory can also be claimed if your opponent cannot draw or reinforce, running out of cards completely.</p>
 </section>
 
 <section class="two-col">
@@ -54,7 +54,7 @@ description: The core rules for Phalanx Duel, the tactical 1v1 card duel.
 
 <section class="card">
   <h2>Formation Architecture</h2>
-  <p>Your **Front Row** is your first line of offense and primary shield. The **Back Row** provides tactical depth, absorbs overflow damage from major attacks, and steps into the Front Row if it falls. Mastering this column-based rotation is the key to high-level Phalanx Duel play.</p>
+  <p>Your **Front Row** is your first line of offense and primary shield. The **Back Row** provides tactical depth, absorbs overflow damage from major attacks, and steps into the Front Row if it falls. Mastering this column-based rotation is the key to high-level Phalanx: Duel play.</p>
 </section>
 
 <div class="cta-row">
@@ -62,4 +62,4 @@ description: The core rules for Phalanx Duel, the tactical 1v1 card duel.
   <a class="button-link" href="{{ '/suits-strategy/' | relative_url }}">Suits & Strategy</a>
 </div>
 
-<p class="small-note">Note: Canonical draft rules are actively maintained in the main repository <a href="https://github.com/phalanxduel/phalanxduel/blob/main/docs/RULES.md" target="_blank" rel="noopener noreferrer">RULES.md</a>.</p>
+<p class="small-note">Note: Canonical draft rules are actively maintained in the main repository <a href="https://github.com/phalanxduel/phalanxduel/blob/main/docs/formats/duel/RULES.md" target="_blank" rel="noopener noreferrer">RULES.md</a>.</p>

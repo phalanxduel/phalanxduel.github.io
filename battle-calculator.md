@@ -1,6 +1,6 @@
 ---
 title: Battle Calculator
-description: Simulate one Phalanx Duel column attack with suit bonuses, overflow, and discard outcomes.
+description: "Simulate one Phalanx: Duel column attack with suit bonuses, overflow, and discard outcomes."
 battle_calculator: true
 ---
 

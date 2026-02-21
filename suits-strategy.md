@@ -1,6 +1,6 @@
 ---
 title: Suits and Strategy
-description: Shield and weapon suit identities in Phalanx Duel and how to use them.
+description: "Shield and weapon suit identities in Phalanx: Duel and how to use them."
 ---
 
 # Suits and Strategy

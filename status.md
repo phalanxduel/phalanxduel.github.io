@@ -1,6 +1,6 @@
 ---
 title: Status
-description: Current project phase, known limitations, and what to expect from Phalanx Duel right now.
+description: "Current project phase, known limitations, and what to expect from Phalanx: Duel right now."
 ---
 
 # Project Status

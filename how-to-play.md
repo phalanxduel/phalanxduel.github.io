@@ -1,6 +1,6 @@
 ---
 title: How to Play
-description: Your first deployment in Phalanx Duel, from setup to victory.
+description: "Your first deployment in Phalanx: Duel, from setup to victory."
 ---
 
 # Your First Deployment
@@ -27,7 +27,7 @@ description: Your first deployment in Phalanx Duel, from setup to victory.
 <section class="formation" aria-labelledby="formation-title">
   <h2 id="formation-title">Formation Intelligence</h2>
   <p class="row-label">Front row (Facing Opponent)</p>
-  <div class="formation-grid" role="img" aria-label="Diagram of a two-row, four-column Phalanx Duel formation.">
+  <div class="formation-grid" role="img" aria-label="Diagram of a two-row, four-column Phalanx: Duel formation.">
     <div class="slot">F1</div>
     <div class="slot">F2</div>
     <div class="slot">F3</div>
@@ -70,4 +70,4 @@ description: Your first deployment in Phalanx Duel, from setup to victory.
   <a class="button-link" href="{{ '/quick-reference/' | relative_url }}">Print Quick Reference</a>
 </div>
 
-<p class="small-note">Note: This guide is for rapid onboarding. Detailed edge cases and mechanical definitions are maintained in the <a href="https://github.com/phalanxduel/phalanxduel/blob/main/docs/RULES.md" target="_blank" rel="noopener noreferrer">Official Rules (RULES.md)</a>.</p>
+<p class="small-note">Note: This guide is for rapid onboarding. Detailed edge cases and mechanical definitions are maintained in the <a href="https://github.com/phalanxduel/phalanxduel/blob/main/docs/formats/duel/RULES.md" target="_blank" rel="noopener noreferrer">Official Rules (RULES.md)</a>.</p>

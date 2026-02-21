@@ -1,6 +1,6 @@
 ---
 title: Get Involved
-description: Ways to help Phalanx Duel as a player, playtester, contributor, or supporter.
+description: "Ways to help Phalanx: Duel as a player, playtester, contributor, or supporter."
 ---
 
 # Get Involved

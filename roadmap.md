@@ -1,6 +1,6 @@
 ---
 title: Roadmap
-description: High-level roadmap for current Phalanx Duel development priorities.
+description: "High-level roadmap for current Phalanx: Duel development priorities."
 ---
 
 # Roadmap

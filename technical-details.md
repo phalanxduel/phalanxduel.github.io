@@ -1,6 +1,6 @@
 ---
 title: Technical Details
-description: Game loop diagrams, state model, and suit trigger timing for Phalanx Duel.
+description: "Game loop diagrams, state model, and suit trigger timing for Phalanx: Duel."
 mermaid: true
 ---
 

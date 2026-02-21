@@ -1,13 +1,13 @@
 ---
 title: Support
-description: How sponsorship and community support help move Phalanx Duel forward.
+description: "How sponsorship and community support help move Phalanx: Duel forward."
 ---
 
-# Support Phalanx Duel
+# Support Phalanx: Duel
 
 <section class="card">
   <h2>Why Support Matters</h2>
-  <p>Phalanx Duel is in pre-alpha active development. Support helps increase delivery capacity for reliability, onboarding, and core game quality.</p>
+  <p>Phalanx: Duel is in pre-alpha active development. Support helps increase delivery capacity for reliability, onboarding, and core game quality.</p>
 </section>
 
 <section class="card">

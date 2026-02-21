@@ -1,6 +1,6 @@
-# Phalanx Duel Pages Site
+# Phalanx: Duel Pages Site
 
-This directory is the `gh-pages` worktree for the Phalanx Duel website.
+This directory is the `gh-pages` worktree for the Phalanx: Duel website.
 
 ## Local Preview
 
@@ -94,7 +94,7 @@ Managed via `.tool-versions`:
 
 ## Historical Assets Policy
 
-Historical artifacts from related Phalanx Duel repositories are stored under `assets/history/`.
+Historical artifacts from related Phalanx: Duel repositories are stored under `assets/history/`.
 
 - They are for narrative and archival context only.
 - They are not canonical gameplay references.
