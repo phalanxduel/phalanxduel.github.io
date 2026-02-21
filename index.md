@@ -77,3 +77,4 @@ description: Phalanx Duel is a high-stakes, strategy-first 1v1 card duel. Deploy
 </section>
 
 <p class="small-note">This site is a tactical reference. Canonical protocol, engine tests, and server source code live in the main repository.</p>
+\n<!-- Standalone Migration Verified: Sat Feb 21 11:40:00 CST 2026 -->
