@@ -7,7 +7,7 @@ description: Phalanx is an open tactical card system for competitive and coopera
   <h1 id="hero-title">Phalanx: An Open Tactical Card System</h1>
   <p>Strategy over luck. Phalanx turns a standard deck of cards into a deep tactical battlefield. From the canonical 1v1 competitive experience of <strong>Phalanx: Duel</strong> to the multiplayer <strong>Arena</strong> and scenario-driven <strong>Siege</strong>, Phalanx is designed for high-stakes play on any surface.</p>
   <div class="cta-row">
-    <a class="button-link primary" href="https://phalanxduel.com" target="_blank" rel="noopener noreferrer">Official Website &rarr;</a>
+    <a class="button-link primary" href="https://play.phalanxduel.com" target="_blank" rel="noopener noreferrer">Play Online &rarr;</a>
     <a class="button-link" href="{{ '/system/' | relative_url }}">The System</a>
     <a class="button-link secondary" href="{{ '/how-to-play/' | relative_url }}">How to Play Duel</a>
   </div>
@@ -39,8 +39,8 @@ description: Phalanx is an open tactical card system for competitive and coopera
 
 <section class="card" aria-labelledby="official-ranked">
   <h2 id="official-ranked">Official Phalanx Ranked</h2>
-  <p>Official policies, certification standards, and ranked ecosystems are published and governed at <strong>phalanxduel.com</strong>. Only authorized systems may use the Official Phalanx Ranked certification.</p>
-  <p><a href="https://phalanxduel.com">Visit the canonical project home at phalanxduel.com</a></p>
+  <p>This site is the canonical home for official policies, certification standards, and ranked ecosystem governance. Only authorized systems may use the Official Phalanx Ranked certification.</p>
+  <p><a href="{{ '/trademarks/' | relative_url }}">Review official certification and trademark policy</a></p>
 </section>
 
 <section class="two-col">
@@ -56,4 +56,4 @@ description: Phalanx is an open tactical card system for competitive and coopera
   </article>
 </section>
 
-<p class="small-note">This site is a tactical reference. Canonical policies and official certification live at <a href="https://phalanxduel.com">https://phalanxduel.com</a>.</p>
+<p class="small-note">This is the official Phalanx site. Online matches are available at <a href="https://play.phalanxduel.com" target="_blank" rel="noopener noreferrer">play.phalanxduel.com</a>.</p>
