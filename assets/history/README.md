@@ -9,8 +9,8 @@ Important:
 
 ## Source Buckets
 
-- `primary/`: copied from `/Users/mike/github.com/phalanxduel/phalanxduel`
-- `legacy/`: copied from `/Users/mike/github.com/phalanxduel/phalanx-ruby`
+- `primary/`: copied from `/Users/mike/github.com/phalanxduel/game`
+- `legacy/`: copied from `/Users/mike/github.com/phalanxduel/.archive/phalanx-ruby`
 
 ## Provenance
 
@@ -20,5 +20,5 @@ Important:
 ## Canonical Policy
 
 When conflicts exist between archived materials and modern docs, prefer:
-1. `/Users/mike/github.com/phalanxduel/phalanxduel/docs/RULES.md`
-2. `/Users/mike/github.com/phalanxduel/phalanxduel/docs/HOWTOPLAY.md`
+1. `/Users/mike/github.com/phalanxduel/game/docs/RULES.md`
+2. `/Users/mike/github.com/phalanxduel/game/docs/HOWTOPLAY.md`

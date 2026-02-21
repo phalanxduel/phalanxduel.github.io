@@ -4,7 +4,7 @@ This directory is the `gh-pages` worktree for the Phalanx: Duel website.
 
 ## Local Preview
 
-1. `cd /Users/mike/github.com/phalanxduel/phalanxduel-site`
+1. `cd /Users/mike/github.com/phalanxduel/site`
 2. `bin/dev`
 3. Open `http://127.0.0.1:4000/phalanx/`
 
