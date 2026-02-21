@@ -66,7 +66,7 @@ description: "Your first deployment in Phalanx: Duel, from setup to victory."
 </section>
 
 <div class="cta-row">
-  <a class="button-link primary" href="https://phalanxduel.fly.dev" target="_blank" rel="noopener noreferrer">Enter Digital Alpha &rarr;</a>
+  <a class="button-link primary" href="https://play.phalanxduel.com" target="_blank" rel="noopener noreferrer">Enter Digital Alpha &rarr;</a>
   <a class="button-link" href="{{ '/quick-reference/' | relative_url }}">Print Quick Reference</a>
 </div>
 

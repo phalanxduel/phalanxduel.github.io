@@ -18,7 +18,7 @@ description: Phalanx is an open tactical card system for competitive and coopera
   <p>The beating heart of the system. <strong>Phalanx: Duel</strong> is the head-to-head competitive format and the canonical basis for <strong>Official Phalanx Ranked</strong> play. Deploy your formation, manage your column-locked attacks, and outmaneuver your opponent to zero LP.</p>
   <div class="cta-row">
     <a class="button-link" href="{{ '/rules/' | relative_url }}">Duel Rules</a>
-    <a class="button-link secondary" href="https://phalanxduel.fly.dev" target="_blank" rel="noopener noreferrer">Play Alpha Online &rarr;</a>
+    <a class="button-link secondary" href="https://play.phalanxduel.com" target="_blank" rel="noopener noreferrer">Play Alpha Online &rarr;</a>
   </div>
 </section>
 

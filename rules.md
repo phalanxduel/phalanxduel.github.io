@@ -58,7 +58,7 @@ description: "The core rules for Phalanx: Duel, the tactical 1v1 card duel."
 </section>
 
 <div class="cta-row">
-  <a class="button-link primary" href="https://phalanxduel.fly.dev" target="_blank" rel="noopener noreferrer">Play the Digital Alpha &rarr;</a>
+  <a class="button-link primary" href="https://play.phalanxduel.com" target="_blank" rel="noopener noreferrer">Play the Digital Alpha &rarr;</a>
   <a class="button-link" href="{{ '/suits-strategy/' | relative_url }}">Suits & Strategy</a>
 </div>
 

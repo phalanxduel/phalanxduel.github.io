@@ -18,7 +18,7 @@ description: "Ways to help Phalanx: Duel as a player, playtester, contributor, o
 
 <section class="card">
   <h2>For Players and Playtesters</h2>
-  <p><a href="https://phalanxduel.fly.dev" target="_blank" rel="noopener noreferrer">Play online</a>, then report findings through GitHub issues using the templates below.</p>
+  <p><a href="https://play.phalanxduel.com" target="_blank" rel="noopener noreferrer">Play online</a>, then report findings through GitHub issues using the templates below.</p>
   <ul class="quick-list">
     <li><a href="https://github.com/phalanxduel/phalanxduel/issues/new?template=bug_report.yml" target="_blank" rel="noopener noreferrer">Bug report template</a></li>
     <li><a href="https://github.com/phalanxduel/phalanxduel/issues/new?template=balance_proposal.yml" target="_blank" rel="noopener noreferrer">Balance proposal template</a></li>

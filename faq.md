@@ -27,7 +27,7 @@ description: Frequently asked questions about decks, players, phase status, and 
 
 <details>
   <summary>Is there a digital version?</summary>
-  <p>Yes. You can play the current alpha at <a href="https://phalanxduel.fly.dev" target="_blank" rel="noopener noreferrer">phalanxduel.fly.dev</a>.</p>
+  <p>Yes. You can play the current alpha at <a href="https://play.phalanxduel.com" target="_blank" rel="noopener noreferrer">play.phalanxduel.com</a>.</p>
 </details>
 
 <details>
