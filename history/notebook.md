@@ -270,7 +270,7 @@ description: The origin story of Phalanx, from a rainy afternoon at Camp Tesomas
 .notebook-page figcaption {
   padding: 1rem 1.5rem;
   background: var(--surface-up);
-  color: var(--text-muted);
+  color: var(--muted);
   font-family: var(--font-display);
   font-size: 0.7rem;
   letter-spacing: 0.1em;

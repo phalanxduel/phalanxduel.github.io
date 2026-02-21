@@ -11,7 +11,7 @@
   --gold-bright:  #ddb96a;
   --gold-glow:    rgba(196, 154, 56, 0.18);
   --text:         #e8d4aa;
-  --text-muted:   #998268;
+  --muted:        #998268;
   --text-dim:     #826f58;
   --green:        #4a7a2e;
   --green-bright: #67a84a;
@@ -140,7 +140,7 @@ a:focus-visible {
   font-size: 0.65rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--text-muted);
+  color: var(--muted);
 }
 
 .nav-list a:hover,
@@ -247,7 +247,7 @@ main.container {
 .button-link.secondary {
   border-color: var(--border);
   background: rgba(196, 154, 56, 0.05);
-  color: var(--text-muted);
+  color: var(--muted);
 }
 
 .button-link.secondary:hover {
@@ -438,7 +438,7 @@ summary {
   border-top: 1px solid var(--border);
   padding: 3rem 0 4rem;
   background: rgba(11, 9, 6, 0.5);
-  color: var(--text-muted);
+  color: var(--muted);
 }
 
 .footer-inner p {
