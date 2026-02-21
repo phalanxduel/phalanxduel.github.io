@@ -4,7 +4,7 @@ description: In-browser unit test criteria and pass/fail results for the battle 
 qunit: true
 ---
 
-# Battle Calculator Unit Tests
+## Battle Calculator Unit Tests
 
 <section class="card">
   <h2>Test Runner</h2>

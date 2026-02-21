@@ -1,7 +1,7 @@
 
 :root {
-  --bg:           #0b0906;
-  --surface:      #151009;
+  --bg:           #050402;
+  --surface:      #0d0a05;
   --surface-up:   #1e1810;
   --surface-high: #272017;
   --border:       #362a18;
@@ -11,8 +11,8 @@
   --gold-bright:  #ddb96a;
   --gold-glow:    rgba(196, 154, 56, 0.18);
   --text:         #e8d4aa;
-  --text-muted:   #998268;
-  --text-dim:     #826f58;
+  --muted:        #ccbba8;
+  --text-dim:     #d6c8b8;
   --green:        #4a7a2e;
   --green-bright: #67a84a;
   --red:          #8a2c2c;
@@ -47,7 +47,7 @@ body {
   background: var(--bg);
   background-image:
     radial-gradient(ellipse 80% 50% at 50% 0%, rgba(196, 154, 56, 0.08) 0%, transparent 60%),
-    linear-gradient(180deg, #0b0806 0%, #0e0b07 60%, #0c0907 100%);
+    linear-gradient(180deg, #050402 0%, #0d0a05 60%, #050402 100%);
   min-height: 100vh;
 }
 
@@ -140,7 +140,7 @@ a:focus-visible {
   font-size: 0.65rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--text-muted);
+  color: var(--muted);
 }
 
 .nav-list a:hover,
@@ -247,7 +247,7 @@ main.container {
 .button-link.secondary {
   border-color: var(--border);
   background: rgba(196, 154, 56, 0.05);
-  color: var(--text-muted);
+  color: var(--muted);
 }
 
 .button-link.secondary:hover {
@@ -438,7 +438,7 @@ summary {
   border-top: 1px solid var(--border);
   padding: 3rem 0 4rem;
   background: rgba(11, 9, 6, 0.5);
-  color: var(--text-muted);
+  color: var(--muted);
 }
 
 .footer-inner p {
@@ -510,3 +510,58 @@ summary {
 }
 
 .basicLightbox--visible { opacity: 1; }
+
+/* A11y Overrides for Third-Party Components */
+
+/* QUnit Contrast Fixes */
+#qunit-header {
+  background-color: var(--surface-high) !important;
+  color: var(--gold-bright) !important;
+}
+#qunit-testresult {
+  background-color: var(--surface) !important;
+  color: var(--text) !important;
+}
+#qunit-tests li {
+  color: #fff !important;
+}
+#qunit-tests a {
+  color: var(--gold-bright) !important;
+}
+#qunit-testresult,
+#qunit-testresult .module-name,
+#qunit-testresult .test-name,
+#qunit-testresult .total,
+#qunit-testresult .failed,
+#qunit-testresult .passed {
+  color: #fff !important;
+}
+#qunit-tests .test-source,
+#qunit-tests .test-message,
+#qunit-tests .runtime {
+  color: var(--text) !important;
+}
+#qunit-tests .pass {
+  background-color: var(--green) !important;
+  color: #fff !important;
+}
+#qunit-tests .fail {
+  background-color: var(--red) !important;
+  color: #fff !important;
+}
+
+/* Mermaid Contrast Fixes */
+.mermaid .node rect {
+  fill: var(--surface-up) !important;
+  stroke: var(--gold) !important;
+}
+.mermaid .node .label {
+  color: #fff !important;
+}
+.mermaid .edgePath .path {
+  stroke: var(--gold-bright) !important;
+}
+.mermaid .edgeLabel {
+  background-color: var(--surface-high) !important;
+  color: #fff !important;
+}

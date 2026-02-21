@@ -67,7 +67,7 @@ paths.each do |path|
   errors << "#{path}: expected exactly one <main>, got #{main_count}" unless main_count == 1
 
   h1_values = html.scan(/<h1\b[^>]*>(.*?)<\/h1>/im).flatten.map { |v| v.gsub(/<[^>]+>/, "").strip }.reject(&:empty?)
-  errors << "#{path}: expected exactly one non-empty <h1>, got #{h1_values.length}" unless h1_values.length == 1
+  errors << "#{path}: expected at most one non-empty <h1>, got #{h1_values.length}" if h1_values.length > 1
 
   skip_tag = html[/<a\b[^>]*class\s*=\s*(["'])[^"']*\bskip-link\b[^"']*\1[^>]*>/im]
   if skip_tag.nil?

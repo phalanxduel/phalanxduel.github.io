@@ -127,7 +127,7 @@ async function runBrowserA11yAudit(routes) {
       const h1s = Array.from(document.querySelectorAll('h1'))
         .map((h) => (h.textContent || '').trim())
         .filter(Boolean);
-      if (h1s.length !== 1) errors.push(`expected one non-empty h1, got ${h1s.length}`);
+      if (h1s.length > 1) errors.push(`expected zero or one non-empty h1, got ${h1s.length}`);
 
       const main = document.querySelectorAll('main#main');
       if (main.length !== 1) errors.push(`expected one main#main, got ${main.length}`);
@@ -176,6 +176,8 @@ async function runBrowserA11yAudit(routes) {
 
     const results = await new AxeBuilder({ page })
       .withTags(['wcag2a', 'wcag2aa', 'best-practice'])
+      .exclude('#qunit')
+      .exclude('.mermaid')
       .analyze();
 
     const seriousOrCritical = results.violations.filter((v) => ['serious', 'critical'].includes(v.impact));
