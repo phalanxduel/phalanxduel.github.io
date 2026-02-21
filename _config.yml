@@ -1,0 +1,13 @@
+title: Phalanx Duel | Tactical 1v1 Card Combat
+description: A high-stakes, strategy-first 1v1 card duel. Deploy your forces, manage your lifeline, and outmaneuver your opponent with standard suited decks.
+url: https://phalanxduel.github.io
+baseurl: ""
+permalink: pretty
+markdown: kramdown
+kramdown:
+  input: GFM
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default

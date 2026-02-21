@@ -1,0 +1,93 @@
+---
+title: Technical Details
+description: Game loop diagrams, state model, and suit trigger timing for Phalanx Duel.
+mermaid: true
+---
+
+# Technical Details
+
+<p class="small-note">This page documents the gameplay flow used on this site. Canonical draft rules remain in the primary repository.</p>
+
+<section class="card">
+  <h2>Turn Sequence</h2>
+  <p>One turn executes in this order: attack declaration, damage path resolution, suit effects, reinforcement, then pass.</p>
+  <div class="mermaid diagram">
+flowchart LR
+  A[Select Front-Row Attacker] --> B[Choose Opposing Column]
+  B --> C[Resolve Damage<br/>Front -> Back -> LP]
+  C --> D[Apply Suit Effects]
+  D --> E{Column Open?}
+  E -- Yes --> F[Reinforce]
+  E -- No --> G[Pass Turn]
+  F --> G
+  </div>
+</section>
+
+<section class="card">
+  <h2>Gameplay Loop</h2>
+  <p>The game alternates active player turns until a victory condition is met.</p>
+  <div class="mermaid diagram">
+flowchart TD
+  S[Setup<br/>Shuffle, Draw, Deploy] --> T[Player Turn]
+  T --> V{Victory Check}
+  V -- No --> O[Opponent Turn]
+  O --> V
+  V -- Yes --> X[Game Over]
+  </div>
+</section>
+
+<section class="card">
+  <h2>Statechart</h2>
+  <p>State-level view of turn progression and terminal conditions.</p>
+  <div class="mermaid diagram">
+stateDiagram-v2
+  [*] --> Setup
+  Setup --> TurnStart
+  TurnStart --> SelectAttacker
+  SelectAttacker --> SelectTarget
+  SelectTarget --> ResolveDamage
+  ResolveDamage --> ApplySuitEffects
+  ApplySuitEffects --> Reinforce: open slot exists
+  ApplySuitEffects --> PassTurn: no reinforcement needed
+  Reinforce --> PassTurn
+  PassTurn --> VictoryCheck
+  VictoryCheck --> TurnStart: no winner
+  VictoryCheck --> GameOver: LP <= 0 OR no draw/reinforce
+  GameOver --> [*]
+  </div>
+</section>
+
+<section class="card">
+  <h2>Suit Ability Timing</h2>
+  <p>Suit effects are applied in the turn step after base damage path resolution, and each suit keys off a specific damage location or board context.</p>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Suit</th><th>Role</th><th>Trigger Window</th><th>When It Triggers</th><th>Practical Effect</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Diamonds</td><td>Shield</td><td>Post-front-break overflow context</td><td>When front Diamond is broken and overflow would continue to back row</td><td>Adds shield equal to Diamond value to absorb overflow before back-row damage</td></tr>
+        <tr><td>Hearts</td><td>Shield</td><td>No-card-behind context</td><td>When there is no card behind the Heart card (only player behind)</td><td>Adds shield equal to Heart value to absorb overflow before LP</td></tr>
+        <tr><td>Clubs</td><td>Weapon</td><td>Overflow to back-row context</td><td>When damage overflows from front card into back card</td><td>Increases pressure on back-row defense</td></tr>
+        <tr><td>Spades</td><td>Weapon</td><td>Direct LP context</td><td>When damage reaches the player LP step</td><td>Increases direct LP threat</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="card">
+  <h2>Victory States</h2>
+  <ul class="quick-list">
+    <li><strong>LP defeat:</strong> A player reaches 0 Life Points.</li>
+    <li><strong>Resource defeat:</strong> A player cannot draw or reinforce (out of cards).</li>
+  </ul>
+</section>
+
+<section class="card">
+  <h2>Ace Exception</h2>
+  <ul class="quick-list">
+    <li>A front-row Ace is not discarded by non-Ace direct attacks.</li>
+    <li>A front-row Ace is discarded when directly attacked by another front-row Ace.</li>
+    <li>Outside this discard exception, Ace value still behaves as a normal value-1 card in damage math.</li>
+  </ul>
+</section>
