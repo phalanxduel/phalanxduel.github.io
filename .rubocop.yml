@@ -1,0 +1,20 @@
+AllCops:
+  NewCops: enable
+  TargetRubyVersion: 3.4
+  Exclude:
+    - "vendor/**/*"
+    - "node_modules/**/*"
+    - "_site/**/*"
+
+Layout/LineLength:
+  Max: 120
+  AllowedPatterns:
+    - 'https?://'
+
+Metrics/BlockLength:
+  Exclude:
+    - "Rakefile"
+    - "spec/**/*"
+
+Style/Documentation:
+  Enabled: false
