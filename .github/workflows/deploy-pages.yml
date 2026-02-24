@@ -42,8 +42,17 @@ jobs:
           npm ci
           npx playwright install --with-deps chromium
 
-      - name: Build and validate site
-        run: ./bin/pipeline ci
+      - name: Build Jekyll output
+        run: ./bin/pipeline build
+
+      - name: Run tests (RSpec + QUnit)
+        run: ./bin/pipeline test
+
+      - name: Validate built output (semantic + HTML)
+        run: ./bin/pipeline validate
+
+      - name: Browser a11y audit
+        run: ./bin/pipeline a11y
 
       - name: Playwright smoke check
         run: ./bin/pipeline smoke
