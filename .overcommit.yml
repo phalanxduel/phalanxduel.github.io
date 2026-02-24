@@ -1,0 +1,90 @@
+# Overcommit configuration for this Jekyll (Ruby + Node/Playwright) site.
+#
+# Install/enable:
+#   bundle add --group development overcommit
+#   bundle exec overcommit --install
+#   bundle exec overcommit --sign
+#
+# Recommended optional tools (free):
+#   brew install shellcheck shfmt actionlint
+#   npm i -D markdownlint-cli2
+#
+# Notes:
+# - This file sticks to built-in Overcommit hooks that are confirmed in the
+#   installed Overcommit 0.68 docs.
+# - QUnit/Playwright and the browser a11y/smoke checks remain in ./bin/pipeline
+#   and are enforced in CI/GitHub Actions.
+
+PreCommit:
+  ALL:
+    problem_on_unmodified_line: ignore
+
+  BrokenSymlinks:
+    enabled: true
+
+  CaseConflicts:
+    enabled: true
+
+  MergeConflicts:
+    enabled: true
+
+  TrailingWhitespace:
+    enabled: true
+
+  HardTabs:
+    enabled: true
+    exclude:
+      - '*.md'
+
+  YamlSyntax:
+    enabled: true
+
+  JsonSyntax:
+    enabled: true
+
+  XmlSyntax:
+    enabled: true
+
+  BundleCheck:
+    enabled: true
+
+  RuboCop:
+    enabled: false # Enable after adding rubocop to the bundle.
+    command: ['bundle', 'exec', 'rubocop']
+    flags: ['--force-exclusion']
+    include:
+      - '**/*.rb'
+      - 'Gemfile'
+      - '*.gemspec'
+      - 'Rakefile'
+
+  ShellCheck:
+    enabled: false # Enable after installing shellcheck (e.g. `brew install shellcheck`).
+    include:
+      - 'bin/**/*'
+      - '**/*.sh'
+
+  EsLint:
+    enabled: false # Enable after adding eslint config + dependency (`npm i -D eslint`).
+    required_executable: 'npx'
+    command: ['npx', 'eslint']
+    include:
+      - 'assets/js/**/*.js'
+      - 'bin/**/*.cjs'
+    on_warn: fail
+
+PrePush:
+  # Runs hook:test and hook:validate via bundle exec rake.
+  RakeTarget:
+    enabled: true
+    command: ['bundle', 'exec', 'rake']
+    flags: ['hook:test', 'hook:validate']
+
+  # Optional heavier Ruby security check (enable if wanted and gem is installed).
+  BundleAudit:
+    enabled: false
+
+  # Protect against accidental direct pushes to release branches if desired.
+  ProtectedBranches:
+    enabled: false
+    branches: ['main', 'master']
