@@ -37,6 +37,10 @@ The repository now mirrors the core validation structure used in your primary si
 - Semantic/a11y validator: `bin/validate_semantic_output.rb`
 - Browser smoke test: `bin/smoke_playwright.sh`
 
+### GitHub Actions Pinning Policy
+
+This repository enforces a strict GitHub Actions policy: all `uses:` actions must be pinned to a full-length commit SHA (not `@v4`, `@v3`, etc.). If a workflow fails during setup with an "actions are not allowed" message, update the action reference to a pinned SHA.
+
 Pipeline commands:
 
 - `./bin/pipeline build`
