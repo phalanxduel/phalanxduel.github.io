@@ -14,3 +14,8 @@ desc "Run built-output validation gate (semantic + HTML checks)"
 task "hook:validate" do
   sh "./bin/pipeline validate"
 end
+
+desc "Run Markdown linting (requires markdownlint-cli2 in node_modules)"
+task "hook:markdownlint" do
+  sh "npx markdownlint-cli2"
+end

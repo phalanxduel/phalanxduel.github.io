@@ -49,9 +49,9 @@ PreCommit:
     enabled: true
 
   RuboCop:
-    enabled: false # Enable after adding rubocop to the bundle.
+    enabled: true
     command: ['bundle', 'exec', 'rubocop']
-    flags: ['--force-exclusion']
+    flags: ['--no-server', '--force-exclusion']
     include:
       - '**/*.rb'
       - 'Gemfile'
@@ -59,32 +59,40 @@ PreCommit:
       - 'Rakefile'
 
   ShellCheck:
-    enabled: false # Enable after installing shellcheck (e.g. `brew install shellcheck`).
+    enabled: true
     include:
       - 'bin/**/*'
       - '**/*.sh'
 
   EsLint:
-    enabled: false # Enable after adding eslint config + dependency (`npm i -D eslint`).
+    enabled: true
     required_executable: 'npx'
     command: ['npx', 'eslint']
+    flags: ['--no-warn-ignored']
     include:
       - 'assets/js/**/*.js'
       - 'bin/**/*.cjs'
     on_warn: fail
+
+  RakeTarget:
+    enabled: true
+    command: ['bundle', 'exec', 'rake']
+    targets: ['hook:markdownlint']
+    include:
+      - '**/*.md'
 
 PrePush:
   # Runs hook:test and hook:validate via bundle exec rake.
   RakeTarget:
     enabled: true
     command: ['bundle', 'exec', 'rake']
-    flags: ['hook:test', 'hook:validate']
+    targets: ['hook:test', 'hook:validate']
 
   # Optional heavier Ruby security check (enable if wanted and gem is installed).
   BundleAudit:
-    enabled: false
+    enabled: true
 
   # Protect against accidental direct pushes to release branches if desired.
   ProtectedBranches:
-    enabled: false
+    enabled: true
     branches: ['main', 'master']

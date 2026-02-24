@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-/* eslint-disable no-console */
 const { chromium } = require('playwright');
 
 const baseUrl = process.env.QUNIT_BASE_URL || 'http://127.0.0.1:4174';

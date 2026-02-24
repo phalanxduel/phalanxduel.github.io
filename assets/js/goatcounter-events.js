@@ -61,7 +61,7 @@
     var url;
     try {
       url = new URL(anchor.href, window.location.origin);
-    } catch (error) {
+    } catch {
       return;
     }
 
