@@ -31,7 +31,7 @@ jobs:
 
       - name: Install Playwright Chromium
         run: |
-          npm install --no-save playwright @axe-core/playwright
+          npm ci
           npx playwright install --with-deps chromium
 
       - name: Build and validate Jekyll output

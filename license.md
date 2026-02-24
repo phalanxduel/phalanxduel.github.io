@@ -34,7 +34,7 @@ Trademarks associated with the project include:
 - Phalanx: Siege
 - Official Phalanx Ranked
 
-For detailed information on trademark usage, please see our [Trademarks](/trademarks/) page.
+For detailed information on trademark usage, please see our [Trademarks]({{ '/trademarks/' | relative_url }}) page.
 
 The canonical trademark policy and any updates live at:
 [https://phalanxduel.com/trademarks](https://phalanxduel.com/trademarks)

@@ -22,6 +22,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 25
+
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
@@ -33,9 +38,14 @@ jobs:
           bundle config set path vendor/bundle
           bundle lock --add-platform x86_64-linux
           bundle install --jobs 4
+          npm ci
+          npx playwright install --with-deps chromium
 
-      - name: Build site
-        run: ./bin/pipeline build
+      - name: Build and validate site
+        run: ./bin/pipeline ci
+
+      - name: Playwright smoke check
+        run: ./bin/pipeline smoke
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3

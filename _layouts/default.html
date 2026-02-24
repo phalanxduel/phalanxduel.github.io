@@ -83,7 +83,10 @@
         document.querySelectorAll('.history-gallery figure img').forEach(function(img) {
           img.style.cursor = 'pointer'; // Indicate it's clickable
           img.addEventListener('click', function() {
-            basicLightbox.create('<img src="' + img.src + '" alt="' + img.alt + '">').show();
+            var lightboxImg = document.createElement('img');
+            lightboxImg.src = img.currentSrc || img.src;
+            lightboxImg.alt = img.alt || '';
+            basicLightbox.create(lightboxImg).show();
           });
         });
       });
