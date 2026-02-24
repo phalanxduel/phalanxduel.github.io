@@ -20,6 +20,41 @@
     });
   }
 
+  function isAce(card) {
+    if (!card) return false;
+    return card.rank === "A" || card.value === 1;
+  }
+
+  function isFaceCard(card) {
+    if (!card) return false;
+    return card.rank === "J" || card.rank === "Q" || card.rank === "K";
+  }
+
+  function faceDestroys(attacker, target) {
+    if (!isFaceCard(attacker) || !isFaceCard(target)) return true;
+    if (attacker.rank === "J") return target.rank === "J";
+    if (attacker.rank === "Q") return target.rank === "J" || target.rank === "Q";
+    if (attacker.rank === "K") return target.rank === "J" || target.rank === "Q" || target.rank === "K";
+    return false;
+  }
+
+  function destructionEligibility(attacker, target, targetIndex) {
+    if (!target) return { eligible: true, reason: "" };
+
+    if (isAce(target)) {
+      if (isAce(attacker) && targetIndex === 0) {
+        return { eligible: true, reason: "" };
+      }
+      return { eligible: false, reason: "Classic Aces: only a direct front-rank Ace attack can destroy an Ace" };
+    }
+
+    if (isFaceCard(target) && !faceDestroys(attacker, target)) {
+      return { eligible: false, reason: "Classic Face Cards: attacker cannot destroy this face card rank" };
+    }
+
+    return { eligible: true, reason: "" };
+  }
+
   function resolveLegacy(attacker, front, back) {
     let damage = attacker.value;
     const log = [];
@@ -106,10 +141,14 @@
     };
   }
 
-  function resolveIntro(attacker, front, back) {
+  function resolveCanonical(attacker, front, back) {
     let overflow = attacker.value;
     const log = [];
     const progression = [];
+    let clubApplied = false;
+    let lastDestroyedCard = null;
+    let frontAceProtected = false;
+    let backAceProtected = false;
 
     log.push("Base attack damage: " + attacker.value + ".");
     addStep(progression, "Attacker Base Damage", overflow, overflow, attacker.suit + " attacker");
@@ -117,9 +156,26 @@
     let frontHealth = null;
     if (front) {
       const before = overflow;
-      frontHealth = front.value - overflow;
-      overflow = clampToZero(overflow - front.value);
+      const tentative = front.value - overflow;
       log.push("Front takes incoming damage first.");
+
+      if (tentative > 0) {
+        frontHealth = tentative;
+        overflow = 0;
+      } else {
+        const eligibility = destructionEligibility(attacker, front, 0);
+        if (eligibility.eligible) {
+          frontHealth = tentative;
+          overflow = clampToZero(overflow - front.value);
+          lastDestroyedCard = front;
+        } else {
+          frontHealth = front.value;
+          overflow = 0;
+          if (isAce(front)) frontAceProtected = true;
+          log.push(eligibility.reason + ".");
+        }
+      }
+
       addStep(progression, "After Front Defender", before, overflow, front.suit + " " + front.value + " in front");
     } else {
       log.push("No front defender: damage overflows directly.");
@@ -135,17 +191,37 @@
 
     if (attacker.suit === "C" && overflow > 0 && back) {
       const before = overflow;
-      overflow += overflow;
-      log.push("Club attacker bonus triggers: overflow to back doubled.");
-      addStep(progression, "Club Overflow Bonus", before, overflow, "Overflow doubled after defender shield in Intro mode");
+      if (lastDestroyedCard === front && !clubApplied) {
+        overflow += overflow;
+        clubApplied = true;
+        log.push("Club attacker bonus triggers: overflow to next defender doubled.");
+        addStep(progression, "Club Overflow Bonus", before, overflow, "Overflow doubled once after first destruction (Canonical v1.0)");
+      }
     }
 
     let backHealth = null;
     if (back) {
       const before = overflow;
-      backHealth = back.value - overflow;
+      const tentative = back.value - overflow;
       log.push("Back takes " + overflow + " damage.");
-      overflow = clampToZero(overflow - back.value);
+
+      if (tentative > 0) {
+        backHealth = tentative;
+        overflow = 0;
+      } else {
+        const eligibility = destructionEligibility(attacker, back, 1);
+        if (eligibility.eligible) {
+          backHealth = tentative;
+          overflow = clampToZero(overflow - back.value);
+          lastDestroyedCard = back;
+        } else {
+          backHealth = back.value;
+          overflow = 0;
+          if (isAce(back)) backAceProtected = true;
+          log.push(eligibility.reason + ".");
+        }
+      }
+
       addStep(progression, "After Back Defender", before, overflow, back.suit + " " + back.value + " in back");
     } else {
       log.push("No back defender: remaining damage targets LP.");
@@ -153,18 +229,11 @@
     }
 
     let lpDamage = overflow;
-    if (front && front.suit === "H" && !back && lpDamage > 0) {
+    if (lastDestroyedCard && lastDestroyedCard.suit === "H" && lpDamage > 0) {
       const before = lpDamage;
-      lpDamage = clampToZero(lpDamage - front.value);
-      log.push("Heart front bonus triggers (no back defender): -" + front.value + " overflow.");
-      addStep(progression, "Front Heart Bonus", before, lpDamage, "Heart reduces overflow");
-    }
-
-    if (back && back.suit === "H" && lpDamage > 0) {
-      const before = lpDamage;
-      lpDamage = clampToZero(lpDamage - back.value);
-      log.push("Heart back bonus triggers: -" + back.value + " overflow.");
-      addStep(progression, "Back Heart Bonus", before, lpDamage, "Heart reduces overflow");
+      lpDamage = clampToZero(lpDamage - lastDestroyedCard.value);
+      log.push("Heart boundary bonus triggers: -" + lastDestroyedCard.value + " LP damage.");
+      addStep(progression, "Heart LP Mitigation", before, lpDamage, "Final destroyed Heart reduces LP damage");
     }
 
     if (attacker.suit === "S" && lpDamage > 0) {
@@ -177,12 +246,16 @@
     addStep(progression, "Damage To Player LP", lpDamage, lpDamage, "Final LP damage");
 
     return {
-      mode: "intro_rules",
+      mode: "canonical_v1_0",
       lpDamage: lpDamage,
       frontHealth: frontHealth,
       backHealth: backHealth,
       log: log,
       progression: progression,
+      specials: {
+        frontAceProtected: frontAceProtected,
+        backAceProtected: backAceProtected,
+      },
     };
   }
 
@@ -190,25 +263,33 @@
     const attacker = input && input.attacker;
     const front = input && input.front ? input.front : null;
     const back = input && input.back ? input.back : null;
-    const mode = (input && input.mode) || "legacy_reference";
+    const mode = (input && input.mode) || "canonical_v1_0";
 
     if (!attacker || typeof attacker.value !== "number") {
       throw new Error("resolveBattle requires an attacker card with numeric value");
     }
 
-    const core = mode === "intro_rules"
-      ? resolveIntro(attacker, front, back)
+    const resolvedMode = mode === "intro_rules" ? "canonical_v1_0" : mode;
+    const core = resolvedMode === "canonical_v1_0"
+      ? resolveCanonical(attacker, front, back)
       : resolveLegacy(attacker, front, back);
 
     const frontAceProtected = Boolean(
-      front &&
-      front.value === 1 &&
-      core.frontHealth <= 0 &&
-      attacker.value !== 1
+      front && (
+        (core.specials && core.specials.frontAceProtected) ||
+        (
+          !core.specials &&
+          front.value === 1 &&
+          core.frontHealth <= 0 &&
+          attacker.value !== 1
+        )
+      )
     );
 
     return Object.assign(core, {
+      mode: resolvedMode,
       specials: {
+        backAceProtected: Boolean(core.specials && core.specials.backAceProtected),
         frontAceProtected: frontAceProtected,
       },
       survivors: {

@@ -1,6 +1,6 @@
 ---
 title: Battle Calculator
-description: "Simulate one Phalanx: Duel column attack with suit bonuses, overflow, and discard outcomes."
+description: "Simulate one Phalanx Duel column attack using canonical v1.0 or a legacy prototype reference mode."
 battle_calculator: true
 ---
 
@@ -9,13 +9,13 @@ battle_calculator: true
 <section class="card">
   <h2>Simulate One Column Attack</h2>
   <p>Select an attacker and the defending front/back cards, then run the battle simulation.</p>
-  <p class="small-note"><strong>Rules Mode</strong> picks which battle logic profile is used. See "Mode Guide" below for exact differences.</p>
+  <p class="small-note"><strong>Rules Mode</strong> selects the battle logic profile. Use <strong>Canonical v1.0</strong> unless you are comparing old prototype examples.</p>
   <div class="calculator-grid">
     <label class="field">
       <span>Rules Mode</span>
       <select id="battle-mode" aria-label="Rules mode">
-        <option value="intro_rules">Current Rules</option>
-        <option value="legacy_reference">Historical Rules</option>
+        <option value="canonical_v1_0">Canonical v1.0</option>
+        <option value="legacy_reference">Historical Prototype</option>
       </select>
     </label>
 
@@ -42,20 +42,21 @@ battle_calculator: true
 
 <section class="card">
   <h2>Mode Guide</h2>
-  <p><strong>Current Rules</strong> reflects the current intended rules behavior on this site. <strong>Historical Rules</strong> preserves the older prototype ordering for reference/comparison.</p>
+  <p><strong>Canonical v1.0</strong> follows the authoritative Duel rules model used by the game docs. <strong>Historical Prototype</strong> preserves an older site-era timing model for comparison.</p>
   <div class="table-wrap">
     <table>
       <thead>
-        <tr><th>Step</th><th>Historical Rules</th><th>Current Rules</th></tr>
+        <tr><th>Step</th><th>Historical Prototype</th><th>Canonical v1.0</th></tr>
       </thead>
       <tbody>
-        <tr><td>Diamond shield vs Club bonus order</td><td>Club doubles overflow first, then Diamond absorbs.</td><td>Diamond absorbs overflow first, then Club doubles what remains.</td></tr>
-        <tr><td>Heart trigger</td><td>Heart shield triggers when no card is behind that Heart card.</td><td>Heart shield triggers when no card is behind that Heart card.</td></tr>
+        <tr><td>Diamond shield vs Club bonus order</td><td>Club doubles overflow first, then Diamond absorbs.</td><td>Diamond absorbs overflow first, then Club can double the remaining carryover once.</td></tr>
+        <tr><td>Heart trigger</td><td>Heart-style mitigation is modeled per site-era overflow rules.</td><td>Heart mitigation applies on the final Card -> Player boundary if the last destroyed card is a Heart.</td></tr>
+        <tr><td>Ace / Face eligibility</td><td>Simplified legacy model.</td><td>Classic Ace and Classic Face Card destroy eligibility is modeled.</td></tr>
         <tr><td>Spade LP bonus</td><td>Doubles final LP damage.</td><td>Doubles final LP damage.</td></tr>
       </tbody>
     </table>
   </div>
-  <p class="small-note"><strong>If you're unsure:</strong> use <strong>Current Rules</strong>. Use <strong>Historical Rules</strong> only when checking older examples.</p>
+  <p class="small-note"><strong>If you're unsure:</strong> use <strong>Canonical v1.0</strong>. Use <strong>Historical Prototype</strong> only when checking older examples or migration notes.</p>
 </section>
 
 <section class="card" aria-live="polite">
@@ -67,16 +68,16 @@ battle_calculator: true
 </section>
 
 <section class="card">
-  <h2>Suit Rules Used By This Calculator</h2>
+  <h2>Canonical v1.0 Rules Mode Notes</h2>
   <ul class="quick-list">
-    <li><strong>Diamond defender:</strong> If front breaks, Diamond grants a shield equal to its value to absorb overflow before back-row damage.</li>
-    <li><strong>Heart defender:</strong> Works like a shield when there is no card behind it (player directly behind).</li>
-    <li><strong>Club attacker:</strong> Applies extra pressure to the back-row defender.</li>
-    <li><strong>Spade attacker:</strong> Doubles final LP damage once overflow reaches the player.</li>
-    <li><strong>Ace defender exception:</strong> A front-row Ace is not discarded by non-Ace direct attacks; it is discarded only by a direct Ace-vs-Ace front-row attack.</li>
+    <li><strong>Diamond boundary:</strong> If a Diamond card was just destroyed and the next target is a card, it reduces carryover before that next card takes damage.</li>
+    <li><strong>Club attacker:</strong> Doubles carryover once on the first eligible Card -> Card boundary after the first destruction.</li>
+    <li><strong>Heart boundary:</strong> Reduces final player damage only if the last destroyed card before the player is a Heart.</li>
+    <li><strong>Spade attacker:</strong> Doubles final LP damage once carryover reaches the player.</li>
+    <li><strong>Classic Aces / Faces:</strong> Front-rank Ace and face-card destroy eligibility is enforced in canonical mode.</li>
   </ul>
-  <p><strong>Heart vs Diamond trigger:</strong> Diamond triggers when a card is behind it. Heart triggers when no card is behind it.</p>
-  <p><strong>Example (Historical):</strong> 10C into 1D with back 5S: overflow 9 -> Club 18 -> Diamond shields 1 -> 17 hits back.</p>
-  <p><strong>Example (Current):</strong> 10C into 1D with back 5S: overflow 9 -> Diamond shields 1 -> Club 16 -> 16 hits back.</p>
-  <p class="small-note">This simulator uses the site's published suit behavior and legacy reference battle math for concrete timing/order.</p>
+  <p><strong>Boundary order (canonical):</strong> Shield -> Weapon -> Clamp.</p>
+  <p><strong>Example (Historical Prototype):</strong> 10C into 1D with back 5S: overflow 9 -> Club 18 -> Diamond shields 1 -> 17 hits back.</p>
+  <p><strong>Example (Canonical v1.0):</strong> 10C into 1D with back 5S: overflow 9 -> Diamond shields 1 -> Club 16 -> 16 hits back.</p>
+  <p class="small-note">Use this tool to build intuition, then confirm final wording in the canonical rules spec in the game repository.</p>
 </section>

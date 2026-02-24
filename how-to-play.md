@@ -1,26 +1,28 @@
 ---
 title: How to Play
-description: "Your first deployment in Phalanx: Duel, from setup to victory."
+description: "Your first match in Phalanx Duel, from classic setup to the first attack."
 ---
 
-# Your First Deployment
+# Your First Match
 
 <section class="hero">
   <h2>Tactical Essentials</h2>
   <ul class="quick-list">
     <li><strong>Participants:</strong> Two-player tactical duel.</li>
-    <li><strong>Armament:</strong> One standard deck per player (recommended) or one shared deck.</li>
-    <li><strong>Objective:</strong> Deplete the opponent’s 20 LP or destroy their entire formation.</li>
+    <li><strong>Classic Battlefield:</strong> 4 columns × 2 ranks (front and back).</li>
+    <li><strong>Classic Hand Limit:</strong> 4 cards.</li>
+    <li><strong>Classic Opening Draw:</strong> 12 cards per player before deployment.</li>
   </ul>
-  <p class="small-note">Use Ace through King. Jokers are currently excluded from core tactical rules.</p>
+  <p class="small-note">This page is a fast-start guide for the canonical Duel format. For exact edge cases and deterministic timing, use the Rules v1.0 summary and canonical spec.</p>
 </section>
 
 <section class="card">
-  <h2>1. Setting the Battlefield</h2>
+  <h2>1. Set Up the Classic Duel</h2>
   <ol class="quick-list">
-    <li><strong>Shuffle & Draw:</strong> Prepare your deck and draw your starting hand.</li>
-    <li><strong>Deploy:</strong> Secretly place 8 cards into your 4x2 formation. Your formation consists of a **Front Row** (offensive/defensive line) and a **Back Row** (support/reserve).</li>
-    <li><strong>Initiate:</strong> Once both formations are locked, the first turn begins.</li>
+    <li><strong>Draw:</strong> Each player draws 12 cards.</li>
+    <li><strong>Deploy in Alternation:</strong> Players alternate placing exactly one card onto their own board.</li>
+    <li><strong>Finish Deployment:</strong> Each player ends with all 8 battlefield slots filled and exactly 4 cards left in hand.</li>
+    <li><strong>Start Play:</strong> In Classic defaults, P2 deploys first and P1 attacks first.</li>
   </ol>
 </section>
 
@@ -44,30 +46,48 @@ description: "Your first deployment in Phalanx: Duel, from setup to victory."
 </section>
 
 <section class="card">
-  <h2>2. The Rhythm of Combat</h2>
+  <h2>2. Understand the Attack Path</h2>
   <ol class="quick-list">
-    <li><strong>Select Attacker:</strong> Choose one active card from your Front Row.</li>
-    <li><strong>Target Column:</strong> Direct your attack at one of the opponent’s four columns.</li>
-    <li><strong>Resolve Damage:</strong> Damage cascades down the column. It hits the Front card first, any **Overflow** hits the Back card, and remaining damage hits the Player’s LP.</li>
-    <li><strong>Reinforce:</strong> If a card is destroyed, you may reinforce that column from your hand during your next phase.</li>
-    <li><strong>Pass:</strong> Control shifts to your opponent.</li>
+    <li><strong>Choose an Attacker:</strong> Only the card at <strong>rank 0</strong> (front) in a column can attack.</li>
+    <li><strong>Choose a Defending Column:</strong> You target a column, not an individual card.</li>
+    <li><strong>Resolve the Chain:</strong> Damage goes front card -> back card -> player life.</li>
+    <li><strong>Carryover Matters:</strong> If damage destroys a card, any remaining damage can continue through the next boundary.</li>
+    <li><strong>Cleanup and Collapse:</strong> Destroyed cards are removed, then the column collapses forward.</li>
   </ol>
 </section>
 
 <section class="card">
-  <h2>3. Suit Powers (Automated)</h2>
-  <p>Suits are more than just colors; they are tactical modifiers that trigger during combat:</p>
+  <h2>3. Learn the Suit Timing (Core Skill)</h2>
+  <p>Suits trigger at boundaries during attack resolution. The canonical boundary order is <strong>Shield -> Weapon -> Clamp</strong>.</p>
   <ul class="quick-list">
-    <li><strong>♦ Diamonds:</strong> On death, grants a Shield to the column to absorb further overflow.</li>
-    <li><strong>♥ Hearts:</strong> Grants a Shield only if it is the last card standing in its column.</li>
-    <li><strong>♣ Clubs:</strong> Overflow damage into the Back Row is doubled (×2).</li>
-    <li><strong>♠ Spades:</strong> Overflow damage into the Player LP is doubled (×2).</li>
+    <li><strong>♦ Diamonds (Card -> Card):</strong> Reduce carryover before it reaches the next card.</li>
+    <li><strong>♣ Clubs (Card -> Card):</strong> The attacking Club can double carryover once on the first eligible boundary after the first destruction.</li>
+    <li><strong>♥ Hearts (Card -> Player):</strong> If the last destroyed card before the player is a Heart, it can reduce final player damage.</li>
+    <li><strong>♠ Spades (Card -> Player):</strong> The attacking Spade doubles damage that reaches the player.</li>
+  </ul>
+</section>
+
+<section class="card">
+  <h2>4. Know the Turn Rhythm</h2>
+  <p>Every turn follows the same 7-phase lifecycle: Start Turn, Attack Phase, Attack Resolution, Cleanup, Reinforcement, Draw, End Turn.</p>
+  <p class="small-note">Even “nothing happened” phases still matter in digital play because the system logs deterministic turn events.</p>
+</section>
+
+<section class="card">
+  <h2>5. First-Match Mistakes to Avoid</h2>
+  <ul class="quick-list">
+    <li><strong>Do not overfocus one column:</strong> Your front line is your attack access.</li>
+    <li><strong>Hearts do not stack:</strong> Only the final eligible Heart mitigation applies to player damage.</li>
+    <li><strong>Clubs do not repeat:</strong> A Club attack doubles carryover at most once per attack.</li>
+    <li><strong>Empty deck is not an automatic loss:</strong> You only draw until hand limit or deck empty.</li>
+    <li><strong>Pass pressure is real:</strong> Consecutive and total pass limits can forfeit the match.</li>
   </ul>
 </section>
 
 <div class="cta-row">
-  <a class="button-link primary" href="https://play.phalanxduel.com" target="_blank" rel="noopener noreferrer">Enter Digital Alpha &rarr;</a>
+  <a class="button-link primary" href="https://play.phalanxduel.com" target="_blank" rel="noopener noreferrer">Play Your First Match &rarr;</a>
   <a class="button-link" href="{{ '/quick-reference/' | relative_url }}">Print Quick Reference</a>
+  <a class="button-link secondary" href="{{ '/rules/' | relative_url }}">Rules v1.0 Summary</a>
 </div>
 
-<p class="small-note">Note: This guide is for rapid onboarding. Detailed edge cases and mechanical definitions are maintained in the <a href="https://github.com/phalanxduel/phalanxduel/blob/main/docs/formats/duel/RULES.md" target="_blank" rel="noopener noreferrer">Official Rules (RULES.md)</a>.</p>
+<p class="small-note">Next step after your first games: study <a href="{{ '/suits-strategy/' | relative_url }}">Suits &amp; Strategy</a> and test scenarios in the <a href="{{ '/battle-calculator/' | relative_url }}">Battle Calculator</a>.</p>

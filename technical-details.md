@@ -1,93 +1,102 @@
 ---
 title: Technical Details
-description: "Game loop diagrams, state model, and suit trigger timing for Phalanx: Duel."
+description: "Deterministic turn lifecycle, state model, and canonical suit boundary timing for Phalanx Duel."
 mermaid: true
 ---
 
 # Technical Details
 
-<p class="small-note">This page documents the gameplay flow used on this site. Canonical draft rules remain in the primary repository.</p>
+<p class="small-note">This page summarizes the canonical v1.0 technical model in player-readable form. Implementation-grade details live in the Phalanx Duel game repository.</p>
 
 <section class="card">
   <h2>Turn Sequence</h2>
-  <p>One turn executes in this order: attack declaration, damage path resolution, suit effects, reinforcement, then pass.</p>
+  <p>Canonical v1.0 executes a deterministic 7-phase turn lifecycle. Attack declaration and combat resolution happen inside that lifecycle, not as a standalone loop.</p>
   <div class="mermaid diagram">
 flowchart LR
-  A[Select Front-Row Attacker] --> B[Choose Opposing Column]
-  B --> C[Resolve Damage<br/>Front -> Back -> LP]
-  C --> D[Apply Suit Effects]
-  D --> E{Column Open?}
-  E -- Yes --> F[Reinforce]
-  E -- No --> G[Pass Turn]
-  F --> G
+  A[StartTurn] --> B[AttackPhase]
+  B --> C[AttackResolution]
+  C --> D[CleanupPhase]
+  D --> E[ReinforcementPhase]
+  E --> F[DrawPhase]
+  F --> G[EndTurn]
   </div>
 </section>
 
 <section class="card">
   <h2>Gameplay Loop</h2>
-  <p>The game alternates active player turns until a victory condition is met.</p>
+  <p>The game alternates deterministic turns. Each turn emits events for all phases, even if no state changes occur.</p>
   <div class="mermaid diagram">
 flowchart TD
-  S[Setup<br/>Shuffle, Draw, Deploy] --> T[Player Turn]
-  T --> V{Victory Check}
-  V -- No --> O[Opponent Turn]
-  O --> V
-  V -- Yes --> X[Game Over]
+  S[Classic Setup<br/>Draw 12, alternate deploy] --> T[Turn Trace]
+  T --> U[7 Phase Execution]
+  U --> V{Continue Match?}
+  V -- Yes --> T
+  V -- No --> X[Match Termination]
   </div>
 </section>
 
 <section class="card">
   <h2>Statechart</h2>
-  <p>State-level view of turn progression and terminal conditions.</p>
+  <p>State-level view of the canonical turn lifecycle.</p>
   <div class="mermaid diagram">
 stateDiagram-v2
   [*] --> Setup
   Setup --> TurnStart
-  TurnStart --> SelectAttacker
-  SelectAttacker --> SelectTarget
-  SelectTarget --> ResolveDamage
-  ResolveDamage --> ApplySuitEffects
-  ApplySuitEffects --> Reinforce: open slot exists
-  ApplySuitEffects --> PassTurn: no reinforcement needed
-  Reinforce --> PassTurn
-  PassTurn --> VictoryCheck
-  VictoryCheck --> TurnStart: no winner
-  VictoryCheck --> GameOver: LP <= 0 OR no draw/reinforce
+  TurnStart --> AttackPhase
+  AttackPhase --> AttackResolution
+  AttackResolution --> CleanupPhase
+  CleanupPhase --> ReinforcementPhase
+  ReinforcementPhase --> DrawPhase
+  DrawPhase --> EndTurn
+  EndTurn --> TurnStart: next turn
+  EndTurn --> GameOver: termination / forfeit / system error
   GameOver --> [*]
   </div>
 </section>
 
 <section class="card">
   <h2>Suit Ability Timing</h2>
-  <p>Suit effects are applied in the turn step after base damage path resolution, and each suit keys off a specific damage location or board context.</p>
+  <p>Suit effects are evaluated at boundaries during attack resolution. Canonical boundary order is <strong>Shield -> Weapon -> Clamp</strong>.</p>
   <div class="table-wrap">
     <table>
       <thead>
-        <tr><th>Suit</th><th>Role</th><th>Trigger Window</th><th>When It Triggers</th><th>Practical Effect</th></tr>
+        <tr><th>Suit</th><th>Role</th><th>Boundary</th><th>Canonical Trigger</th><th>Practical Effect</th></tr>
       </thead>
       <tbody>
-        <tr><td>Diamonds</td><td>Shield</td><td>Post-front-break overflow context</td><td>When front Diamond is broken and overflow would continue to back row</td><td>Adds shield equal to Diamond value to absorb overflow before back-row damage</td></tr>
-        <tr><td>Hearts</td><td>Shield</td><td>No-card-behind context</td><td>When there is no card behind the Heart card (only player behind)</td><td>Adds shield equal to Heart value to absorb overflow before LP</td></tr>
-        <tr><td>Clubs</td><td>Weapon</td><td>Overflow to back-row context</td><td>When damage overflows from front card into back card</td><td>Increases pressure on back-row defense</td></tr>
-        <tr><td>Spades</td><td>Weapon</td><td>Direct LP context</td><td>When damage reaches the player LP step</td><td>Increases direct LP threat</td></tr>
+        <tr><td>Diamonds</td><td>Shield</td><td>Card -> Card</td><td>If the current destroyed card is a Diamond and the next target is a card</td><td>Reduces carryover before the next defender takes damage</td></tr>
+        <tr><td>Hearts</td><td>Shield</td><td>Card -> Player</td><td>If the last destroyed card before the player is a Heart</td><td>Reduces final player damage (Hearts do not stack)</td></tr>
+        <tr><td>Clubs</td><td>Weapon</td><td>Card -> Card</td><td>If the attacker is Club and this is the first eligible boundary after the first destruction</td><td>Doubles carryover once per attack</td></tr>
+        <tr><td>Spades</td><td>Weapon</td><td>Card -> Player</td><td>If the attacker is Spade and carryover reaches the player</td><td>Doubles final player damage</td></tr>
       </tbody>
     </table>
   </div>
 </section>
 
 <section class="card">
-  <h2>Victory States</h2>
+  <h2>Match Termination Signals (Canonical Concepts)</h2>
   <ul class="quick-list">
-    <li><strong>LP defeat:</strong> A player reaches 0 Life Points.</li>
-    <li><strong>Resource defeat:</strong> A player cannot draw or reinforce (out of cards).</li>
+    <li><strong>Player damage:</strong> Attack resolution can reduce player life when carryover reaches the player boundary.</li>
+    <li><strong>Pass limits:</strong> Exceeding consecutive or total pass limits results in forfeit.</li>
+    <li><strong>System errors:</strong> Deterministic invariant violations terminate the match with an unrecoverable error event.</li>
+    <li><strong>Important:</strong> Empty deck alone is not an automatic loss in canonical v1.0.</li>
   </ul>
 </section>
 
 <section class="card">
-  <h2>Ace Exception</h2>
+  <h2>Classic Special Cards</h2>
   <ul class="quick-list">
-    <li>A front-row Ace is not discarded by non-Ace direct attacks.</li>
-    <li>A front-row Ace is discarded when directly attacked by another front-row Ace.</li>
-    <li>Outside this discard exception, Ace value still behaves as a normal value-1 card in damage math.</li>
+    <li><strong>Classic Aces:</strong> A front-rank Ace is destroyable only by a direct Ace attack at target index 0.</li>
+    <li><strong>Classic Face Cards:</strong> Jack/Queen/King destroy eligibility is rank-restricted (J < Q < K hierarchy).</li>
+    <li><strong>Origin attacker is immutable:</strong> Destroy eligibility is determined by the original attacker across the full target chain.</li>
+  </ul>
+</section>
+
+<section class="card">
+  <h2>Trust Model (Why This Matters Online)</h2>
+  <ul class="quick-list">
+    <li>Phalanx Duel uses a server-authoritative architecture in digital play.</li>
+    <li>The server validates actions against the rules engine.</li>
+    <li>Turns emit structured events and can be replay-verified with hashes.</li>
+    <li>Identical inputs must produce identical outputs under the same spec version.</li>
   </ul>
 </section>

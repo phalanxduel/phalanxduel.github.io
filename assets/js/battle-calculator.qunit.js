@@ -1,6 +1,6 @@
-(function () {
-  function card(suit, value) {
-    return { suit: suit, value: value };
+  (function () {
+  function card(suit, value, rank) {
+    return { suit: suit, value: value, rank: rank || String(value) };
   }
 
   function resolve(mode, attacker, front, back) {
@@ -45,59 +45,59 @@
       assert.equal(result.lpDamage, 1, "heart mitigation reduces LP overflow");
     });
 
-    QUnit.test("intro: no defenders sends all damage to LP", function (assert) {
-      const result = resolve("intro_rules", card("D", 9), null, null);
+    QUnit.test("canonical: no defenders sends all damage to LP", function (assert) {
+      const result = resolve("canonical_v1_0", card("D", 9, "9"), null, null);
       assert.equal(result.lpDamage, 9, "all attack damage reaches LP");
     });
 
-    QUnit.test("intro: diamond shield applies after front break", function (assert) {
-      const result = resolve("intro_rules", card("C", 7), card("D", 6), card("S", 4));
+    QUnit.test("canonical: diamond shield applies before Club bonus", function (assert) {
+      const result = resolve("canonical_v1_0", card("C", 7, "7"), card("D", 6, "6"), card("S", 4, "4"));
       assert.equal(result.frontHealth, -1, "front is discarded");
       assert.equal(result.backHealth, 4, "diamond shield prevents back damage");
       assert.equal(result.lpDamage, 0, "no LP damage");
     });
 
-    QUnit.test("intro: back heart mitigates overflow", function (assert) {
-      const result = resolve("intro_rules", card("D", 11), card("H", 3), card("H", 2));
+    QUnit.test("canonical: final destroyed Heart mitigates LP damage", function (assert) {
+      const result = resolve("canonical_v1_0", card("D", 11, "K"), card("H", 3, "3"), card("H", 2, "2"));
       assert.equal(result.lpDamage, 4, "back heart applies when it is last defender before player");
     });
 
-    QUnit.test("intro: front heart activates only when no back card exists", function (assert) {
-      const withBack = resolve("intro_rules", card("D", 8), card("H", 3), card("C", 2));
-      const noBack = resolve("intro_rules", card("D", 8), card("H", 3), null);
+    QUnit.test("canonical: Heart mitigation depends on last destroyed card before player", function (assert) {
+      const withBack = resolve("canonical_v1_0", card("D", 8, "8"), card("H", 3, "3"), card("C", 2, "2"));
+      const noBack = resolve("canonical_v1_0", card("D", 8, "8"), card("H", 3, "3"), null);
 
-      assert.equal(withBack.lpDamage, 3, "front heart does not trigger if a back card is behind it");
+      assert.equal(withBack.lpDamage, 3, "front heart does not mitigate when a non-heart is destroyed after it");
       assert.equal(noBack.lpDamage, 2, "front heart triggers when player is directly behind");
     });
   });
 
   QUnit.module("Battle Resolver - Mode Contrast", function () {
-    QUnit.test("legacy and intro diverge on Club-vs-Diamond ordering", function (assert) {
-      const legacy = resolve("legacy_reference", card("C", 10), card("D", 1), card("S", 5));
-      const intro = resolve("intro_rules", card("C", 10), card("D", 1), card("S", 5));
+    QUnit.test("legacy and canonical diverge on Club-vs-Diamond ordering", function (assert) {
+      const legacy = resolve("legacy_reference", card("C", 10, "10"), card("D", 2, "2"), card("S", 5, "5"));
+      const canonical = resolve("canonical_v1_0", card("C", 10, "10"), card("D", 2, "2"), card("S", 5, "5"));
 
-      assert.equal(legacy.backHealth, -12, "legacy: club doubling happens before diamond shield");
-      assert.equal(intro.backHealth, -11, "intro: diamond shield happens before club doubling");
-      assert.equal(legacy.lpDamage, 12, "legacy final LP damage");
-      assert.equal(intro.lpDamage, 11, "intro final LP damage");
-      assert.notEqual(legacy.lpDamage, intro.lpDamage, "modes produce different outcomes");
+      assert.equal(legacy.backHealth, -9, "legacy: club doubling happens before diamond shield");
+      assert.equal(canonical.backHealth, -7, "canonical: diamond shield happens before club doubling");
+      assert.equal(legacy.lpDamage, 9, "legacy final LP damage");
+      assert.equal(canonical.lpDamage, 7, "canonical final LP damage");
+      assert.notEqual(legacy.lpDamage, canonical.lpDamage, "modes produce different outcomes");
     });
 
     QUnit.test("progression order differs between modes", function (assert) {
-      const legacy = resolve("legacy_reference", card("C", 10), card("D", 1), card("S", 5));
-      const intro = resolve("intro_rules", card("C", 10), card("D", 1), card("S", 5));
+      const legacy = resolve("legacy_reference", card("C", 10, "10"), card("D", 2, "2"), card("S", 5, "5"));
+      const canonical = resolve("canonical_v1_0", card("C", 10, "10"), card("D", 2, "2"), card("S", 5, "5"));
 
       const legacyStages = legacy.progression.map(function (s) { return s.stage; }).join(" > ");
-      const introStages = intro.progression.map(function (s) { return s.stage; }).join(" > ");
+      const canonicalStages = canonical.progression.map(function (s) { return s.stage; }).join(" > ");
 
       assert.true(legacyStages.indexOf("Club Overflow Bonus") < legacyStages.indexOf("Diamond Shield"), "legacy applies Club before Diamond");
-      assert.true(introStages.indexOf("Diamond Shield") < introStages.indexOf("Club Overflow Bonus"), "intro applies Diamond before Club");
+      assert.true(canonicalStages.indexOf("Diamond Shield") < canonicalStages.indexOf("Club Overflow Bonus"), "canonical applies Diamond before Club");
     });
   });
 
   QUnit.module("Battle Resolver - Edge Cases", function () {
     QUnit.test("low attacker into stronger defenders yields zero LP damage", function (assert) {
-      const modes = ["legacy_reference", "intro_rules"];
+      const modes = ["legacy_reference", "canonical_v1_0"];
       modes.forEach(function (mode) {
         const result = resolve(mode, card("D", 1), card("C", 10), card("S", 10));
         assert.equal(result.lpDamage, 0, mode + " has no LP leakage");
@@ -105,7 +105,7 @@
     });
 
     QUnit.test("heart mitigation cannot push LP damage below zero", function (assert) {
-      const result = resolve("intro_rules", card("D", 4), card("H", 3), null);
+      const result = resolve("canonical_v1_0", card("D", 4, "4"), card("H", 3, "3"), null);
       assert.equal(result.lpDamage, 0, "LP damage clamps to zero");
     });
 
@@ -123,8 +123,8 @@
     });
 
     QUnit.test("front Ace survives non-Ace direct attack (legacy and current)", function (assert) {
-      const legacy = resolve("legacy_reference", card("H", 6), card("D", 1), card("C", 4));
-      const current = resolve("intro_rules", card("H", 6), card("D", 1), card("C", 4));
+      const legacy = resolve("legacy_reference", card("H", 6, "6"), card("D", 1, "A"), card("C", 4, "4"));
+      const current = resolve("canonical_v1_0", card("H", 6, "6"), card("D", 1, "A"), card("C", 4, "4"));
 
       assert.true(legacy.survivors.front, "legacy: front Ace survives");
       assert.true(current.survivors.front, "current: front Ace survives");
@@ -133,18 +133,32 @@
     });
 
     QUnit.test("front Ace is discarded by direct Ace attack", function (assert) {
-      const legacy = resolve("legacy_reference", card("H", 1), card("D", 1), card("C", 4));
-      const current = resolve("intro_rules", card("H", 1), card("D", 1), card("C", 4));
+      const legacy = resolve("legacy_reference", card("H", 1, "A"), card("D", 1, "A"), card("C", 4, "4"));
+      const current = resolve("canonical_v1_0", card("H", 1, "A"), card("D", 1, "A"), card("C", 4, "4"));
 
       assert.notOk(legacy.survivors.front, "legacy: front Ace discarded by Ace");
       assert.notOk(current.survivors.front, "current: front Ace discarded by Ace");
       assert.notOk(legacy.specials.frontAceProtected, "legacy: no Ace protection");
       assert.notOk(current.specials.frontAceProtected, "current: no Ace protection");
     });
+    QUnit.test("canonical: face-card destroy eligibility is enforced", function (assert) {
+      const queenIntoKing = resolve("canonical_v1_0", card("H", 11, "Q"), card("S", 11, "K"), null);
+      const kingIntoQueen = resolve("canonical_v1_0", card("H", 11, "K"), card("S", 11, "Q"), null);
+
+      assert.true(queenIntoKing.survivors.front, "queen cannot destroy king");
+      assert.equal(queenIntoKing.frontHealth, 11, "ineligible face target remains at full value in classic mode");
+      assert.notOk(kingIntoQueen.survivors.front, "king can destroy queen");
+    });
+
+    QUnit.test("intro_rules mode aliases to canonical_v1_0", function (assert) {
+      const aliased = resolve("intro_rules", card("D", 9, "9"), null, null);
+      assert.equal(aliased.mode, "canonical_v1_0", "legacy mode name remains a compatibility alias");
+      assert.equal(aliased.lpDamage, 9, "alias resolves using canonical rules");
+    });
   });
 
   QUnit.module("Battle Resolver - Permutations", function () {
-    const modes = ["legacy_reference", "intro_rules"];
+    const modes = ["legacy_reference", "canonical_v1_0"];
     const attackers = ["D", "H", "C", "S"];
     const slotPermutations = [
       { front: null, back: null, label: "no defenders" },

@@ -70,8 +70,8 @@
   }
 
   function modeLabel(mode) {
-    if (mode === "intro_rules") return "Current Rules";
-    return "Historical Rules";
+    if (mode === "canonical_v1_0" || mode === "intro_rules") return "Canonical v1.0";
+    return "Historical Prototype";
   }
 
   function renderProgression(result) {
@@ -132,7 +132,7 @@
     attackerSelect.value = "S-9";
     frontSelect.value = "D-3";
     backSelect.value = "H-2";
-    modeSelect.value = "intro_rules";
+    modeSelect.value = "canonical_v1_0";
 
     button.addEventListener("click", function () {
       const attacker = parseCard(attackerSelect.value);
