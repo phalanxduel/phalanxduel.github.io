@@ -1,0 +1,9 @@
+{% assign section = include.section %}
+<section class="{{ section.class | default: 'grid three' }}"{% if section.aria_label %} aria-label="{{ section.aria_label }}"{% endif %}>
+  {% for item in section.items %}
+    <article class="card">
+      <h2>{{ item.heading }}</h2>
+      <p>{{ item.body }}</p>
+    </article>
+  {% endfor %}
+</section>

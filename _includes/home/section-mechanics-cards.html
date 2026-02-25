@@ -1,0 +1,16 @@
+{% assign section = include.section %}
+<section class="{{ section.class | default: 'card' }}"{% if section.section_id %} aria-labelledby="{{ section.section_id }}"{% endif %}>
+  <h2{% if section.section_id %} id="{{ section.section_id }}"{% endif %}>{{ section.heading }}</h2>
+  <p>{{ section.body }}</p>
+  <div class="grid three">
+    {% for card in section.cards %}
+      <article class="card">
+        <h3>{{ card.heading }}</h3>
+        <p>{{ card.body }}</p>
+      </article>
+    {% endfor %}
+  </div>
+  {% if section.helper_line %}
+    <p class="small-note">{{ section.helper_line }}</p>
+  {% endif %}
+</section>

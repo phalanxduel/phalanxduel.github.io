@@ -1,0 +1,23 @@
+{% assign section = include.section %}
+{% case section.type %}
+  {% when "hero" %}
+    {% include home/section-hero.html section=section %}
+  {% when "card" %}
+    {% include home/section-card.html section=section %}
+  {% when "grid_cards" %}
+    {% include home/section-grid-cards.html section=section %}
+  {% when "two_col_cards" %}
+    {% include home/section-two-col-cards.html section=section %}
+  {% when "small_note" %}
+    {% include home/section-small-note.html section=section %}
+  {% when "feature_cards" %}
+    {% include home/section-feature-cards.html section=section %}
+  {% when "mechanics_cards" %}
+    {% include home/section-mechanics-cards.html section=section %}
+  {% when "steps_teaser" %}
+    {% include home/section-steps-teaser.html section=section %}
+  {% when "onboarding_choices" %}
+    {% include home/section-onboarding-choices.html section=section %}
+  {% when "final_cta" %}
+    {% include home/section-final-cta.html section=section %}
+{% endcase %}

@@ -1,0 +1,48 @@
+{% assign section = include.section %}
+<section class="{{ section.class | default: 'hero' }}" aria-labelledby="{{ section.aria_labelledby }}">
+  <div class="hero-layout">
+    <div class="hero-copy">
+      {% if section.eyebrow %}<p class="hero-eyebrow">{{ section.eyebrow }}</p>{% endif %}
+      <h1 id="{{ section.title_id }}">{{ section.heading }}</h1>
+      <p>{{ section.body }}</p>
+      {% if section.ctas and section.ctas.size > 0 %}
+        <div class="cta-row">
+          {% for cta in section.ctas %}
+            {% include home/cta-link.html cta=cta %}
+          {% endfor %}
+        </div>
+      {% endif %}
+      {% if section.friction_line %}
+        <p class="small-note">{{ section.friction_line }}</p>
+      {% endif %}
+      {% if section.proof_points and section.proof_points.size > 0 %}
+        <ul class="proof-points">
+          {% for point in section.proof_points %}
+            <li>{{ point }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </div>
+
+    {% if section.preview_panel %}
+      <aside class="hero-preview" aria-label="{{ section.preview_panel.aria_label | default: section.preview_panel.heading }}">
+        <p class="hero-preview-label">{{ section.preview_panel.label | default: "What You'll See First" }}</p>
+        <h2>{{ section.preview_panel.heading }}</h2>
+        {% if section.preview_panel.subheading %}<p class="hero-preview-subheading">{{ section.preview_panel.subheading }}</p>{% endif %}
+        {% if section.preview_panel.rows and section.preview_panel.rows.size > 0 %}
+          <ul class="hero-preview-list">
+            {% for row in section.preview_panel.rows %}
+              <li>
+                <span>{{ row.label }}</span>
+                {% if row.value %}<strong>{{ row.value }}</strong>{% endif %}
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+        {% if section.preview_panel.footer %}
+          <p class="hero-preview-footer">{{ section.preview_panel.footer }}</p>
+        {% endif %}
+      </aside>
+    {% endif %}
+  </div>
+</section>

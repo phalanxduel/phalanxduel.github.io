@@ -1,0 +1,492 @@
+meta:
+  title: "Phalanx"
+  description: "Phalanx is an open tactical card system for competitive and cooperative play."
+
+active_variant: "expectations_conversion_v1"
+
+variants:
+  current:
+    name: "Current homepage"
+    sections:
+      - type: "hero"
+        class: "hero"
+        aria_labelledby: "hero-title"
+        title_id: "hero-title"
+        heading: "Phalanx Duel: Column Tactics, Deterministic Combat"
+        body: "Phalanx Duel turns card values and suits into a high-skill 1v1 battlefield. Build pressure across four columns, break through front-to-back defenses, and convert overflow into decisive life damage."
+        ctas:
+          - label: "Play Online &rarr;"
+            href: "https://play.phalanxduel.com"
+            style: "primary"
+            external: true
+          - label: "Learn in 2 Minutes"
+            href: "/how-to-play/"
+            style: "secondary"
+          - label: "Rules v1.0 Summary"
+            href: "/rules/"
+
+      - type: "card"
+        class: "card"
+        section_id: "canonical-format"
+        heading: "Start Here: The Canonical Duel Format"
+        body_html: "<strong>Phalanx Duel</strong> is the canonical competitive format of the Phalanx system. Classic play uses a <strong>4-column, 2-rank battlefield</strong>, a <strong>4-card hand limit</strong>, and deterministic attack resolution with suit timing that rewards planning over guesswork."
+        ctas:
+          - label: "Your First Match"
+            href: "/how-to-play/"
+          - label: "Suits & Strategy"
+            href: "/suits-strategy/"
+            style: "secondary"
+          - label: "Battle Calculator"
+            href: "/battle-calculator/"
+
+      - type: "grid_cards"
+        class: "grid three"
+        aria_label: "Phalanx Duel Progression"
+        items:
+          - heading: "Play"
+            body: "Learn the board, choose attacks from the front rank, and feel how overflow damage moves through a defending column."
+          - heading: "Improve"
+            body: "Understand suit timing: Diamonds and Hearts mitigate, Clubs and Spades convert carryover into pressure."
+          - heading: "Master"
+            body: "Read attack boundaries correctly, exploit pass pressure, and plan reinforcement around column collapse."
+
+      - type: "card"
+        class: "card"
+        section_id: "why-fair"
+        heading: "Why Competitive Players Trust It"
+        paragraphs:
+          - "Phalanx Duel’s canonical rules are deterministic: identical inputs produce identical outcomes. The game is designed for replay verification, event logging, and server-authoritative enforcement in digital play."
+        links_line:
+          links:
+            - label: "See technical details"
+              href: "/technical-details/"
+            - label: "read the player-facing rules summary"
+              href: "/rules/"
+          conjunction: " and "
+          suffix: "."
+
+      - type: "two_col_cards"
+        class: "two-col"
+        cards:
+          - heading: "Learn Fast"
+            body: "Start with the short onboarding guide, then use the quick reference while you play."
+            cta:
+              label: "How to Play"
+              href: "/how-to-play/"
+          - heading: "Train Smarter"
+            body: "Use the battle calculator and strategy notes to understand suit timing, overflow, and column outcomes."
+            cta:
+              label: "Analyze Battles"
+              href: "/battle-calculator/"
+
+      - type: "card"
+        class: "card"
+        section_id: "project-links"
+        heading: "Project & Policy"
+        body: "The engine and rules are open. Trademarks and certification are managed separately."
+        ctas:
+          - label: "License"
+            href: "/license/"
+          - label: "Trademarks"
+            href: "/trademarks/"
+          - label: "The System"
+            href: "/system/"
+
+      - type: "small_note"
+        class: "small-note"
+        prefix: "Ready to test your read on the board? Play online at "
+        link:
+          label: "play.phalanxduel.com"
+          href: "https://play.phalanxduel.com"
+          external: true
+        suffix: "."
+
+  conversion_strategy_v1:
+    name: "Conversion strategy v1"
+    sections:
+      - type: "hero"
+        class: "hero"
+        aria_labelledby: "hero-title"
+        title_id: "hero-title"
+        heading: "Simple rules. Serious strategy."
+        body: "Phalanx Duel is a tactical duel where positioning, timing, and prediction decide the outcome. Learn the basics in a minute, then uncover deeper counters, traps, and formations every time you play."
+        ctas:
+          - label: "Play Now"
+            href: "https://play.phalanxduel.com"
+            style: "primary"
+            external: true
+          - label: "How to Play (60 sec)"
+            href: "/how-to-play/"
+            style: "secondary"
+        friction_line: "Free to play in your browser. No download. Start instantly."
+        proof_points:
+          - "Learn fast, improve forever"
+          - "Quick matches, meaningful choices"
+          - "Built for mind games and mastery"
+
+      - type: "feature_cards"
+        class: "card"
+        section_id: "why-it-hooks"
+        heading: "Learn the basics fast. Stay for the mind games."
+        body: "Phalanx Duel is easy to begin because the rules are clear. The challenge comes from what those rules create: pressure, traps, counters, and the constant battle to stay one move ahead."
+        cards:
+          - heading: "Clear Rules, Fast Start"
+            body: "You do not need a long tutorial to begin. The core actions are simple, so your first match starts quickly and makes sense right away."
+          - heading: "Every Move Matters"
+            body: "Each decision changes the board. A strong move can create pressure, open a path, or bait your opponent into a mistake."
+          - heading: "Depth That Rewards Practice"
+            body: "As you play, you start seeing patterns, counters, and setups you missed before. That is where mastery begins."
+
+      - type: "mechanics_cards"
+        class: "card"
+        section_id: "how-it-works"
+        heading: "What makes a great move?"
+        body: "Winning is not about memorizing rules. It is about reading the board and making the right decision at the right time."
+        cards:
+          - heading: "Positioning Wins Games"
+            body: "Control space, protect key pieces, and shape the board in your favor."
+          - heading: "Timing Creates Openings"
+            body: "The right move too early can fail. The right move at the right moment can decide the match."
+          - heading: "Prediction Beats Reaction"
+            body: "Success comes from reading what your opponent wants and disrupting it before it happens."
+        helper_line: "New player? Learn the essentials in 60 seconds, then improve by playing."
+
+      - type: "steps_teaser"
+        class: "card"
+        section_id: "how-to-play-teaser"
+        heading: "How to play in 60 seconds"
+        intro: "Understand the goal, learn the core moves, and start playing. The strategy comes from how you combine them."
+        steps:
+          - heading: "Know the objective"
+            body: "Win by creating the position your opponent cannot answer."
+          - heading: "Learn the core moves"
+            body: "Each turn, you make one move that changes space, pressure, and possibilities on the board."
+          - heading: "Think one move ahead"
+            body: "Do not just look at your move. Look at the reply it invites."
+          - heading: "Build pressure"
+            body: "Strong play comes from creating threats while protecting your position."
+          - heading: "Play and improve"
+            body: "Your first match teaches the basics. Every match after that teaches timing, counters, and pattern recognition."
+        ctas:
+          - label: "Play Your First Match"
+            href: "https://play.phalanxduel.com"
+            style: "primary"
+            external: true
+          - label: "See Full Rules"
+            href: "/rules/"
+            style: "secondary"
+
+      - type: "onboarding_choices"
+        class: "card"
+        section_id: "start-your-first-duel"
+        heading: "Start your first duel your way"
+        body: "Jump straight into a match, or take the 60-second rules tour first. Either way, you will be playing in moments."
+        cards:
+          - heading: "Play Now"
+            body: "Learn by doing. Start a match instantly."
+            cta:
+              label: "Play Now"
+              href: "https://play.phalanxduel.com"
+              external: true
+          - heading: "60-Second Rules"
+            body: "Get the essentials, then jump in with confidence."
+            cta:
+              label: "How to Play"
+              href: "/how-to-play/"
+          - heading: "Practice First"
+            body: "Test the basics before facing other players."
+            cta:
+              label: "Practice"
+              href: "/practice/"
+            optional: true
+        helper_line: "No download. No long tutorial. Just a fast start and real strategy."
+
+      - type: "final_cta"
+        class: "card"
+        section_id: "final-cta"
+        heading: "Your next great move starts now."
+        body: "Play your first match in minutes. Come back for the depth, the mind games, and the mastery."
+        ctas:
+          - label: "Play Now"
+            href: "https://play.phalanxduel.com"
+            style: "primary"
+            external: true
+          - label: "How to Play"
+            href: "/how-to-play/"
+            style: "secondary"
+        closing_microcopy: "Free in your browser. No download required."
+
+  embed_conversion_v1:
+    name: "Embed-first conversion v1"
+    sections:
+      - type: "hero"
+        class: "hero"
+        aria_labelledby: "hero-title"
+        title_id: "hero-title"
+        heading: "Start a tactical duel in seconds."
+        body: "Phalanx Duel is a deterministic 1v1 strategy game built on phases, positioning, and timing. Enter your name, create a match, and share a link with a friend. The game starts as soon as they join."
+        ctas:
+          - label: "Create Match"
+            href: "https://play.phalanxduel.com"
+            style: "primary"
+            external: true
+          - label: "How a Turn Works"
+          - label: "How It Works"
+            href: "#how-a-turn-works"
+            style: "secondary"
+        friction_line: "No download. No account required. Spectator link included."
+
+      - type: "card"
+        class: "card"
+        section_id: "play-right-here"
+        heading: "Play right here"
+        body: "Create a match, share the player link with a friend, and share the spectator link if others want to watch."
+        ctas:
+          - label: "Create Match"
+            href: "https://play.phalanxduel.com"
+            style: "primary"
+            external: true
+          - label: "Open Full App"
+            href: "https://play.phalanxduel.com"
+            external: true
+          - label: "Rules Summary"
+            href: "/rules/"
+        embed:
+          enabled: true
+          src: "https://play.phalanxduel.com"
+          title: "Phalanx Duel embedded game"
+          aspect_ratio: "16 / 10"
+          loading: "lazy"
+          sandbox: "allow-scripts allow-same-origin allow-forms allow-popups allow-downloads"
+          referrerpolicy: "strict-origin-when-cross-origin"
+          allow: "fullscreen"
+
+      - type: "steps_teaser"
+        class: "card"
+        section_id: "what-happens-next"
+        heading: "What happens when you click Create Match"
+        intro: "This is the full flow from first click to a live match."
+        steps:
+          - heading: "Enter your name"
+          - heading: "A match link is created instantly"
+          - heading: "Share the player link with a friend"
+          - heading: "Share the spectator link (optional)"
+          - heading: "Your friend enters their name and clicks Join"
+          - heading: "The match begins immediately"
+        helper_line: "You can start a real match in under a minute."
+
+      - type: "card"
+        class: "card"
+        section_id: "what-the-game-is"
+        heading: "What Phalanx Duel actually is"
+        body: "A deterministic tactical duel where each turn follows clear phases. The rules are quick to learn, and the depth comes from positioning, timing, and reading the next move before it happens."
+        bullets:
+          - "1v1 strategy with deterministic resolution"
+          - "Turn-based play with phase-driven decisions"
+          - "Skill rewards foresight, not guesswork"
+
+      - type: "steps_teaser"
+        class: "card"
+        section_id: "how-a-turn-works"
+        heading: "How a turn works"
+        intro: "Each turn follows clear phases. The strategy comes from the order of decisions and how they shape the next turn."
+        steps:
+          - heading: "Choose your play"
+            body: "Commit your move and shape the board."
+          - heading: "Resolve attacks"
+            body: "Combat resolves deterministically from the current position."
+          - heading: "Apply pressure"
+            body: "Column outcomes and carryover create new threats."
+          - heading: "Prepare the next turn"
+            body: "Reposition, reinforce, and plan the next sequence."
+        helper_line: "Play one turn and the core loop clicks. Mastery comes from reading what your opponent is setting up next."
+        ctas:
+          - label: "How to Play"
+            href: "/how-to-play/"
+            style: "secondary"
+          - label: "See Full Rules"
+            href: "/rules/"
+
+      - type: "mechanics_cards"
+        class: "card"
+        section_id: "why-it-stays-interesting"
+        heading: "Simple to start. Deep to master."
+        body: "The rules are learnable quickly, but every turn creates new timing windows, threats, and counterplay."
+        cards:
+          - heading: "Positioning matters"
+            body: "Where you commit pressure changes what is possible next."
+          - heading: "Timing matters"
+            body: "Strong moves fail if played too early or too late."
+          - heading: "Prediction matters"
+            body: "Winning comes from reading intent and disrupting plans."
+
+      - type: "final_cta"
+        class: "card"
+        section_id: "final-cta"
+        heading: "Create a match and test your first read."
+        body: "Start now, share a link, and begin as soon as your friend joins."
+        ctas:
+          - label: "Create Match"
+            href: "https://play.phalanxduel.com"
+            style: "primary"
+            external: true
+          - label: "How to Play"
+            href: "/how-to-play/"
+            style: "secondary"
+        closing_microcopy: "No download. No account required. Spectator link included."
+
+  expectations_conversion_v1:
+    name: "Expectations-first conversion v1"
+    sections:
+      - type: "hero"
+        class: "hero"
+        aria_labelledby: "hero-title"
+        title_id: "hero-title"
+        heading: "Start a duel in seconds."
+        body: "Create a match. Share a link. Start the duel."
+        proof_points:
+          - "No account required"
+          - "Create, Join, or Watch"
+          - "Spectator link included"
+        ctas:
+          - label: "Create Match"
+            href: "https://play.phalanxduel.com"
+            style: "primary"
+            external: true
+          - label: "How It Works"
+            href: "#how-a-turn-works"
+            style: "secondary"
+        friction_line: "No download. No account required. Spectator link included."
+        preview_panel:
+          label: "First Screen"
+          heading: "Play Phalanx Duel"
+          subheading: "1v1 card combat. Strategy over luck."
+          rows:
+            - label: "Your name"
+              value: "Enter and create"
+            - label: "Damage Mode"
+              value: "Cumulative / Per-Turn Reset"
+            - label: "Starting LP"
+              value: "20 (default)"
+            - label: "Actions"
+              value: "Create Match • Join Match • Watch Match"
+            - label: "Rules"
+              value: "How to play ▼"
+          footer: "After Create Match: copy player link + spectator link and wait for your challenger."
+
+      - type: "steps_teaser"
+        class: "card"
+        section_id: "what-happens-when-you-click-play"
+        heading: "What happens when you click Play Phalanx Duel"
+        intro: "This is the exact flow from first click to a live game."
+        steps:
+          - heading: "You enter your name"
+          - heading: "You choose Damage Mode and Starting LP (or keep the defaults)"
+          - heading: "You click Create Match and a match link is created instantly"
+          - heading: "You share the player link with a friend"
+          - heading: "You can also share the spectator link"
+          - heading: "Your friend can join from the lobby with Join Match or from a challenge page with Accept & Enter Match"
+          - heading: "The game starts immediately"
+        helper_line: "No signup flow. You can start a real match in under a minute."
+        ctas:
+          - label: "How to Play"
+            href: "/how-to-play/"
+            style: "secondary"
+          - label: "See Full Rules"
+            href: "/rules/"
+
+      - type: "card"
+        class: "card"
+        section_id: "what-you-will-see-first"
+        heading: "What you will see first"
+        body: "You will see a quick start screen where you can create a match, join a friend’s match, or watch a match. Create Match starts with your name, Damage Mode, and Starting LP, then gives you player and spectator links to share."
+        bullets:
+          - "Name entry (no account required)"
+          - "Damage Mode selector (Cumulative or Per-Turn Reset)"
+          - "Starting LP (default 20)"
+          - "Create Match, Join Match, or Watch Match"
+          - "In-app How to play panel"
+          - "Instant player invite link"
+          - "Spectator link for every match"
+          - "Friend joins with Join Match or Accept & Enter Match"
+          - "Match starts as soon as they join"
+
+      - type: "card"
+        class: "card"
+        section_id: "what-the-game-is"
+        heading: "What Phalanx Duel actually is"
+        body: "Phalanx Duel is a deterministic 1v1 tactical game. Players take turns through clear phases, and the depth comes from positioning, timing, and reading the next move before it happens."
+        paragraphs:
+          - "Win by dropping your opponent to 0 life points, or by destroying every card they have."
+        bullets:
+          - "1v1 tactical strategy"
+          - "Deterministic resolution"
+          - "Turn-based play with phases"
+          - "Skill rewards foresight, not guesswork"
+
+      - type: "steps_teaser"
+        class: "card"
+        section_id: "how-a-turn-works"
+        heading: "How a turn works"
+        intro: "Players take turns. The game and each turn have phases, and the current phase determines whether you deploy cards or attack."
+        steps:
+          - heading: "Start and set the duel"
+            body: "Create or join a match, then begin with the selected Damage Mode and Starting LP."
+          - heading: "Deploy across 4 columns"
+            body: "Players secretly deploy 8 cards across a 4-column battlefield with a front row and back row."
+          - heading: "Take turns attacking"
+            body: "On attack phases, players choose attacks and defend as combat resolves from the current position."
+          - heading: "Damage cascades through columns"
+            body: "Damage moves through a defending column and can carry into life points based on the board state and card effects."
+          - heading: "Push to victory"
+            body: "Keep attacking and deploying through the turn and game phases until an opponent reaches 0 LP or has no cards left."
+        helper_line: "You do not need every suit interaction memorized before your first game. Play one match, then use the in-app quick rules and full rules as questions come up."
+        ctas:
+          - label: "How to Play"
+            href: "/how-to-play/"
+            style: "secondary"
+          - label: "See Full Rules"
+            href: "/rules/"
+
+      - type: "feature_cards"
+        class: "card"
+        section_id: "what-you-need-to-know"
+        heading: "What you need to know (and what can wait)"
+        body: "You do not need the full rules memorized before starting. Learn the basics first, then use the deeper rule pages and tools as you improve."
+        cards:
+          - heading: "Start a game"
+            body: "Enter your name, choose match settings (or keep defaults), create a match, and share the player link."
+          - heading: "Learn the core loop"
+            body: "Understand how turns and phases shape when you deploy or attack."
+          - heading: "Go deeper later"
+            body: "Use the in-app quick rules, then the full rules, strategy notes, and calculator when you want mastery."
+
+      - type: "two_col_cards"
+        class: "two-col"
+        cards:
+          - heading: "Quick Start (Beginner)"
+            body: "Start with the shortest path: what the goal is, how turns and phases work, and how to begin your first duel."
+            cta:
+              label: "Quick Start"
+              href: "/how-to-play/"
+              style: "secondary"
+          - heading: "Deep Rules & Tools"
+            body: "When you want exact resolution details and strategy depth, use the rules summary, suit strategy notes, and battle calculator."
+            cta:
+              label: "Rules & Tools"
+              href: "/rules/"
+
+      - type: "final_cta"
+        class: "card"
+        section_id: "final-cta"
+        heading: "Start a match knowing exactly what to expect."
+        body: "Enter your name, create a link, invite a friend, and begin as soon as they join."
+        ctas:
+          - label: "Create Match"
+            href: "https://play.phalanxduel.com"
+            style: "primary"
+            external: true
+          - label: "How to Play"
+            href: "/how-to-play/"
+            style: "secondary"
+        closing_microcopy: "No download. No account required. Every match includes a spectator link."

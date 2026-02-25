@@ -1,0 +1,2 @@
+{% assign section = include.section %}
+<p class="{{ section.class | default: 'small-note' }}">{{ section.prefix }}<a href="{{ section.link.href }}"{% if section.link.external %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ section.link.label }}</a>{{ section.suffix }}</p>

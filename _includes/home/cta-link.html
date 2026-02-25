@@ -1,0 +1,4 @@
+{% assign cta = include.cta %}
+<a class="button-link{% if cta.style %} {{ cta.style }}{% endif %}"
+   href="{% if cta.external %}{{ cta.href }}{% else %}{{ cta.href | relative_url }}{% endif %}"
+   {% if cta.external %}target="_blank" rel="noopener noreferrer"{% endif %}>{{ cta.label }}</a>

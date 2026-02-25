@@ -1,0 +1,24 @@
+{% assign section = include.section %}
+<section class="{{ section.class | default: 'card' }} steps-teaser"{% if section.section_id %} aria-labelledby="{{ section.section_id }}"{% endif %}>
+  <h2{% if section.section_id %} id="{{ section.section_id }}"{% endif %}>{{ section.heading }}</h2>
+  {% if section.intro %}<p>{{ section.intro }}</p>{% endif %}
+  <ol class="steps-list">
+    {% for step in section.steps %}
+      <li>
+        <div class="step-item">
+          <strong>{{ step.heading }}</strong>{% if step.body %}<span>{{ step.body }}</span>{% endif %}
+        </div>
+      </li>
+    {% endfor %}
+  </ol>
+  {% if section.ctas and section.ctas.size > 0 %}
+    <div class="cta-row">
+      {% for cta in section.ctas %}
+        {% include home/cta-link.html cta=cta %}
+      {% endfor %}
+    </div>
+  {% endif %}
+  {% if section.helper_line %}
+    <p class="small-note">{{ section.helper_line }}</p>
+  {% endif %}
+</section>

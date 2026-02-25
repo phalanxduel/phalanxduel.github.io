@@ -1,0 +1,15 @@
+{% assign section = include.section %}
+<section class="{{ section.class | default: 'card' }}"{% if section.section_id %} aria-labelledby="{{ section.section_id }}"{% endif %}>
+  <h2{% if section.section_id %} id="{{ section.section_id }}"{% endif %}>{{ section.heading }}</h2>
+  <p>{{ section.body }}</p>
+  {% if section.ctas and section.ctas.size > 0 %}
+    <div class="cta-row">
+      {% for cta in section.ctas %}
+        {% include home/cta-link.html cta=cta %}
+      {% endfor %}
+    </div>
+  {% endif %}
+  {% if section.closing_microcopy %}
+    <p class="small-note">{{ section.closing_microcopy }}</p>
+  {% endif %}
+</section>

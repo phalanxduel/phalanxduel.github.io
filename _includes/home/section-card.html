@@ -1,0 +1,57 @@
+{% assign section = include.section %}
+<section class="{{ section.class | default: 'card' }}"{% if section.section_id %} aria-labelledby="{{ section.section_id }}"{% endif %}>
+  {% if section.heading %}
+    <h2{% if section.section_id %} id="{{ section.section_id }}"{% endif %}>{{ section.heading }}</h2>
+  {% endif %}
+
+  {% if section.body_html %}
+    <p>{{ section.body_html }}</p>
+  {% endif %}
+
+  {% if section.body %}
+    <p>{{ section.body }}</p>
+  {% endif %}
+
+  {% if section.embed and section.embed.enabled %}
+    <div class="embed-shell"{% if section.embed.aspect_ratio %} style="--embed-aspect-ratio: {{ section.embed.aspect_ratio }};"{% endif %}>
+      <iframe
+        src="{{ section.embed.src }}"
+        title="{{ section.embed.title }}"
+        loading="{{ section.embed.loading | default: 'lazy' }}"
+        referrerpolicy="{{ section.embed.referrerpolicy | default: 'strict-origin-when-cross-origin' }}"
+        {% if section.embed.sandbox %}sandbox="{{ section.embed.sandbox }}"{% endif %}
+        {% if section.embed.allow %}allow="{{ section.embed.allow }}"{% endif %}></iframe>
+    </div>
+  {% endif %}
+
+  {% if section.paragraphs and section.paragraphs.size > 0 %}
+    {% for paragraph in section.paragraphs %}
+      <p>{{ paragraph }}</p>
+    {% endfor %}
+  {% endif %}
+
+  {% if section.bullets and section.bullets.size > 0 %}
+    <ul>
+      {% for bullet in section.bullets %}
+        <li>{{ bullet }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+  {% if section.links_line and section.links_line.links and section.links_line.links.size > 0 %}
+    <p>
+      {% if section.links_line.prefix %}{{ section.links_line.prefix }}{% endif %}
+      {% for link in section.links_line.links %}
+        <a href="{{ link.href | relative_url }}">{{ link.label }}</a>{% unless forloop.last %}{{ section.links_line.conjunction | default: " " }}{% endunless %}
+      {% endfor %}{% if section.links_line.suffix %}{{ section.links_line.suffix }}{% endif %}
+    </p>
+  {% endif %}
+
+  {% if section.ctas and section.ctas.size > 0 %}
+    <div class="cta-row">
+      {% for cta in section.ctas %}
+        {% include home/cta-link.html cta=cta %}
+      {% endfor %}
+    </div>
+  {% endif %}
+</section>

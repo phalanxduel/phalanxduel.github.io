@@ -295,10 +295,267 @@ main.container > section + section {
   margin-top: 3rem;
 }
 
+.homepage {
+  display: grid;
+  gap: 3rem;
+}
+
+.homepage p,
+.homepage li,
+.homepage .small-note,
+.homepage .button-link {
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.homepage > section {
+  margin-top: 0;
+}
+
+.homepage .hero {
+  position: relative;
+  overflow: hidden;
+  background-image:
+    linear-gradient(145deg, rgba(196, 154, 56, 0.08) 0%, transparent 55%),
+    linear-gradient(0deg, rgba(88, 166, 255, 0.04), rgba(88, 166, 255, 0.04)),
+    linear-gradient(135deg, rgba(255,255,255,0.02) 0%, transparent 100%);
+}
+
+.homepage .hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(196, 154, 56, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(196, 154, 56, 0.05) 1px, transparent 1px);
+  background-size: 2rem 2rem;
+  opacity: 0.18;
+  mask-image: radial-gradient(circle at 20% 20%, #000 0%, #000 45%, transparent 100%);
+}
+
+.hero-layout {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.hero-copy > p:first-of-type {
+  font-size: 1.05rem;
+  max-width: 36rem;
+}
+
+.proof-points {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.proof-points li {
+  border: 1px solid rgba(196, 154, 56, 0.35);
+  background: rgba(196, 154, 56, 0.08);
+  color: var(--text);
+  padding: 0.35rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  line-height: 1.2;
+}
+
+.hero-preview {
+  border: 1px solid rgba(88, 166, 255, 0.25);
+  border-bottom: 3px solid rgba(88, 166, 255, 0.45);
+  border-radius: 0.6rem;
+  padding: 1rem;
+  background:
+    linear-gradient(180deg, rgba(31, 58, 95, 0.25) 0%, rgba(13, 10, 5, 0.92) 100%);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+}
+
+.hero-preview-label {
+  margin: 0 0 0.35rem;
+  color: var(--blue);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.hero-preview h2 {
+  margin: 0;
+  font-size: 1.05rem;
+  color: var(--text);
+  letter-spacing: 0.06em;
+}
+
+.hero-preview-subheading {
+  margin: 0.4rem 0 0.8rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.hero-preview-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.hero-preview-list li {
+  display: grid;
+  gap: 0.2rem;
+  border: 1px solid rgba(196, 154, 56, 0.18);
+  border-radius: 0.4rem;
+  background: rgba(5, 4, 2, 0.45);
+  padding: 0.55rem 0.65rem;
+}
+
+.hero-preview-list li span {
+  color: var(--text-dim);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hero-preview-list li strong {
+  color: var(--text);
+  font-size: 0.88rem;
+  line-height: 1.25;
+}
+
+.hero-preview-footer {
+  margin: 0.8rem 0 0;
+  color: var(--muted);
+  font-size: 0.84rem;
+}
+
+.homepage .card {
+  background-image:
+    radial-gradient(ellipse 120% 100% at 0% 0%, rgba(196, 154, 56, 0.05), transparent 60%),
+    var(--card-gradient);
+}
+
+.homepage .card h2 {
+  font-size: 1rem;
+  color: var(--gold-bright);
+}
+
+.homepage .card h3 {
+  color: var(--gold);
+}
+
+.homepage .steps-teaser {
+  position: relative;
+}
+
+.steps-list {
+  margin: 1.2rem 0 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: phalanx-step;
+  display: grid;
+  gap: 0.9rem;
+}
+
+.steps-list li {
+  counter-increment: phalanx-step;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.8rem;
+  align-items: start;
+}
+
+.steps-list li::before {
+  content: counter(phalanx-step);
+  display: inline-grid;
+  place-items: center;
+  width: 1.9rem;
+  height: 1.9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(196, 154, 56, 0.5);
+  color: var(--gold-bright);
+  background: rgba(196, 154, 56, 0.09);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.8rem;
+  line-height: 1;
+}
+
+.step-item {
+  display: grid;
+  gap: 0.25rem;
+  border-left: 2px solid rgba(196, 154, 56, 0.15);
+  padding-left: 0.8rem;
+  min-height: 1.9rem;
+}
+
+.step-item strong {
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
+.step-item span {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.homepage #what-happens-when-you-click-play {
+  background-image:
+    linear-gradient(135deg, rgba(88, 166, 255, 0.05), transparent 55%),
+    var(--card-gradient);
+}
+
+.homepage #how-a-turn-works {
+  background-image:
+    linear-gradient(180deg, rgba(196, 154, 56, 0.05), transparent 45%),
+    linear-gradient(90deg, rgba(196, 154, 56, 0.02) 1px, transparent 1px),
+    var(--card-gradient);
+  background-size: auto, 1.5rem 1.5rem, auto;
+}
+
+.homepage #what-you-will-see-first ul,
+.homepage #what-the-game-is ul {
+  margin-top: 1rem;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.homepage .two-col .card {
+  padding: 1.35rem;
+}
+
+.homepage .two-col .button-link {
+  margin-top: 0.4rem;
+}
+
 .small-note {
   color: var(--text-dim);
   font-size: 0.9rem;
   font-style: italic;
+}
+
+.embed-shell {
+  --embed-aspect-ratio: 16 / 10;
+  margin-top: 1rem;
+  border: 1px solid var(--border);
+  border-bottom: 3px solid var(--border-up);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background: #0b0906;
+  box-shadow: var(--shadow-sm);
+}
+
+.embed-shell iframe {
+  display: block;
+  width: 100%;
+  aspect-ratio: var(--embed-aspect-ratio);
+  min-height: 24rem;
+  border: 0;
+  background: #0b0906;
 }
 
 .two-col {
@@ -308,12 +565,48 @@ main.container > section + section {
 }
 
 @media (min-width: 48rem) {
+  .hero-layout {
+    grid-template-columns: minmax(0, 1.2fr) minmax(18rem, 0.8fr);
+    gap: 2rem;
+  }
+
+  .homepage .hero {
+    padding: 2.6rem;
+  }
+
   .two-col {
     grid-template-columns: 1fr 1fr;
   }
 
   .grid.three {
     grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 47.99rem) {
+  .homepage {
+    gap: 2rem;
+  }
+
+  .homepage .hero {
+    padding: 1.4rem 1.1rem;
+  }
+
+  .homepage .hero h1 {
+    font-size: 1.65rem;
+    letter-spacing: 0.12em;
+  }
+
+  .homepage .cta-row {
+    gap: 0.6rem;
+  }
+
+  .homepage .button-link {
+    width: 100%;
+  }
+
+  .embed-shell iframe {
+    min-height: 18rem;
   }
 }
 
