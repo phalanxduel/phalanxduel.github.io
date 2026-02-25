@@ -50,7 +50,7 @@ description: "Your first match in Phalanx Duel, from classic setup to the first 
   <ol class="quick-list">
     <li><strong>Choose an Attacker:</strong> Only the card at <strong>rank 0</strong> (front) in a column can attack.</li>
     <li><strong>Choose a Defending Column:</strong> You target a column, not an individual card.</li>
-    <li><strong>Resolve the Chain:</strong> Damage goes front card -> back card -> player life.</li>
+    <li><strong>Resolve the Chain:</strong> Damage goes front card -> back card -> player LP.</li>
     <li><strong>Carryover Matters:</strong> If damage destroys a card, any remaining damage can continue through the next boundary.</li>
     <li><strong>Cleanup and Collapse:</strong> Destroyed cards are removed, then the column collapses forward.</li>
   </ol>

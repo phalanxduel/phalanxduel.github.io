@@ -230,7 +230,6 @@ variants:
             href: "https://play.phalanxduel.com"
             style: "primary"
             external: true
-          - label: "How a Turn Works"
           - label: "How It Works"
             href: "#how-a-turn-works"
             style: "secondary"
@@ -371,7 +370,7 @@ variants:
             - label: "Actions"
               value: "Create Match • Join Match • Watch Match"
             - label: "Rules"
-              value: "How to play ▼"
+              value: "How to Play ▼"
           footer: "After Create Match: copy player link + spectator link and wait for your challenger."
 
       - type: "steps_teaser"
@@ -405,7 +404,7 @@ variants:
           - "Damage Mode selector (Cumulative or Per-Turn Reset)"
           - "Starting LP (default 20)"
           - "Create Match, Join Match, or Watch Match"
-          - "In-app How to play panel"
+          - "In-app How to Play panel"
           - "Instant player invite link"
           - "Spectator link for every match"
           - "Friend joins with Join Match or Accept & Enter Match"
@@ -417,7 +416,7 @@ variants:
         heading: "What Phalanx Duel actually is"
         body: "Phalanx Duel is a deterministic 1v1 tactical game. Players take turns through clear phases, and the depth comes from positioning, timing, and reading the next move before it happens."
         paragraphs:
-          - "Win by dropping your opponent to 0 life points, or by destroying every card they have."
+          - "Win by dropping your opponent to 0 LP, or by destroying every card they have."
         bullets:
           - "1v1 tactical strategy"
           - "Deterministic resolution"
@@ -439,7 +438,7 @@ variants:
           - heading: "Attack from the front rank"
             body: "On attack phases, the active player attacks from a front-rank card in one column into a chosen defending column."
           - heading: "Damage cascades through columns"
-            body: "Damage moves through a defending column and can carry into life points based on the board state and card effects."
+            body: "Damage moves through a defending column and can carry into LP based on the board state and card effects."
           - heading: "Push to victory"
             body: "Keep attacking and deploying through the turn and game phases until an opponent reaches 0 LP or every card they have is destroyed."
         helper_line: "You do not need every suit interaction memorized before your first game. Play one match, then use the in-app quick rules and full rules as questions come up."

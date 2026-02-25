@@ -75,7 +75,7 @@ stateDiagram-v2
 <section class="card">
   <h2>Match Termination Signals (Canonical Concepts)</h2>
   <ul class="quick-list">
-    <li><strong>Player damage:</strong> Attack resolution can reduce player life when carryover reaches the player boundary.</li>
+    <li><strong>Player damage:</strong> Attack resolution can reduce player LP when carryover reaches the player boundary.</li>
     <li><strong>Pass limits:</strong> Exceeding consecutive or total pass limits results in forfeit.</li>
     <li><strong>System errors:</strong> Deterministic invariant violations terminate the match with an unrecoverable error event.</li>
     <li><strong>Important:</strong> Empty deck alone is not an automatic loss in canonical v1.0.</li>
