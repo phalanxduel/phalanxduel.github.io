@@ -25,7 +25,7 @@ description: "How sponsorship and community support help move Phalanx: Duel forw
   <ul class="quick-list">
     <li><a href="{{ '/roadmap/' | relative_url }}">High-level roadmap</a></li>
     <li><a href="{{ '/status/' | relative_url }}">Current status and limitations</a></li>
-    <li><a href="https://github.com/phalanxduel/phalanxduel/blob/main/docs/TASKS.md" target="_blank" rel="noopener noreferrer">Detailed engineering backlog</a></li>
+    <li><a href="https://github.com/phalanxduel/phalanxduel/blob/main/docs/system/TASKS.md" target="_blank" rel="noopener noreferrer">Detailed engineering backlog</a></li>
   </ul>
 </section>
 

@@ -22,7 +22,7 @@ description: "Current project phase, known limitations, and what to expect from 
 <section class="card">
   <h2>Known Limitation</h2>
   <p>Reconnect behavior is not fully complete yet. Rejoin attempts can still fail for already-full matches in current runtime behavior.</p>
-  <p><a href="https://github.com/phalanxduel/phalanxduel/blob/main/docs/TASKS.md" target="_blank" rel="noopener noreferrer">Track current engineering status in TASKS.md.</a></p>
+  <p><a href="https://github.com/phalanxduel/phalanxduel/blob/main/docs/system/TASKS.md" target="_blank" rel="noopener noreferrer">Track current engineering status in TASKS.md.</a></p>
 </section>
 
 <section class="card">
@@ -37,9 +37,9 @@ description: "Current project phase, known limitations, and what to expect from 
 <section class="card">
   <h2>Canonical Technical References</h2>
   <ul class="quick-list">
-    <li><a href="https://github.com/phalanxduel/phalanxduel/blob/main/docs/RULES.md" target="_blank" rel="noopener noreferrer">Rules</a></li>
-    <li><a href="https://github.com/phalanxduel/phalanxduel/blob/main/docs/PROTOCOL.md" target="_blank" rel="noopener noreferrer">Protocol</a></li>
-    <li><a href="https://github.com/phalanxduel/phalanxduel/blob/main/docs/CLIENT_CONTRACT.md" target="_blank" rel="noopener noreferrer">Client Contract</a></li>
-    <li><a href="https://github.com/phalanxduel/phalanxduel/blob/main/docs/ARCHITECTURE.md" target="_blank" rel="noopener noreferrer">Architecture</a></li>
+    <li><a href="https://github.com/phalanxduel/phalanxduel/blob/main/docs/formats/duel/RULES.md" target="_blank" rel="noopener noreferrer">Rules</a></li>
+    <li><a href="https://github.com/phalanxduel/phalanxduel/blob/main/docs/system/PROTOCOL.md" target="_blank" rel="noopener noreferrer">Protocol</a></li>
+    <li><a href="https://github.com/phalanxduel/phalanxduel/blob/main/docs/system/CLIENT_CONTRACT.md" target="_blank" rel="noopener noreferrer">Client Contract</a></li>
+    <li><a href="https://github.com/phalanxduel/phalanxduel/blob/main/docs/system/ARCHITECTURE.md" target="_blank" rel="noopener noreferrer">Architecture</a></li>
   </ul>
 </section>

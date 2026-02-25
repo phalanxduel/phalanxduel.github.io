@@ -28,8 +28,8 @@ description: "Ways to help Phalanx: Duel as a player, playtester, contributor, o
 <section class="card">
   <h2>For Contributors</h2>
   <ul class="quick-list">
-    <li><a href="https://github.com/phalanxduel/phalanxduel/blob/main/docs/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer">Contribution workflow</a></li>
-    <li><a href="https://github.com/phalanxduel/phalanxduel/blob/main/docs/TASKS.md" target="_blank" rel="noopener noreferrer">Current backlog and priorities</a></li>
+    <li><a href="https://github.com/phalanxduel/phalanxduel/blob/main/docs/system/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer">Contribution workflow</a></li>
+    <li><a href="https://github.com/phalanxduel/phalanxduel/blob/main/docs/system/TASKS.md" target="_blank" rel="noopener noreferrer">Current backlog and priorities</a></li>
     <li><a href="https://github.com/phalanxduel/phalanxduel/issues" target="_blank" rel="noopener noreferrer">Open issues</a></li>
   </ul>
 </section>

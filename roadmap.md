@@ -36,7 +36,7 @@ description: "High-level roadmap for current Phalanx: Duel development prioritie
   <h2>How This Connects to Delivery</h2>
   <ul class="quick-list">
     <li><a href="{{ '/status/' | relative_url }}">Current status and limitations</a></li>
-    <li><a href="https://github.com/phalanxduel/phalanxduel/blob/main/docs/TASKS.md" target="_blank" rel="noopener noreferrer">Detailed engineering backlog</a></li>
+    <li><a href="https://github.com/phalanxduel/phalanxduel/blob/main/docs/system/TASKS.md" target="_blank" rel="noopener noreferrer">Detailed engineering backlog</a></li>
     <li><a href="{{ '/get-involved/' | relative_url }}">Ways to get involved</a></li>
   </ul>
 </section>
