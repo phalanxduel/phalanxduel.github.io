@@ -10,9 +10,11 @@ RSpec.describe "Built site output" do
   it "renders the homepage conversion headline and rules CTA" do
     doc = parse_site_html("index.html")
 
-    expect(doc.at_css("h1")&.text).to include("Phalanx Duel: Column Tactics, Deterministic Combat")
-    expect(doc.text).to include("Rules v1.0 Summary")
-    expect(doc.text).to include("Why Competitive Players Trust It")
+    expect(doc.at_css("h1")&.text).to include("Start a duel in seconds.")
+    expect(doc.text).to include("Create a match. Share a link. Start the duel.")
+    expect(doc.text).to include("What happens when you click Play Phalanx Duel")
+    expect(doc.text).to include("How a turn works")
+    expect(doc.text).to include("See Full Rules")
   end
 
   it "renders the rules page canonical v1.0 sections" do
