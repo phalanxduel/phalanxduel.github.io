@@ -14,7 +14,7 @@ description: "Current project phase, known limitations, and what to expect from 
   <h2>What Works Today</h2>
   <ul class="quick-list">
     <li>Two-player deployment, combat, reinforcement, and victory flow.</li>
-    <li>Playable real-time browser match flow.</li>
+    <li>Playable turn-based browser match flow.</li>
     <li>Deterministic rules engine and documented protocol contracts.</li>
   </ul>
 </section>
