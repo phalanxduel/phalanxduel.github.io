@@ -145,8 +145,6 @@
     let overflow = attacker.value;
     const log = [];
     const progression = [];
-    let clubApplied = false;
-    let lastDestroyedCard = null;
     let frontAceProtected = false;
     let backAceProtected = false;
 
@@ -154,6 +152,10 @@
     addStep(progression, "Attacker Base Damage", overflow, overflow, attacker.suit + " attacker");
 
     let frontHealth = null;
+    let frontDestroyed = false;
+    let frontDiamondShield = 0;
+    let frontHeartShield = 0;
+
     if (front) {
       const before = overflow;
       const tentative = front.value - overflow;
@@ -167,7 +169,9 @@
         if (eligibility.eligible) {
           frontHealth = tentative;
           overflow = clampToZero(overflow - front.value);
-          lastDestroyedCard = front;
+          frontDestroyed = true;
+          if (front.suit === "D") frontDiamondShield = front.value;
+          if (front.suit === "H" && !back) frontHeartShield = front.value;
         } else {
           frontHealth = front.value;
           overflow = 0;
@@ -175,31 +179,38 @@
           log.push(eligibility.reason + ".");
         }
       }
-
       addStep(progression, "After Front Defender", before, overflow, front.suit + " " + front.value + " in front");
     } else {
       log.push("No front defender: damage overflows directly.");
       addStep(progression, "No Front Defender", overflow, overflow, "Unblocked overflow");
     }
 
-    if (front && front.suit === "D" && overflow > 0) {
-      const before = overflow;
-      overflow = clampToZero(overflow - front.value);
-      log.push("Diamond front bonus triggers: shield absorbs " + (before - overflow) + " overflow.");
-      addStep(progression, "Diamond Shield", before, overflow, "Diamond absorbs overflow");
-    }
+    // Boundary between Front and Back
+    if (overflow > 0) {
+      const beforeBoundary = overflow;
+      
+      // Club doubles once if target exists
+      if (back && attacker.suit === "C") {
+        overflow *= 2;
+        log.push("Club bonus: carryover doubled.");
+      }
 
-    if (attacker.suit === "C" && overflow > 0 && back) {
-      const before = overflow;
-      if (lastDestroyedCard === front && !clubApplied) {
-        overflow += overflow;
-        clubApplied = true;
-        log.push("Club attacker bonus triggers: overflow to next defender doubled.");
-        addStep(progression, "Club Overflow Bonus", before, overflow, "Overflow doubled once after first destruction (Canonical v1.0)");
+      // Diamond shield applies after Club doubling
+      if (frontDiamondShield > 0) {
+        const absorbed = Math.min(overflow, frontDiamondShield);
+        overflow -= absorbed;
+        log.push("Diamond shield: absorbed " + absorbed + ".");
+      }
+
+      if (overflow !== beforeBoundary) {
+        addStep(progression, "Boundary (Front->Back)", beforeBoundary, overflow, "Suit effects applied");
       }
     }
 
     let backHealth = null;
+    let backDestroyed = false;
+    let backHeartShield = 0;
+
     if (back) {
       const before = overflow;
       const tentative = back.value - overflow;
@@ -213,7 +224,8 @@
         if (eligibility.eligible) {
           backHealth = tentative;
           overflow = clampToZero(overflow - back.value);
-          lastDestroyedCard = back;
+          backDestroyed = true;
+          if (back.suit === "H") backHeartShield = back.value;
         } else {
           backHealth = back.value;
           overflow = 0;
@@ -221,7 +233,6 @@
           log.push(eligibility.reason + ".");
         }
       }
-
       addStep(progression, "After Back Defender", before, overflow, back.suit + " " + back.value + " in back");
     } else {
       log.push("No back defender: remaining damage targets LP.");
@@ -229,18 +240,24 @@
     }
 
     let lpDamage = overflow;
-    if (lastDestroyedCard && lastDestroyedCard.suit === "H" && lpDamage > 0) {
-      const before = lpDamage;
-      lpDamage = clampToZero(lpDamage - lastDestroyedCard.value);
-      log.push("Heart boundary bonus triggers: -" + lastDestroyedCard.value + " LP damage.");
-      addStep(progression, "Heart LP Mitigation", before, lpDamage, "Final destroyed Heart reduces LP damage");
-    }
+    if (lpDamage > 0) {
+      const beforeLp = lpDamage;
+      
+      if (attacker.suit === "S") {
+        lpDamage *= 2;
+        log.push("Spade bonus: LP damage doubled.");
+      }
 
-    if (attacker.suit === "S" && lpDamage > 0) {
-      const before = lpDamage;
-      lpDamage += lpDamage;
-      log.push("Spade attacker bonus triggers: LP damage doubled.");
-      addStep(progression, "Spade LP Bonus", before, lpDamage, "Final LP damage doubled");
+      const totalHeartShield = frontHeartShield + backHeartShield;
+      if (totalHeartShield > 0) {
+        const absorbed = Math.min(lpDamage, totalHeartShield);
+        lpDamage -= absorbed;
+        log.push("Heart shield: absorbed " + absorbed + ".");
+      }
+
+      if (lpDamage !== beforeLp) {
+        addStep(progression, "Boundary (Card->Player)", beforeLp, lpDamage, "Suit effects applied");
+      }
     }
 
     addStep(progression, "Damage To Player LP", lpDamage, lpDamage, "Final LP damage");

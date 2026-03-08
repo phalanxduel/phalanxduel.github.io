@@ -50,16 +50,35 @@
       assert.equal(result.lpDamage, 9, "all attack damage reaches LP");
     });
 
-    QUnit.test("canonical: diamond shield applies before Club bonus", function (assert) {
+    QUnit.test("canonical: diamond shield applies AFTER Club doubling", function (assert) {
+      // 7C into 6D (front) with 4S (back)
+      // Front destroyed. Overflow 1.
+      // Boundary Front->Back: Club 1*2 = 2. Diamond 2-6 = 0.
       const result = resolve("canonical_v1_0", card("C", 7, "7"), card("D", 6, "6"), card("S", 4, "4"));
       assert.equal(result.frontHealth, -1, "front is discarded");
-      assert.equal(result.backHealth, 4, "diamond shield prevents back damage");
+      assert.equal(result.backHealth, 4, "diamond shield absorbed the doubled overflow");
       assert.equal(result.lpDamage, 0, "no LP damage");
     });
 
-    QUnit.test("canonical: final destroyed Heart mitigates LP damage", function (assert) {
-      const result = resolve("canonical_v1_0", card("D", 11, "K"), card("H", 3, "3"), card("H", 2, "2"));
-      assert.equal(result.lpDamage, 4, "back heart applies when it is last defender before player");
+    QUnit.test("canonical: Diamond shield reduces doubled Club overflow", function (assert) {
+      // 10C into 2D (front) with 5S (back)
+      // Front destroyed. Overflow 8.
+      // Boundary Front->Back: Club 8*2 = 16. Diamond 16-2 = 14.
+      // Back 5S takes 14: destroyed. Overflow 9.
+      // Boundary Back->LP: 9.
+      const result = resolve("canonical_v1_0", card("C", 10, "10"), card("D", 2, "2"), card("S", 5, "5"));
+      assert.equal(result.backHealth, -9, "canonical: 10C into 2D and 5S -> 9 overflow");
+      assert.equal(result.lpDamage, 9, "canonical LP damage");
+    });
+
+    QUnit.test("canonical: Heart shields sum from both front and back", function (assert) {
+      // 11D into 3H (front) with 2H (back)
+      // Front destroyed. Overflow 8.
+      // Boundary Front->Back: 8.
+      // Back destroyed. Overflow 6.
+      // Boundary Back->LP: Hearts (3+2)=5. 6-5=1.
+      const result = resolve("canonical_v1_0", card("D", 11, "J"), card("H", 3, "3"), card("H", 2, "2"));
+      assert.equal(result.lpDamage, 1, "both hearts sum to mitigate 5 LP damage");
     });
 
     QUnit.test("canonical: Heart mitigation depends on last destroyed card before player", function (assert) {

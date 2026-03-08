@@ -49,8 +49,8 @@ battle_calculator: true
         <tr><th>Step</th><th>Historical Prototype</th><th>Canonical v1.0</th></tr>
       </thead>
       <tbody>
-        <tr><td>Diamond shield vs Club bonus order</td><td>Club doubles overflow first, then Diamond absorbs.</td><td>Diamond absorbs overflow first, then Club can double the remaining carryover once.</td></tr>
-        <tr><td>Heart trigger</td><td>Heart-style mitigation is modeled per site-era overflow rules.</td><td>Heart mitigation applies on the final Card -> Player boundary if the last destroyed card is a Heart.</td></tr>
+        <tr><td>Diamond shield vs Club bonus order</td><td>Club doubles overflow first, then Diamond absorbs.</td><td>Diamond shield applies <strong>after</strong> Club doubling.</td></tr>
+        <tr><td>Heart trigger</td><td>Heart-style mitigation is modeled per site-era overflow rules.</td><td>Total value of all destroyed Hearts in the column reduces final LP damage.</td></tr>
         <tr><td>Ace / Face eligibility</td><td>Simplified legacy model.</td><td>Classic Ace and Classic Face Card destroy eligibility is modeled.</td></tr>
         <tr><td>Spade LP bonus</td><td>Doubles final LP damage.</td><td>Doubles final LP damage.</td></tr>
       </tbody>
@@ -70,14 +70,14 @@ battle_calculator: true
 <section class="card">
   <h2>Canonical v1.0 Rules Mode Notes</h2>
   <ul class="quick-list">
-    <li><strong>Diamond boundary:</strong> If a Diamond card was just destroyed and the next target is a card, it reduces carryover before that next card takes damage.</li>
-    <li><strong>Club attacker:</strong> Doubles carryover once on the first eligible Card -> Card boundary after the first destruction.</li>
-    <li><strong>Heart boundary:</strong> Reduces final player damage only if the last destroyed card before the player is a Heart.</li>
+    <li><strong>Diamond boundary:</strong> If a Diamond card was destroyed, it reduces carryover at the next boundary. Applied <strong>after</strong> Club doubling.</li>
+    <li><strong>Club attacker:</strong> Doubles carryover once at the first eligible boundary after a destruction.</li>
+    <li><strong>Heart boundary:</strong> Total value of all destroyed Hearts in the column reduces final player damage.</li>
     <li><strong>Spade attacker:</strong> Doubles final LP damage once carryover reaches the player.</li>
     <li><strong>Classic Aces / Faces:</strong> Front-rank Ace and face-card destroy eligibility is enforced in canonical mode.</li>
   </ul>
   <p><strong>Boundary order (canonical):</strong> Shield -> Weapon -> Clamp.</p>
   <p><strong>Example (Historical Prototype):</strong> 10C into 1D with back 5S: overflow 9 -> Club 18 -> Diamond shields 1 -> 17 hits back.</p>
-  <p><strong>Example (Canonical v1.0):</strong> 10C into 1D with back 5S: overflow 9 -> Diamond shields 1 -> Club 16 -> 16 hits back.</p>
+  <p><strong>Example (Canonical v1.0):</strong> 10C into 2D with back 5S: overflow 8 -> Club 16 -> Diamond shields 2 -> 14 hits back.</p>
   <p class="small-note">Use this tool to build intuition, then confirm final wording in the canonical rules spec in the game repository.</p>
 </section>
