@@ -27,6 +27,25 @@ variants:
 
       - type: "card"
         class: "card"
+        section_id: "curious-to-master"
+        heading: "From Curious to Master"
+        body: "Your journey in Phalanx Duel has a clear path. Start simple, practice solo, then compete for rank."
+        intro: "How to go from 0 to 1, and 1 to \u221E."
+        bullets:
+          - "<strong>Curious (0 \u2192 1):</strong> Watch a match or play the <strong>Solo Bot (Easy)</strong>. No pressure, just learn the flow."
+          - "<strong>Player (1 \u2192 10):</strong> Play the <strong>Solo Bot (Medium)</strong> to test your defense. Then challenge a friend."
+          - "<strong>Master (10 \u2192 \u221E):</strong> Compete in ranked play. Study suit boundaries. Use the <strong>Battle Calculator</strong> to find lethal lines others miss."
+        ctas:
+          - label: "Play Solo Bot"
+            href: "https://play.phalanxduel.com"
+            style: "primary"
+            external: true
+          - label: "Battle Calculator"
+            href: "/battle-calculator/"
+            style: "secondary"
+
+      - type: "card"
+        class: "card"
         section_id: "canonical-format"
         heading: "Start Here: The Canonical Duel Format"
         body_html: "<strong>Phalanx Duel</strong> is the canonical competitive format of the Phalanx system. Classic play uses a <strong>4-column, 2-rank battlefield</strong>, a <strong>4-card hand limit</strong>, and deterministic attack resolution with suit timing that rewards planning over guesswork."
@@ -49,6 +68,24 @@ variants:
             body: "Understand suit timing: Diamonds and Hearts mitigate, Clubs and Spades convert carryover into pressure."
           - heading: "Master"
             body: "Read attack boundaries correctly, exploit pass pressure, and plan reinforcement around column collapse."
+
+      - type: "card"
+        class: "card"
+        section_id: "simplified-rules"
+        heading: "Simplified Rules"
+        body: "Phalanx Duel is a game of positioning and timing. Master these core concepts to win."
+        bullets:
+          - "<strong>Columns:</strong> Cards are arranged in 4 columns. Attacks hit the front card first, then the back, then you."
+          - "<strong>Phases:</strong> Each turn has 7 fixed phases. You deploy in Reinforcement and strike in the Attack phase."
+          - "<strong>Suits:</strong> ♦ Diamonds and ♥ Hearts defend; ♣ Clubs and ♠ Spades boost your attack power."
+          - "<strong>Victory:</strong> Reduce your opponent to 0 LP or destroy their entire formation to win."
+        ctas:
+          - label: "Step-by-Step Tutorial &rarr;"
+            href: "/tutorial/"
+            style: "primary"
+          - label: "Quick Reference"
+            href: "/quick-reference/"
+            style: "secondary"
 
       - type: "card"
         class: "card"
@@ -345,6 +382,7 @@ variants:
         body: "Create a match. Share a link. Start the duel."
         proof_points:
           - "No account required"
+          - "1 & 2 Player Modes (Solo vs Bot or PvP)"
           - "Create, Join, or Watch"
           - "Spectator link included"
         ctas:
@@ -357,21 +395,44 @@ variants:
             style: "secondary"
         friction_line: "No download. No account required. Spectator link included."
         preview_panel:
-          label: "First Screen"
-          heading: "Play Phalanx Duel"
-          subheading: "1v1 card combat. Strategy over luck."
+          label: "Your Progression"
+          heading: "From Curious to Master"
+          subheading: "Go from 0 to 1, and 1 to \u221E."
           rows:
-            - label: "Your name"
-              value: "Enter and create"
-            - label: "Damage Mode"
-              value: "Cumulative / Per-Turn Reset"
-            - label: "Starting LP"
-              value: "20 (default)"
-            - label: "Actions"
-              value: "Create Match • Join Match • Watch Match"
-            - label: "Rules"
-              value: "How to Play ▼"
-          footer: "After Create Match: copy player link + spectator link and wait for your challenger."
+            - label: "Phase 0 (Curious)"
+              value: "Read the board"
+              href: "/tutorial/"
+            - label: "Phase 1 (Player)"
+              value: "Play Solo Bot (Easy)"
+              href: "https://play.phalanxduel.com"
+              external: true
+            - label: "Phase 10 (Duelist)"
+              value: "Challenge a Friend"
+              href: "https://play.phalanxduel.com"
+              external: true
+            - label: "Phase \u221E (Master)"
+              value: "Ranked + Battle Calculator"
+              href: "/battle-calculator/"
+          footer: "Start your first duel in seconds. No account needed."
+
+      - type: "card"
+        class: "card"
+        section_id: "curious-to-master"
+        heading: "From Curious to Master"
+        body: "Your journey in Phalanx Duel has a clear path. Start simple, practice solo, then compete for rank."
+        intro: "How to go from 0 to 1, and 1 to \u221E."
+        bullets:
+          - "<strong>Curious (0 \u2192 1):</strong> Watch a match or play the <strong>Solo Bot (Easy)</strong>. No pressure, just learn the flow."
+          - "<strong>Player (1 \u2192 10):</strong> Play the <strong>Solo Bot (Medium)</strong> to test your defense. Then challenge a friend."
+          - "<strong>Master (10 \u2192 \u221E):</strong> Compete in ranked play. Study suit boundaries. Use the <strong>Battle Calculator</strong> to find lethal lines others miss."
+        ctas:
+          - label: "Play Solo Bot"
+            href: "https://play.phalanxduel.com"
+            style: "primary"
+            external: true
+          - label: "Battle Calculator"
+            href: "/battle-calculator/"
+            style: "secondary"
 
       - type: "steps_teaser"
         class: "card"
@@ -448,6 +509,24 @@ variants:
             style: "secondary"
           - label: "See Full Rules"
             href: "/rules/"
+
+      - type: "card"
+        class: "card"
+        section_id: "simplified-rules"
+        heading: "Simplified Rules"
+        body: "Phalanx Duel is a game of positioning and timing. Master these core concepts to win."
+        bullets:
+          - "<strong>Columns:</strong> Cards are arranged in 4 columns. Attacks hit the front card first, then the back, then you."
+          - "<strong>Phases:</strong> Each turn has 7 fixed phases. You deploy in Reinforcement and strike in the Attack phase."
+          - "<strong>Suits:</strong> ♦ Diamonds and ♥ Hearts defend; ♣ Clubs and ♠ Spades boost your attack power."
+          - "<strong>Victory:</strong> Reduce your opponent to 0 LP or destroy their entire formation to win."
+        ctas:
+          - label: "Step-by-Step Tutorial &rarr;"
+            href: "/tutorial/"
+            style: "primary"
+          - label: "Quick Reference"
+            href: "/quick-reference/"
+            style: "secondary"
 
       - type: "feature_cards"
         class: "card"

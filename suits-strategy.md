@@ -77,6 +77,7 @@ description: "Canonical suit timing and tactical patterns for improving at Phala
     <h2>Next Step</h2>
     <p>Once suit timing feels automatic, focus on reinforcement planning and pass pressure. That is where solid players become consistent winners.</p>
     <div class="cta-row">
+      <a class="button-link primary" href="{{ '/tutorial/' | relative_url }}">Official Tutorial</a>
       <a class="button-link" href="{{ '/battle-calculator/' | relative_url }}">Battle Calculator</a>
       <a class="button-link secondary" href="https://play.phalanxduel.com" target="_blank" rel="noopener noreferrer">Play Online &rarr;</a>
     </div>

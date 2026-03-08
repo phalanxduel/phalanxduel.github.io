@@ -133,6 +133,7 @@ description: "Player-readable summary of the canonical Phalanx Duel v1.0 rules."
 
 <div class="cta-row">
   <a class="button-link primary" href="https://play.phalanxduel.com" target="_blank" rel="noopener noreferrer">Play Online &rarr;</a>
+  <a class="button-link" href="{{ '/tutorial/' | relative_url }}">Official Tutorial</a>
   <a class="button-link" href="{{ '/how-to-play/' | relative_url }}">How to Play</a>
   <a class="button-link secondary" href="{{ '/suits-strategy/' | relative_url }}">Suits & Strategy</a>
 </div>

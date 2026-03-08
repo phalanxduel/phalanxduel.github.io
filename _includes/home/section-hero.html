@@ -34,7 +34,15 @@
             {% for row in section.preview_panel.rows %}
               <li>
                 <span>{{ row.label }}</span>
-                {% if row.value %}<strong>{{ row.value }}</strong>{% endif %}
+                {% if row.value %}
+                  <strong>
+                    {% if row.href %}
+                      <a href="{{ row.href | relative_url }}" {% if row.external %}target="_blank" rel="noopener noreferrer"{% endif %}>{{ row.value }}</a>
+                    {% else %}
+                      {{ row.value }}
+                    {% endif %}
+                  </strong>
+                {% endif %}
               </li>
             {% endfor %}
           </ul>

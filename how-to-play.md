@@ -86,6 +86,7 @@ description: "Your first match in Phalanx Duel, from classic setup to the first 
 
 <div class="cta-row">
   <a class="button-link primary" href="https://play.phalanxduel.com" target="_blank" rel="noopener noreferrer">Play Your First Match &rarr;</a>
+  <a class="button-link" href="{{ '/tutorial/' | relative_url }}">Official Tutorial</a>
   <a class="button-link" href="{{ '/quick-reference/' | relative_url }}">Print Quick Reference</a>
   <a class="button-link secondary" href="{{ '/rules/' | relative_url }}">Rules v1.0 Summary</a>
 </div>
