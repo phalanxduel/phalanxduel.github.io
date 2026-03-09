@@ -6,10 +6,9 @@ description: The origin story of Phalanx, from a rainy afternoon at Camp Tesomas
 # The Design Journey (2022)
 
 <section class="hero" style="text-align: left; padding: 2.5rem;">
-  <p>Phalanx was born from necessity during a rainy afternoon at <strong>Camp Tesomas</strong>. As an Eagle Scout, I’ve spent plenty of time in the woods, but this particular day was a choice between getting soaked in the freezing rain or hanging out in my tent.</p>
-  
-  <p>With no phone and no distractions, I found myself wishing I’d brought my <strong>Magic: The Gathering</strong> cards for a tournament later that week. It sparked a challenge: could I capture the deep, back-and-forth tactical tension of collectible dueling giants like <em>Magic</em>, <em>Yu-Gi-Oh!</em>, or <em>Disney Lorcana</em>—games that often require expensive, specialized decks—using only what we had in abundance at camp?</p>
+  <p>Phalanx was born from necessity during a rainy afternoon at <strong>Camp Tesomas</strong> in 2022. As an Eagle Scout, I’ve spent plenty of time in the woods, but this trip was different—I was there as an adult leader helping out with my son’s troop. This particular day was a choice between getting soaked in the freezing rain or hanging out in my tent.</p>
 
+  <p>With no phone and no distractions, I found myself wishing I’d brought my <strong>Magic: The Gathering</strong> cards for a tournament later that week. It sparked a challenge: could I capture the deep, back-and-forth tactical tension of collectible dueling giants like <em>Magic</em>, <em>Yu-Gi-Oh!</em>, or <em>Disney Lorcana</em> using only what we had in abundance at camp?</p>
   <p>I grabbed a pen and a notebook I’d packed from home and started writing. For the cards, I made a trip to the <strong>Trading Post</strong> to pick up an official <strong>Camp Tesomas</strong> deck. For the rest of the week, that book and those cards went everywhere with me. I jotted notes, sketched formations, and eventually convinced everyone who would entertain the notion to sit down for a match. That field testing proved the concept: the game wasn’t just functional; it was fun. These photos capture that original notebook exactly as it looked when I got home.</p>
 </section>
 

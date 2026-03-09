@@ -56,25 +56,17 @@ description: "Your first match in Phalanx Duel, from classic setup to the first 
   </ol>
 </section>
 
-<section class="card">
-  <h2>3. Learn the Suit Timing (Core Skill)</h2>
-  <p>Suits trigger at boundaries during attack resolution. The canonical boundary order is <strong>Shield -> Weapon -> Clamp</strong>.</p>
-  <ul class="quick-list">
-    <li><strong>♦ Diamonds (Card -> Card):</strong> Reduce carryover before it reaches the next card.</li>
-    <li><strong>♣ Clubs (Card -> Card):</strong> The attacking Club can double carryover once on the first eligible boundary after the first destruction.</li>
-    <li><strong>♥ Hearts (Card -> Player):</strong> If the last destroyed card before the player is a Heart, it can reduce final player damage.</li>
-    <li><strong>♠ Spades (Card -> Player):</strong> The attacking Spade doubles damage that reaches the player.</li>
-  </ul>
+<section class="hero">
+  <h2>3. Mastering the Flow</h2>
+  <p>To go from understanding the board to mastering the game, you need to feel the rhythm of the 7-phase turn cycle and the timing of suit boundaries.</p>
+  <div class="cta-row">
+    <a class="button-link primary" href="{{ '/tutorial/' | relative_url }}">See the Step-by-Step Tutorial &rarr;</a>
+    <a class="button-link" href="{{ '/battle-calculator/' | relative_url }}">Test Scenarios in the Calculator</a>
+  </div>
 </section>
 
 <section class="card">
-  <h2>4. Know the Turn Rhythm</h2>
-  <p>Every turn follows the same 7-phase lifecycle: Start Turn, Attack Phase, Attack Resolution, Cleanup, Reinforcement, Draw, End Turn.</p>
-  <p class="small-note">Even “nothing happened” phases still matter in digital play because the system logs deterministic turn events.</p>
-</section>
-
-<section class="card">
-  <h2>5. First-Match Mistakes to Avoid</h2>
+  <h2>4. First-Match Mistakes to Avoid</h2>
   <ul class="quick-list">
     <li><strong>Do not overfocus one column:</strong> Your front line is your attack access.</li>
     <li><strong>Hearts do not stack:</strong> Only the final eligible Heart mitigation applies to player damage.</li>

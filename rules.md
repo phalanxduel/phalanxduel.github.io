@@ -67,47 +67,24 @@ description: "Player-readable summary of the canonical Phalanx Duel v1.0 rules."
   </article>
 </section>
 
-<section class="card">
-  <h2>Turn Lifecycle (Always 7 Phases)</h2>
-  <ol class="quick-list">
-    <li><strong>Start Turn</strong></li>
-    <li><strong>Attack Phase</strong></li>
-    <li><strong>Attack Resolution</strong></li>
-    <li><strong>Cleanup Phase</strong></li>
-    <li><strong>Reinforcement Phase</strong></li>
-    <li><strong>Draw Phase</strong></li>
-    <li><strong>End Turn</strong></li>
-  </ol>
-  <p class="small-note">Phases always emit events in the canonical model, even when they do not change state.</p>
+<section class="hero">
+  <h2>Turn Cycle and Suit Timing</h2>
+  <p>For a visual walkthrough of the 7-phase turn lifecycle and the <strong>Shield -> Weapon -> Clamp</strong> boundary ordering, use our authoritative learning resources.</p>
+  <div class="cta-row">
+    <a class="button-link primary" href="{{ '/tutorial/' | relative_url }}">Official Tutorial &rarr;</a>
+    <a class="button-link" href="{{ '/battle-calculator/' | relative_url }}">Battle Calculator</a>
+  </div>
 </section>
 
 <section class="card">
   <h2>Attack Declaration & Target Chain</h2>
   <ul class="quick-list">
-    <li><strong>Attacker Source:</strong> The active player must have a card at rank 0 in the attacking column.</li>
-    <li><strong>Targeting:</strong> You pick a defending column.</li>
-    <li><strong>Target Chain:</strong> All non-null defending cards front-to-back, then the defending player.</li>
+    <li><strong>Attacker Source:</strong> Must have a card at rank 0 in the attacking column.</li>
+    <li><strong>Targeting:</strong> You pick a defending column, not an individual card.</li>
+    <li><strong>Target Chain:</strong> All defending cards front-to-back, then the defending player.</li>
     <li><strong>Carryover:</strong> Remaining damage after a destruction can continue to the next target.</li>
     <li><strong>Cleanup:</strong> Destroyed cards are removed, then the column collapses forward.</li>
   </ul>
-</section>
-
-<section class="card">
-  <h2>Suit Boundary Semantics (Canonical Order)</h2>
-  <p>At each boundary, evaluate in this order: <strong>Shield -> Weapon -> Clamp</strong>.</p>
-  <div class="table-wrap">
-    <table>
-      <thead>
-        <tr><th>Suit</th><th>Boundary</th><th>Effect</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>♦ Diamond</td><td>Card -> Card</td><td>Reduces carryover before it reaches the next card.</td></tr>
-        <tr><td>♣ Club (attacker)</td><td>Card -> Card</td><td>Doubles carryover once on the first eligible boundary after the first destruction.</td></tr>
-        <tr><td>♥ Heart</td><td>Card -> Player</td><td>If the final destroyed card before the player is a Heart, it reduces final player damage.</td></tr>
-        <tr><td>♠ Spade (attacker)</td><td>Card -> Player</td><td>Doubles damage that reaches the player.</td></tr>
-      </tbody>
-    </table>
-  </div>
 </section>
 
 <section class="two-col">

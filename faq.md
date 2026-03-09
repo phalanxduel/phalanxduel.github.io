@@ -6,6 +6,11 @@ description: Frequently asked questions about decks, players, phase status, and 
 # FAQ
 
 <details>
+  <summary>What is the best way to learn the game?</summary>
+  <p>Start with the <a href="{{ '/tutorial/' | relative_url }}">Official Step-by-Step Tutorial</a> for a visual walkthrough of the mechanics. Once you understand the flow, use the <a href="{{ '/battle-calculator/' | relative_url }}">Battle Calculator</a> to test complex damage scenarios and refine your strategy.</p>
+</details>
+
+<details>
   <summary>Do I need a custom deck to play?</summary>
   <p>No. Phalanx: Duel is designed around standard suited playing cards.</p>
 </details>

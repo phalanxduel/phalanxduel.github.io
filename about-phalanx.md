@@ -36,12 +36,21 @@ description: "What Phalanx: Duel is, who it is for, and how the game is being de
 </section>
 
 <section class="card">
-  <h2>Learn More</h2>
+  <h2>Primary Resources</h2>
   <ul class="quick-list">
-    <li><a href="{{ '/how-to-play/' | relative_url }}">How to Play</a></li>
-    <li><a href="{{ '/rules/' | relative_url }}">Rules overview</a></li>
+    <li><a href="{{ '/tutorial/' | relative_url }}">Step-by-Step Tutorial</a></li>
+    <li><a href="{{ '/battle-calculator/' | relative_url }}">Battle Calculator</a></li>
+    <li><a href="{{ '/how-to-play/' | relative_url }}">Quick Start Guide</a></li>
+    <li><a href="{{ '/rules/' | relative_url }}">Rules Summary</a></li>
+  </ul>
+</section>
+
+<section class="card">
+  <h2>Project Context</h2>
+  <ul class="quick-list">
+    <li><a href="{{ '/status/' | relative_url }}">Current Status</a></li>
     <li><a href="{{ '/roadmap/' | relative_url }}">Roadmap</a></li>
     <li><a href="{{ '/get-involved/' | relative_url }}">Get Involved</a></li>
-    <li><a href="{{ '/support/' | relative_url }}">Support</a></li>
+    <li><a href="{{ '/support/' | relative_url }}">Support Options</a></li>
   </ul>
 </section>

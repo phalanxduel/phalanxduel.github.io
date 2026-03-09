@@ -6,6 +6,15 @@ description: "Ways to help Phalanx: Duel as a player, playtester, contributor, o
 # Get Involved
 
 <section class="card">
+  <h2>Learn the Flow</h2>
+  <p>Before jumping into a live match, we recommend using our primary learning resources:</p>
+  <ul class="quick-list">
+    <li><a href="{{ '/tutorial/' | relative_url }}">Step-by-Step Tutorial</a>: A visual walkthrough of phases and combat.</li>
+    <li><a href="{{ '/battle-calculator/' | relative_url }}">Battle Calculator</a>: A faithful implementation of canonical damage rules.</li>
+  </ul>
+</section>
+
+<section class="card">
   <h2>Pick Your Path</h2>
   <ul class="quick-list">
     <li><strong>Player:</strong> play matches and share friction points.</li>

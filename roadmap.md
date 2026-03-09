@@ -9,7 +9,7 @@ description: "High-level roadmap for current Phalanx: Duel development prioritie
   <h2>Now</h2>
   <ul class="quick-list">
     <li>Maintain a stable and playable two-player core loop.</li>
-    <li>Improve player onboarding and first-session clarity.</li>
+    <li>Maintaining authoritative learning resources (Tutorial & Battle Calculator).</li>
     <li>Keep rules, protocol, and docs aligned across surfaces.</li>
   </ul>
 </section>
