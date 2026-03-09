@@ -100,6 +100,9 @@
     }
 
     let backHealth = null;
+    let lastDestroyedCard = null;
+    if (front && frontHealth <= 0) lastDestroyedCard = front;
+
     damage = overflow;
     if (back) {
       const before = damage;
@@ -110,7 +113,9 @@
       damage = clampToZero(damage);
       addStep(progression, "After Back Defender", before, damage, back.suit + " " + back.value + " in back");
 
-      if (back.suit === "H") {
+      if (backHealth <= 0) lastDestroyedCard = back;
+
+      if (back.suit === "H" && backHealth <= 0) {
         const heartBefore = damage;
         damage -= back.value;
         damage = clampToZero(damage);
@@ -171,7 +176,7 @@
           overflow = clampToZero(overflow - front.value);
           frontDestroyed = true;
           if (front.suit === "D") frontDiamondShield = front.value;
-          if (front.suit === "H" && !back) frontHeartShield = front.value;
+          if (front.suit === "H") frontHeartShield = front.value;
         } else {
           frontHealth = front.value;
           overflow = 0;
@@ -185,64 +190,77 @@
       addStep(progression, "No Front Defender", overflow, overflow, "Unblocked overflow");
     }
 
-    // Boundary between Front and Back
-    if (overflow > 0) {
-      const beforeBoundary = overflow;
-      
-      // Club doubles once if target exists
-      if (back && attacker.suit === "C") {
-        overflow *= 2;
-        log.push("Club bonus: carryover doubled.");
-      }
-
-      // Diamond shield applies after Club doubling
-      if (frontDiamondShield > 0) {
-        const absorbed = Math.min(overflow, frontDiamondShield);
-        overflow -= absorbed;
-        log.push("Diamond shield: absorbed " + absorbed + ".");
-      }
-
-      if (overflow !== beforeBoundary) {
-        addStep(progression, "Boundary (Front->Back)", beforeBoundary, overflow, "Suit effects applied");
-      }
-    }
-
+    // Step B: Back card
     let backHealth = null;
     let backDestroyed = false;
     let backHeartShield = 0;
 
     if (back) {
-      const before = overflow;
-      const tentative = back.value - overflow;
-      log.push("Back takes " + overflow + " damage.");
-
-      if (tentative > 0) {
-        backHealth = tentative;
-        overflow = 0;
-      } else {
-        const eligibility = destructionEligibility(attacker, back, 1);
-        if (eligibility.eligible) {
-          backHealth = tentative;
-          overflow = clampToZero(overflow - back.value);
-          backDestroyed = true;
-          if (back.suit === "H") backHeartShield = back.value;
-        } else {
-          backHealth = back.value;
-          overflow = 0;
-          if (isAce(back)) backAceProtected = true;
-          log.push(eligibility.reason + ".");
+      backHealth = back.value; // Default health
+      
+      if (overflow > 0) {
+        const beforeBackStep = overflow;
+        
+        // Club doubles once if back target exists
+        if (back && attacker.suit === "C") {
+          overflow *= 2;
+          log.push("Club bonus: carryover doubled.");
         }
+
+        // Diamond shield applies after Club doubling
+        if (frontDiamondShield > 0) {
+          const absorbed = Math.min(overflow, frontDiamondShield);
+          overflow -= absorbed;
+          log.push("Diamond shield: absorbed " + absorbed + ".");
+        }
+
+        if (back) {
+          addStep(progression, "Boundary (Front->Back)", beforeBackStep, overflow, "Suit effects evaluated");
+        }
+
+        if (overflow > 0) {
+          const before = overflow;
+          const tentative = back.value - overflow;
+          log.push("Back takes " + overflow + " damage.");
+
+          if (tentative > 0) {
+            backHealth = tentative;
+            overflow = 0;
+          } else {
+            const eligibility = destructionEligibility(attacker, back, 1);
+            if (eligibility.eligible) {
+              backHealth = tentative;
+              overflow = clampToZero(overflow - back.value);
+              backDestroyed = true;
+              if (back.suit === "H") backHeartShield = back.value;
+            } else {
+              backHealth = back.value;
+              overflow = 0;
+              if (isAce(back)) backAceProtected = true;
+              log.push(eligibility.reason + ".");
+            }
+          }
+          addStep(progression, "After Back Defender", before, overflow, back.suit + " " + back.value + " in back");
+        }
+      } else {
+        // No overflow from front, but still check if we need to record the boundary if we evaluate it
+        // Actually, if overflow is 0, the boundary logic doesn't trigger bonuses. 
+        // But for consistency we might want to show it.
       }
-      addStep(progression, "After Back Defender", before, overflow, back.suit + " " + back.value + " in back");
     } else {
-      log.push("No back defender: remaining damage targets LP.");
-      addStep(progression, "No Back Defender", overflow, overflow, "Remaining overflow goes to LP");
+      // No back defender
+      if (overflow > 0) {
+        log.push("No back defender: remaining damage targets LP.");
+        addStep(progression, "No Back Defender", overflow, overflow, "Remaining overflow goes to LP");
+      }
     }
 
+    // Step C: Player LP
     let lpDamage = overflow;
     if (lpDamage > 0) {
       const beforeLp = lpDamage;
       
+      // Spade doubling happens BEFORE Heart mitigation
       if (attacker.suit === "S") {
         lpDamage *= 2;
         log.push("Spade bonus: LP damage doubled.");
@@ -255,9 +273,7 @@
         log.push("Heart shield: absorbed " + absorbed + ".");
       }
 
-      if (lpDamage !== beforeLp) {
-        addStep(progression, "Boundary (Card->Player)", beforeLp, lpDamage, "Suit effects applied");
-      }
+      addStep(progression, "Boundary (Card->Player)", beforeLp, lpDamage, "Suit effects evaluated");
     }
 
     addStep(progression, "Damage To Player LP", lpDamage, lpDamage, "Final LP damage");

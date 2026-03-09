@@ -15,9 +15,21 @@ async function main() {
 
   try {
     page.on('console', (msg) => {
-      if (msg.type() === 'error') {
-        console.error(`Browser console error: ${msg.text()}`);
-      }
+      console.log(`[Browser ${msg.type()}] ${msg.text()}`);
+    });
+
+    await page.addInitScript(() => {
+      window.qunitFailures = [];
+      const checkQUnit = setInterval(() => {
+        if (window.QUnit) {
+          QUnit.log((details) => {
+            if (!details.result) {
+              window.qunitFailures.push(details);
+            }
+          });
+          clearInterval(checkQUnit);
+        }
+      }, 10);
     });
 
     await page.goto(`${baseUrl}${path}`, { waitUntil: 'networkidle' });
@@ -28,18 +40,35 @@ async function main() {
     }, { timeout: 15000 });
 
     const result = await page.evaluate(() => {
-      const stats = window.QUnit && window.QUnit.config && window.QUnit.config.stats;
+      const stats = window.QUnit.config.stats;
       const details = document.querySelector('#qunit-testresult')?.textContent || '';
       return {
-        all: stats ? stats.all : null,
-        bad: stats ? stats.bad : null,
+        all: stats.all,
+        bad: stats.bad,
         details: details.trim(),
+        failures: window.qunitFailures || []
       };
     });
 
     if (typeof result.all !== 'number') fail('QUnit did not report test totals.');
     if (typeof result.bad !== 'number') fail('QUnit did not report failure totals.');
-    if (result.bad > 0) fail(`QUnit failed (${result.bad}/${result.all}): ${result.details}`);
+    
+    if (result.bad > 0) {
+      await page.screenshot({ path: 'qunit-failures.png', fullPage: true });
+      console.error(`\n--- QUnit Failures (${result.bad}/${result.all}) ---`);
+      
+      result.failures.forEach((f, i) => {
+        console.error(`${i+1}. ${f.module ? f.module + ': ' : ''}${f.name}`);
+        console.error(`   Message:  ${f.message || 'No message'}`);
+        console.error(`   Expected: ${JSON.stringify(f.expected)}`);
+        console.error(`   Actual:   ${JSON.stringify(f.actual)}`);
+        if (f.source) console.error(`   Source:   ${f.source.split('\n')[0]}`);
+        console.error('');
+      });
+
+      console.error('Screenshot saved to qunit-failures.png');
+      fail(`QUnit failed (${result.bad}/${result.all}): ${result.details}`);
+    }
 
     console.log(`QUnit passed (${result.all} assertions). ${result.details}`);
   } finally {
