@@ -921,3 +921,47 @@ summary {
   line-height: 1.5;
   color: var(--text-dim);
 }
+
+/* Notebook Viewer */
+.notebook-viewer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 3rem;
+  margin-top: 4rem;
+}
+
+.notebook-page {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.notebook-page img {
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--border);
+  border-bottom: 4px solid var(--border-up);
+  border-radius: 4px;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.5);
+  transition: transform var(--transition-med);
+}
+
+.notebook-page img:hover {
+  transform: scale(1.02);
+  border-color: var(--gold-dim);
+}
+
+.notebook-page figcaption {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  color: var(--text-dim);
+  border-left: 2px solid var(--gold-glow);
+  padding-left: 1rem;
+}
+
+.notebook-page .page-desc {
+  font-size: 0.95rem;
+  color: var(--muted);
+  font-style: italic;
+}
