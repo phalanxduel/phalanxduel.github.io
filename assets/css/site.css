@@ -858,3 +858,66 @@ summary {
   background-color: var(--surface-high) !important;
   color: #fff !important;
 }
+
+/* Feature Showcase Section */
+.feature-showcase-intro {
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  color: var(--muted);
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.feature-item {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface-up);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-med);
+}
+
+.feature-item:hover {
+  transform: translateY(-4px);
+  border-color: var(--gold-dim);
+}
+
+.feature-image-container {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border);
+  background: #000;
+}
+
+.feature-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.feature-copy {
+  padding: 1.25rem;
+}
+
+.feature-copy h3 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+  color: var(--gold-bright);
+}
+
+.feature-copy p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--text-dim);
+}

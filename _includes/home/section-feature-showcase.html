@@ -1,0 +1,29 @@
+{% assign section = include.section %}
+<section class="{{ section.class | default: 'card' }} feature-showcase"{% if section.section_id %} aria-labelledby="{{ section.section_id }}"{% endif %}>
+  <h2{% if section.section_id %} id="{{ section.section_id }}"{% endif %}>{{ section.heading }}</h2>
+  {% if section.intro %}<p class="feature-showcase-intro">{{ section.intro }}</p>{% endif %}
+
+  <div class="feature-grid">
+    {% for feature in section.features %}
+      <div class="feature-item">
+        {% if feature.image %}
+          <div class="feature-image-container">
+            <img src="{{ feature.image | relative_url }}" alt="{{ feature.heading }}" loading="lazy">
+          </div>
+        {% endif %}
+        <div class="feature-copy">
+          <h3>{{ feature.heading }}</h3>
+          <p>{{ feature.body }}</p>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+
+  {% if section.ctas and section.ctas.size > 0 %}
+    <div class="cta-row">
+      {% for cta in section.ctas %}
+        {% include home/cta-link.html cta=cta %}
+      {% endfor %}
+    </div>
+  {% endif %}
+</section>

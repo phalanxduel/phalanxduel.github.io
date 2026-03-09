@@ -87,6 +87,26 @@ variants:
             href: "/quick-reference/"
             style: "secondary"
 
+      - type: "feature_showcase"
+        class: "card"
+        section_id: "gameplay-preview"
+        heading: "Dynamic Gameplay"
+        intro: "Experience deterministic, tactical card combat. Every move matters."
+        features:
+          - heading: "Deployment"
+            body: "Strategic setup is key. Position your cards across 4 columns and 2 ranks to form an impenetrable line."
+            image: "/assets/images/tutorial/deployment-start.png"
+          - heading: "Tactical Attacks"
+            body: "Strike from your front rank. Watch damage cascade through columns and overcome your opponent's defense."
+            image: "/assets/images/tutorial/attack-phase.png"
+          - heading: "Dynamic Reinforcement"
+            body: "Rebuild your formation mid-battle. Deploy new cards to your back row as the front line shifts."
+            image: "/assets/images/tutorial/reinforce-phase.png"
+        ctas:
+          - label: "Full Step-by-Step Tutorial &rarr;"
+            href: "/tutorial/"
+            style: "primary"
+
       - type: "card"
         class: "card"
         section_id: "why-fair"
@@ -483,6 +503,26 @@ variants:
           - "Deterministic resolution"
           - "Turn-based play with phases"
           - "Skill rewards foresight, not guesswork"
+
+      - type: "feature_showcase"
+        class: "card"
+        section_id: "gameplay-preview"
+        heading: "Dynamic Gameplay"
+        intro: "Experience deterministic, tactical card combat. Every move matters."
+        features:
+          - heading: "Deployment"
+            body: "Strategic setup is key. Position your cards across 4 columns and 2 ranks to form an impenetrable line."
+            image: "/assets/images/tutorial/deployment-start.png"
+          - heading: "Tactical Attacks"
+            body: "Strike from your front rank. Watch damage cascade through columns and overcome your opponent's defense."
+            image: "/assets/images/tutorial/attack-phase.png"
+          - heading: "Dynamic Reinforcement"
+            body: "Rebuild your formation mid-battle. Deploy new cards to your back row as the front line shifts."
+            image: "/assets/images/tutorial/reinforce-phase.png"
+        ctas:
+          - label: "Full Step-by-Step Tutorial &rarr;"
+            href: "/tutorial/"
+            style: "primary"
 
       - type: "steps_teaser"
         class: "card"
