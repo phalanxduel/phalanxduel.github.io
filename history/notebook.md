@@ -6,55 +6,37 @@ description: The origin story of Phalanx, from a rainy afternoon at Camp Tesomas
 # The Design Journey (2022)
 
 <section class="hero" style="text-align: left; padding: 2.5rem;">
-  <p>Phalanx started because it was raining. In July 2022, I was up at <strong>Camp Tesomas</strong> as an adult leader with my son's troop. A sudden storm pushed everyone into their tents. With no phone service and no distractions, I really wished I had brought my <strong>Magic: The Gathering</strong> cards for a tournament later that week. That boredom turned into a specific challenge. I wanted to see if I could capture the tactical tension of a collectible card game using only a standard deck of cards from the camp trading post.</p>
+  <p>Phalanx started because it was raining. In July 2022, I was up at <strong>Camp Tesomas</strong> as an adult leader with my son's troop. A sudden storm pushed everyone into their tents. With no phone service and no distractions, I was bored and was looking forward to the game night coming up. I really wished I had brought my <strong>Magic: The Gathering</strong> cards for a tournament later that week. That boredom turned into a specific challenge. I wanted to see if I could capture the tactical tension of a collectible card game using only a standard deck of cards from the camp trading post.</p>
 
   <p>I grabbed a pen and a notebook I had packed and started writing. For the next week, that book and those cards went everywhere. I sketched formations, calculated damage chains, and convinced anyone who would listen to sit down for a match. The field testing proved the concept. The game was not just functional. It was fun. These photos show that original notebook exactly as it looked when I finally made it home.</p>
 </section>
 
 <section class="card">
-  <h2>The Core Combat</h2>
-  <p>The first few pages were all about defining how one card hits another. I knew I wanted deterministic subtraction. No dice. No luck. Just value against value. I needed a system where a 10 hitting a 3 felt powerful, but predictable. This led to the concept of <strong>Combat Math</strong> and overflow damage, which became the foundation of every turn.</p>
-</section>
-
-<section class="card">
-  <h2>The Formation</h2>
-  <p>I realized early on that a single line of cards was too simple. I needed depth. I needed a Phalanx. This led to the <strong>4x2 grid</strong>—four columns, two ranks deep. This structure created the need for rules about <strong>Column Collapse</strong> (how reserves step up) and <strong>Targeting Logic</strong> (you attack a column, not a specific card). The 4x2 grid has remained the standard battlefield ever since.</p>
-</section>
-
-<section class="card">
-  <h2>The Power of Suits</h2>
-  <p>Standard cards have four suits, and I needed them to mean something tactical. In the notebook, I finalized their roles:
-  <ul>
-    <li><strong>Diamonds</strong> became the shield, absorbing overflow damage.</li>
-    <li><strong>Clubs</strong> became the weapon, doubling carryover damage to break lines.</li>
-    <li><strong>Hearts</strong> became the final defense, mitigating damage to the player.</li>
-    <li><strong>Spades</strong> became the finisher, doubling damage directly to Life Points.</li>
-  </ul>
-  These roles gave every card a distinct tactical identity beyond its number.</p>
-</section>
-
-<section class="card">
-  <h2>Special Units and Determinism</h2>
-  <p>To make Aces and Face cards feel special, I introduced <strong>Rank Eligibility</strong>. A 10 cannot kill a King; the attack simply stops. An Ace can only be killed by another Ace. This added a layer of rock-paper-scissors strategy to the raw math. Finally, as I playtested, I realized players could stall forever. This led to the <strong>Pass Limit</strong>, ensuring that the game always moves toward a conclusion. This commitment to <strong>determinism</strong>—removing mid-turn luck—became the guiding philosophy of Phalanx Duel.</p>
+  <h2>From Tent to Tabletop</h2>
+  <p>The rules in this notebook established the foundations that still drive the game today. I worked through the math of deterministic carryover, assigned specific tactical roles to each of the four suits, and defined the 4x2 grid that became the canonical Phalanx battlefield. The goal was to remove the luck of the mid-turn draw so that every win was earned through positioning and timing.</p>
 </section>
 
 <section class="hero" style="margin-top: 4rem;">
   <h2>The Notebook Archive</h2>
-  <p>Below is the complete visual record of that week at Camp Tesomas. From the first cover sketch to the final playtest logs, this is how Phalanx Duel was born.</p>
+  <p>The complete visual record from that week at Camp Tesomas, presented in the order it was written.</p>
 </section>
 
 <div class="notebook-viewer">
   <figure class="notebook-page">
     <img src="{{ '/assets/history/primary/images/pen.jpg' | relative_url }}" alt="The Pen" loading="lazy">
+    <figcaption>Field Prototyping Tools</figcaption>
   </figure>
   <figure class="notebook-page">
     <img src="{{ '/assets/history/primary/images/cards.jpg' | relative_url }}" alt="The Cards" loading="lazy">
+    <figcaption>The Original Trading Post Deck</figcaption>
   </figure>
   <figure class="notebook-page">
     <img src="{{ '/assets/history/primary/images/toolset.jpg' | relative_url }}" alt="Field Prototyping" loading="lazy">
+    <figcaption>Prototyping at Camp</figcaption>
   </figure>
   <figure class="notebook-page">
     <img src="{{ '/assets/history/primary/notebook/cover_01_front.png' | relative_url }}" alt="Notebook Cover" loading="lazy">
+    <figcaption>Original Notebook Cover (Panoplia)</figcaption>
   </figure>
   <figure class="notebook-page">
     <img src="{{ '/assets/history/primary/notebook/page_01.png' | relative_url }}" alt="Page 01" loading="lazy">
@@ -162,6 +144,7 @@ description: The origin story of Phalanx, from a rainy afternoon at Camp Tesomas
   </figure>
   <figure class="notebook-page">
     <img src="{{ '/assets/history/primary/notebook/cover_02_back.png' | relative_url }}" alt="Back Cover" loading="lazy">
+    <figcaption>Worn and Traveled</figcaption>
   </figure>
 </div>
 
