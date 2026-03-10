@@ -1,4 +1,5 @@
 (function () {
+  console.log("Battle Calculator JS Loaded");
   const suits = [
     { code: "D", name: "Diamond" },
     { code: "H", name: "Heart" },
@@ -116,6 +117,7 @@
   }
 
   function init() {
+    console.log("Battle Calculator: Initializing...");
     const attackerSelect = document.getElementById("attacker-card");
     const frontSelect = document.getElementById("front-card");
     const backSelect = document.getElementById("back-card");
@@ -123,7 +125,10 @@
     const button = document.getElementById("simulate-battle");
     const resultRoot = document.getElementById("battle-result");
 
-    if (!attackerSelect || !frontSelect || !backSelect || !modeSelect || !button || !resultRoot) return;
+    if (!attackerSelect || !frontSelect || !backSelect || !modeSelect || !button || !resultRoot) {
+      console.error("Battle Calculator: Missing DOM elements!");
+      return;
+    }
 
     populateCardSelect(attackerSelect, false);
     populateCardSelect(frontSelect, true);
@@ -134,7 +139,8 @@
     backSelect.value = "H-2";
     modeSelect.value = "canonical_v1_0";
 
-    button.addEventListener("click", function () {
+    function runSimulation(event) {
+      console.log("Battle Calculator: Running simulation...");
       const attacker = parseCard(attackerSelect.value);
       const front = parseCard(frontSelect.value);
       const back = parseCard(backSelect.value);
@@ -156,9 +162,33 @@
         back: back,
         mode: mode,
       });
+      console.log("Battle Calculator Result:", result);
       renderResult(resultRoot, attacker, front, back, mode, result);
+
+      // Trigger visual feedback
+      resultRoot.classList.remove("calculation-update");
+      void resultRoot.offsetWidth; // Force reflow to re-trigger animation
+      resultRoot.classList.add("calculation-update");
+
+      // Scroll into view if triggered by an explicit click (vs change or initial load)
+      if (event && event.type === "click") {
+        resultRoot.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      }
+    }
+
+    button.addEventListener("click", runSimulation);
+
+    [attackerSelect, frontSelect, backSelect, modeSelect].forEach(function (el) {
+      el.addEventListener("change", runSimulation);
     });
+
+    // Run initial simulation
+    runSimulation();
   }
 
-  document.addEventListener("DOMContentLoaded", init);
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
+  }
 })();

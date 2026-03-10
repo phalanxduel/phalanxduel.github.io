@@ -217,6 +217,47 @@ main.container {
   color: var(--text);
   background: var(--surface);
   transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.result-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.result-block {
+  border: 1px solid var(--border);
+  padding: 1.25rem;
+  border-radius: 0.5rem;
+  background: var(--surface-up);
+}
+
+.result-block h3 {
+  margin-top: 0;
+  font-size: 0.8rem;
+  color: var(--gold-bright);
+}
+
+.result-block p {
+  margin: 0.5rem 0 0;
+  font-size: 0.95rem;
+}
+
+@keyframes calculation-flash {
+  0% { border-color: var(--gold-bright); box-shadow: 0 0 15px var(--gold-glow); }
+  100% { border-color: var(--border); box-shadow: none; }
+}
+
+.calculation-update {
+  animation: calculation-flash 0.6s ease-out;
+}
+
+@media (min-width: 48rem) {
+  .result-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .button-link:hover {

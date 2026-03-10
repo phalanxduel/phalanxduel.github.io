@@ -40,6 +40,14 @@ battle_calculator: true
   <p><a href="{{ '/battle-calculator-tests/' | relative_url }}">Open calculator unit tests</a></p>
 </section>
 
+<section class="card" aria-live="polite">
+  <h2>Battle Result</h2>
+  <p class="small-note">Result output includes stage-by-stage damage totals: attacker base, after front, after back, and final player LP damage.</p>
+  <div id="battle-result">
+    <p class="small-note">Run a simulation to see LP damage, suit effects, and which cards survive.</p>
+  </div>
+</section>
+
 <section class="card">
   <h2>Mode Guide</h2>
   <p><strong>Canonical v1.0</strong> follows the authoritative Duel rules model used by the game docs. <strong>Historical Prototype</strong> preserves an older site-era timing model for comparison.</p>
@@ -57,14 +65,6 @@ battle_calculator: true
     </table>
   </div>
   <p class="small-note"><strong>If you're unsure:</strong> use <strong>Canonical v1.0</strong>. Use <strong>Historical Prototype</strong> only when checking older examples or migration notes.</p>
-</section>
-
-<section class="card" aria-live="polite">
-  <h2>Battle Result</h2>
-  <p class="small-note">Result output includes stage-by-stage damage totals: attacker base, after front, after back, and final player LP damage.</p>
-  <div id="battle-result">
-    <p class="small-note">Run a simulation to see LP damage, suit effects, and which cards survive.</p>
-  </div>
 </section>
 
 <section class="card">
