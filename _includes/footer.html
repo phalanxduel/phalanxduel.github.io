@@ -1,25 +1,30 @@
 <footer class="site-footer">
   <div class="container footer-inner">
-    <p>Phalanx Duel is a tactical two-player card duel playable with standard suited playing cards.</p>
-    <p>
-      <a href="{{ '/learn/getting-started/' | relative_url }}">How to Play</a>
-      <span aria-hidden="true">|</span>
-      <a href="{{ '/about-phalanx/' | relative_url }}">About</a>
-      <span aria-hidden="true">|</span>
-      <a href="{{ '/status/' | relative_url }}">Status</a>
-      <span aria-hidden="true">|</span>
-      <a href="{{ '/roadmap/' | relative_url }}">Roadmap</a>
-      <span aria-hidden="true">|</span>
-      <a href="{{ '/contribute/' | relative_url }}">Get Involved</a>
-      <span aria-hidden="true">|</span>
-      <a href="{{ '/support/' | relative_url }}">Support</a>
-      <span aria-hidden="true">|</span>
-      <a href="{{ '/faq/' | relative_url }}">FAQ</a>
-      <span aria-hidden="true">|</span>
-      <a href="{{ '/quick-reference/' | relative_url }}">Printable Quick Reference</a>
-      <span aria-hidden="true">|</span>
-      <a href="{{ '/sitemap.xml' | relative_url }}">Sitemap</a>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
+      <div>
+        <span style="display: block; margin-bottom: 1rem; color: #fff;">THE GRID</span>
+        <a href="{{ '/learn/getting-started/' | relative_url }}">Tactics Hub</a>
+        <a href="{{ '/learn/first-match/' | relative_url }}">0 to 1 Walkthrough</a>
+        <a href="{{ '/tools/battle-calculator/' | relative_url }}">Combat Simulator</a>
+      </div>
+      <div>
+        <span style="display: block; margin-bottom: 1rem; color: #fff;">THE DECK</span>
+        <a href="{{ '/mastery/mastery/' | relative_url }}">Suit Boundaries</a>
+        <a href="{{ '/improve/tactical-patterns/' | relative_url }}">Tactical Patterns</a>
+        <a href="{{ '/quick-reference/' | relative_url }}">Quick Reference</a>
+      </div>
+      <div>
+        <span style="display: block; margin-bottom: 1rem; color: #fff;">THE SYSTEM</span>
+        <a href="{{ '/about/philosophy/' | relative_url }}">Design Philosophy</a>
+        <a href="{{ '/learn/rules/' | relative_url }}">Canonical Rules</a>
+        <a href="{{ '/contribute/' | relative_url }}">The Forge</a>
+      </div>
+    </div>
+    <p style="border-top: 1px solid #222; padding-top: 2rem;">
+      Phalanx Duel is a deterministic tactical system. No RNG. No Boosters. Just Positioning.
     </p>
-    <p class="small-note">Rules are evolving. Canonical draft rules and implementation contracts live in the main Phalanx Duel repository.</p>
+    <p class="small-note" style="margin-top: 1rem;">
+      Engine v1.0. Developed by Mike Hall. Open Source.
+    </p>
   </div>
 </footer>
