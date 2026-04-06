@@ -4,7 +4,7 @@ title: 'Site Transformation: Tactical Brutalism & Suit Truth'
 status: Done
 assignee: []
 created_date: '2026-04-06 14:18'
-updated_date: '2026-04-06 15:19'
+updated_date: '2026-04-06 15:26'
 labels: []
 dependencies: []
 priority: high
@@ -64,5 +64,5 @@ The site is now unmistakably specific to Phalanx Duel's unique mechanics and vis
 
 ## Definition of Done
 <!-- DOD:BEGIN -->
-- [ ] #1 The a11y is run agains the site and all claims are verified against the official rules and guidlines for Phalanx Duel
+- [x] #1 The a11y is run agains the site and all claims are verified against the official rules and guidlines for Phalanx Duel
 <!-- DOD:END -->
