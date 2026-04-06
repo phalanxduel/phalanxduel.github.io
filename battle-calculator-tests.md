@@ -15,7 +15,7 @@ qunit: true
     <li><strong>Mode contrast checks:</strong> explicit pass/fail assertions that Historical Prototype and Canonical v1.0 produce different outputs in targeted cases.</li>
     <li><strong>Permutations:</strong> mode, suit, and defender-slot combinations.</li>
   </ul>
-  <p><a href="{{ '/battle-calculator/' | relative_url }}">Back to Battle Calculator</a></p>
+  <p><a href="{{ '/tools/battle-calculator/' | relative_url }}">Back to Battle Calculator</a></p>
 </section>
 
 <div id="qunit"></div>

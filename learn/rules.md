@@ -71,8 +71,8 @@ description: "Player-readable summary of the canonical Phalanx Duel v1.0 rules."
   <h2>Turn Cycle and Suit Timing</h2>
   <p>For a visual walkthrough of the 7-phase turn lifecycle and the <strong>Shield -> Weapon -> Clamp</strong> boundary ordering, use our authoritative learning resources.</p>
   <div class="cta-row">
-    <a class="button-link primary" href="{{ '/tutorial/' | relative_url }}">Official Tutorial &rarr;</a>
-    <a class="button-link" href="{{ '/battle-calculator/' | relative_url }}">Battle Calculator</a>
+    <a class="button-link primary" href="{{ '/learn/first-match/' | relative_url }}">Official Tutorial &rarr;</a>
+    <a class="button-link" href="{{ '/tools/battle-calculator/' | relative_url }}">Battle Calculator</a>
   </div>
 </section>
 
@@ -110,9 +110,9 @@ description: "Player-readable summary of the canonical Phalanx Duel v1.0 rules."
 
 <div class="cta-row">
   <a class="button-link primary" href="https://play.phalanxduel.com" target="_blank" rel="noopener noreferrer">Play Online &rarr;</a>
-  <a class="button-link" href="{{ '/tutorial/' | relative_url }}">Official Tutorial</a>
-  <a class="button-link" href="{{ '/how-to-play/' | relative_url }}">How to Play</a>
-  <a class="button-link secondary" href="{{ '/suits-strategy/' | relative_url }}">Suits & Strategy</a>
+  <a class="button-link" href="{{ '/learn/first-match/' | relative_url }}">Official Tutorial</a>
+  <a class="button-link" href="{{ '/learn/getting-started/' | relative_url }}">How to Play</a>
+  <a class="button-link secondary" href="{{ '/mastery/mastery/' | relative_url }}">Suits & Strategy</a>
 </div>
 
 <p class="small-note">For implementation-grade language and exact canonical terminology, use the official v1.0 rules specification in the Phalanx Duel game repository.</p>

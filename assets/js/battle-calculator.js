@@ -23,7 +23,7 @@
     { code: "K", value: 11, label: "K" },
   ];
 
-  const suitSymbol = { D: "D", H: "H", C: "C", S: "S" };
+  const suitSymbol = { D: "♦", H: "♥", C: "♣", S: "♠" };
   const suitName = { D: "Diamond", H: "Heart", C: "Club", S: "Spade" };
 
   function parseCard(token) {
@@ -43,9 +43,9 @@
 
   function cardOutcome(card, health, survives, aceProtected) {
     if (!card) return "Empty slot";
-    if (aceProtected) return "Survives (Ace rule)";
-    if (survives) return "Survives (" + health + " HP)";
-    return "Discarded";
+    if (aceProtected) return "<span style='color: green;'>Survives (Ace rule)</span>";
+    if (survives) return "<span style='color: green;'>Survives (" + health + " HP)</span>";
+    return "<span style='color: red;'>Destroyed</span>";
   }
 
   function createOption(value, text) {
@@ -80,40 +80,74 @@
     if (!steps.length) return "<p class=\"small-note\">No progression data available.</p>";
 
     const rows = steps.map(function (step) {
-      return "<tr><td>" + step.stage + "</td><td>" + step.before + "</td><td>" + step.after + "</td><td>" + (step.note || "") + "</td></tr>";
+      return "<tr><td><strong>" + step.stage + "</strong></td><td>" + step.before + "</td><td>" + step.after + "</td><td><em>" + (step.note || "") + "</em></td></tr>";
     }).join("");
 
-    return '<div class="table-wrap"><table><thead><tr><th>Stage</th><th>Damage Before</th><th>Damage After</th><th>Note</th></tr></thead><tbody>' + rows + "</tbody></table></div>";
+    return '<div class="table-wrap" style="margin-top: 1rem;"><table><thead><tr><th>Stage</th><th>Damage Before</th><th>Damage After</th><th>Teaching Note</th></tr></thead><tbody>' + rows + "</tbody></table></div>";
+  }
+  
+  function generateTeachingNarrative(attacker, front, back, result) {
+      let narrative = "<p style='font-size: 1.1rem; line-height: 1.6;'>";
+      
+      narrative += "The <strong>" + attacker.verbose + "</strong> attacks the column. ";
+      
+      if (!front) {
+          narrative += "The Front Row is empty, so the attack immediately hits the Back Row. ";
+      } else {
+          if (result.survivors.front) {
+              narrative += "The <strong>" + front.verbose + "</strong> absorbs the hit and <strong>survives</strong>, stopping the attack completely. ";
+              return narrative + "</p>";
+          } else {
+              narrative += "The attack <strong>destroys</strong> the <strong>" + front.verbose + "</strong>. ";
+          }
+      }
+      
+      if (!back && front) {
+          narrative += "Because there is no Back Row defender, the carryover damage proceeds toward the Life Points. ";
+      } else if (back && !result.survivors.front) {
+          if (result.survivors.back) {
+              narrative += "The carryover damage hits the <strong>" + back.verbose + "</strong>, which <strong>survives</strong> and stops the attack. ";
+              return narrative + "</p>";
+          } else {
+              narrative += "The carryover damage is strong enough to also <strong>destroy</strong> the <strong>" + back.verbose + "</strong>. ";
+          }
+      }
+      
+      if (result.lpDamage > 0) {
+          narrative += "The remaining damage breaks through the column entirely, resulting in <strong>" + result.lpDamage + " LP damage</strong> to the player. ";
+      } else {
+          narrative += "However, suit shields (like Hearts or Diamonds) mitigate the remaining damage, resulting in <strong>0 LP damage</strong>. ";
+      }
+      
+      return narrative + "</p>";
   }
 
   function renderResult(root, attacker, front, back, mode, result) {
-    const discarded = [];
-    if (front && result.survivors.front === false) discarded.push(front.label);
-    if (back && result.survivors.back === false) discarded.push(back.label);
-
-    const survivors = [];
-    survivors.push(attacker.label + " (attacker)");
-    if (front && result.survivors.front) survivors.push(front.label + " (front)");
-    if (back && result.survivors.back) survivors.push(back.label + " (back)");
-
     const logItems = result.log.map(function (entry) {
-      return "<li>" + entry + "</li>";
+      return "<li style='margin-bottom: 0.25rem;'>" + entry + "</li>";
     }).join("");
 
     root.innerHTML =
-      '<p><strong>Mode:</strong> ' + modeLabel(mode) + "</p>" +
-      '<p><strong>LP Damage:</strong> ' + result.lpDamage + "</p>" +
-      '<div class="result-grid">' +
-      '<div class="result-block"><h3>Front Slot</h3><p><strong>Card:</strong> ' + (front ? front.verbose : "Empty") + '</p><p><strong>Outcome:</strong> ' + cardOutcome(front, result.frontHealth, result.survivors.front, result.specials && result.specials.frontAceProtected) + "</p></div>" +
-      '<div class="result-block"><h3>Back Slot</h3><p><strong>Card:</strong> ' + (back ? back.verbose : "Empty") + '</p><p><strong>Outcome:</strong> ' + cardOutcome(back, result.backHealth, result.survivors.back, false) + "</p></div>" +
-      '<div class="result-block"><h3>Attacker</h3><p><strong>Card:</strong> ' + attacker.verbose + '</p><p><strong>Outcome:</strong> Survives (no retaliation in this model)</p></div>' +
+      '<div style="text-align: center; margin-bottom: 1.5rem;">' +
+      '<h3 style="font-size: 2rem; margin: 0; color: ' + (result.lpDamage > 0 ? 'var(--color-danger, #d9534f)' : 'var(--text-color)') + ';">' + result.lpDamage + ' LP Damage</h3>' +
+      '</div>' +
+      
+      '<div style="background: white; border: 1px solid var(--border-color, #ccc); padding: 1rem; border-radius: 4px; margin-bottom: 1.5rem;">' +
+      '<h4 style="margin-top: 0;">What just happened?</h4>' +
+      generateTeachingNarrative(attacker, front, back, result) +
+      '</div>' +
+
+      '<div class="result-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin-bottom: 1.5rem;">' +
+      '<div class="result-block" style="background: white; padding: 1rem; border-radius: 4px; border: 1px solid var(--border-color, #ccc);"><h3>Front Slot</h3><p><strong>Card:</strong> ' + (front ? front.verbose : "Empty") + '</p><p><strong>Outcome:</strong> ' + cardOutcome(front, result.frontHealth, result.survivors.front, result.specials && result.specials.frontAceProtected) + "</p></div>" +
+      '<div class="result-block" style="background: white; padding: 1rem; border-radius: 4px; border: 1px solid var(--border-color, #ccc);"><h3>Back Slot</h3><p><strong>Card:</strong> ' + (back ? back.verbose : "Empty") + '</p><p><strong>Outcome:</strong> ' + cardOutcome(back, result.backHealth, result.survivors.back, false) + "</p></div>" +
+      '<div class="result-block" style="background: white; padding: 1rem; border-radius: 4px; border: 1px solid var(--border-color, #ccc);"><h3>Attacker</h3><p><strong>Card:</strong> ' + attacker.verbose + '</p><p><strong>Outcome:</strong> <span style="color: green;">Survives</span></p></div>' +
       "</div>" +
-      "<p><strong>Survivors:</strong> " + (survivors.length ? survivors.join(", ") : "None") + "</p>" +
-      "<p><strong>Discarded:</strong> " + (discarded.length ? discarded.join(", ") : "None") + "</p>" +
-      "<h3>Damage Progression</h3>" +
+      
+      "<h3>Step-by-Step Resolution</h3>" +
       renderProgression(result) +
-      "<h3>Resolution Trace</h3>" +
-      '<ol class="quick-list">' + logItems + "</ol>";
+      
+      "<h3 style='margin-top: 2rem;'>Engine Trace Log</h3>" +
+      '<ol class="quick-list" style="font-family: monospace; font-size: 0.9em; background: #eee; padding: 1rem 1rem 1rem 2rem; border-radius: 4px;">' + logItems + "</ol>";
   }
 
   function init() {
@@ -152,7 +186,7 @@
       }
 
       if (!window.PhxBattle || typeof window.PhxBattle.resolveBattle !== "function") {
-        resultRoot.innerHTML = '<p class="small-note">Battle engine unavailable on this page.</p>';
+        resultRoot.innerHTML = '<p class="small-note">Battle engine unavailable on this page. The calculator requires the PhxBattle script to be loaded.</p>';
         return;
       }
 
@@ -162,15 +196,13 @@
         back: back,
         mode: mode,
       });
-      console.log("Battle Calculator Result:", result);
+      
       renderResult(resultRoot, attacker, front, back, mode, result);
 
-      // Trigger visual feedback
       resultRoot.classList.remove("calculation-update");
-      void resultRoot.offsetWidth; // Force reflow to re-trigger animation
+      void resultRoot.offsetWidth; 
       resultRoot.classList.add("calculation-update");
 
-      // Scroll into view if triggered by an explicit click (vs change or initial load)
       if (event && event.type === "click") {
         resultRoot.scrollIntoView({ behavior: "smooth", block: "nearest" });
       }
@@ -182,8 +214,8 @@
       el.addEventListener("change", runSimulation);
     });
 
-    // Run initial simulation
-    runSimulation();
+    // We do NOT run an initial simulation anymore so the user has to click,
+    // which makes it a conscious study tool.
   }
 
   if (document.readyState === "loading") {

@@ -1,0 +1,67 @@
+---
+title: Battle Calculator
+description: "Simulate one Phalanx Duel column attack and learn how damage resolves step-by-step."
+battle_calculator: true
+---
+
+# Battle Calculator (10 to ∞)
+
+<section class="card">
+  <h2>Study the Target Chain</h2>
+  <p>The best way to master Phalanx Duel is to stop guessing. Use this tool to test "lethal" setups, study how suit boundaries alter carryover, and learn exactly why an attack succeeds or fails.</p>
+  
+  <p class="small-note">Select your attacker and the defending column, then simulate the battle.</p>
+  
+  <div class="calculator-grid" style="display: flex; gap: 2rem; flex-wrap: wrap; margin-bottom: 2rem;">
+    <div style="flex: 1; min-width: 200px; border-right: 1px solid var(--border-color, #ccc); padding-right: 2rem;">
+      <h3>Attacker</h3>
+      <label class="field" style="display: block; margin-bottom: 1rem;">
+        <span style="display: block; margin-bottom: 0.5rem; font-weight: bold;">Attacker Card</span>
+        <select id="attacker-card" aria-label="Attacker card" style="width: 100%; padding: 0.5rem;"></select>
+      </label>
+      <label class="field" style="display: block;">
+        <span style="display: block; margin-bottom: 0.5rem; font-weight: bold;">Rules Mode</span>
+        <select id="battle-mode" aria-label="Rules mode" style="width: 100%; padding: 0.5rem;">
+          <option value="canonical_v1_0">Canonical v1.0 (Standard)</option>
+          <option value="legacy_reference">Historical Prototype</option>
+        </select>
+      </label>
+    </div>
+
+    <div style="flex: 1; min-width: 200px;">
+      <h3>Defending Column</h3>
+      <label class="field" style="display: block; margin-bottom: 1rem;">
+        <span style="display: block; margin-bottom: 0.5rem; font-weight: bold;">Front Row Defender</span>
+        <select id="front-card" aria-label="Defender front card" style="width: 100%; padding: 0.5rem;"></select>
+      </label>
+
+      <label class="field" style="display: block;">
+        <span style="display: block; margin-bottom: 0.5rem; font-weight: bold;">Back Row Defender</span>
+        <select id="back-card" aria-label="Defender back card" style="width: 100%; padding: 0.5rem;"></select>
+      </label>
+    </div>
+  </div>
+
+  <p style="text-align: center;">
+    <button id="simulate-battle" type="button" class="button-link primary" style="width: 100%; max-width: 300px; padding: 1rem; font-size: 1.2rem;">Simulate Battle</button>
+  </p>
+</section>
+
+<section class="card" aria-live="polite">
+  <h2>Battle Result & Analysis</h2>
+  <div id="battle-result" style="background-color: var(--bg-secondary, #f8f9fa); padding: 1.5rem; border-radius: 8px;">
+    <p class="small-note" style="text-align: center;">Run a simulation to see the step-by-step breakdown.</p>
+  </div>
+</section>
+
+<section class="card">
+  <h2>How to Read the Results</h2>
+  <ul class="quick-list">
+    <li><strong>Carryover:</strong> Damage that survives destroying the Front Row moves to the Back Row.</li>
+    <li><strong>Diamond Shields:</strong> Reduce carryover damage <em>before</em> it hits the next card.</li>
+    <li><strong>Club Weapons:</strong> Double the carryover damage once, right after the first card is destroyed.</li>
+    <li><strong>Heart Shields:</strong> Reduce the final damage that reaches your Life Points (LP).</li>
+    <li><strong>Spade Weapons:</strong> Double the final damage that reaches the opponent's LP.</li>
+  </ul>
+  <p class="small-note">The boundary order is strictly: Shield -> Weapon -> Clamp.</p>
+</section>

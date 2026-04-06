@@ -19,7 +19,7 @@ Provide the documentation and feedback infrastructure on the marketing site to s
 
 ## Acceptance Criteria
 <!-- AC:BEGIN -->
-- [ ] #1 Create or update the '/get-involved/' page with a clear 'Playtester' section.
+- [ ] #1 Create or update the '/contribute/' page with a clear 'Playtester' section.
 - [ ] #2 Implement an embedded feedback form (e.g. via Tally, Google Forms, or a custom /feedback page) on the site.
 - [ ] #3 Add 'Report a Bug' and 'Submit Feedback' links to the site's footer and quick-reference pages.
 - [ ] #4 Verify that the feedback mechanism is easily accessible on mobile devices.

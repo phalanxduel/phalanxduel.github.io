@@ -7,7 +7,7 @@ description: Frequently asked questions about decks, players, phase status, and 
 
 <details>
   <summary>What is the best way to learn the game?</summary>
-  <p>Start with the <a href="{{ '/tutorial/' | relative_url }}">Official Step-by-Step Tutorial</a> for a visual walkthrough of the mechanics. Once you understand the flow, use the <a href="{{ '/battle-calculator/' | relative_url }}">Battle Calculator</a> to test complex damage scenarios and refine your strategy.</p>
+  <p>Start with the <a href="{{ '/learn/first-match/' | relative_url }}">Official Step-by-Step Tutorial</a> for a visual walkthrough of the mechanics. Once you understand the flow, use the <a href="{{ '/tools/battle-calculator/' | relative_url }}">Battle Calculator</a> to test complex damage scenarios and refine your strategy.</p>
 </details>
 
 <details>
@@ -52,5 +52,5 @@ description: Frequently asked questions about decks, players, phase status, and 
 
 <details>
   <summary>How can I help?</summary>
-  <p>See <a href="{{ '/get-involved/' | relative_url }}">Get Involved</a> and <a href="{{ '/support/' | relative_url }}">Support</a>.</p>
+  <p>See <a href="{{ '/contribute/' | relative_url }}">Get Involved</a> and <a href="{{ '/support/' | relative_url }}">Support</a>.</p>
 </details>

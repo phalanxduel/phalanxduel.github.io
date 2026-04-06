@@ -103,4 +103,4 @@ description: Printable one-page reference for canonical Phalanx Duel v1.0 setup,
   </div>
 </section>
 
-<p class="small-note">Use this page at the table. Use <a href="{{ '/rules/' | relative_url }}">Rules v1.0 Summary</a> for fuller explanations and <a href="{{ '/suits-strategy/' | relative_url }}">Suits &amp; Strategy</a> for mastery patterns.</p>
+<p class="small-note">Use this page at the table. Use <a href="{{ '/learn/rules/' | relative_url }}">Rules v1.0 Summary</a> for fuller explanations and <a href="{{ '/mastery/mastery/' | relative_url }}">Suits &amp; Strategy</a> for mastery patterns.</p>
