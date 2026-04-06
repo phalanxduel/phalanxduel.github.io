@@ -124,30 +124,43 @@
 
   function renderResult(root, attacker, front, back, mode, result) {
     const logItems = result.log.map(function (entry) {
-      return "<li style='margin-bottom: 0.25rem;'>" + entry + "</li>";
+      return "<li style='margin-bottom: 0.5rem; border-left: 2px solid var(--color-border-up); padding-left: 1rem;'>" + entry + "</li>";
     }).join("");
 
     root.innerHTML =
-      '<div style="text-align: center; margin-bottom: 1.5rem;">' +
-      '<h3 style="font-size: 2rem; margin: 0; color: ' + (result.lpDamage > 0 ? 'var(--color-danger, #d9534f)' : 'var(--text-color)') + ';">' + result.lpDamage + ' LP Damage</h3>' +
+      '<div style="text-align: center; margin-bottom: 3rem; border-bottom: 1px solid var(--color-border); padding-bottom: 2rem;">' +
+      '<span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--color-text-dim); text-transform: uppercase;">Final Combat Outcome</span>' +
+      '<h3 style="font-size: 4rem; margin: 0.5rem 0 0; color: ' + (result.lpDamage > 0 ? 'var(--color-accent)' : 'var(--color-success)') + ';">' + result.lpDamage + ' LP Damage</h3>' +
       '</div>' +
       
-      '<div style="background: white; border: 1px solid var(--border-color, #ccc); padding: 1rem; border-radius: 4px; margin-bottom: 1.5rem;">' +
-      '<h4 style="margin-top: 0;">What just happened?</h4>' +
+      '<div style="background: var(--color-surface-up); border: 1px solid var(--color-accent); padding: 2rem; margin-bottom: 3rem;">' +
+      '<h4 style="margin-top: 0; color: var(--color-accent); font-family: var(--font-mono); font-size: 0.8rem;">// TACTICAL ANALYSIS</h4>' +
       generateTeachingNarrative(attacker, front, back, result) +
       '</div>' +
 
-      '<div class="result-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin-bottom: 1.5rem;">' +
-      '<div class="result-block" style="background: white; padding: 1rem; border-radius: 4px; border: 1px solid var(--border-color, #ccc);"><h3>Front Slot</h3><p><strong>Card:</strong> ' + (front ? front.verbose : "Empty") + '</p><p><strong>Outcome:</strong> ' + cardOutcome(front, result.frontHealth, result.survivors.front, result.specials && result.specials.frontAceProtected) + "</p></div>" +
-      '<div class="result-block" style="background: white; padding: 1rem; border-radius: 4px; border: 1px solid var(--border-color, #ccc);"><h3>Back Slot</h3><p><strong>Card:</strong> ' + (back ? back.verbose : "Empty") + '</p><p><strong>Outcome:</strong> ' + cardOutcome(back, result.backHealth, result.survivors.back, false) + "</p></div>" +
-      '<div class="result-block" style="background: white; padding: 1rem; border-radius: 4px; border: 1px solid var(--border-color, #ccc);"><h3>Attacker</h3><p><strong>Card:</strong> ' + attacker.verbose + '</p><p><strong>Outcome:</strong> <span style="color: green;">Survives</span></p></div>' +
+      '<div class="result-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1px; background: var(--color-border); border: 1px solid var(--color-border); margin-bottom: 3rem;">' +
+      '<div class="result-block" style="background: var(--color-bg); padding: 1.5rem;">' +
+        '<span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--color-text-dim); display: block; margin-bottom: 1rem;">FRONT SLOT</span>' +
+        '<p style="margin: 0; font-weight: 900; text-transform: uppercase;">' + (front ? front.verbose : "Empty") + '</p>' +
+        '<p style="margin: 0.5rem 0 0; font-family: var(--font-mono); font-size: 0.8rem;">' + cardOutcome(front, result.frontHealth, result.survivors.front, result.specials && result.specials.frontAceProtected) + "</p>" +
+      '</div>' +
+      '<div class="result-block" style="background: var(--color-bg); padding: 1.5rem;">' +
+        '<span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--color-text-dim); display: block; margin-bottom: 1rem;">BACK SLOT</span>' +
+        '<p style="margin: 0; font-weight: 900; text-transform: uppercase;">' + (back ? back.verbose : "Empty") + '</p>' +
+        '<p style="margin: 0.5rem 0 0; font-family: var(--font-mono); font-size: 0.8rem;">' + cardOutcome(back, result.backHealth, result.survivors.back, false) + "</p>" +
+      '</div>' +
+      '<div class="result-block" style="background: var(--color-bg); padding: 1.5rem;">' +
+        '<span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--color-text-dim); display: block; margin-bottom: 1rem;">ATTACKER</span>' +
+        '<p style="margin: 0; font-weight: 900; text-transform: uppercase;">' + attacker.verbose + '</p>' +
+        '<p style="margin: 0.5rem 0 0; font-family: var(--font-mono); font-size: 0.8rem; color: var(--color-success);">DEPLOYED</p>' +
+      '</div>' +
       "</div>" +
       
-      "<h3>Step-by-Step Resolution</h3>" +
+      '<h3 style="font-size: 1rem; letter-spacing: 0.1em; margin-bottom: 1.5rem; color: var(--color-text-dim);">Combat Sequence</h3>' +
       renderProgression(result) +
       
-      "<h3 style='margin-top: 2rem;'>Engine Trace Log</h3>" +
-      '<ol class="quick-list" style="font-family: monospace; font-size: 0.9em; background: #eee; padding: 1rem 1rem 1rem 2rem; border-radius: 4px;">' + logItems + "</ol>";
+      '<h3 style="font-size: 1rem; letter-spacing: 0.1em; margin-top: 4rem; margin-bottom: 1.5rem; color: var(--color-text-dim);">Engine Trace Log</h3>' +
+      '<ul class="quick-list" style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--color-text-dim); list-style: none; padding: 0;">' + logItems + "</ul>";
   }
 
   function init() {
