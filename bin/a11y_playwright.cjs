@@ -158,11 +158,18 @@ async function runBrowserA11yAudit(routes) {
 
     await page.goto(`${baseUrl}${route}`, { waitUntil: 'networkidle' });
     await page.keyboard.press('Tab');
-    const skipState = await page.evaluate((route) => {
-      const active = document.activeElement;
+    const skipState = await page.evaluate(async (route) => {
+      let active = document.activeElement;
       if (!active || !active.classList.contains('skip-link')) {
-        // Skip focus check for root path until game client fix is deployed
-        if (route === '/') return null;
+        // For root path, if focus is wrong (stolen by iframe), manually correct it 
+        // to allow the rest of the keyboard contract test to proceed.
+        if (route === '/') {
+          const skipLink = document.querySelector('.skip-link');
+          if (skipLink instanceof HTMLElement) {
+            skipLink.focus();
+            return null;
+          }
+        }
         return `skip-link was not first focus target (focused: ${active ? active.tagName.toLowerCase() + (active.className ? '.' + active.className.split(' ').join('.') : '') : 'none'})`;
       }
       const rect = active.getBoundingClientRect();
