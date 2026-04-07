@@ -1,14 +1,15 @@
-# PHALANX DUEL: TACTICAL STYLE GUIDE (v1.0)
+# PHALANX DUEL: TACTICAL STYLE GUIDE (v1.1)
 
-This document defines the visual and structural language of the Phalanx Duel ecosystem. It ensures that the "Tactical Brutalism" and "Suit Truth" discovered in the v1.0 engine are applied consistently across both the website and the game client.
+This document defines the visual and structural language of the Phalanx Duel ecosystem. It ensures that the **"Vector Brutalism"** aesthetic—inspired by Tron and 80s Star Wars arcade graphics—is applied consistently across both the website and the game client.
 
 ---
 
-## 1. DESIGN PHILOSOPHY: TACTICAL BRUTALISM
-Phalanx Duel is a game of deterministic consequences. The visual style must reflect this through:
-*   **High Information Density:** Don't hide the math; celebrate it.
-*   **Architectural Rigor:** Everything is aligned to a grid. No "floating" elements.
-*   **Kinetic Clarity:** Use color and motion only to describe the "Cascade" (damage flow).
+## 1. DESIGN PHILOSOPHY: VECTOR BRUTALISM
+Phalanx Duel is a game of deterministic consequences. The visual style reflects this through a high-contrast "Command Console" aesthetic:
+*   **Ray-Traced Outlines:** Elements are defined by glowing borders, not solid fills. This creates a "Heavy but Light" feel—substantial geometry rendered as fast-moving light.
+*   **Tactical HUD:** The UI should feel like a heads-up display. Use corner markers, scanlines, and tactical readouts.
+*   **The Global Grid:** Everything exists within a persistent 40px grid system. The grid is the "floor" of the simulation.
+*   **Kinetic Clarity:** Use glow and chromatic aberration only to describe the "Cascade" (damage flow) and impact events.
 
 ---
 
@@ -17,107 +18,78 @@ We use a two-font system to separate "Narrative" from "Data."
 
 ### **Primary Display & UI: Inter**
 *   **Usage:** Headers, Buttons, Navigation, Card Names.
-*   **Character:** Modern, geometric, neutral.
-*   **Source:** [Google Fonts / RSMS](https://rsms.me/inter/)
 *   **Weights:** 
-    *   `Black (900)`: Hero statements and Rank numbers.
+    *   `Black (900)`: Primary headings.
     *   `Bold (700)`: Subheaders and Button labels.
-    *   `Regular (400)`: Instructional body copy.
 
 ### **Data & Tactical: JetBrains Mono**
-*   **Usage:** Damage values, Engine logs, Suit effects, Calculator readouts.
+*   **Usage:** Damage values, Engine logs, Suit effects, HUD markers.
 *   **Character:** Technical, high-readability, "Command Console" feel.
-*   **Source:** [JetBrains Mono](https://www.jetbrains.com/lp/mono/)
 *   **Weights:**
     *   `Bold (700)`: Critical values (e.g., **11 LP DAMAGE**).
     *   `Regular (400)`: Contextual notes and logic logs.
 
 ---
 
-## 3. COLOR SYSTEM: THE SUIT FAMILIES
-Color in Phalanx is **Semantic**, not decorative. Never use Red for an offensive action or Blue for a defensive action.
+## 3. COLOR SYSTEM: THE NEON VECTORS
+Color in Phalanx is **Semantic**. We use vibrant, glowing neon versions of the suit families.
 
 ### **Neutral Foundation**
-*   **Deep Space:** `#050505` (Background)
-*   **Bunker Grey:** `#0F0F0F` (Surface Panels)
-*   **Interface Line:** `rgba(255, 255, 255, 0.05)` (Grid Lines)
+*   **The Void:** `#020205` (Background)
+*   **Grid Line:** `rgba(0, 122, 255, 0.08)` (Tactical Grid)
+*   **Surface:** `rgba(10, 10, 15, 0.8)` (Blurred Panels)
 
 ### **The Defense Family (RED)**
-*   **Tactical Red:** `#FF3E3E`
+*   **Neon Defense:** `#FF2D55`
+*   **Glow:** `0 0 15px rgba(255, 45, 85, 0.5)`
 *   **Suits:** Hearts (♥), Diamonds (♦)
-*   **Role:** Shield Wall. Mitigation. Survival.
 
 ### **The Offense Family (BLUE)**
-*   **Kinetic Blue:** `#3E82FF`
+*   **Neon Offense:** `#007AFF`
+*   **Glow:** `0 0 15px rgba(0, 122, 255, 0.5)`
 *   **Suits:** Clubs (♣), Spades (♠)
-*   **Role:** Striking Line. Impact. Breach.
 
 ---
 
-## 4. SYMBOLOGY & SUIT TRUTH
-Each suit must be paired with its specific color and a secondary geometric "Role Tag" to ensure accessibility.
-
-| Suit | Name | Color | Role Tag | Mechanical Truth |
-| :--- | :--- | :--- | :--- | :--- |
-| **♥** | **HEART** | Red | `[PLAYER SHIELD]` | Mitigates final damage to the player. |
-| **♦** | **DIAMOND** | Red | `[CARD SHIELD]` | Mitigates carryover to the card behind. |
-| **♣** | **CLUB** | Blue | `[IMPACT WEAPON]` | Doubles carryover to the card behind. |
-| **♠** | **SPADE** | Blue | `[REACH WEAPON]` | Doubles final damage to the player. |
+## 4. COMPONENT: THE VECTOR CARD
+The card is not a piece of paper; it is a tactical data-construct.
+*   **Outline:** `1px solid var(--color-border-up)`.
+*   **Glow Stance:** A glowing top-border (2px) indicates if the card is in Defense (Red) or Offense (Blue).
+*   **Corner Markers:** Every card "data panel" should have L-shaped corner brackets in the active suit color.
 
 ---
 
 ## 5. THE GRID: 4x2 FORMATION
 The grid is the primary UI element.
-*   **The Lane:** Every attack is a vertical column. In UI, highlight the active lane with a `1px solid var(--color-offense)` border.
-*   **The Cascade Path:** Use a directional arrow (↓) between ranks to show damage flow.
-*   **Empty Slots:** Should not be "blank." Use a subtle `dashed` border with the `Bunker Grey` color to show the formation's potential.
+*   **The Lane:** Every attack is a vertical column. Highlight the active lane with a glowing Blue or Red border.
+*   **The Cascade Path:** Damage flow is shown as a glowing "ray-traced" line moving from Front Rank to Back Rank.
+*   **Empty Slots:** Use a subtle dashed wireframe to show the formation's potential.
 
 ---
 
-## 6. COMPONENT STATES (FOR THE GAME UI)
-
-### **The Card Surface**
-*   **Border:** `1px solid var(--color-border)`.
-*   **Stance Indicator:** A 4px top-border that is either **Red** (Defense) or **Blue** (Offense).
-*   **Rank (Value):** Large `Inter Black` in the top-left.
-*   **Suit Symbol:** Large center-aligned icon.
-
-### **The "Destroyed" State**
-*   Do not just remove the card.
-*   **Visual:** Apply a `grayscale(1)` filter and a `45-degree` red strike-through line.
-*   **Label:** Display `// DESTROYED` in `JetBrains Mono`.
-
-### **The "Protected" State (Ace Rule)**
-*   **Visual:** A glowing border using `var(--color-success)` (Green).
-*   **Label:** `// PROTECTED` in `JetBrains Mono`.
+## 6. VISUAL EFFECTS (THE POLISH)
+*   **Scanlines:** Subtle 4px horizontal lines over the playable embed to simulate a CRT terminal.
+*   **Chromatic Aberration:** Applied briefly during a `MATCH_START` or `PLAYER_BREACH` event.
+*   **Vector Glow:** Buttons and active elements should pulse slightly with a light-bloom effect.
 
 ---
 
-## 7. MOTION & THE CASCADE
-Motion must follow the deterministic logic of the engine.
-*   **Sequential Resolution:** Damage must "hit" the Front Rank first, wait 200ms, evaluate suits, then "drain" into the Back Rank.
-*   **No Random Shakes:** Screenshake is only allowed on a **Player Breach** (LP Damage) and must be purely vertical to mirror the lane logic.
-*   **The Counter-Roll:** LP damage should "count down" rapidly in `JetBrains Mono` text, never just "pop" to the new value.
-
----
-
-## 8. VOICE & TONE: DETERMINISTIC
+## 7. VOICE & TONE: DETERMINISTIC
 The system speaks like a tactical computer.
 *   **Bad:** "You hit for 5 damage! Nice!"
-*   **Good:** `// ATTACK BREACHED FRONT RANK. CARRYOVER: 5.`
-*   **Avoid:** Exclamation points, casual slang, or "flavor" text that obscures the math.
+*   **Good:** `// ATTACK_BREACHED_FRONT_RANK. CARRYOVER: 05.`
+*   **Avoid:** Casuality or slang. The computer is neutral and precise.
 
 ---
 
-### **Implementation Checklist for Developers**
-- [ ] CSS Variables imported from `assets/css/site.css`.
-- [ ] `Inter` and `JetBrains Mono` set as primary font-stack.
-- [ ] Hearts/Diamonds forced to `#FF3E3E`.
-- [ ] Clubs/Spades forced to `#3E82FF`.
-- [ ] 4-Column Grid layout used for the main game board.
-- [ ] All status messages prefixed with `// ` to mirror the "Combat Lab" logs.
+### **Implementation Checklist**
+- [x] Background grid (40px) implemented in `site.css`.
+- [x] Neon glows (`--glow-defense`, `--glow-offense`) defined as variables.
+- [x] Buttons use 2px vector borders and glow-on-hover.
+- [x] Cards/Panels use corner brackets (`::before`, `::after`) for the wireframe feel.
+- [x] Embed container uses scanline overlays.
 
 ---
 
 **Creative Director Statement:** 
-"In Phalanx Duel, beauty is the byproduct of precision. If a visual choice doesn't help the player predict the math of the next turn, it is noise. Cut it."
+"We are rendering the math of the duel. If it doesn't look like it was drawn by a laser on a black glass screen, it's not Phalanx."
