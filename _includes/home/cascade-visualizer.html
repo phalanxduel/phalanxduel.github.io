@@ -1,7 +1,7 @@
-<div class="cascade-visualizer">
+<div class="cascade-visualizer cv-animating" id="cascade-vis">
   <div class="cv-lane">
     <!-- Attacker -->
-    <div class="cv-card cv-attacker">
+    <div class="cv-card cv-attacker" id="vis-attacker">
       <span class="cv-suit suit-s">♠</span>
       <span class="cv-rank">A</span>
       <div class="cv-label">ATTACKER</div>
@@ -13,7 +13,7 @@
     </div>
 
     <!-- Front Rank -->
-    <div class="cv-card cv-defender">
+    <div class="cv-card cv-defender" id="vis-front">
       <span class="cv-suit suit-d">♦</span>
       <span class="cv-rank">K</span>
       <div class="cv-label">FRONT RANK</div>
@@ -26,107 +26,22 @@
     </div>
 
     <!-- Back Rank -->
-    <div class="cv-card cv-defender">
+    <div class="cv-card cv-defender" id="vis-back">
       <span class="cv-suit suit-h">♥</span>
       <span class="cv-rank">7</span>
       <div class="cv-label">BACK RANK</div>
     </div>
+
+    <!-- Breach Path -->
+    <div class="cv-path cv-breach">
+      <div class="cv-pulse"></div>
+    </div>
+
+    <!-- Core -->
+    <div class="cv-card cv-core" id="vis-core">
+      <span class="cv-suit suit-h">♥</span>
+      <span class="cv-rank">LP</span>
+      <div class="cv-label">CORE (LP)</div>
+    </div>
   </div>
 </div>
-
-<style>
-.cascade-visualizer {
-  background: var(--color-bg);
-  border: 2px solid var(--color-offense);
-  padding: 2rem;
-  display: flex;
-  justify-content: center;
-  overflow: hidden;
-  position: relative;
-  min-height: 400px;
-}
-
-.cv-lane {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  position: relative;
-}
-
-.cv-card {
-  width: 80px;
-  height: 110px;
-  border: 1px solid var(--color-border-up);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  background: var(--color-surface);
-}
-
-.cv-attacker {
-  border-color: var(--color-offense);
-  box-shadow: var(--glow-offense);
-}
-
-.cv-defender {
-  border-color: var(--color-defense);
-}
-
-.cv-suit { font-size: 2rem; line-height: 1; }
-.cv-rank { font-weight: 900; font-size: 1.2rem; }
-.cv-label { font-size: 0.5rem; font-family: var(--font-mono); color: var(--color-text-dim); margin-top: 0.5rem; }
-
-.cv-path {
-  width: 2px;
-  height: 40px;
-  background: rgba(0, 122, 255, 0.2);
-  position: relative;
-}
-
-.cv-pulse {
-  position: absolute;
-  top: 0;
-  left: -1px;
-  width: 4px;
-  height: 10px;
-  background: var(--color-offense);
-  box-shadow: var(--glow-offense);
-  animation: cv-travel 2s infinite cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.cv-impact {
-  position: absolute;
-  inset: 0;
-  border: 2px solid var(--color-defense);
-  opacity: 0;
-  pointer-events: none;
-}
-
-@keyframes cv-travel {
-  0% { transform: translateY(-150px); opacity: 0; }
-  20% { opacity: 1; }
-  40% { transform: translateY(150px); }
-  60% { transform: translateY(300px); }
-  80% { opacity: 0; }
-  100% { transform: translateY(400px); opacity: 0; }
-}
-
-/* Impact sync animation */
-.cv-attacker { animation: cv-pulse-atk 2s infinite linear; }
-.cv-defender { animation: cv-impact-def 2s infinite linear; }
-
-@keyframes cv-pulse-atk {
-  0%, 100% { transform: scale(1); }
-  5% { transform: scale(1.1); border-color: #fff; }
-  15% { transform: scale(1); }
-}
-
-@keyframes cv-impact-def {
-  0%, 35% { transform: scale(1); border-color: var(--color-defense); }
-  40% { transform: scale(0.95); border-color: #fff; box-shadow: var(--glow-defense); }
-  50% { transform: scale(1); }
-}
-</style>

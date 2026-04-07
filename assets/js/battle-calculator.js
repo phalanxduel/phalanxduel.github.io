@@ -122,7 +122,43 @@
       return narrative + "</p>";
   }
 
+  function updateVisualizer(attacker, front, back) {
+    const vis = document.getElementById("cascade-vis");
+    const vAtk = document.getElementById("vis-attacker");
+    const vFront = document.getElementById("vis-front");
+    const vBack = document.getElementById("vis-back");
+
+    if (!vis || !vAtk || !vFront || !vBack) return;
+
+    // Reset animation state
+    vis.classList.remove("cv-animating");
+    void vis.offsetWidth; // Trigger reflow
+
+    const setCard = (el, card) => {
+      if (!card) {
+        el.style.opacity = "0.2";
+        el.querySelector(".cv-suit").textContent = "";
+        el.querySelector(".cv-rank").textContent = "";
+        return;
+      }
+      el.style.opacity = "1";
+      el.querySelector(".cv-suit").textContent = suitSymbol[card.suit];
+      el.querySelector(".cv-rank").textContent = card.rank;
+      el.style.borderColor = card.suit === "H" || card.suit === "D" ? "var(--color-defense)" : "var(--color-offense)";
+    };
+
+    setCard(vAtk, attacker);
+    setCard(vFront, front);
+    setCard(vBack, back);
+
+    // Re-enable animation
+    vis.classList.add("cv-animating");
+  }
+
   function renderResult(root, attacker, front, back, mode, result) {
+    // Update the visualizer first
+    updateVisualizer(attacker, front, back);
+
     const logItems = result.log.map(function (entry) {
       return "<li style='margin-bottom: 0.5rem; border-left: 2px solid var(--grid-line-bold); padding-left: 1rem;'>" + entry + "</li>";
     }).join("");
@@ -231,8 +267,11 @@
       el.addEventListener("change", runSimulation);
     });
 
-    // We do NOT run an initial simulation anymore so the user has to click,
-    // which makes it a conscious study tool.
+    // Initial sync
+    const initialAtk = parseCard(attackerSelect.value);
+    const initialFront = parseCard(frontSelect.value);
+    const initialBack = parseCard(backSelect.value);
+    updateVisualizer(initialAtk, initialFront, initialBack);
   }
 
   if (document.readyState === "loading") {
