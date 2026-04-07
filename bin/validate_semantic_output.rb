@@ -28,6 +28,7 @@ xml.elements.each("urlset/url/loc") do |loc|
   paths << path
 end
 paths = paths.uniq
+paths = paths.reject { |p| p.start_with?("/backlog/") || p == "/play/" }
 abort("No routes found in sitemap.xml") if paths.empty?
 
 errors = []

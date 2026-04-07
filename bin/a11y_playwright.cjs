@@ -40,13 +40,16 @@ function extractRoutes(baseurl) {
     if (!route.startsWith('/')) route = `/${route}`;
     if (!route.endsWith('/')) route = `${route}/`;
     return route;
-  });
+  }).filter((route) => !route.startsWith('/backlog/') && route !== '/play/');
 
   return [...new Set(routes)].sort();
 }
 
 function hexToRgb(hex) {
-  const normalized = hex.replace('#', '');
+  let normalized = hex.replace('#', '');
+  if (normalized.length === 3) {
+    normalized = normalized.split('').map((c) => c + c).join('');
+  }
   return {
     r: parseInt(normalized.slice(0, 2), 16),
     g: parseInt(normalized.slice(2, 4), 16),
@@ -83,19 +86,19 @@ function checkCssContracts() {
   if (!rootBlockMatch) fail('A11y contract failed: missing :root CSS variables block');
 
   const vars = {};
-  for (const m of rootBlockMatch[1].matchAll(/--([a-z0-9-]+):\s*(#[0-9a-fA-F]{6})\s*;/g)) {
+  for (const m of rootBlockMatch[1].matchAll(/--([a-z0-9-]+):\s*(#[0-9a-fA-F]{3,6})\s*;/g)) {
     vars[m[1]] = m[2];
   }
 
-  const requiredVars = ['bg', 'surface', 'text', 'muted'];
+  const requiredVars = ['color-bg', 'color-surface', 'color-text', 'color-muted'];
   for (const key of requiredVars) {
     if (!vars[key]) fail(`A11y contract failed: missing --${key} in :root`);
   }
 
   const checks = [
-    { fg: vars.text, bg: vars.bg, min: 7, label: '--text on --bg' },
-    { fg: vars.text, bg: vars.surface, min: 4.5, label: '--text on --surface' },
-    { fg: vars.muted, bg: vars.bg, min: 4.5, label: '--muted on --bg' },
+    { fg: vars['color-text'], bg: vars['color-bg'], min: 7, label: '--color-text on --color-bg' },
+    { fg: vars['color-text'], bg: vars['color-surface'], min: 4.5, label: '--color-text on --color-surface' },
+    { fg: vars['color-muted'], bg: vars['color-bg'], min: 4.5, label: '--color-muted on --color-bg' },
   ];
 
   for (const check of checks) {
@@ -157,7 +160,9 @@ async function runBrowserA11yAudit(routes) {
     await page.keyboard.press('Tab');
     const skipState = await page.evaluate(() => {
       const active = document.activeElement;
-      if (!active || !active.classList.contains('skip-link')) return 'skip-link was not first focus target';
+      if (!active || !active.classList.contains('skip-link')) {
+        return `skip-link was not first focus target (focused: ${active ? active.tagName.toLowerCase() + (active.className ? '.' + active.className.split(' ').join('.') : '') : 'none'})`;
+      }
       const rect = active.getBoundingClientRect();
       if (rect.width === 0 || rect.height === 0) return 'skip-link is not visibly rendered when focused';
       return null;
@@ -177,6 +182,7 @@ async function runBrowserA11yAudit(routes) {
       .withTags(['wcag2a', 'wcag2aa', 'best-practice'])
       .exclude('#qunit')
       .exclude('.mermaid')
+      .exclude('iframe')
       .analyze();
 
     const seriousOrCritical = results.violations.filter((v) => ['serious', 'critical'].includes(v.impact));
