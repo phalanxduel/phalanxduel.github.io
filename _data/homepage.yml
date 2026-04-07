@@ -144,6 +144,9 @@ variants:
               href: "/tools/battle-calculator/"
           footer: "Red defends the line. Blue breaks it."
 
+      - type: "cascade_visualizer"
+        section_id: "the-math"
+
       - type: "card"
         class: "card"
         section_id: "play-the-duel"

@@ -8,27 +8,27 @@ description: "High-level roadmap for current Phalanx: Duel development prioritie
 <section class="card">
   <h2>Now</h2>
   <ul class="quick-list">
-    <li>Maintain a stable and playable two-player core loop.</li>
-    <li>Maintaining authoritative learning resources (Tutorial & Battle Calculator).</li>
-    <li>Keep rules, protocol, and docs aligned across surfaces.</li>
+    <li><strong>DONE:</strong> Major UI/UX overhaul to "Vector Brutalism" identity.</li>
+    <li>Maintaining authoritative learning resources (Tutorial & Battle Lab).</li>
+    <li>Hardening session stability and reconnect reliability.</li>
   </ul>
 </section>
 
 <section class="card">
   <h2>Next</h2>
   <ul class="quick-list">
-    <li>Complete reconnect behavior hardening for smoother session continuity.</li>
-    <li>Continue reliability and quality-of-life improvements for digital play.</li>
-    <li>Expand structured playtest and feedback loops.</li>
+    <li>Complete session continuity for all edge cases.</li>
+    <li>Expand structured playtest and feedback loops for r/playmygame.</li>
+    <li>Refine tutorial visual assets to match new UI identity.</li>
   </ul>
 </section>
 
 <section class="card">
   <h2>Later</h2>
   <ul class="quick-list">
-    <li>Additional UX polish and presentation quality improvements.</li>
     <li>Optional expansion explorations (including Joker concepts).</li>
-    <li>Broader community growth based on playtest outcomes.</li>
+    <li>Advanced statistical tracking for competitive balance.</li>
+    <li>Broader community growth and tournament system design.</li>
   </ul>
 </section>
 
