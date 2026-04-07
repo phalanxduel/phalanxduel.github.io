@@ -59,6 +59,6 @@ That is the core loop: Deploy, Attack, Resolve the Cascade, Reinforce.
 
 As you play, you'll discover how the suit modifiers (Shields and Weapons) create dramatic twists. But for now, you know enough to begin.
 
-[Play Your First Match Online Now](https://play.phalanxduel.com)
+[Play Your First Match Online Now]({{ '/play/' | relative_url }})
 
 After a few matches, you'll probably make some beginner mistakes. When you do, read the [Road to Champion]({{ '/improve/road-to-champion/' | relative_url }}) guide to level up.

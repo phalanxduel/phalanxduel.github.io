@@ -4,6 +4,7 @@ url: https://phalanxduel.com
 baseurl: ""
 permalink: pretty
 markdown: kramdown
+game_url: https://play.phalanxduel.com
 kramdown:
   input: GFM
 defaults:

@@ -2,18 +2,22 @@
 layout: null
 permalink: /play/
 ---
+{% assign target_url = "https://play.phalanxduel.com" %}
+{% if jekyll.environment == "development" %}
+  {% assign target_url = "http://localhost:5173" %}
+{% endif %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Phalanx Duel | Launching Game...</title>
-  <meta http-equiv="refresh" content="0; url=https://play.phalanxduel.com">
-  <link rel="canonical" href="https://play.phalanxduel.com">
+  <meta http-equiv="refresh" content="0; url={{ target_url }}">
+  <link rel="canonical" href="{{ target_url }}">
   <script type="text/javascript">
-    window.location.href = "https://play.phalanxduel.com"
+    window.location.href = "{{ target_url }}"
   </script>
 </head>
 <body>
-  <p>Redirecting to the game... <a href="https://play.phalanxduel.com">Click here if you are not redirected automatically</a>.</p>
+  <p>Redirecting to the game... <a href="{{ target_url }}">Click here if you are not redirected automatically</a>.</p>
 </body>
 </html>

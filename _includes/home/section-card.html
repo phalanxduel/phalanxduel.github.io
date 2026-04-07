@@ -13,12 +13,16 @@
   {% endif %}
 
   {% if section.embed and section.embed.enabled %}
+    {% assign embed_src = section.embed.src %}
+    {% if jekyll.environment == "development" %}
+      {% assign embed_src = embed_src | replace: "https://play.phalanxduel.com/", "http://localhost:5173/" %}
+    {% endif %}
     <div class="embed-shell"{% if section.embed.aspect_ratio %} style="--embed-aspect-ratio: {{ section.embed.aspect_ratio }};"{% endif %}>
       <button class="embed-popout" title="Full Screen Duel" onclick="this.parentElement.requestFullscreen()">
         <span class="icon">⛶</span>
       </button>
       <iframe
-        src="{{ section.embed.src }}"
+        src="{{ embed_src }}"
         title="{{ section.embed.title }}"
         loading="{{ section.embed.loading | default: 'lazy' }}"
         referrerpolicy="{{ section.embed.referrerpolicy | default: 'strict-origin-when-cross-origin' }}"

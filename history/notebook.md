@@ -198,5 +198,5 @@ description: The origin story of Phalanx, from a rainy afternoon at Camp Tesomas
 
 <div class="cta-row" style="justify-content: center; margin-top: 5rem;">
   <a class="button-link" href="{{ '/history/' | relative_url }}">&larr; Back to Timeline</a>
-  <a class="button-link primary" href="https://play.phalanxduel.com" target="_blank" rel="noopener noreferrer">Play Phalanx Online &rarr;</a>
+  <a class="button-link primary" href="{{ '/play/' | relative_url }}">Play Phalanx Online &rarr;</a>
 </div>
