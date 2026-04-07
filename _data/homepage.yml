@@ -208,7 +208,7 @@ variants:
           - "Have a proposal for a new suit mechanic?"
         ctas:
           - label: "Submit Feedback (GitHub)"
-            href: "https://github.com/phalanxduel/game/issues"
+            href: "https://github.com/phalanxduel/phalanxduel/issues"
             style: "primary"
             external: true
           - label: "Join the Playtest Discussion"
