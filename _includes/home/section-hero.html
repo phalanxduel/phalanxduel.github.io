@@ -1,54 +1,59 @@
 {% assign section = include.section %}
-<section class="{{ section.class | default: 'hero' }}" aria-labelledby="{{ section.aria_labelledby }}">
-  <div class="hero-layout">
+<section class="{{ section.class | default: 'hero' }}" aria-labelledby="{{ section.title_id }}">
+  <div class="container hero-layout">
     <div class="hero-copy">
-      {% if section.eyebrow %}<p class="hero-eyebrow">{{ section.eyebrow }}</p>{% endif %}
+      {% if section.eyebrow %}<p class="hero-eyebrow" style="font-family: var(--font-mono); color: var(--color-offense); letter-spacing: 0.2em; font-size: 0.8rem; text-transform: uppercase;">// {{ section.eyebrow }}</p>{% endif %}
       <h1 id="{{ section.title_id }}">{{ section.heading }}</h1>
-      <p>{{ section.body }}</p>
+      <p style="font-size: 1.2rem; color: var(--color-text-dim); margin-bottom: 3rem; max-width: 40rem;">{{ section.body }}</p>
+      
       {% if section.ctas and section.ctas.size > 0 %}
-        <div class="cta-row">
+        <div class="cta-row" style="display: flex; gap: 1rem; margin-bottom: 1.5rem;">
           {% for cta in section.ctas %}
             {% include home/cta-link.html cta=cta %}
           {% endfor %}
         </div>
       {% endif %}
+
       {% if section.friction_line %}
-        <p class="small-note">{{ section.friction_line }}</p>
+        <p class="small-note" style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--color-text-dim);">{{ section.friction_line }}</p>
       {% endif %}
+
       {% if section.proof_points and section.proof_points.size > 0 %}
-        <ul class="proof-points">
+        <ul class="proof-points" style="list-style: none; padding: 0; margin-top: 4rem; display: flex; gap: 2.5rem;">
           {% for point in section.proof_points %}
-            <li>{{ point }}</li>
+            <li style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--color-text-dim); text-transform: uppercase; letter-spacing: 0.1em;">
+              <span style="color: var(--color-offense); margin-right: 0.5rem;">[+]</span> {{ point }}
+            </li>
           {% endfor %}
         </ul>
       {% endif %}
     </div>
 
     {% if section.preview_panel %}
-      <aside class="hero-preview" aria-label="{{ section.preview_panel.aria_label | default: section.preview_panel.heading }}">
-        <p class="hero-preview-label">{{ section.preview_panel.label | default: "What You'll See First" }}</p>
-        <h2>{{ section.preview_panel.heading }}</h2>
-        {% if section.preview_panel.subheading %}<p class="hero-preview-subheading">{{ section.preview_panel.subheading }}</p>{% endif %}
+      <aside class="hero-preview" aria-label="{{ section.preview_panel.label }}">
+        <p class="hero-preview-label" style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--color-text-dim); margin-bottom: 2rem; border-bottom: 1px solid var(--grid-line-bold); padding-bottom: 0.5rem;">// {{ section.preview_panel.label }}</p>
+        <h2 style="font-size: 2.5rem; line-height: 1; margin-bottom: 1rem;">{{ section.preview_panel.heading }}</h2>
+        {% if section.preview_panel.subheading %}<p style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--color-text-dim); margin-bottom: 2.5rem;">{{ section.preview_panel.subheading }}</p>{% endif %}
+        
         {% if section.preview_panel.rows and section.preview_panel.rows.size > 0 %}
-          <ul class="hero-preview-list">
+          <ul class="hero-preview-list" style="list-style: none; padding: 0; margin-bottom: 3rem;">
             {% for row in section.preview_panel.rows %}
-              <li>
-                <span>{{ row.label }}</span>
-                {% if row.value %}
-                  <strong>
-                    {% if row.href %}
-                      <a href="{{ row.href | relative_url }}" {% if row.external %}target="_blank" rel="noopener noreferrer"{% endif %}>{{ row.value }}</a>
-                    {% else %}
-                      {{ row.value }}
-                    {% endif %}
-                  </strong>
-                {% endif %}
+              <li style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--grid-line); padding: 1rem 0; font-family: var(--font-mono); font-size: 0.85rem;">
+                <span style="color: var(--color-text-dim); text-transform: uppercase;">{{ row.label }}</span>
+                <strong style="color: #fff;">
+                  {% if row.href %}
+                    <a href="{{ row.href | relative_url }}" {% if row.external %}target="_blank" rel="noopener noreferrer"{% endif %} style="text-decoration: none; border-bottom: 1px solid var(--color-offense);">{{ row.value }}</a>
+                  {% else %}
+                    {{ row.value }}
+                  {% endif %}
+                </strong>
               </li>
             {% endfor %}
           </ul>
         {% endif %}
+        
         {% if section.preview_panel.footer %}
-          <p class="hero-preview-footer">{{ section.preview_panel.footer }}</p>
+          <p class="hero-preview-footer" style="font-family: var(--font-mono); font-size: 0.7rem; text-transform: uppercase; color: var(--color-offense); letter-spacing: 0.1em;">{{ section.preview_panel.footer }}</p>
         {% endif %}
       </aside>
     {% endif %}

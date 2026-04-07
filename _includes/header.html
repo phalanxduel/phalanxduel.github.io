@@ -1,12 +1,12 @@
 <header class="site-header">
   <div class="container header-inner">
     <a class="brand" href="{{ '/' | relative_url }}">Phalanx Duel</a>
-    <nav aria-label="Primary">
-      <ul class="nav-list">
-        <li><a href="{{ '/learn/getting-started/' | relative_url }}">Tactics</a></li>
-        <li><a href="{{ '/tools/battle-calculator/' | relative_url }}">Simulator</a></li>
-        <li><a href="{{ '/learn/rules/' | relative_url }}">The System</a></li>
-        <li><a class="nav-play button-link" href="https://play.phalanxduel.com" target="_blank" rel="noopener noreferrer">Play Now</a></li>
+    <nav aria-label="Primary Navigation">
+      <ul class="nav-list" style="display: flex; align-items: center; gap: 2rem;">
+        <li><a href="{{ '/learn/getting-started/' | relative_url }}" style="font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none;">Briefing</a></li>
+        <li><a href="{{ '/tools/battle-calculator/' | relative_url }}" style="font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none;">Combat Lab</a></li>
+        <li><a href="{{ '/learn/rules/' | relative_url }}" style="font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none;">Rules</a></li>
+        <li><a class="button-link" href="https://play.phalanxduel.com" target="_blank" rel="noopener noreferrer" style="padding: 0.5rem 1rem; font-size: 0.7rem;">Play Now</a></li>
       </ul>
     </nav>
   </div>

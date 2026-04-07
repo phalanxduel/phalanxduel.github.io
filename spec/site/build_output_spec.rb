@@ -3,33 +3,32 @@ require "spec_helper"
 RSpec.describe "Built site output" do
   it "has generated key pages" do
     expect(SITE_DIR.join("index.html")).to exist
-    expect(SITE_DIR.join("learn/learn/rules/index.html")).to exist
+    expect(SITE_DIR.join("learn/rules/index.html")).to exist
     expect(SITE_DIR.join("learn/getting-started/index.html")).to exist
     expect(SITE_DIR.join("learn/first-match/index.html")).to exist
-    expect(SITE_DIR.join("tools/tools/battle-calculator/index.html")).to exist
+    expect(SITE_DIR.join("tools/battle-calculator/index.html")).to exist
   end
 
   it "renders the homepage conversion headline and primary CTAs" do
     doc = parse_site_html("index.html")
 
-    expect(doc.at_css("h1")&.text).to include("Start a duel in seconds.")
-    expect(doc.text).to include("Create a match. Share a link. Start the duel.")
-    expect(doc.text).to include("Dynamic Gameplay")
-    expect(doc.text).to include("From Curious to Master")
-    expect(doc.text).to include("Official Tutorial")
-    expect(doc.text).to include("Battle Calculator")
+    expect(doc.at_css("h1")&.text).to include("The Collision of Lines.")
+    expect(doc.text).to include("Red protects. Blue attacks. Master the cascade.")
+    expect(doc.text).to include("Formation is Destiny")
+    expect(doc.text).to include("Study the Cascade")
+    expect(doc.text).to include("Combat Lab")
   end
 
   it "renders the rules page scannable sections" do
-    html = read_site_file("learn/learn/rules/index.html")
+    html = read_site_file("learn/rules/index.html")
 
-    expect(html).to include("Phalanx Duel Rules v1.0 (Player Summary)")
-    expect(html).to include("Turn Cycle and Suit Timing")
-    expect(html).to include("Attack Declaration &amp; Target Chain")
+    expect(html).to include("Tactical Briefing: The Grid System")
+    expect(html).to include("Suit Roles (The Combat Engine)")
+    expect(html).to include("The Cascade")
   end
 
   it "keeps global accessibility landmarks on key pages" do
-    ["index.html", "learn/learn/rules/index.html", "learn/getting-started/index.html", "learn/first-match/index.html"].each do |page|
+    ["index.html", "learn/rules/index.html", "learn/getting-started/index.html", "learn/first-match/index.html"].each do |page|
       doc = parse_site_html(page)
 
       expect(doc.at_css("a.skip-link")&.[]("href")).to eq("#main"), page

@@ -15,12 +15,12 @@
   "dependencies": {
     "@axe-core/playwright": "^4.11.1",
     "basiclightbox": "^5.0.4",
-    "playwright": "^1.58.2"
+    "playwright": "^1.59.1"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
-    "eslint": "^10.0.2",
-    "globals": "^17.3.0",
-    "markdownlint-cli2": "^0.21.0"
+    "eslint": "^10.2.0",
+    "globals": "^17.4.0",
+    "markdownlint-cli2": "^0.22.0"
   }
 }

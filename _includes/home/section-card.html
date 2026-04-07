@@ -14,13 +14,17 @@
 
   {% if section.embed and section.embed.enabled %}
     <div class="embed-shell"{% if section.embed.aspect_ratio %} style="--embed-aspect-ratio: {{ section.embed.aspect_ratio }};"{% endif %}>
+      <button class="embed-popout" title="Full Screen Duel" onclick="this.parentElement.requestFullscreen()">
+        <span class="icon">⛶</span>
+      </button>
       <iframe
         src="{{ section.embed.src }}"
         title="{{ section.embed.title }}"
         loading="{{ section.embed.loading | default: 'lazy' }}"
         referrerpolicy="{{ section.embed.referrerpolicy | default: 'strict-origin-when-cross-origin' }}"
         {% if section.embed.sandbox %}sandbox="{{ section.embed.sandbox }}"{% endif %}
-        {% if section.embed.allow %}allow="{{ section.embed.allow }}"{% endif %}></iframe>
+        {% if section.embed.allow %}allow="{{ section.embed.allow }}"{% endif %}
+        allowfullscreen></iframe>
     </div>
   {% endif %}
 

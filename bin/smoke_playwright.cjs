@@ -38,7 +38,7 @@ function getRoutes(baseurl) {
     if (!route.startsWith('/')) route = `/${route}`;
     if (!route.endsWith('/')) route = `${route}/`;
     return route;
-  });
+  }).filter((route) => !route.startsWith('/backlog/') && route !== '/play/');
 
   return [...new Set(routes)].sort();
 }

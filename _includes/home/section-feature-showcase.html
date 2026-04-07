@@ -1,26 +1,31 @@
 {% assign section = include.section %}
-<section class="{{ section.class | default: 'card' }} feature-showcase"{% if section.section_id %} aria-labelledby="{{ section.section_id }}"{% endif %}>
-  <h2{% if section.section_id %} id="{{ section.section_id }}"{% endif %}>{{ section.heading }}</h2>
-  {% if section.intro %}<p class="feature-showcase-intro">{{ section.intro }}</p>{% endif %}
+<section class="container {{ section.class | default: 'card' }} feature-showcase" style="padding: 8rem 0; border: none; background: transparent;" {% if section.section_id %} aria-labelledby="{{ section.section_id }}"{% endif %}>
+  <div style="margin-bottom: 5rem;">
+    <h2{% if section.section_id %} id="{{ section.section_id }}"{% endif %} style="font-size: 0.8rem; letter-spacing: 0.2em; color: var(--color-offense); margin-bottom: 1.5rem;">// {{ section.heading }}</h2>
+    {% if section.intro %}<p class="feature-showcase-intro" style="font-size: 2.5rem; line-height: 1.1; font-weight: 900; color: #fff; max-width: 50rem;">{{ section.intro }}</p>{% endif %}
+  </div>
 
-  <div class="feature-grid">
+  <div class="feature-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1px; background: var(--grid-line-bold); border: 1px solid var(--grid-line-bold);">
     {% for feature in section.features %}
-      <div class="feature-item">
+      <div class="feature-item" style="background: var(--color-bg); padding: 3rem; transition: var(--transition); position: relative; overflow: hidden;">
         {% if feature.image %}
-          <div class="feature-image-container">
-            <img src="{{ feature.image | relative_url }}" alt="{{ feature.heading }}" loading="lazy">
+          <div class="feature-image-container" style="margin-bottom: 2.5rem; border: 1px solid var(--color-border); aspect-ratio: 16/9; overflow: hidden; background: #000;">
+            <img src="{{ feature.image | relative_url }}" alt="{{ feature.heading }}" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.7; filter: grayscale(100%) contrast(1.2);">
           </div>
         {% endif %}
         <div class="feature-copy">
-          <h3>{{ feature.heading }}</h3>
-          <p>{{ feature.body }}</p>
+          <h3 style="font-family: var(--font-mono); font-size: 1rem; color: #fff; margin-bottom: 1rem; display: flex; align-items: baseline; gap: 1rem;">
+            <span style="color: var(--color-offense); font-size: 0.7rem;">[{{ forloop.index | prepend: '0' | slice: -2, 2 }}]</span>
+            {{ feature.heading }}
+          </h3>
+          <p style="color: var(--color-text-dim); font-size: 0.95rem;">{{ feature.body }}</p>
         </div>
       </div>
     {% endfor %}
   </div>
 
   {% if section.ctas and section.ctas.size > 0 %}
-    <div class="cta-row">
+    <div class="cta-row" style="margin-top: 4rem; display: flex; gap: 1rem; justify-content: center;">
       {% for cta in section.ctas %}
         {% include home/cta-link.html cta=cta %}
       {% endfor %}

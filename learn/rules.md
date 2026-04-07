@@ -1,118 +1,86 @@
 ---
-title: Rules of Engagement
-description: "Player-readable summary of the canonical Phalanx Duel v1.0 rules."
+title: Tactical Briefing
+description: "The core mechanics of Phalanx Duel. Red protects, Blue attacks. Master the grid."
 ---
 
-# Phalanx Duel Rules v1.0 (Player Summary)
+# Tactical Briefing: The Grid System
 
-<p class="small-note">This page is a scannable, player-readable summary of the canonical v1.0 rules. It is designed for play accuracy, not lore.</p>
+<p class="small-note">This is an authoritative summary of Phalanx Duel v1.0. No luck. No RNG. Just geometric consequence.</p>
 
-<section class="hero">
-  <h2>What the Game Is</h2>
-  <p>Phalanx Duel is a deterministic 1v1 column-battle card game. You attack from the front rank of your board into one defending column, resolve carryover through front -> back -> player, then rebuild pressure through reinforcement and draw.</p>
-</section>
-
-<section class="two-col">
-  <article class="card">
-    <h2>Classic Match Defaults (v1.0)</h2>
-    <ul class="quick-list">
-      <li><strong>Board:</strong> 4 columns × 2 ranks (front = rank 0, back = rank 1).</li>
-      <li><strong>Hand Limit:</strong> 4.</li>
-      <li><strong>Initial Draw:</strong> 12.</li>
-      <li><strong>Classic Aces:</strong> Enabled.</li>
-      <li><strong>Classic Face Cards:</strong> Enabled.</li>
-      <li><strong>Damage Persistence:</strong> Classic (no defense persists between turns).</li>
-    </ul>
-  </article>
-
-  <article class="card">
-    <h2>Initiative & Pass Rules</h2>
-    <ul class="quick-list">
-      <li><strong>Classic Deployment:</strong> P2 deploys first.</li>
-      <li><strong>Classic First Attack:</strong> P1 attacks first.</li>
-      <li><strong>Pass Limits:</strong> More than 3 consecutive passes is a forfeit.</li>
-      <li><strong>Total Pass Limit:</strong> More than 5 total passes by one player is a forfeit.</li>
-      <li><strong>No-Attacker Attempt:</strong> Counts as a pass outside any special-start window.</li>
-    </ul>
-  </article>
-</section>
-
-<section class="two-col">
-  <article class="card">
-    <h2>Card Values</h2>
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr><th>Rank</th><th>Combat Value</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Ace</td><td>1 (special destroy rules in Classic Aces)</td></tr>
-          <tr><td>2 through 10</td><td>Face value</td></tr>
-          <tr><td>Jack, Queen, King</td><td>11 (with Classic Face Card destroy restrictions)</td></tr>
-        </tbody>
-      </table>
+<section class="hero" style="padding: 4rem 0;">
+  <div class="hero-layout">
+    <div class="hero-copy">
+      <h2>1. The Battlefield</h2>
+      <p>The game is played on a <strong>4x2 grid</strong>. Every column is a lane. Every slot is a tactical decision.</p>
+      <ul class="proof-points">
+        <li><strong>Front Rank:</strong> The first line of contact.</li>
+        <li><strong>Back Rank:</strong> The reserve line / secondary shield.</li>
+        <li><strong>The Player:</strong> The final target behind the lines.</li>
+      </ul>
     </div>
-    <p class="small-note">Face cards and Aces use eligibility rules in Classic modes. Damage value alone does not guarantee destruction.</p>
-  </article>
-
-  <article class="card">
-    <h2>Classic Special Card Rules</h2>
-    <ul class="quick-list">
-      <li><strong>Ace (Classic Aces):</strong> A front-rank Ace is destroyable only by an Ace attack hitting target index 0.</li>
-      <li><strong>Jack:</strong> Can destroy Jack.</li>
-      <li><strong>Queen:</strong> Can destroy Jack or Queen.</li>
-      <li><strong>King:</strong> Can destroy Jack, Queen, or King.</li>
-      <li><strong>Damage Origin:</strong> The attacking card remains the origin across the whole target chain.</li>
-    </ul>
-  </article>
-</section>
-
-<section class="hero">
-  <h2>Turn Cycle and Suit Timing</h2>
-  <p>For a visual walkthrough of the 7-phase turn lifecycle and the <strong>Shield -> Weapon -> Clamp</strong> boundary ordering, use our authoritative learning resources.</p>
-  <div class="cta-row">
-    <a class="button-link primary" href="{{ '/learn/first-match/' | relative_url }}">Official Tutorial &rarr;</a>
-    <a class="button-link" href="{{ '/tools/battle-calculator/' | relative_url }}">Battle Calculator</a>
+    <div class="hero-preview">
+      <h3 style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--color-offense);">// FORMATION LOGIC</h3>
+      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-top: 1.5rem;">
+        <div style="border: 1px solid var(--color-defense); padding: 1rem; text-align: center;">
+          <span class="suit-red" style="font-weight: 900;">RED</span><br>
+          <small>DEFENSE</small>
+        </div>
+        <div style="border: 1px solid var(--color-offense); padding: 1rem; text-align: center;">
+          <span class="suit-blue" style="font-weight: 900;">BLUE</span><br>
+          <small>OFFENSE</small>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
 <section class="card">
-  <h2>Attack Declaration & Target Chain</h2>
-  <ul class="quick-list">
-    <li><strong>Attacker Source:</strong> Must have a card at rank 0 in the attacking column.</li>
-    <li><strong>Targeting:</strong> You pick a defending column, not an individual card.</li>
-    <li><strong>Target Chain:</strong> All defending cards front-to-back, then the defending player.</li>
-    <li><strong>Carryover:</strong> Remaining damage after a destruction can continue to the next target.</li>
-    <li><strong>Cleanup:</strong> Destroyed cards are removed, then the column collapses forward.</li>
-  </ul>
+  <h2>2. Suit Roles (The Combat Engine)</h2>
+  <p>Suits are not decoration. They define the role of the card in the cascade.</p>
+  
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2rem; margin-top: 2rem;">
+    <div style="border-top: 4px solid var(--color-defense); padding-top: 1rem;">
+      <h3 class="suit-h">♥ HEARTS</h3>
+      <p><strong>Shield: Player.</strong> Reduces damage directed at the Player LP. The final line of defense.</p>
+    </div>
+    <div style="border-top: 4px solid var(--color-defense); padding-top: 1rem;">
+      <h3 class="suit-d">♦ DIAMONDS</h3>
+      <p><strong>Shield: Formation.</strong> Reduces damage carryover from the Front Rank to the Back Rank.</p>
+    </div>
+    <div style="border-top: 4px solid var(--color-offense); padding-top: 1rem;">
+      <h3 class="suit-c">♣ CLUBS</h3>
+      <p><strong>Weapon: Impact.</strong> Doubles the carryover damage hitting the Back Rank defender.</p>
+    </div>
+    <div style="border-top: 4px solid var(--color-offense); padding-top: 1rem;">
+      <h3 class="suit-s">♠ SPADES</h3>
+      <p><strong>Weapon: Reach.</strong> Doubles the final damage hitting the Player LP.</p>
+    </div>
+  </div>
 </section>
 
 <section class="two-col">
   <article class="card">
-    <h2>Reinforcement & Draw</h2>
-    <ul class="quick-list">
-      <li>After cleanup, you may reinforce empty back ranks from hand.</li>
-      <li>Draw until hand size reaches the max (4 in Classic) or the deck is empty.</li>
-      <li>No reshuffle from graveyard.</li>
-      <li>Empty deck alone does not cause an automatic loss.</li>
-    </ul>
+    <h2>3. The Cascade</h2>
+    <p>Damage flows front-to-back in a deterministic sequence:</p>
+    <ol class="quick-list">
+      <li><strong>Front Contact:</strong> Attacker hits Front Defender.</li>
+      <li><strong>Suit Check:</strong> Diamonds or Clubs modify carryover.</li>
+      <li><strong>Back Contact:</strong> Remaining damage hits Back Defender.</li>
+      <li><strong>Final Breach:</strong> Remaining damage hits Player LP (modified by Spades/Hearts).</li>
+    </ol>
   </article>
 
   <article class="card">
-    <h2>Determinism (Why It Matters)</h2>
+    <h2>4. Special Eligibility</h2>
     <ul class="quick-list">
-      <li>Identical inputs must produce identical outcomes.</li>
-      <li>Turns are event-logged and hashable for replay verification.</li>
-      <li>This supports competitive adjudication and trustworthy online play.</li>
+      <li><strong>Aces:</strong> A front-rank Ace can only be destroyed by an Ace attack. However, it still takes damage and allows overflow to pass through to the back rank or player.</li>
+      <li><strong>Face Cards:</strong> Can only be destroyed by face cards of equal or lower rank (J < Q < K). Like Aces, they still allow carryover damage to flow even if they survive.</li>
+      <li><strong>Deterministic:</strong> Identical inputs always produce identical outcomes.</li>
     </ul>
   </article>
 </section>
 
-<div class="cta-row">
-  <a class="button-link primary" href="https://play.phalanxduel.com" target="_blank" rel="noopener noreferrer">Play Online &rarr;</a>
-  <a class="button-link" href="{{ '/learn/first-match/' | relative_url }}">Official Tutorial</a>
-  <a class="button-link" href="{{ '/learn/getting-started/' | relative_url }}">How to Play</a>
-  <a class="button-link secondary" href="{{ '/mastery/mastery/' | relative_url }}">Suits & Strategy</a>
+<div class="cta-row" style="margin-top: 4rem;">
+  <a class="button-link primary" href="{{ '/tools/battle-calculator/' | relative_url }}">Enter the Combat Lab &rarr;</a>
+  <a class="button-link" href="{{ '/play/' | relative_url }}">Launch Online Match</a>
 </div>
-
-<p class="small-note">For implementation-grade language and exact canonical terminology, use the official v1.0 rules specification in the Phalanx Duel game repository.</p>

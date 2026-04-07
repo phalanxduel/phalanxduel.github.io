@@ -179,9 +179,11 @@
           if (front.suit === "H") frontHeartShield = front.value;
         } else {
           frontHealth = front.value;
-          overflow = 0;
+          overflow = clampToZero(overflow - front.value);
           if (isAce(front)) frontAceProtected = true;
-          log.push(eligibility.reason + ".");
+          if (front.suit === "D") frontDiamondShield = front.value;
+          if (front.suit === "H") frontHeartShield = front.value;
+          log.push(eligibility.reason + " (Survives, damage overflows).");
         }
       }
       addStep(progression, "After Front Defender", before, overflow, front.suit + " " + front.value + " in front");
@@ -235,9 +237,10 @@
               if (back.suit === "H") backHeartShield = back.value;
             } else {
               backHealth = back.value;
-              overflow = 0;
+              overflow = clampToZero(overflow - back.value);
               if (isAce(back)) backAceProtected = true;
-              log.push(eligibility.reason + ".");
+              if (back.suit === "H") backHeartShield = back.value;
+              log.push(eligibility.reason + " (Survives, damage overflows).");
             }
           }
           addStep(progression, "After Back Defender", before, overflow, back.suit + " " + back.value + " in back");
@@ -250,6 +253,13 @@
     } else {
       // No back defender
       if (overflow > 0) {
+        // If there was no back defender, we still apply Diamond shield to the overflow targeting LP
+        if (frontDiamondShield > 0) {
+          const absorbed = Math.min(overflow, frontDiamondShield);
+          overflow -= absorbed;
+          log.push("Diamond shield (no back): absorbed " + absorbed + ".");
+        }
+
         log.push("No back defender: remaining damage targets LP.");
         addStep(progression, "No Back Defender", overflow, overflow, "Remaining overflow goes to LP");
       }

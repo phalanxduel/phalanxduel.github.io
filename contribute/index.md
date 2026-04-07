@@ -11,7 +11,7 @@ We have explicit pathways for different types of contributors.
 
 ## 1. Engine & Rules (Developers)
 If you want to work on the core server-authoritative engine, deterministic logic, or canonical rules specification:
-*   **Where to go:** The [Game Repository (GitHub)](https://github.com/phalanxduel/phalanxduel)
+*   **Where to go:** The [Game Repository (GitHub)](https://github.com/phalanxduel/game)
 *   **What we need:** Bug fixes, performance improvements, invariant testing, and strict alignment of the engine with the `RULES.md` spec.
 
 ## 2. Site & Tools (Web Developers)
