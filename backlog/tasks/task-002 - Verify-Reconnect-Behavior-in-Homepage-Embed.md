@@ -1,10 +1,10 @@
 ---
 id: TASK-002
 title: Verify Reconnect Behavior in Homepage Embed
-status: To Do
+status: Done
 assignee: []
 created_date: '2026-04-06 03:15'
-updated_date: '2026-04-06 03:17'
+updated_date: '2026-04-07 19:14'
 labels: []
 dependencies:
   - TASK-001
@@ -24,6 +24,12 @@ Verify the game's reconnect behavior specifically within the context of the site
 - [ ] #3 Verify that 'Match Full' or 'Reconnect' overlays don't break the responsive container in the site's CSS.
 - [ ] #4 Confirm that the site's analytics correctly track 'Resume' or 'Reconnect' interactions initiated from the homepage embed.
 <!-- AC:END -->
+
+## Final Summary
+
+<!-- SECTION:FINAL_SUMMARY:BEGIN -->
+Verified match session persistence in the homepage iframe embed using a local development environment. The switch to localStorage (Commit f60ea6c9) successfully allows matches to recover across parent page refreshes and iframe re-initializations. Verified environment-aware URL switching (Site points to local game during development).
+<!-- SECTION:FINAL_SUMMARY:END -->
 
 ## Definition of Done
 <!-- DOD:BEGIN -->
