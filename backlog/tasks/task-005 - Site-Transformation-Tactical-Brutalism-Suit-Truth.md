@@ -1,10 +1,10 @@
 ---
 id: TASK-005
 title: 'Site Transformation: Tactical Brutalism & Suit Truth'
-status: Done
+status: In Progress
 assignee: []
 created_date: '2026-04-06 14:18'
-updated_date: '2026-04-06 16:03'
+updated_date: '2026-04-07 14:28'
 labels: []
 dependencies: []
 priority: high
@@ -13,7 +13,7 @@ priority: high
 ## Description
 
 <!-- SECTION:DESCRIPTION:BEGIN -->
-Formalize the transition of the Phalanx Duel website from a documentation archive to a game-native 'Command Console' surface. This involves implementing the Tactical Brutalism design system, enforcing 'Suit Truth' (Red=Defense, Blue=Offense), and centering all UX around the 4x2 battlefield grid.
+Transform the site's visual language into 'Vector Brutalism' inspired by Tron and 80s Star Wars vector graphics. Focus on high-contrast neon outlines (Suit Truth), tactical HUD elements, and a persistent grid-driven layout. Ensure the playable embed feels like a command console rather than a generic iframe.
 <!-- SECTION:DESCRIPTION:END -->
 
 ## Acceptance Criteria
@@ -38,13 +38,11 @@ Formalize the transition of the Phalanx Duel website from a documentation archiv
 ## Implementation Notes
 
 <!-- SECTION:NOTES:BEGIN -->
-- Created STYLE_GUIDE.md with SIL Open Font License fonts (Inter, JetBrains Mono).
-- Implemented --color-defense (Red) and --color-offense (Blue) tokens in assets/css/site.css.
-- Redesigned tools/battle-calculator.html into the 'Combat Lab' with vertical lane visualization.
-- Rewrote learn/rules.md and learn/getting-started.md as 'Briefings'.
-- Updated site navigation and footer to 'Briefing' and 'Combat Lab' nomenclature.
-
-The visual system is now grounded in 'Suit Truth' discovered in the v1.0 engine. Red=Defense, Blue=Offense. Grid is 4x2. Layout is Lane-based.
+- Implemented glowing neon borders for primary/secondary buttons.
+- Added 40px tactical grid background across the site.
+- Integrated scanline and RGB-split effects for the playable embed container.
+- Updated color palette to 'Neon Vector' adjusted versions of Red (Defense) and Blue (Offense).
+- Added 'TACTICAL_HUD' corner markers to preview panels.
 <!-- SECTION:NOTES:END -->
 
 ## Final Summary
