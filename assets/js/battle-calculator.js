@@ -263,6 +263,17 @@
 
     button.addEventListener("click", runSimulation);
 
+    // Rules Help Toggle
+    const helpToggle = document.getElementById("rules-help-toggle");
+    const helpPanel = document.getElementById("rules-help-panel");
+    if (helpToggle && helpPanel) {
+      helpToggle.addEventListener("click", function() {
+        const isHidden = helpPanel.style.display === "none";
+        helpPanel.style.display = isHidden ? "block" : "none";
+        helpToggle.textContent = isHidden ? "[X] CLOSE_INFO" : "[?] SYSTEM_INFO";
+      });
+    }
+
     [attackerSelect, frontSelect, backSelect, modeSelect].forEach(function (el) {
       el.addEventListener("change", runSimulation);
     });
