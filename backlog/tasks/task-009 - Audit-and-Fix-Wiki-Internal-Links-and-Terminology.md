@@ -1,9 +1,10 @@
 ---
 id: TASK-009
 title: Audit and Fix Wiki Internal Links and Terminology
-status: To Do
+status: Done
 assignee: []
 created_date: '2026-04-07 14:47'
+updated_date: '2026-04-07 15:20'
 labels:
   - documentation
   - wiki
@@ -23,6 +24,12 @@ Audit the Wiki repository for stale links and outdated terminology following the
 - [ ] #2 References to 'Official Tutorial' are updated to 'Tactical Briefing' or 'Briefing'.
 - [ ] #3 The Wiki home page acknowledges the 'Vector Command' identity.
 <!-- AC:END -->
+
+## Final Summary
+
+<!-- SECTION:FINAL_SUMMARY:BEGIN -->
+Performed global find-and-replace across 25+ wiki pages. Updated phalanxduel.com links from stale paths (/rules/, /how-to-play/) to correct /learn/ subdirectories. Synchronized terminology by replacing 'Tutorial' with 'Briefing'. Updated Home.md to acknowledge the 'Vector Command' identity.
+<!-- SECTION:FINAL_SUMMARY:END -->
 
 ## Definition of Done
 <!-- DOD:BEGIN -->
