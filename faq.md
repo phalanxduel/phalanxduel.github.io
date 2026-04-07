@@ -47,7 +47,7 @@ description: Frequently asked questions about decks, players, phase status, and 
 
 <details>
   <summary>Where are the authoritative rules and technical contracts?</summary>
-  <p>Canonical docs live in the main repo: <a href="https://github.com/phalanxduel/phalanxduel/blob/main/docs/formats/duel/RULES.md" target="_blank" rel="noopener noreferrer">RULES.md</a>, <a href="https://github.com/phalanxduel/phalanxduel/blob/main/docs/system/PROTOCOL.md" target="_blank" rel="noopener noreferrer">PROTOCOL.md</a>, and <a href="https://github.com/phalanxduel/phalanxduel/blob/main/docs/system/CLIENT_CONTRACT.md" target="_blank" rel="noopener noreferrer">CLIENT_CONTRACT.md</a>.</p>
+  <p>Canonical docs live in the main repo: <a href="https://github.com/phalanxduel/phalanxduel/blob/main/docs/RULES.md" target="_blank" rel="noopener noreferrer">RULES.md</a>, <a href="https://github.com/phalanxduel/phalanxduel/blob/main/docs/system/SITE_FLOW.md" target="_blank" rel="noopener noreferrer">SITE_FLOW.md</a>, and <a href="https://github.com/phalanxduel/phalanxduel/blob/main/docs/system/ARCHITECTURE.md" target="_blank" rel="noopener noreferrer">ARCHITECTURE.md</a>.</p>
 </details>
 
 <details>
