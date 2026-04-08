@@ -12,10 +12,10 @@ RSpec.describe "Built site output" do
   it "renders the homepage conversion headline and primary CTAs" do
     doc = parse_site_html("index.html")
 
-    expect(doc.at_css("h1")&.text).to include("The Collision of Lines.")
-    expect(doc.text).to include("Red protects. Blue attacks. Master the cascade.")
+    expect(doc.at_css("h1")&.text).to include("Initialize Combat.")
+    expect(doc.text).to include("Red protects. Blue attacks. Execute the briefing.")
     expect(doc.text).to include("Formation is Destiny")
-    expect(doc.text).to include("Study the Cascade")
+    expect(doc.text).to include("Access Briefing")
     expect(doc.text).to include("Combat Lab")
   end
 
