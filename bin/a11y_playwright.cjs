@@ -108,7 +108,7 @@ async function runBrowserA11yAudit(routes) {
 
   const browser = await chromium.launch();
   const context = await browser.newContext();
-  const baseUrl = process.env.SMOKE_BASE_URL || 'http://localhost:4000';
+  const baseUrl = process.env.A11Y_BASE_URL || 'http://localhost:4000';
   const axeFailures = [];
   const contractFailures = [];
 
