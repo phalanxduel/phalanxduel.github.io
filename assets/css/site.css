@@ -502,3 +502,61 @@ section {
   h1 { font-size: 3rem; }
   .nav-list { display: none; }
 }
+
+/* basicLightbox Styles */
+.basicLightbox {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(2, 2, 5, 0.9);
+  backdrop-filter: blur(20px);
+  opacity: 0;
+  transition: opacity .4s ease;
+  z-index: 1000;
+  will-change: opacity;
+}
+
+.basicLightbox--visible {
+  opacity: 1;
+}
+
+.basicLightbox__placeholder {
+  max-width: 90%;
+  max-height: 90%;
+  transform: scale(.9);
+  transition: transform .4s ease;
+  z-index: 1;
+  will-change: transform;
+}
+
+.basicLightbox--visible .basicLightbox__placeholder {
+  transform: scale(1);
+}
+
+.basicLightbox img {
+  max-width: 100%;
+  max-height: 100%;
+  border: 2px solid var(--color-offense);
+  box-shadow: 0 0 50px rgba(0, 122, 255, 0.4);
+}
+
+/* Feature Image Hover */
+.feature-image-container {
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.feature-image-container:hover img {
+  opacity: 1 !important;
+  filter: grayscale(0%) contrast(1) !important;
+  transform: scale(1.05);
+}
+
+.feature-image-container img {
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.5s, filter 0.5s;
+}

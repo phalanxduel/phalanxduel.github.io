@@ -12,6 +12,7 @@ description: "How Phalanx: Duel evolved from notebook sketches to modern digital
     <li><strong>July 11, 2022:</strong> Project renamed from <em>Panoplia</em> to <strong>Phalanx: Duel</strong>.</li>
     <li><strong>July-August 2022:</strong> Legacy Ruby implementation explored combat logic and test-driven behavior.</li>
     <li><strong>February 2026:</strong> Modern TypeScript engine established with real-time multiplayer support.</li>
+    <li><strong>April 27, 2026:</strong> <strong>v1.0.0 Stable Release.</strong> Global matchmaking, state persistence, and legal hardening.</li>
   </ul>
 </section>
 

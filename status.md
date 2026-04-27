@@ -1,45 +1,47 @@
 ---
 title: Status
-description: "Current project phase, known limitations, and what to expect from Phalanx: Duel right now."
+description: "Current project phase, stability, and what to expect from Phalanx: Duel v1.0."
 ---
 
 # Project Status
 
 <section class="card">
   <h2>Current Phase</h2>
-  <p><strong>Pre-alpha active development.</strong> The core game loop is playable online, and rules/protocol are documented, but reliability and UX are still being improved.</p>
+  <p><strong>v1.0.0 Stable (Production).</strong> The core game engine is battle-tested and production-ready. We are now focused on ecosystem expansion and cross-platform competitive play.</p>
 </section>
 
 <section class="card">
   <h2>What Works Today</h2>
   <ul class="quick-list">
-    <li>Two-player deployment, combat, reinforcement, and victory flow.</li>
-    <li>Playable turn-based browser match flow.</li>
-    <li>Deterministic rules engine and documented protocol contracts.</li>
+    <li>Full deterministic combat lifecycle (Deployment through EndTurn).</li>
+    <li>Glicko-2 ranked matchmaking and public lobby system.</li>
+    <li>Resilient state rehydration and session re-entry.</li>
+    <li>High-fidelity in-game video tutorials.</li>
+    <li>Official Go CLI and TypeScript SDKs.</li>
   </ul>
 </section>
 
 <section class="card">
-  <h2>Known Limitation</h2>
-  <p>Reconnect behavior is not fully complete yet. Rejoin attempts can still fail for already-full matches in current runtime behavior.</p>
-  <p><a href="https://github.com/phalanxduel/phalanxduel/blob/main/docs/system/DEVELOPER_GUIDE.md" target="_blank" rel="noopener noreferrer">Track current engineering status in the Developer Guide.</a></p>
+  <h2>Production Stability</h2>
+  <p>Matches are backed by a persistent action ledger, ensuring your tactical progress is preserved even across server restarts or connection drops.</p>
+  <p><a href="https://github.com/phalanxduel/phalanxduel/blob/main/CHANGELOG.md" target="_blank" rel="noopener noreferrer">View the latest release notes in the Changelog.</a></p>
 </section>
 
 <section class="card">
-  <h2>What to Expect</h2>
+  <h2>Next Horizons</h2>
   <ul class="quick-list">
-    <li>Feature and UX changes as playtesting feedback arrives.</li>
-    <li>Occasional downtime or restarts during active development windows.</li>
-    <li>Roadmap ordering can shift as reliability and gameplay findings evolve.</li>
+    <li>Hardening of native mobile (SwiftUI/Android) operatives.</li>
+    <li>Expansion of automated tournament and bracket support.</li>
+    <li>Advanced strategic AI heuristics for solo play.</li>
   </ul>
 </section>
 
 <section class="card">
   <h2>Canonical Technical References</h2>
   <ul class="quick-list">
-    <li><a href="https://github.com/phalanxduel/phalanxduel/blob/main/docs/RULES.md" target="_blank" rel="noopener noreferrer">Rules</a></li>
-    <li><a href="https://github.com/phalanxduel/phalanxduel/blob/main/docs/system/SITE_FLOW.md" target="_blank" rel="noopener noreferrer">Site Flow</a></li>
-    <li><a href="https://github.com/phalanxduel/phalanxduel/blob/main/docs/system/CLIENT_COMPATIBILITY.md" target="_blank" rel="noopener noreferrer">Client Compatibility</a></li>
-    <li><a href="https://github.com/phalanxduel/phalanxduel/blob/main/docs/system/ARCHITECTURE.md" target="_blank" rel="noopener noreferrer">Architecture</a></li>
+    <li><a href="https://github.com/phalanxduel/phalanxduel/blob/main/docs/RULES.md" target="_blank" rel="noopener noreferrer">Rules Specification</a></li>
+    <li><a href="https://github.com/phalanxduel/phalanxduel/blob/main/docs/api/openapi.yaml" target="_blank" rel="noopener noreferrer">OpenAPI Contract</a></li>
+    <li><a href="https://github.com/phalanxduel/phalanxduel/blob/main/docs/system/ARCHITECTURE.md" target="_blank" rel="noopener noreferrer">System Architecture</a></li>
+    <li><a href="https://github.com/phalanxduel/phalanxduel/blob/main/docs/system/TELEMETRY.md" target="_blank" rel="noopener noreferrer">Telemetry & Observability</a></li>
   </ul>
 </section>

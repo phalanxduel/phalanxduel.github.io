@@ -1,22 +1,22 @@
 ---
 title: Support
-description: "How sponsorship and community support help move Phalanx: Duel forward."
+description: "How sponsorship and community support help scale the Phalanx: Duel ecosystem."
 ---
 
 # Support Phalanx: Duel
 
 <section class="card">
   <h2>Why Support Matters</h2>
-  <p>Phalanx: Duel is in pre-alpha active development. Support helps increase delivery capacity for reliability, onboarding, and core game quality.</p>
+  <p>With the release of v1.0.0 Stable, Phalanx: Duel has proven its core tactical engine. Your support now helps scale the platform and expand the competitive ecosystem across all platforms.</p>
 </section>
 
 <section class="card">
-  <h2>What Support Funds (Near Term)</h2>
+  <h2>What Support Funds (v1.0 Era)</h2>
   <ul class="quick-list">
-    <li>Reliability work, including reconnect behavior hardening.</li>
-    <li>Playtesting and feedback-response cycles.</li>
-    <li>Documentation and onboarding improvements for players and contributors.</li>
-    <li>Operational hosting and release maintenance.</li>
+    <li><strong>Ecosystem Growth:</strong> Maintaining official SDKs (Go, TypeScript, Swift) for a diverse client base.</li>
+    <li><strong>Competitive Play:</strong> Scaling the global matchmaking and ranking infrastructure.</li>
+    <li><strong>Native Mobile:</strong> Accelerating the delivery of native Android and iOS operatives.</li>
+    <li><strong>Global Infrastructure:</strong> Multi-region hosting for low-latency tactical engagements.</li>
   </ul>
 </section>
 
@@ -24,8 +24,8 @@ description: "How sponsorship and community support help move Phalanx: Duel forw
   <h2>Transparency</h2>
   <ul class="quick-list">
     <li><a href="{{ '/roadmap/' | relative_url }}">High-level roadmap</a></li>
-    <li><a href="{{ '/status/' | relative_url }}">Current status and limitations</a></li>
-    <li><a href="https://github.com/phalanxduel/phalanxduel/blob/main/docs/system/DEVELOPER_GUIDE.md" target="_blank" rel="noopener noreferrer">Developer guide and engineering overview</a></li>
+    <li><a href="{{ '/status/' | relative_url }}">Current status and specifications</a></li>
+    <li><a href="https://github.com/phalanxduel/phalanxduel/blob/main/CHANGELOG.md" target="_blank" rel="noopener noreferrer">Latest release notes</a></li>
   </ul>
 </section>
 

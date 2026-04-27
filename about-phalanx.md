@@ -7,32 +7,32 @@ description: "What Phalanx: Duel is, who it is for, and how the game is being de
 
 <section class="card">
   <h2>What It Is</h2>
-  <p>Phalanx: Duel is a tactical two-player card duel built on standard playing cards and formalized into a deterministic digital game engine.</p>
+  <p>Phalanx: Duel is a tactical two-player card duel built on standard playing cards and formalized into a deterministic digital game engine. It is a pure test of skill, positioning, and mathematical consequence.</p>
 </section>
 
 <section class="card">
-  <h2>Design Direction</h2>
+  <h2>The v1.0 Standard</h2>
   <ul class="quick-list">
-    <li>Keep the tabletop spirit while making digital play practical.</li>
-    <li>Make core mechanics transparent and testable.</li>
-    <li>Use clear contracts for rules, protocol, and state transitions.</li>
+    <li><strong>Zero RNG:</strong> Every outcome is determined by player choice and deterministic rules.</li>
+    <li><strong>Cross-Platform:</strong> Play on the web, in your terminal with Go, or via experimental mobile operatives.</li>
+    <li><strong>Ranked Competition:</strong> Global Glicko-2 matchmaking and public lobby system.</li>
+    <li><strong>Open Ecosystem:</strong> Official SDKs in Go and TypeScript for developers to build bots and custom clients.</li>
   </ul>
 </section>
 
 <section class="card">
   <h2>Who It Is For</h2>
   <ul class="quick-list">
-    <li>Players who enjoy tactical head-to-head combat.</li>
-    <li>Playtesters interested in game balance and UX clarity.</li>
-    <li>Developers who care about deterministic game systems.</li>
-    <li>Supporters who want to back an early-stage indie game project.</li>
+    <li><strong>Tacticians:</strong> Players who enjoy deep, deterministic head-to-head combat.</li>
+    <li><strong>Developers:</strong> Engineers who care about actor-based architecture and state rehydration.</li>
+    <li><strong>Competitors:</strong> Players looking for a fair, ratings-driven tactical ladder.</li>
   </ul>
 </section>
 
 <section class="card">
-  <h2>Current State</h2>
-  <p>Phalanx: Duel is in pre-alpha active development. Core gameplay is playable now, while reliability and polish continue to improve.</p>
-  <p><a href="{{ '/status/' | relative_url }}">See current status.</a></p>
+  <h2>Production State</h2>
+  <p>Phalanx: Duel has reached <strong>v1.0.0 Stable</strong>. The core engine is production-ready, persistent, and highly observable.</p>
+  <p><a href="{{ '/status/' | relative_url }}">See current status and technical specifications.</a></p>
 </section>
 
 <section class="card">

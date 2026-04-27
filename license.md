@@ -9,15 +9,19 @@ Phalanx is designed to be an open system. We encourage the community to build, f
 
 ## Code License
 
-The code for the Phalanx rules engine, server, and client is licensed under the **GNU General Public License v3.0 (GPL v3)**.
+The code for the Phalanx rules engine, server, and client is licensed under the **GNU Affero General Public License v3.0 (AGPL v3)**.
 
-The GPL grants you the freedom to:
+The AGPL grants you the freedom to:
 - Use the software for any purpose.
 - Modify the software to suit your needs.
-- Share the software with your friends and neighbors.
-- Share the changes you make.
+- Share the software and its changes.
+- **Important**: If you run a modified version of this software on a server and let the public access it, you must make your source code available to those users.
 
 A copy of the full license text is available in the main code repository.
+
+## Design Assets & Media
+
+The creative assets, high-fidelity tutorials, and branding media are licensed under **Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)**.
 
 ## Open Implementations
 

@@ -92,6 +92,24 @@ stateDiagram-v2
 </section>
 
 <section class="card">
+  <h2>Competitive Model (Glicko-2)</h2>
+  <ul class="quick-list">
+    <li><strong>Ratings System:</strong> v1.0 implements a full Glicko-2 matchmaking system.</li>
+    <li><strong>Ranked Lobbies:</strong> Public matches contribute to a global leaderboard with volatility and rating deviation tracking.</li>
+    <li><strong>Cross-Platform Rankings:</strong> Rankings are unified across Web, CLI (Go), and Mobile clients.</li>
+  </ul>
+</section>
+
+<section class="card">
+  <h2>Observability & Verification</h2>
+  <ul class="quick-list">
+    <li><strong>OTel Native:</strong> Full OpenTelemetry integration for distributed tracing of match lifecycles.</li>
+    <li><strong>Ledger Persistence:</strong> Every match is backed by an append-only action ledger, allowing for full state rehydration and crash recovery.</li>
+    <li><strong>Playthrough Verification:</strong> Headless automation verifies game logic on every deployment, ensuring 100% rule integrity.</li>
+  </ul>
+</section>
+
+<section class="card">
   <h2>Trust Model (Why This Matters Online)</h2>
   <ul class="quick-list">
     <li>Phalanx Duel uses a server-authoritative architecture in digital play.</li>

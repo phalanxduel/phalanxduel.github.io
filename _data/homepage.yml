@@ -6,14 +6,14 @@ active_variant: "embed_conversion_v1"
 
 variants:
   tactical_v1:
-    name: "Tactical Overthrow v1"
+    name: "Tactical Overthrow v1.0"
     sections:
       - type: "hero"
         class: "hero"
         aria_labelledby: "hero-title"
         title_id: "hero-title"
-        heading: "The Collision of Lines."
-        body: "Phalanx Duel is a deterministic tactical battle on a 4x2 grid. No luck. No boosters. Just the geometric consequence of your deployment. Red protects. Blue attacks. Master the cascade."
+        heading: "The Definitive Tactical Duel."
+        body: "Phalanx Duel v1.0 is here. A deterministic tactical battle on a 4x2 grid. No luck. No boosters. Full cross-platform matchmaking and competitive Glicko rankings. Red protects. Blue attacks. Master the cascade."
         proof_points:
           - "Deterministic: 0% RNG"
           - "Open: Standard 52-Card Deck"
@@ -108,14 +108,14 @@ variants:
         closing_microcopy: "Free. Fast. Fair."
 
   embed_conversion_v1:
-    name: "Vector Command v1"
+    name: "Vector Command v1.0"
     sections:
       - type: "hero"
         class: "hero"
         aria_labelledby: "hero-title"
         title_id: "hero-title"
-        heading: "Initialize Combat."
-        body: "Phalanx Duel is a deterministic tactical battle on a 4x2 grid. No luck. No boosters. Just the geometric consequence of your deployment. Red protects. Blue attacks. Execute the briefing."
+        heading: "Initialize Global Combat."
+        body: "Phalanx Duel v1.0 is officially active. Deterministic tactical battle on a 4x2 grid. Zero RNG. Full cross-platform competition. Red protects. Blue attacks. Execute the briefing."
         proof_points:
           - "Vector: 0% RNG"
           - "Open: Standard Deck"
@@ -184,6 +184,21 @@ variants:
           - label: "Enter the Combat Lab &rarr;"
             href: "/tools/battle-calculator/"
             style: "primary"
+
+      - type: "two_col_cards"
+        class: "two-col"
+        section_id: "cross-platform"
+        cards:
+          - heading: "Alternative Clients"
+            body: "Battle from any terminal. Our official Go client provides a high-performance CLI experience with full session re-entry."
+            cta:
+              label: "Get the Go SDK"
+              href: "https://github.com/phalanxduel/phalanxduel/tree/main/sdk/go"
+          - heading: "Competitive Ladder"
+            body: "Climb the global Glicko-2 rankings. True cross-platform play across Web, CLI, and Mobile (SwiftUI) operatives."
+            cta:
+              label: "View Rankings"
+              href: "/status/"
 
       - type: "card"
         class: "card"

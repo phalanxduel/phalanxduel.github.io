@@ -80,8 +80,9 @@
     {% endif %}
     <script>
       document.addEventListener('DOMContentLoaded', function() {
-        document.querySelectorAll('.history-gallery figure img').forEach(function(img) {
-          img.style.cursor = 'pointer'; // Indicate it's clickable
+        // Lightbox for history gallery and feature showcase
+        document.querySelectorAll('.history-gallery figure img, .feature-image-container img').forEach(function(img) {
+          img.style.cursor = 'pointer';
           img.addEventListener('click', function() {
             var lightboxImg = document.createElement('img');
             lightboxImg.src = img.currentSrc || img.src;
