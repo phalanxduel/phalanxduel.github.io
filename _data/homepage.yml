@@ -198,7 +198,7 @@ variants:
             body: "Climb the global Glicko-2 rankings. True cross-platform play across Web, CLI, and Mobile (SwiftUI) operatives."
             cta:
               label: "View Rankings"
-              href: "/status/"
+              href: "/competitive/"
 
       - type: "card"
         class: "card"

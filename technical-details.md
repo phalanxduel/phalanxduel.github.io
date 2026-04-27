@@ -94,7 +94,7 @@ stateDiagram-v2
 <section class="card">
   <h2>Competitive Model (Glicko-2)</h2>
   <ul class="quick-list">
-    <li><strong>Ratings System:</strong> v1.0 implements a full Glicko-2 matchmaking system.</li>
+    <li><strong>Ratings System:</strong> v1.0 implements a full Glicko-2 matchmaking system. (<a href="{{ '/competitive/' | relative_url }}">See Competitive Play</a>)</li>
     <li><strong>Ranked Lobbies:</strong> Public matches contribute to a global leaderboard with volatility and rating deviation tracking.</li>
     <li><strong>Cross-Platform Rankings:</strong> Rankings are unified across Web, CLI (Go), and Mobile clients.</li>
   </ul>
