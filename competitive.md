@@ -45,6 +45,16 @@ Phalanx Duel v1.0 introduces a production-grade competitive ecosystem designed f
 </section>
 
 <section class="card">
+  <h2>Tactical Video Intel</h2>
+  <p>Phalanx Duel v1.0 features high-fidelity video briefings generated directly from the combat engine. These tutorials provide phase-specific intelligence on complex tactical maneuvers.</p>
+  <ul class="quick-list">
+    <li><strong>Integrated Briefings:</strong> Access video intel directly within the Combat Console by selecting the <strong>"?" (Help)</strong> icon.</li>
+    <li><strong>Phase-Specific Guidance:</strong> Get real-time visual breakdowns of Deployment, Attack, and Cascade resolution.</li>
+    <li><strong>Deterministic Analysis:</strong> Every video briefing uses the same vector identity and rules logic as the live simulation.</li>
+  </ul>
+</section>
+
+<section class="card">
   <h2>Ecosystem Integrity</h2>
   <p>Competitive integrity is maintained through server-authoritative validation and ledger-backed match state.</p>
   <ul class="quick-list">
