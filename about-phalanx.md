@@ -15,7 +15,7 @@ description: "What Phalanx: Duel is, who it is for, and how the game is being de
   <ul class="quick-list">
     <li><strong>Zero RNG:</strong> Every outcome is determined by player choice and deterministic rules.</li>
     <li><strong>Cross-Platform:</strong> Play on the web (all screens), in your terminal with our Golang client, or via native mobile operatives (SwiftUI in-progress).</li>
-    <li><strong>Ranked Competition:</strong> Global Glicko-2 matchmaking and public lobby system.</li>
+    <li><strong>Ranked Competition (Beta):</strong> Global Glicko-2 matchmaking and public lobby system.</li>
     <li><strong>Open Ecosystem:</strong> Official SDKs in Go and TypeScript for developers to build bots and custom clients.</li>
   </ul>
 </section>

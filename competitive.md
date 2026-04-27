@@ -3,12 +3,12 @@ title: Competitive Play
 description: "Global Glicko-2 rankings, cross-platform matchmaking, and the Phalanx Duel ladder."
 ---
 
-# Competitive Play
+# Competitive Play (Beta)
 
-Phalanx Duel v1.0 introduces a production-grade competitive ecosystem designed for deterministic tactical combat across all platforms.
+Phalanx Duel v1.0 introduces a production-grade competitive ecosystem designed for deterministic tactical combat across all platforms. While the core game engine is v1.0, the **Ladder and Matchmaking system is currently in Beta**—it has been thoroughly tested in development but is now ready to be put through its paces by the community.
 
 <section class="card">
-  <h2>The Global Ladder</h2>
+  <h2>The Global Ladder (Beta)</h2>
   <p>The Phalanx Duel ladder is a unified ranking system that spans Web, CLI, and Mobile operatives. Every ranked match contributes to your global standing.</p>
   <ul class="quick-list">
     <li><strong>Glicko-2 Ratings:</strong> We use the Glicko-2 system to track player skill, rating deviation (uncertainty), and volatility.</li>

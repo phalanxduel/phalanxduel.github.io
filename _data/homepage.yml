@@ -194,7 +194,7 @@ variants:
             cta:
               label: "Get the Go SDK"
               href: "https://github.com/phalanxduel/phalanxduel/tree/main/sdk/go"
-          - heading: "Competitive Ladder"
+          - heading: "Competitive Ladder (Beta)"
             body: "Climb the global Glicko-2 rankings. True cross-platform play across Web (all screens), CLI, and Mobile (SwiftUI in-progress) operatives."
             cta:
               label: "View Rankings"
