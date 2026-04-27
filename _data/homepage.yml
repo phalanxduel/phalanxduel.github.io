@@ -189,13 +189,13 @@ variants:
         class: "two-col"
         section_id: "cross-platform"
         cards:
-          - heading: "Alternative Clients"
-            body: "Battle from any terminal. Our official Go client provides a high-performance CLI experience with full session re-entry."
+          - heading: "Terminal Operative"
+            body: "Battle from any command line. Our official Golang client provides a high-performance terminal experience with full session re-entry."
             cta:
               label: "Get the Go SDK"
               href: "https://github.com/phalanxduel/phalanxduel/tree/main/sdk/go"
           - heading: "Competitive Ladder"
-            body: "Climb the global Glicko-2 rankings. True cross-platform play across Web, CLI, and Mobile (SwiftUI) operatives."
+            body: "Climb the global Glicko-2 rankings. True cross-platform play across Web (all screens), CLI, and Mobile (SwiftUI in-progress) operatives."
             cta:
               label: "View Rankings"
               href: "/competitive/"

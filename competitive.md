@@ -33,15 +33,15 @@ Phalanx Duel v1.0 introduces a production-grade competitive ecosystem designed f
   <p>Battle from the environment that suits your tactical needs. All official clients share the same rules engine and matchmaking pool.</p>
   
   <h3>🌐 Web Client (Standard)</h3>
-  <p>The primary tactical interface. Rich visuals, integrated video briefings, and full lobby management. No installation required.</p>
+  <p>The primary tactical interface. Our WebUI is responsive and designed for all screens—from desktop command centers to mobile devices. It features rich visuals, integrated video briefings, and full lobby management with no installation required.</p>
   <p><a href="{{ '/play/' | relative_url }}" class="cta-link">Launch Web Operative</a></p>
 
-  <h3>💻 Go CLI SDK (Advanced)</h3>
-  <p>For operatives who prefer the terminal. High-performance, low-latency combat with full session persistence. Ideal for building bots or playing in resource-constrained environments.</p>
+  <h3>💻 Golang Terminal Client (Advanced)</h3>
+  <p>For operatives who prefer the command line, we provide a high-performance, terminal-based client written in Go. It offers low-latency combat with full session persistence and is the ideal platform for building tactical bots or playing in resource-constrained environments.</p>
   <p><a href="https://github.com/phalanxduel/phalanxduel/tree/main/sdk/go" target="_blank" rel="noopener noreferrer">Get the Go SDK</a></p>
 
-  <h3>📱 Mobile Operatives (Experimental)</h3>
-  <p>Take the duel on the go. Native SwiftUI and Android wrappers are currently in active development for seamless cross-platform play.</p>
+  <h3>📱 Native Mobile (In-Progress)</h3>
+  <p>While the web interface works on mobile, we are currently developing native SwiftUI (iOS) and Android operatives for a more integrated mobile experience. These clients are currently in-progress and will join the global matchmaking pool upon release.</p>
 </section>
 
 <section class="card">

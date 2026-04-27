@@ -17,7 +17,7 @@ description: "Current project phase, stability, and what to expect from Phalanx:
     <li>Glicko-2 ranked matchmaking and public lobby system. (<a href="{{ '/competitive/' | relative_url }}">See Competitive Play</a>)</li>
     <li>Resilient state rehydration and session re-entry.</li>
     <li>High-fidelity in-game video tutorials.</li>
-    <li>Official Go CLI and TypeScript SDKs.</li>
+    <li>Official Golang terminal client and TypeScript SDK.</li>
   </ul>
 </section>
 
@@ -30,7 +30,7 @@ description: "Current project phase, stability, and what to expect from Phalanx:
 <section class="card">
   <h2>Next Horizons</h2>
   <ul class="quick-list">
-    <li>Hardening of native mobile (SwiftUI/Android) operatives.</li>
+    <li>Hardening of native mobile (SwiftUI) and Android operatives (In-Progress).</li>
     <li>Expansion of automated tournament and bracket support.</li>
     <li>Advanced strategic AI heuristics for solo play.</li>
   </ul>
