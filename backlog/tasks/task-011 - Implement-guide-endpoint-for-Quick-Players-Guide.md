@@ -1,9 +1,10 @@
 ---
 id: TASK-011
 title: Implement /guide endpoint for Quick Players Guide
-status: To Do
+status: In Progress
 assignee: []
 created_date: '2026-04-28 23:36'
+updated_date: '2026-04-28 23:36'
 labels: []
 dependencies: []
 priority: medium
