@@ -81,6 +81,7 @@ description: "The core mechanics of Phalanx Duel. Red protects, Blue attacks. Ma
 </section>
 
 <div class="cta-row" style="margin-top: 4rem;">
-  <a class="button-link primary" href="{{ '/tools/battle-calculator/' | relative_url }}">Enter the Combat Lab &rarr;</a>
+  <a class="button-link primary" href="{{ '/guide' | relative_url }}">Quick Players Guide &rarr;</a>
+  <a class="button-link" href="{{ '/tools/battle-calculator/' | relative_url }}">Enter the Combat Lab</a>
   <a class="button-link" href="{{ '/play/' | relative_url }}">Launch Online Match</a>
 </div>

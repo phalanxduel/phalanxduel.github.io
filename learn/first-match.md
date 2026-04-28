@@ -18,7 +18,7 @@ Both players receive a **Hand of 12 cards**.
 *   Build a wall of defense while positioning high-value cards for tactical advantage.
 *   Once all 8 slots are occupied, you will have exactly 4 cards remaining in your hand.
 
-![Deployment with Hand]({{ '/assets/images/tutorial/deployment-with-hand.png' | relative_url }})
+![Deployment with Hand]({{ '/assets/images/tutorial/qa-formation.png' | relative_url }})
 
 *Pro Tip: Do not place your highest value card in the front rank where it is vulnerable. Position it in the back rank to create a second-wave attack vector.*
 
@@ -29,7 +29,7 @@ Turns alternate. During your turn, you will declare an attack.
 1.  **Select Attacker:** Choose a card in your **Front Rank**.
 2.  **Target Column:** You target an entire column, not an individual card.
 
-![Attack Phase]({{ '/assets/images/tutorial/attack-with-hand.png' | relative_url }})
+![Attack Phase]({{ '/assets/images/tutorial/qa-cascade.png' | relative_url }})
 
 **Example Engagement:**
 *   You attack with a **10 of Spades** in your front rank.
@@ -48,7 +48,7 @@ Because your attacker was a **Spade**, that final Core damage is doubled! The op
 
 After combat resolves, the defending column is breached. The opponent must use their **Reinforcement Phase** to deploy new cards from their hand into the empty slots.
 
-![Reinforce Phase]({{ '/assets/images/tutorial/reinforce-phase.png' | relative_url }})
+![Reinforce Phase]({{ '/assets/images/tutorial/qa-reinforce.png' | relative_url }})
 
 *   If they cannot fill the front rank, they leave a massive vector open for your next strike.
 *   At the end of the turn, players draw back up to their Hand Limit (4 cards).

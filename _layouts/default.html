@@ -81,13 +81,13 @@
     <script>
       document.addEventListener('DOMContentLoaded', function() {
         // Lightbox for history gallery and feature showcase
-        document.querySelectorAll('.history-gallery figure img, .feature-image-container img').forEach(function(img) {
+        document.querySelectorAll('.history-gallery figure img, .feature-image-container img, .notebook-viewer img').forEach(function(img) {
           img.style.cursor = 'pointer';
-          img.addEventListener('click', function() {
-            var lightboxImg = document.createElement('img');
-            lightboxImg.src = img.currentSrc || img.src;
-            lightboxImg.alt = img.alt || '';
-            basicLightbox.create(lightboxImg).show();
+          img.addEventListener('click', function(e) {
+            const clickedImg = e.currentTarget;
+            const src = clickedImg.currentSrc || clickedImg.src;
+            const alt = clickedImg.alt || '';
+            basicLightbox.create('<img src="' + src + '" alt="' + alt + '">').show();
           });
         });
       });

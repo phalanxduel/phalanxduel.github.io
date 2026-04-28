@@ -23,8 +23,8 @@ variants:
             href: "/play/"
             style: "primary"
             external: false
-          - label: "Study the Cascade"
-            href: "/learn/getting-started/"
+          - label: "Read the Rules"
+            href: "/guide"
             style: "secondary"
         friction_line: "No account required. Logic is the only weapon."
         preview_panel:
@@ -51,17 +51,20 @@ variants:
         features:
           - heading: "01. Formation"
             body: "Your 4x2 grid is your survival. A gap in the front rank is an invitation to destruction. Every card is a tactical decision."
-            image: "/assets/images/tutorial/deployment-with-hand.png"
+            image: "/assets/images/tutorial/qa-formation.png"
           - heading: "02. The Cascade"
             body: "Damage flows front-to-back. Suits like Diamonds and Clubs modify the kinetic energy as it breaches each rank."
-            image: "/assets/images/tutorial/attack-with-hand.png"
+            image: "/assets/images/tutorial/qa-cascade.png"
           - heading: "03. Determinism"
             body: "Identical inputs. Identical outcomes. Your victory is not a roll of the dice; it is the mathematical inevitable."
-            image: "/assets/images/tutorial/reinforce-phase.png"
+            image: "/assets/images/tutorial/qa-determinism.png"
         ctas:
           - label: "Enter the Combat Lab &rarr;"
             href: "/tools/battle-calculator/"
             style: "primary"
+
+      - type: "welcome_dialog"
+        heading: "WELCOME TO PHALANX DUEL"
 
       - type: "card"
         class: "card"
@@ -124,8 +127,8 @@ variants:
           - label: "Enter the Duel"
             href: "#play-the-duel"
             style: "primary"
-          - label: "Access Briefing"
-            href: "/learn/getting-started/"
+          - label: "Read the Rules"
+            href: "/guide"
             style: "secondary"
         friction_line: "No account required. Logic is the only weapon."
         preview_panel:
@@ -173,17 +176,20 @@ variants:
         features:
           - heading: "01. Formation"
             body: "Your 4x2 grid is your survival. Every card is a tactical data-point. Deploy carefully to protect your line."
-            image: "/assets/images/tutorial/deployment-with-hand.png"
+            image: "/assets/images/tutorial/qa-formation.png"
           - heading: "02. The Cascade"
             body: "Damage flows front-to-back. Choose between **Classic Mode** (Equal/Greater attack) or **Cumulative Mode** (Carryover damage)."
-            image: "/assets/images/tutorial/attack-with-hand.png"
+            image: "/assets/images/tutorial/qa-cascade.png"
           - heading: "03. Determinism"
             body: "Identical inputs. Identical outcomes. Your victory is not a roll of the dice; it is mathematical inevitability."
-            image: "/assets/images/tutorial/reinforce-phase.png"
+            image: "/assets/images/tutorial/qa-determinism.png"
         ctas:
           - label: "Enter the Combat Lab &rarr;"
             href: "/tools/battle-calculator/"
             style: "primary"
+
+      - type: "welcome_dialog"
+        heading: "WELCOME TO PHALANX DUEL"
 
       - type: "two_col_cards"
         class: "two-col"
@@ -243,7 +249,7 @@ variants:
             href: "/play/"
             style: "primary"
             external: false
-          - label: "Access Briefing"
-            href: "/learn/first-match/"
+          - label: "Read the Rules"
+            href: "/guide"
             style: "secondary"
         closing_microcopy: "Free. Fast. Fair."

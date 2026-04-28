@@ -74,9 +74,11 @@ Manual accessibility checklist before publish:
   - `faq.md`
   - `history.md`
   - `roadmap.md`
+  - `guide.md`
   - `quick-reference.md`
 - Shared UI:
   - `_layouts/default.html`
+  - `_includes/home/section-welcome-dialog.html`
   - `_includes/header.html`
   - `_includes/footer.html`
 - Styling:
@@ -93,7 +95,7 @@ Manual accessibility checklist before publish:
 
 Managed via `.tool-versions`:
 
-- Ruby `3.4.8`
+- Ruby `4.0.2`
 - Node.js `25.6.1`
 
 ## Historical Assets Policy
