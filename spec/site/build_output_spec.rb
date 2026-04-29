@@ -15,7 +15,7 @@ RSpec.describe "Built site output" do
     expect(doc.at_css("h1")&.text).to include("Initialize Global Combat.")
     expect(doc.text).to include("Red protects. Blue attacks. Execute the briefing.")
     expect(doc.text).to include("Formation is Destiny")
-    expect(doc.text).to include("Access Briefing")
+    expect(doc.text).to include("Read the Rules")
     expect(doc.text).to include("Combat Lab")
   end
 
