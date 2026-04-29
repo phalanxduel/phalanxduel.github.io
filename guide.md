@@ -1,7 +1,7 @@
 ---
 title: Quick Players Guide
 description: Essential briefing for Phalanx Duel operatives. Setup, turn flow, and suit timing.
-permalink: /guide
+permalink: /guide/
 ---
 
 # Quick Players Guide (v1.0)
