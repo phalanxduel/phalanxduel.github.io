@@ -1,7 +1,12 @@
 <header class="site-header">
   <div class="container header-inner">
     <a class="brand" href="{{ '/' | relative_url }}">Phalanx Duel</a>
-    <nav aria-label="Primary Navigation">
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-nav">
+      <span class="hamburger-bar"></span>
+      <span class="hamburger-bar"></span>
+      <span class="hamburger-bar"></span>
+    </button>
+    <nav aria-label="Primary Navigation" id="primary-nav">
       <ul class="nav-list" style="display: flex; align-items: center; gap: 2rem;">
         <li><a href="{{ '/learn/getting-started/' | relative_url }}" style="font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none;">Briefing</a></li>
         <li><a href="{{ '/tools/battle-calculator/' | relative_url }}" style="font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none;">Combat Lab</a></li>
