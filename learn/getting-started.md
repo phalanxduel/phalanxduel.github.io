@@ -32,6 +32,6 @@ We have weaponized the standard deck through **Suit Boundaries**.
 **Mastery starts with math, not luck.**
 
 ## 📽️ Integrated Tactical Briefings
-Phalanx Duel v1.0 features high-fidelity video tutorials built directly into the game client. Look for the **"?" (Help)** icon in the Combat Console to access phase-specific video intel on Deployment, Attack, and Cascade resolution.
+Phalanx Duel v1.0 includes phase-specific tactical briefing overlays built directly into the game client. They appear automatically on first visit and can be re-accessed via the **"?" (Help)** icon in the Combat Console — covering Deployment, Attack, and Cascade phases.
 
 [Initialize Your First Match]({{ '/learn/first-match/' | relative_url }}) or [Access the Combat Lab]({{ '/tools/battle-calculator/' | relative_url }}).

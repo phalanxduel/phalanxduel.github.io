@@ -7,7 +7,7 @@ description: Frequently asked questions about v1.0, matchmaking, cross-platform 
 
 <details>
   <summary>What is the best way to learn the game?</summary>
-  <p>Start with the <a href="{{ '/learn/first-match/' | relative_url }}">Official Step-by-Step Tutorial</a> and the <strong>Integrated Video Briefings</strong> within the game client. You can also use the <a href="{{ '/tools/battle-calculator/' | relative_url }}">Battle Calculator</a> to test complex tactical scenarios.</p>
+  <p>Start with the <a href="{{ '/learn/first-match/' | relative_url }}">Official Step-by-Step Tutorial</a> and the <strong>Tactical Briefing overlays</strong> built into the game client — they appear automatically on your first deployment and attack phase. You can also use the <a href="{{ '/tools/battle-calculator/' | relative_url }}">Battle Calculator</a> to test complex tactical scenarios.</p>
 </details>
 
 <details>
