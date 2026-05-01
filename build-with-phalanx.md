@@ -17,11 +17,11 @@ description: "Technical overview and canonical documentation links for developer
 <section class="card">
   <h2>Canonical Developer Docs</h2>
   <ul class="quick-list">
-    <li><a href="https://github.com/phalanxduel/phalanxduel/blob/main/docs/system/ARCHITECTURE.md" target="_blank" rel="noopener noreferrer">Architecture</a></li>
-    <li><a href="https://github.com/phalanxduel/phalanxduel/blob/main/docs/system/SITE_FLOW.md" target="_blank" rel="noopener noreferrer">Site Flow</a></li>
-    <li><a href="https://github.com/phalanxduel/phalanxduel/blob/main/docs/system/CLIENT_COMPATIBILITY.md" target="_blank" rel="noopener noreferrer">Client Compatibility</a></li>
-    <li><a href="https://github.com/phalanxduel/phalanxduel/blob/main/docs/RULES.md" target="_blank" rel="noopener noreferrer">Rules</a></li>
-    <li><a href="https://github.com/phalanxduel/phalanxduel/blob/main/docs/system/DEVELOPER_GUIDE.md" target="_blank" rel="noopener noreferrer">Developer Guide</a></li>
+    <li><a href="https://github.com/phalanxduel/phalanxduel/blob/main/docs/architecture/principles.md" target="_blank" rel="noopener noreferrer">Architecture</a></li>
+    <li><a href="https://github.com/phalanxduel/phalanxduel/blob/main/docs/architecture/site-flow.md" target="_blank" rel="noopener noreferrer">Site Flow</a></li>
+    <li><a href="https://github.com/phalanxduel/phalanxduel/blob/main/docs/reference/client-compatibility.md" target="_blank" rel="noopener noreferrer">Client Compatibility</a></li>
+    <li><a href="https://github.com/phalanxduel/phalanxduel/blob/main/docs/gameplay/rules.md" target="_blank" rel="noopener noreferrer">Rules</a></li>
+    <li><a href="https://github.com/phalanxduel/phalanxduel/blob/main/docs/tutorials/developer-guide.md" target="_blank" rel="noopener noreferrer">Developer Guide</a></li>
   </ul>
 </section>
 
@@ -32,7 +32,7 @@ description: "Technical overview and canonical documentation links for developer
     <li>Playtest-driven quality improvements.</li>
     <li>Documentation and onboarding consistency.</li>
   </ul>
-  <p><a href="https://github.com/phalanxduel/phalanxduel/blob/main/docs/system/DEVELOPER_GUIDE.md" target="_blank" rel="noopener noreferrer">See developer guide.</a></p>
+  <p><a href="https://github.com/phalanxduel/phalanxduel/blob/main/docs/tutorials/developer-guide.md" target="_blank" rel="noopener noreferrer">See developer guide.</a></p>
 </section>
 
 <section class="card">

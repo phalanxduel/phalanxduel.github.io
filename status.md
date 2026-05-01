@@ -39,9 +39,9 @@ description: "Current project phase, stability, and what to expect from Phalanx:
 <section class="card">
   <h2>Canonical Technical References</h2>
   <ul class="quick-list">
-    <li><a href="https://github.com/phalanxduel/phalanxduel/blob/main/docs/RULES.md" target="_blank" rel="noopener noreferrer">Rules Specification</a></li>
-    <li><a href="https://github.com/phalanxduel/phalanxduel/blob/main/docs/api/openapi.yaml" target="_blank" rel="noopener noreferrer">OpenAPI Contract</a></li>
-    <li><a href="https://github.com/phalanxduel/phalanxduel/blob/main/docs/system/ARCHITECTURE.md" target="_blank" rel="noopener noreferrer">System Architecture</a></li>
-    <li><a href="https://github.com/phalanxduel/phalanxduel/blob/main/docs/system/TELEMETRY.md" target="_blank" rel="noopener noreferrer">Telemetry & Observability</a></li>
+    <li><a href="https://github.com/phalanxduel/phalanxduel/blob/main/docs/gameplay/rules.md" target="_blank" rel="noopener noreferrer">Rules Specification</a></li>
+    <li><a href="https://github.com/phalanxduel/phalanxduel/blob/main/docs/api/openapi.json" target="_blank" rel="noopener noreferrer">OpenAPI Contract</a></li>
+    <li><a href="https://github.com/phalanxduel/phalanxduel/blob/main/docs/architecture/principles.md" target="_blank" rel="noopener noreferrer">System Architecture</a></li>
+    <li><a href="https://github.com/phalanxduel/phalanxduel/blob/main/docs/ops/slo.md" target="_blank" rel="noopener noreferrer">Telemetry & Observability</a></li>
   </ul>
 </section>
