@@ -10,7 +10,7 @@ description: "High-level roadmap for the Phalanx: Duel v1.0 era and beyond."
   <ul class="quick-list">
     <li><strong>Deterministic Core:</strong> Fully verified 0% RNG engine.</li>
     <li><strong>Matchmaking:</strong> Glicko-2 ratings and public lobbies are live.</li>
-    <li><strong>Tutorials:</strong> High-fidelity video briefings integrated into the client.</li>
+    <li><strong>Tutorials:</strong> Phase-specific tactical briefing overlays integrated into the client.</li>
     <li><strong>Persistence:</strong> State rehydration and reconnect are production-hardened.</li>
   </ul>
 </section>
