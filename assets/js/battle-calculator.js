@@ -86,7 +86,10 @@
     return '<div class="table-wrap" style="margin-top: 1rem;"><table><thead><tr><th>Stage</th><th>Damage Before</th><th>Damage After</th><th>Teaching Note</th></tr></thead><tbody>' + rows + "</tbody></table></div>";
   }
   
-  function generateTeachingNarrative(attacker, front, back, result) {
+  // PedagogicalAdapter Interface
+  // This layer bridges simulation engine results and educational UI components.
+  const PedagogicalAdapter = {
+    getBeginnerNarrative: function(attacker, front, back, result) {
       let narrative = "<p style='font-size: 1.1rem; line-height: 1.6;'>";
       
       narrative += "The <strong>" + attacker.verbose + "</strong> attacks the column. ";
@@ -120,6 +123,11 @@
       }
       
       return narrative + "</p>";
+    }
+  };
+
+  function generateTeachingNarrative(attacker, front, back, result) {
+      return PedagogicalAdapter.getBeginnerNarrative(attacker, front, back, result);
   }
 
   function updateVisualizer(attacker, front, back) {
