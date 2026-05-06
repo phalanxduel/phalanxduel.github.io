@@ -123,6 +123,28 @@
       }
       
       return narrative + "</p>";
+    },
+
+    // Mastery layer provides deep tactical insights and efficiency metrics
+    getMasteryNarrative: function(attacker, front, back, result) {
+      const efficiency = front && front.value > 0 ? (result.lpDamage / attacker.value).toFixed(2) : "1.00";
+      
+      let narrative = "<div style='font-family: var(--font-mono); font-size: 0.9rem;'>";
+      narrative += "<strong>// TACTICAL ANALYSIS</strong><br/>";
+      narrative += "Damage Efficiency (LP/Atk): " + efficiency + "<br/>";
+      
+      if (result.specials && (result.specials.frontAceProtected || result.specials.backAceProtected)) {
+        narrative += "Ace Protection engaged: Defensive stability confirmed.<br/>";
+      }
+
+      if (result.lpDamage === 0 && (front || back)) {
+        narrative += "Optimal Shielding: Full mitigation achieved.";
+      } else if (result.lpDamage > 0) {
+        narrative += "Column breached: Aggressive stance recommended.";
+      }
+      
+      narrative += "</div>";
+      return narrative;
     }
   };
 
