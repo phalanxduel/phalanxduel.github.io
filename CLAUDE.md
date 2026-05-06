@@ -1,4 +1,18 @@
 
+## Agent skills
+
+### Issue tracker
+
+This project uses the Backlog.md MCP for all task management. See `docs/agents/issue-tracker.md`.
+
+### Triage labels
+
+Canonical triage roles mapping to Backlog task statuses. See `docs/agents/triage-labels.md`.
+
+### Domain docs
+
+Single-context documentation layout. See `docs/agents/domain.md`.
+
 <!-- BACKLOG.MD MCP GUIDELINES START -->
 
 <CRITICAL_INSTRUCTION>
