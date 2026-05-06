@@ -155,7 +155,30 @@
     vis.classList.add("cv-animating");
   }
 
+  // PedagogicalAdapter Interface (Proposed)
+  // This layer will bridge the gap between simulation engine results and educational UI components.
+  const PedagogicalAdapter = {
+    // Defines the contract for transforming a raw battle simulation result 
+    // into structured tutorial narrative tokens.
+    getNarrative: function(attacker, front, back, result) {
+      // Implementation will be filled in Task-013
+      return []; 
+    }
+  };
+
   function renderResult(root, attacker, front, back, mode, result) {
+    // SimulationOutcome: The canonical data model returned by PhxBattle.resolveBattle
+    // result: {
+    //   mode: string,
+    //   lpDamage: number,
+    //   frontHealth: number | null,
+    //   backHealth: number | null,
+    //   log: string[],
+    //   progression: Array<{ stage: string, before: any, after: any, note: string }>,
+    //   survivors: { attacker: boolean, front: boolean | null, back: boolean | null },
+    //   specials: { frontAceProtected: boolean, backAceProtected: boolean }
+    // }
+
     // Update the visualizer first
     updateVisualizer(attacker, front, back);
 
