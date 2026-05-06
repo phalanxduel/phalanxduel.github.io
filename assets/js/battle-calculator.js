@@ -225,6 +225,7 @@ import { resolveBattle } from './battle-resolver.js?v=1.1';
   }
 
   function init() {
+    console.log("Battle Calculator: Initializing...");
     const attackerSelect = document.getElementById("attacker-card");
     const frontSelect = document.getElementById("front-card");
     const backSelect = document.getElementById("back-card");
@@ -233,8 +234,10 @@ import { resolveBattle } from './battle-resolver.js?v=1.1';
     const resultRoot = document.getElementById("battle-result");
 
     if (!attackerSelect || !frontSelect || !backSelect || !modeSelect || !button || !resultRoot) {
+      console.log("Battle Calculator: Missing DOM elements!");
       return;
     }
+    console.log("Battle Calculator: DOM elements found.");
 
     populateCardSelect(attackerSelect, false);
     populateCardSelect(frontSelect, true);
