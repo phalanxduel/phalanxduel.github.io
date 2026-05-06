@@ -1,5 +1,6 @@
+import { resolveBattle } from './battle-resolver.js?v=1.1';
+
 (function () {
-  console.log("Battle Calculator JS Loaded");
   const suits = [
     { code: "D", name: "Diamond" },
     { code: "H", name: "Heart" },
@@ -70,11 +71,6 @@
     });
   }
 
-  function modeLabel(mode) {
-    if (mode === "canonical_v1_0" || mode === "intro_rules") return "Canonical v1.0";
-    return "Historical Prototype";
-  }
-
   function renderProgression(result) {
     const steps = Array.isArray(result.progression) ? result.progression : [];
     if (!steps.length) return "<p class=\"small-note\">No progression data available.</p>";
@@ -87,7 +83,6 @@
   }
   
   // PedagogicalAdapter Interface
-  // This layer bridges simulation engine results and educational UI components.
   const PedagogicalAdapter = {
     getBeginnerNarrative: function(attacker, front, back, result) {
       let narrative = "<p style='font-size: 1.1rem; line-height: 1.6;'>";
@@ -125,7 +120,6 @@
       return narrative + "</p>";
     },
 
-    // Mastery layer provides deep tactical insights and efficiency metrics
     getMasteryNarrative: function(attacker, front, back, result) {
       const efficiency = front && front.value > 0 ? (result.lpDamage / attacker.value).toFixed(2) : "1.00";
       
@@ -160,9 +154,8 @@
 
     if (!vis || !vAtk || !vFront || !vBack) return;
 
-    // Reset animation state
     vis.classList.remove("cv-animating");
-    void vis.offsetWidth; // Trigger reflow
+    void vis.offsetWidth; 
 
     const setCard = (el, card) => {
       if (!card) {
@@ -181,35 +174,10 @@
     setCard(vFront, front);
     setCard(vBack, back);
 
-    // Re-enable animation
     vis.classList.add("cv-animating");
   }
 
-  // PedagogicalAdapter Interface (Proposed)
-  // This layer will bridge the gap between simulation engine results and educational UI components.
-  const PedagogicalAdapter = {
-    // Defines the contract for transforming a raw battle simulation result 
-    // into structured tutorial narrative tokens.
-    getNarrative: function(attacker, front, back, result) {
-      // Implementation will be filled in Task-013
-      return []; 
-    }
-  };
-
   function renderResult(root, attacker, front, back, mode, result) {
-    // SimulationOutcome: The canonical data model returned by PhxBattle.resolveBattle
-    // result: {
-    //   mode: string,
-    //   lpDamage: number,
-    //   frontHealth: number | null,
-    //   backHealth: number | null,
-    //   log: string[],
-    //   progression: Array<{ stage: string, before: any, after: any, note: string }>,
-    //   survivors: { attacker: boolean, front: boolean | null, back: boolean | null },
-    //   specials: { frontAceProtected: boolean, backAceProtected: boolean }
-    // }
-
-    // Update the visualizer first
     updateVisualizer(attacker, front, back);
 
     const logItems = result.log.map(function (entry) {
@@ -257,7 +225,6 @@
   }
 
   function init() {
-    console.log("Battle Calculator: Initializing...");
     const attackerSelect = document.getElementById("attacker-card");
     const frontSelect = document.getElementById("front-card");
     const backSelect = document.getElementById("back-card");
@@ -266,7 +233,6 @@
     const resultRoot = document.getElementById("battle-result");
 
     if (!attackerSelect || !frontSelect || !backSelect || !modeSelect || !button || !resultRoot) {
-      console.error("Battle Calculator: Missing DOM elements!");
       return;
     }
 
@@ -280,7 +246,6 @@
     modeSelect.value = "canonical_v1_0";
 
     function runSimulation(event) {
-      console.log("Battle Calculator: Running simulation...");
       const attacker = parseCard(attackerSelect.value);
       const front = parseCard(frontSelect.value);
       const back = parseCard(backSelect.value);
@@ -291,12 +256,7 @@
         return;
       }
 
-      if (!window.PhxBattle || typeof window.PhxBattle.resolveBattle !== "function") {
-        resultRoot.innerHTML = '<p class="small-note">Battle engine unavailable on this page. The calculator requires the PhxBattle script to be loaded.</p>';
-        return;
-      }
-
-      const result = window.PhxBattle.resolveBattle({
+      const result = resolveBattle({
         attacker: attacker,
         front: front,
         back: back,
@@ -304,32 +264,9 @@
       });
       
       renderResult(resultRoot, attacker, front, back, mode, result);
-
-      resultRoot.classList.remove("calculation-update");
-      void resultRoot.offsetWidth; 
-      resultRoot.classList.add("calculation-update");
-
-      if (event && event.type === "click") {
-        resultRoot.scrollIntoView({ behavior: "smooth", block: "nearest" });
-      }
     }
 
     button.addEventListener("click", runSimulation);
-
-    // Rules Help Toggle
-    const helpToggle = document.getElementById("rules-help-toggle");
-    const helpPanel = document.getElementById("rules-help-panel");
-    if (helpToggle && helpPanel) {
-      helpToggle.addEventListener("click", function() {
-        const isHidden = helpPanel.style.display === "none";
-        helpPanel.style.display = isHidden ? "block" : "none";
-        helpToggle.textContent = isHidden ? "[X] CLOSE_INFO" : "[?] SYSTEM_INFO";
-      });
-    }
-
-    [attackerSelect, frontSelect, backSelect, modeSelect].forEach(function (el) {
-      el.addEventListener("change", runSimulation);
-    });
 
     // Initial sync
     const initialAtk = parseCard(attackerSelect.value);
@@ -338,9 +275,4 @@
     updateVisualizer(initialAtk, initialFront, initialBack);
   }
 
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", init);
-  } else {
-    init();
-  }
-})();
+  document.addEventListener("DOMContentLoaded", init);
