@@ -36,6 +36,24 @@ This inventory defines the **intent, scenario, and pedagogical purpose** for vis
 
 ---
 
+## Visual Style & Composition Guidelines
+
+To ensure the generated assets meet our "Tactical Brutalism" identity, provide the following stylistic context for critical assets:
+
+*   **`tut-foundations-cascade` (MP4)**:
+    *   **Focus**: The path of the damage token from front rank to back rank.
+    *   **Composition**: Keep the board centered. Use motion blur on the "damage token" to emphasize speed and consequence.
+    *   **Style**: High-contrast. The impact point should feel sharp and immediate.
+*   **`mkt-hero-breach` (MP4)**:
+    *   **Focus**: The sudden collapse of a defender column.
+    *   **Composition**: Low-angle or "shaking" camera effect to convey the weight of the suit-clash.
+    *   **Style**: Cinematic. Include the "Breach" pulse effect from the visualizer.
+*   **`mkt-suit-interaction` (PNG)**:
+    *   **Focus**: A 2x2 grid, each showing one suit interacting with a defender.
+    *   **Composition**: Clean, minimal UI. No extraneous labels—let the suit symbols and colors carry the narrative.
+    *   **Style**: "Flat" but with heavy glow/bloom on the active suit symbol.
+
+These guidelines are suggestions for the automation engine to prioritize visual clarity and narrative impact.
 
 ---
 
