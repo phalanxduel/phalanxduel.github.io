@@ -1,4 +1,4 @@
-import { resolveBattle } from './battle-resolver.js?v=1.1';
+import { resolveBattle } from '/assets/js/battle-resolver.js';
 
 (function () {
   const suits = [
