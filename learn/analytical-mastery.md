@@ -12,6 +12,8 @@ Every attack represents a resource expenditure. Mastery requires you to track yo
 - High efficiency breaches the column cleanly.
 - Low efficiency signifies "waste" that can be turned against you by an observant opponent.
 
+{% include render-asset.html id="tut-mastery-briefing" show_caption=true %}
+
 ## 2. Stability Analysis: Ace Protection
 Understanding when your core defensive structures are "stable" is key. The `Engine Trace` and `Tactical Briefing` provide real-time status on **Ace Protection**. Mastery is knowing when your defensive formation is immune to destruction, allowing for more aggressive board positioning.
 

@@ -1,0 +1,128 @@
+# Phalanx Duel Canonical Asset Registry
+# This file is the single source of truth for all site-side media assets.
+
+- id: tut-foundations-setup
+  type: webm
+  path: /assets/videos/tutorial/tut-foundations-setup.webm
+  title: Deployment Basics
+  description: Standard column setup showing clear separation of Front/Back ranks.
+  category: tutorial
+  status: active
+  autoplay: true
+  loop: true
+  muted: true
+  poster: /assets/images/tutorial/qa-formation.png # Graceful fallback/legacy poster
+
+- id: tut-foundations-cascade
+  type: webm
+  path: /assets/videos/tutorial/tut-foundations-cascade.webm
+  title: The Combat Cascade
+  description: A clean breach showing damage spilling from Front to Back to LP.
+  category: tutorial
+  status: active
+  autoplay: true
+  loop: true
+  muted: true
+  poster: /assets/images/tutorial/qa-cascade.png # Graceful fallback/legacy poster
+
+- id: mkt-hero-breach
+  type: webm
+  path: /assets/videos/tutorial/mkt-hero-breach.webm
+  title: Massive Column Breach
+  description: High-stakes column breach resulting in massive damage.
+  category: marketing
+  status: active
+  autoplay: true
+  loop: true
+  muted: true
+
+- id: tut-tactics-clubs
+  type: webm
+  title: Club Doubling
+  description: An attack where the club suit triggers doubling carryover.
+  category: tutorial
+  status: missing
+  priority: high
+
+- id: tut-tactics-protection
+  type: webm
+  title: Ace Protection
+  description: An attack where an Ace defender resists destruction in Front rank.
+  category: tutorial
+  status: missing
+  priority: high
+
+- id: tut-reinforce-basics
+  type: png
+  title: Reinforcement
+  description: Reinforce Phase mechanics demonstration.
+  category: tutorial
+  status: missing
+  priority: medium
+
+- id: tut-mastery-briefing
+  type: png
+  title: Mastery Dashboard
+  description: Dashboard view showing high Damage Efficiency metrics.
+  category: tutorial
+  status: missing
+  priority: medium
+
+- id: mkt-suit-shield
+  type: png
+  title: Suit Shielding
+  description: A Heart suit card absorbing critical damage.
+  category: marketing
+  status: missing
+  priority: high
+
+- id: mkt-spectator-view
+  type: png
+  title: Spectator Mode
+  description: A real-time spectator view showing active battle metadata.
+  category: marketing
+  status: missing
+  priority: medium
+
+- id: mkt-suit-interaction
+  type: png
+  title: Suit System Complexity
+  description: Composite grid showing all 4 suits in play.
+  category: marketing
+  status: missing
+  priority: high
+
+- id: eng-trace-sample
+  type: png
+  title: Engine Trace Sample
+  description: A clear, readable engine trace showing damage resolution.
+  category: engine
+  status: missing
+  priority: medium
+
+- id: eng-spectator-overlay
+  type: png
+  title: Spectator UI Overlay
+  description: Design-focused UI overlay for the spectator interface.
+  category: engine
+  status: missing
+  priority: low
+
+# Legacy Asset Tracking
+- id: legacy-qa-cascade
+  path: /assets/images/tutorial/qa-cascade.png
+  status: replaced
+  replaced_by: tut-foundations-cascade
+
+- id: legacy-qa-formation
+  path: /assets/images/tutorial/qa-formation.png
+  status: replaced
+  replaced_by: tut-foundations-setup
+
+- id: legacy-qa-reinforce
+  path: /assets/images/tutorial/qa-reinforce.png
+  status: stale
+
+- id: legacy-qa-determinism
+  path: /assets/images/tutorial/qa-determinism.png
+  status: stale
