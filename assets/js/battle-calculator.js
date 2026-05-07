@@ -141,8 +141,25 @@ const PedagogicalAdapter = {
   }
 };
 
+// ProgressionManager: Orchestrates the tutorial progression state
+const ProgressionManager = {
+  currentStep: "beginner", // 'beginner' | 'mastery'
+  
+  setStep: function(step) {
+    this.currentStep = step;
+    console.log("ProgressionManager: Step set to", step);
+  },
+  
+  getAdapter: function(adapter) {
+    return this.currentStep === "mastery" 
+      ? adapter.getMasteryNarrative 
+      : adapter.getBeginnerNarrative;
+  }
+};
+
 function generateTeachingNarrative(attacker, front, back, result) {
-    return PedagogicalAdapter.getBeginnerNarrative(attacker, front, back, result);
+    const narrativeFunc = ProgressionManager.getAdapter(PedagogicalAdapter);
+    return narrativeFunc(attacker, front, back, result);
 }
 
 function updateVisualizer(attacker, front, back) {
