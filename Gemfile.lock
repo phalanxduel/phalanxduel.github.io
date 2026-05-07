@@ -91,7 +91,7 @@ GEM
       sass-embedded (~> 1.75)
     jekyll-watch (2.2.1)
       listen (~> 3.0)
-    json (2.19.4)
+    json (2.19.5)
     kramdown (2.5.2)
       rexml (>= 3.4.4)
     kramdown-parser-gfm (1.1.0)
@@ -106,11 +106,11 @@ GEM
     logger (1.7.0)
     mercenary (0.4.0)
     metrics (0.15.0)
-    nokogiri (1.19.2-arm64-darwin)
+    nokogiri (1.19.3-arm64-darwin)
       racc (~> 1.4)
-    nokogiri (1.19.2-x86_64-darwin)
+    nokogiri (1.19.3-x86_64-darwin)
       racc (~> 1.4)
-    nokogiri (1.19.2-x86_64-linux-gnu)
+    nokogiri (1.19.3-x86_64-linux-gnu)
       racc (~> 1.4)
     overcommit (0.69.0)
       childprocess (>= 0.6.3, < 6)
@@ -240,7 +240,7 @@ CHECKSUMS
   jekyll (4.4.1) sha256=4c1144d857a5b2b80d45b8cf5138289579a9f8136aadfa6dd684b31fe2bc18c1
   jekyll-sass-converter (3.1.0) sha256=83925d84f1d134410c11d0c6643b0093e82e3a3cf127e90757a85294a3862443
   jekyll-watch (2.2.1) sha256=bc44ed43f5e0a552836245a54dbff3ea7421ecc2856707e8a1ee203a8387a7e1
-  json (2.19.4) sha256=670a7d333fb3b18ca5b29cb255eb7bef099e40d88c02c80bd42a3f30fe5239ac
+  json (2.19.5) sha256=218a18553e4801d579ca7e0f5bc72bafd776d7397238a1fb4e74db5b0a812c59
   kramdown (2.5.2) sha256=1ba542204c66b6f9111ff00dcc26075b95b220b07f2905d8261740c82f7f02fa
   kramdown-parser-gfm (1.1.0) sha256=fb39745516427d2988543bf01fc4cf0ab1149476382393e0e9c48592f6581729
   language_server-protocol (3.17.0.5) sha256=fd1e39a51a28bf3eec959379985a72e296e9f9acfce46f6a79d31ca8760803cc
@@ -250,9 +250,9 @@ CHECKSUMS
   logger (1.7.0) sha256=196edec7cc44b66cfb40f9755ce11b392f21f7967696af15d274dde7edff0203
   mercenary (0.4.0) sha256=b25a1e4a59adca88665e08e24acf0af30da5b5d859f7d8f38fba52c28f405138
   metrics (0.15.0) sha256=61ded5bac95118e995b1bc9ed4a5f19bc9814928a312a85b200abbdac9039072
-  nokogiri (1.19.2-arm64-darwin) sha256=58d8ea2e31a967b843b70487a44c14c8ba1866daa1b9da9be9dbdf1b43dee205
-  nokogiri (1.19.2-x86_64-darwin) sha256=7d9af11fda72dfaa2961d8c4d5380ca0b51bc389dc5f8d4b859b9644f195e7a4
-  nokogiri (1.19.2-x86_64-linux-gnu) sha256=fa8feca882b73e871a9845f3817a72e9734c8e974bdc4fbad6e4bc6e8076b94f
+  nokogiri (1.19.3-arm64-darwin) sha256=71b9bd424b1b7abc18b05052a1a3cfd3627abdca62be280854cc411791357e42
+  nokogiri (1.19.3-x86_64-darwin) sha256=77f3fba57d46c53ab31e62fc6c28f705109d1bf6264356c76f132b2be5728d4d
+  nokogiri (1.19.3-x86_64-linux-gnu) sha256=2f5078620fe12e83669b5b17311b32532a8153d02eee7ad06948b926d6080976
   overcommit (0.69.0) sha256=1509042558eb04cb780a3e15943e2b7770298f93f55e5a286b4afeb57f4f8697
   parallel (2.1.0) sha256=b35258865c2e31134c5ecb708beaaf6772adf9d5efae28e93e99260877b09356
   parser (3.3.11.1) sha256=d17ace7aabe3e72c3cc94043714be27cc6f852f104d81aa284c2281aecc65d54
