@@ -69,10 +69,10 @@
     </script>
     {% endif %}
     {% if page.battle_calculator or page.qunit %}
-    <script src="{{ '/assets/js/battle-resolver.js' | relative_url }}?v=1.1"></script>
+    <script type="module" src="{{ '/assets/js/battle-resolver.js' | relative_url }}"></script>
     {% endif %}
     {% if page.battle_calculator %}
-    <script src="{{ '/assets/js/battle-calculator.js' | relative_url }}?v=1.1"></script>
+    <script type="module" src="{{ '/assets/js/battle-calculator.js' | relative_url }}"></script>
     {% endif %}
     {% if page.qunit %}
     <script src="https://code.jquery.com/qunit/qunit-2.24.1.js"></script>
