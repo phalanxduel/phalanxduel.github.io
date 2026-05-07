@@ -57,7 +57,15 @@ These guidelines are suggestions for the automation engine to prioritize visual 
 
 ---
 
-## Asset Delivery Protocol
+## 4. Legacy Asset Refresh
+The following existing assets do not match the "Tactical Brutalism" identity and must be replaced during the tutorial rollout.
+
+| Legacy Path | Target Asset ID | Purpose |
+| :--- | :--- | :--- |
+| `assets/images/tutorial/qa-cascade.png` | `tut-foundations-cascade` | Refresh cascade tutorial. |
+| `assets/images/tutorial/qa-formation.png` | `tut-foundations-setup` | Refresh deployment visualization. |
+| `assets/images/tutorial/qa-reinforce.png` | N/A | Review/Deprecated (Remove if redundant). |
+| `assets/images/tutorial/qa-determinism.png` | N/A | Review/Deprecated (Remove if redundant). |
 To integrate generated assets into the repository, follow this workflow:
 
 1. **Packaging**: Archive the assets into a ZIP file. Organize files within the archive using the following structure:
