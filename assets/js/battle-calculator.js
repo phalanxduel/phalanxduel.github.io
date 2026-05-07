@@ -176,19 +176,35 @@ function updateVisualizer(attacker, front, back) {
   vis.classList.add("cv-animating");
 }
 
+// SimulationPresenter: Transforms SimulationOutcome into View-ready objects
+const SimulationPresenter = {
+  getViewData: function(attacker, front, back, result) {
+    const logItems = result.log.map(entry => "<li>" + entry + "</li>").join("");
+
+    return {
+      lpDamage: result.lpDamage,
+      lpDamageColor: result.lpDamage > 0 ? 'var(--color-defense)' : 'var(--color-success)',
+      attackerLabel: attacker.verbose,
+      frontDefenderLabel: front ? front.verbose : "EMPTY",
+      frontOutcome: cardOutcome(front, result.frontHealth, result.survivors.front, result.specials && result.specials.frontAceProtected),
+      backDefenderLabel: back ? back.verbose : "EMPTY",
+      backOutcome: cardOutcome(back, result.backHealth, result.survivors.back, false),
+      logItems: logItems,
+      progressionHTML: renderProgression(result)
+    };
+  }
+};
+
 function renderResult(root, attacker, front, back, mode, result) {
   updateVisualizer(attacker, front, back);
-
-  const logItems = result.log.map(function (entry) {
-    return "<li style='margin-bottom: 0.5rem; border-left: 2px solid var(--grid-line-bold); padding-left: 1rem;'>" + entry + "</li>";
-  }).join("");
+  const viewData = SimulationPresenter.getViewData(attacker, front, back, result);
 
   root.innerHTML =
     '<div style="text-align: center; margin-bottom: 3rem; border-bottom: 1px solid var(--grid-line-bold); padding-bottom: 2rem;">' +
     '<span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--color-text-dim); text-transform: uppercase;">Simulation Outcome</span>' +
-    '<h3 style="font-size: 4rem; margin: 0.5rem 0 0; color: ' + (result.lpDamage > 0 ? 'var(--color-defense)' : 'var(--color-success)') + ';">' + result.lpDamage + ' LP Damage</h3>' +
+    '<h3 style="font-size: 4rem; margin: 0.5rem 0 0; color: ' + viewData.lpDamageColor + ';">' + viewData.lpDamage + ' LP Damage</h3>' +
     '</div>' +
-    
+
     '<div style="background: var(--color-surface-up); border-left: 4px solid var(--color-offense); padding: 2rem; margin-bottom: 3rem;">' +
     '<h4 style="margin-top: 0; color: var(--color-offense); font-family: var(--font-mono); font-size: 0.8rem; letter-spacing: 0.1em;">// TACTICAL BRIEFING</h4>' +
     generateTeachingNarrative(attacker, front, back, result) +
@@ -197,32 +213,31 @@ function renderResult(root, attacker, front, back, mode, result) {
     '<div class="result-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 3rem;">' +
     '<div class="result-block" style="background: var(--color-surface); border: 1px solid var(--color-border-up); padding: 1.5rem; border-top: 4px solid var(--color-offense);">' +
       '<span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--color-offense); display: block; margin-bottom: 1rem;">ATTACKER</span>' +
-      '<p style="margin: 0; font-weight: 900; text-transform: uppercase; font-size: 1.2rem;">' + attacker.verbose + '</p>' +
+      '<p style="margin: 0; font-weight: 900; text-transform: uppercase; font-size: 1.2rem;">' + viewData.attackerLabel + '</p>' +
       '<p style="margin: 0.5rem 0 0; font-family: var(--font-mono); font-size: 0.75rem; color: var(--color-success);">ACTIVE SOURCE</p>' +
     '</div>' +
     '<div class="result-block" style="background: var(--color-surface); border: 1px solid var(--color-border-up); padding: 1.5rem; border-top: 4px solid var(--color-defense);">' +
       '<span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--color-defense); display: block; margin-bottom: 1rem;">FRONT DEFENDER</span>' +
-      '<p style="margin: 0; font-weight: 900; text-transform: uppercase; font-size: 1.2rem;">' + (front ? front.verbose : "EMPTY") + '</p>' +
-      '<p style="margin: 0.5rem 0 0; font-family: var(--font-mono); font-size: 0.75rem;">' + cardOutcome(front, result.frontHealth, result.survivors.front, result.specials && result.specials.frontAceProtected) + "</p>" +
+      '<p style="margin: 0; font-weight: 900; text-transform: uppercase; font-size: 1.2rem;">' + viewData.frontDefenderLabel + '</p>' +
+      '<p style="margin: 0.5rem 0 0; font-family: var(--font-mono); font-size: 0.75rem;">' + viewData.frontOutcome + "</p>" +
     '</div>' +
     '<div class="result-block" style="background: var(--color-surface); border: 1px solid var(--color-border-up); padding: 1.5rem; border-top: 4px solid var(--color-defense);">' +
       '<span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--color-defense); display: block; margin-bottom: 1rem;">BACK DEFENDER</span>' +
-      '<p style="margin: 0; font-weight: 900; text-transform: uppercase; font-size: 1.2rem;">' + (back ? back.verbose : "EMPTY") + '</p>' +
-      '<p style="margin: 0.5rem 0 0; font-family: var(--font-mono); font-size: 0.75rem;">' + cardOutcome(back, result.backHealth, result.survivors.back, false) + "</p>" +
+      '<p style="margin: 0; font-weight: 900; text-transform: uppercase; font-size: 1.2rem;">' + viewData.backDefenderLabel + '</p>' +
+      '<p style="margin: 0.5rem 0 0; font-family: var(--font-mono); font-size: 0.75rem;">' + viewData.backOutcome + "</p>" +
     '</div>' +
     "</div>" +
-    
+
     '<div style="margin-top: 4rem;">' +
       '<h3 style="font-size: 0.8rem; letter-spacing: 0.2em; margin-bottom: 1.5rem; color: var(--color-text-dim); text-transform: uppercase;">Combat Cascade Log</h3>' +
-      renderProgression(result) +
+      viewData.progressionHTML +
     '</div>' +
-    
+
     '<div style="margin-top: 4rem; background: var(--color-bg); padding: 1.5rem; border: 1px solid var(--grid-line-bold);">' +
       '<h3 style="font-size: 0.8rem; letter-spacing: 0.2em; margin-bottom: 1.5rem; color: var(--color-text-dim); text-transform: uppercase;">Engine Trace</h3>' +
-      '<ul class="quick-list" style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--color-text-dim); list-style: none; padding: 0;">' + logItems + "</ul>" +
+      '<ul class="quick-list" style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--color-text-dim); list-style: none; padding: 0;">' + viewData.logItems + "</ul>" +
     '</div>';
 }
-
 function init() {
   console.log("Battle Calculator: Initializing...");
   const attackerSelect = document.getElementById("attacker-card");
