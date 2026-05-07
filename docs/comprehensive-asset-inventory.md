@@ -36,5 +36,17 @@ This inventory defines the **intent, scenario, and pedagogical purpose** for vis
 
 ---
 
-## Intent-Driven Automation
-The generator should ingest these intents and translate them into valid simulation states. The focus is on **composition, narrative accuracy, and visual clarity** within the game simulation, not implementation.
+
+---
+
+## Asset Delivery Protocol
+To integrate generated assets into the repository, follow this workflow:
+
+1. **Packaging**: Archive the assets into a ZIP file. Organize files within the archive using the following structure:
+   ```text
+   /tutorial/   (e.g., tut-foundations-setup.png)
+   /marketing/  (e.g., mkt-hero-breach.mp4)
+   /engine/     (e.g., eng-trace-sample.png)
+   ```
+2. **Naming**: Use the `Asset ID` from the tables above as the filename (case-sensitive).
+3. **Delivery**: Upload the archive directly to this session. I will handle the extraction, verification, path integration, and commit process.
