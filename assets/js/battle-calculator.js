@@ -278,4 +278,7 @@ import { resolveBattle } from '/assets/js/battle-resolver.js';
     updateVisualizer(initialAtk, initialFront, initialBack);
   }
 
-  document.addEventListener("DOMContentLoaded", init);
+document.addEventListener("DOMContentLoaded", () => {
+    console.log("DOM fully loaded and parsed");
+    init();
+});
