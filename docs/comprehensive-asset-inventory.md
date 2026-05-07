@@ -47,6 +47,12 @@ To integrate generated assets into the repository, follow this workflow:
    /tutorial/   (e.g., tut-foundations-setup.png)
    /marketing/  (e.g., mkt-hero-breach.mp4)
    /engine/     (e.g., eng-trace-sample.png)
+   generation-log.json  (Required Metadata Log)
    ```
 2. **Naming**: Use the `Asset ID` from the tables above as the filename (case-sensitive).
-3. **Delivery**: Upload the archive directly to this session. I will handle the extraction, verification, path integration, and commit process.
+3. **Asset Generation Log (`generation-log.json`)**: This file is **critical** for our collaborative process. Each asset entry must include:
+   - `id`: Matching Asset ID.
+   - `realized_aspect_ratio`: Actual ratio achieved if different from intent.
+   - `passes_required`: Number of simulation runs required to satisfy the visual scenario.
+   - `reality_notes`: Any constraints encountered where the simulation logic deviated from the visual intent (e.g., "Aspect ratio adjusted to prevent overlap of cascade logs").
+4. **Delivery**: Upload the archive directly to this session. I will use the `generation-log.json` to review the metadata before finalizing the integration.
