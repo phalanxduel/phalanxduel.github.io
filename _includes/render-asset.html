@@ -1,0 +1,43 @@
+{% assign asset = site.data.assets | where: "id", include.id | first %}
+
+{% if asset and asset.status == "active" %}
+  <div class="asset-container asset-{{ asset.category }}" data-asset-id="{{ asset.id }}">
+    {% if asset.type == "webm" or asset.type == "mp4" %}
+      <video 
+        class="responsive-video"
+        {% if asset.autoplay %}autoplay{% endif %}
+        {% if asset.loop %}loop{% endif %}
+        {% if asset.muted %}muted{% endif %}
+        playsinline
+        preload="metadata"
+        {% if asset.poster %}poster="{{ asset.poster | relative_url }}"{% endif %}
+        aria-label="{{ asset.description }}"
+      >
+        <source src="{{ asset.path | relative_url }}" type="video/{{ asset.type }}">
+        Your browser does not support the video tag.
+      </video>
+    {% elsif asset.type == "png" or asset.type == "jpg" %}
+      <img 
+        src="{{ asset.path | relative_url }}" 
+        alt="{{ asset.description }}" 
+        class="responsive-image"
+        loading="lazy"
+      >
+    {% endif %}
+    {% if include.show_caption %}
+      <p class="asset-caption">{{ asset.title }}</p>
+    {% endif %}
+  </div>
+{% elsif asset and asset.status == "missing" %}
+  <!-- Asset {{ asset.id }} is coming soon -->
+  <div class="asset-placeholder missing">
+    <p>Visual demonstration coming soon: {{ asset.title }}</p>
+  </div>
+{% else %}
+  <!-- Asset {{ include.id }} not found in registry -->
+  {% if include.fallback %}
+    <div class="asset-container">
+      <img src="{{ include.fallback | relative_url }}" alt="Fallback image" class="responsive-image">
+    </div>
+  {% endif %}
+{% endif %}

@@ -638,3 +638,82 @@ section {
 .feature-image-container img {
   transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.5s, filter 0.5s;
 }
+
+/* Asset Rendering System */
+.asset-container {
+  margin: 2rem 0;
+  border: 1px solid var(--color-border-up);
+  background: var(--color-surface);
+  position: relative;
+  overflow: hidden;
+}
+
+.asset-container.asset-marketing {
+  border: 2px solid var(--color-offense);
+  box-shadow: var(--glow-offense);
+}
+
+.responsive-video, .responsive-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.asset-caption {
+  padding: 1rem;
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  background: var(--color-surface-up);
+  border-top: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.asset-placeholder {
+  padding: 4rem 2rem;
+  border: 1px dashed var(--color-border-up);
+  background: rgba(20, 20, 30, 0.4);
+  text-align: center;
+  font-family: var(--font-mono);
+  color: var(--color-text-dim);
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+}
+
+.asset-placeholder.missing::before {
+  content: "// SIGNAL_LOST";
+  display: block;
+  margin-bottom: 1rem;
+  color: var(--color-defense);
+}
+
+.feature-image-container .asset-container {
+  margin: 0;
+  border: none;
+  background: transparent;
+  height: 100%;
+}
+
+.feature-image-container .responsive-video,
+.feature-image-container .responsive-image {
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.7;
+  filter: grayscale(100%) contrast(1.2);
+  transition: var(--transition);
+}
+
+.feature-item:hover .responsive-video,
+.feature-item:hover .responsive-image {
+  opacity: 1;
+  filter: grayscale(0%) contrast(1);
+}
+
+.hero-asset-container .asset-container {
+  margin: 0;
+  border: none;
+  background: transparent;
+}
