@@ -85,40 +85,56 @@ function renderProgression(result) {
 const PedagogicalAdapter = {
   getBeginnerNarrative: function(attacker, front, back, result) {
     let narrative = "<p style='font-size: 1.1rem; line-height: 1.6;'>";
-    
+
     narrative += "The <strong>" + attacker.verbose + "</strong> attacks the column. ";
-    
+
+    let frontStoppedFullAttack = false;
+
     if (!front) {
         narrative += "The Front Row is empty, so the attack immediately hits the Back Row. ";
     } else {
         if (result.survivors.front) {
-            narrative += "The <strong>" + front.verbose + "</strong> absorbs the hit and <strong>survives</strong>, stopping the attack completely. ";
-            return narrative + "</p>";
+            const isProtected = result.specials && result.specials.frontAceProtected;
+            // A card 'absorbs' and 'stops' ONLY if it wasn't protected and has positive health
+            if (!isProtected && result.frontHealth > 0) {
+              narrative += "The <strong>" + front.verbose + "</strong> absorbs the hit and <strong>survives</strong>, stopping the attack completely. ";
+              frontStoppedFullAttack = true;
+            } else {
+              narrative += "The <strong>" + front.verbose + "</strong> <strong>survives</strong> due to special protection rules, but the excess energy continues to the Back Rank. ";
+            }
         } else {
             narrative += "The attack <strong>destroys</strong> the <strong>" + front.verbose + "</strong>. ";
         }
     }
-    
+
+    if (frontStoppedFullAttack) {
+        return narrative + "</p>";
+    }
+
     if (!back && front) {
         narrative += "Because there is no Back Row defender, the carryover damage proceeds toward the Life Points. ";
-    } else if (back && !result.survivors.front) {
+    } else if (back) {
         if (result.survivors.back) {
-            narrative += "The carryover damage hits the <strong>" + back.verbose + "</strong>, which <strong>survives</strong> and stops the attack. ";
-            return narrative + "</p>";
+            const isProtected = result.specials && result.specials.backAceProtected;
+            if (!isProtected && result.backHealth > 0) {
+              narrative += "The carryover damage hits the <strong>" + back.verbose + "</strong>, which <strong>survives</strong> and stops the attack. ";
+              return narrative + "</p>";
+            } else {
+              narrative += "The <strong>" + back.verbose + "</strong> <strong>survives</strong> special rules, but the remaining damage breaches the Core. ";
+            }
         } else {
             narrative += "The carryover damage is strong enough to also <strong>destroy</strong> the <strong>" + back.verbose + "</strong>. ";
         }
     }
-    
+
     if (result.lpDamage > 0) {
         narrative += "The remaining damage breaks through the column entirely, resulting in <strong>" + result.lpDamage + " LP damage</strong> to the player. ";
     } else {
         narrative += "However, suit shields (like Hearts or Diamonds) mitigate the remaining damage, resulting in <strong>0 LP damage</strong>. ";
     }
-    
+
     return narrative + "</p>";
   },
-
   getMasteryNarrative: function(attacker, front, back, result) {
     const efficiency = front && front.value > 0 ? (result.lpDamage / attacker.value).toFixed(2) : "1.00";
     

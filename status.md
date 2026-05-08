@@ -1,6 +1,6 @@
 ---
 title: Status
-description: "Current project phase, stability, and what to expect from Phalanx: Duel v1.0."
+description: "Current project phase, stability, and what to expect from Phalanx: Duel v1.1.0."
 ---
 
 # Project Status

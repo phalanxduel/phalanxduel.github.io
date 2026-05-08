@@ -1,106 +1,75 @@
 ---
 title: Quick Reference
-description: Printable one-page reference for canonical Phalanx Duel v1.0 setup, turn flow, and suit timing.
+description: Printable one-page reference for canonical Phalanx Duel v1.1.0 setup, turn flow, and suit timing.
+layout: default
 ---
 
-# Quick Reference (v1.0)
+# Quick Reference (v1.1.0)
 
-<p class="print-note">Use browser print for a paper table aid. This page is formatted to stay compact and readable when printed.</p>
+<p class="small-note">Use this page at the table. Use <a href="{{ '/learn/rules/' | relative_url }}">Rules v1.1.0 Summary</a> for fuller explanations and <a href="{{ '/mastery/mastery/' | relative_url }}">Suits & Strategy</a> for mastery patterns.</p>
 
-<section class="two-col">
-  <article class="card">
-    <h2>Classic Setup</h2>
+<div class="grid-2">
+  <div class="card">
+    <h2>1. Setup & Deployment</h2>
     <ul class="quick-list">
-      <li>Two players.</li>
-      <li>Battlefield: 4 columns x 2 ranks (front/back).</li>
-      <li>Initial draw: 12 cards each (Classic default).</li>
-      <li>Deploy alternately until all 8 slots are filled and 4 cards remain in hand.</li>
-      <li>Classic initiative: P2 deploys first, P1 attacks first.</li>
+      <li><strong>Field:</strong> 4 Columns x 2 Ranks (Front/Back).</li>
+      <li><strong>Hand:</strong> 12 Cards.</li>
+      <li><strong>Phase:</strong> Alternate deploying 1 card until 8 slots filled.</li>
+      <li><strong>Hand Remainder:</strong> 4 cards.</li>
     </ul>
-  </article>
+  </div>
 
-  <article class="card">
-    <h2>Turn Lifecycle (7 Phases)</h2>
+  <div class="card">
+    <h2>2. Turn Sequence</h2>
     <ol class="quick-list">
-      <li>Start Turn</li>
-      <li>Attack Phase</li>
-      <li>Attack Resolution</li>
-      <li>Cleanup Phase</li>
-      <li>Reinforcement Phase</li>
-      <li>Draw Phase</li>
-      <li>End Turn</li>
+      <li><strong>Start Turn:</strong> Passive effects.</li>
+      <li><strong>Attack:</strong> Resolve one lane (Cascade).</li>
+      <li><strong>Cleanup:</strong> Clear destroyed cards.</li>
+      <li><strong>Reinforce:</strong> Deploy 1 card to any slot.</li>
+      <li><strong>Draw:</strong> Draw to hand size of 4.</li>
+      <li><strong>End Turn:</strong> Pass.</li>
     </ol>
-  </article>
-</section>
+  </div>
+</div>
 
-<section class="card">
-  <h2>Attack Path & Boundary Order</h2>
-  <ul class="quick-list">
-    <li><strong>Attacker source:</strong> Rank 0 (front) card in your chosen attacking column.</li>
-    <li><strong>Targeting:</strong> Choose a defending column.</li>
-    <li><strong>Target chain:</strong> Front card -> back card -> player.</li>
-    <li><strong>Carryover:</strong> Damage can continue after destruction.</li>
-    <li><strong>Boundary order:</strong> <strong>Shield -> Weapon -> Clamp</strong>.</li>
-  </ul>
-</section>
-
-<section class="card">
-  <h2>Suit Timing (Canonical)</h2>
+<div class="card">
+  <h2>3. The Cascade (Suit Timing)</h2>
   <div class="table-wrap">
     <table>
       <thead>
-        <tr><th>Suit</th><th>When It Applies</th><th>Effect</th></tr>
+        <tr><th>Trigger</th><th>Suit</th><th>Effect</th></tr>
       </thead>
       <tbody>
-        <tr><td>♦ Diamond</td><td>Card -> Card boundary</td><td>Reduces carryover before the next card.</td></tr>
-        <tr><td>♣ Club (attacker)</td><td>First eligible Card -> Card boundary after first destruction</td><td>Doubles carryover once per attack.</td></tr>
-        <tr><td>♥ Heart</td><td>Card -> Player boundary</td><td>If the last destroyed card before player is Heart, reduce final player damage.</td></tr>
-        <tr><td>♠ Spade (attacker)</td><td>Card -> Player boundary</td><td>Doubles damage that reaches the player.</td></tr>
+        <tr><td>Card -> Card</td><td>♦ Diamond</td><td>Reduces carryover to your Back Rank.</td></tr>
+        <tr><td>Card -> Card</td><td>♣ Club</td><td>Doubles carryover to opponent's Back Rank.</td></tr>
+        <tr><td>Card -> Player</td><td>♥ Heart</td><td>Reduces final damage to your LP.</td></tr>
+        <tr><td>Card -> Player</td><td>♠ Spade</td><td>Doubles final damage to opponent's LP.</td></tr>
       </tbody>
     </table>
   </div>
-  <p class="small-note">Hearts do not stack. Clubs apply at most once per attack.</p>
-</section>
+</div>
 
-<section class="two-col">
-  <article class="card">
-    <h2>Classic Special Cards</h2>
+<div class="grid-2">
+  <div class="card">
+    <h2>4. Special Rules</h2>
     <ul class="quick-list">
-      <li><strong>Ace:</strong> Front-rank Ace is destroyable only by a direct Ace attack (Classic Aces).</li>
-      <li><strong>Jack:</strong> Destroys Jack.</li>
-      <li><strong>Queen:</strong> Destroys Jack or Queen.</li>
-      <li><strong>King:</strong> Destroys Jack, Queen, or King.</li>
+      <li><strong>Ace:</strong> Only destroyed by a front-rank Ace.</li>
+      <li><strong>Face:</strong> Destroyer must be equal or lower rank (J < Q < K).</li>
+      <li><strong>No RNG:</strong> Math is final. No dice.</li>
     </ul>
-  </article>
+  </div>
 
-  <article class="card">
-    <h2>Pass & Draw Rules</h2>
+  <div class="card">
+    <h2>5. Quick Tips</h2>
     <ul class="quick-list">
-      <li>More than 3 consecutive passes = forfeit.</li>
-      <li>More than 5 total passes by one player = forfeit.</li>
-      <li>Draw until hand size reaches 4 or deck is empty.</li>
-      <li>Empty deck alone is not an automatic loss.</li>
+      <li><strong>Lanes:</strong> Every column is an independent battle.</li>
+      <li><strong>Breach:</strong> An empty column deals massive LP damage.</li>
+      <li><strong>Armor:</strong> Diamonds in front protect your back rank.</li>
     </ul>
-  </article>
-</section>
-
-<section class="formation">
-  <h2>Formation</h2>
-  <p class="row-label">Front row</p>
-  <div class="formation-grid">
-    <div class="slot">F1</div>
-    <div class="slot">F2</div>
-    <div class="slot">F3</div>
-    <div class="slot">F4</div>
   </div>
-  <p class="arrow">Target chain / carryover path: Front -> Back -> Player</p>
-  <p class="row-label">Back row</p>
-  <div class="formation-grid">
-    <div class="slot back">B1</div>
-    <div class="slot back">B2</div>
-    <div class="slot back">B3</div>
-    <div class="slot back">B4</div>
-  </div>
-</section>
+</div>
 
-<p class="small-note">Use this page at the table. Use <a href="{{ '/learn/rules/' | relative_url }}">Rules v1.0 Summary</a> for fuller explanations and <a href="{{ '/mastery/mastery/' | relative_url }}">Suits &amp; Strategy</a> for mastery patterns.</p>
+<div class="cta-row" style="margin-top: 4rem;">
+  <button class="button-link primary" onclick="window.print()">Print This Guide</button>
+  <a class="button-link" href="{{ '/tools/battle-calculator/' | relative_url }}">Open Combat Lab</a>
+</div>

@@ -25,7 +25,7 @@ The Phalanx system is deployed through specialized formats, each tailored for di
 **Phalanx: Duel** is the beating heart of the Phalanx ecosystem. It is the head-to-head competitive format and the canonical basis for **Official Phalanx Ranked** play.
 
 - **Structure:** Two-player tactical column battle.
-- **Canonical Rules:** Deterministic v1.0 specification with 7-phase turns and replay-verifiable outcomes.
+- **Canonical Rules:** Deterministic v1.1.0 specification with 7-phase turns and replay-verifiable outcomes.
 - **Classic Defaults:** 4 columns x 2 ranks, hand size 4, initial draw 12.
 - **Official Ranked:** Phalanx: Duel is the only format certified for Official Phalanx Ranked systems.
 

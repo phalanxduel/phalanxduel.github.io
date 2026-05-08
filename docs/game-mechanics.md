@@ -1,6 +1,6 @@
 # Phalanx Duel: Canonical Game Mechanics
 
-This document serves as the internal architectural and rules reference for Phalanx Duel (v1.0), derived from the canonical game engine.
+This document serves as the internal architectural and rules reference for Phalanx Duel (v1.1.0), derived from the canonical game engine.
 
 ## 1. Play Surface & Lifecycle
 ### Zones

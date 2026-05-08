@@ -78,7 +78,7 @@ stateDiagram-v2
     <li><strong>Player damage:</strong> Attack resolution can reduce player LP when carryover reaches the player boundary.</li>
     <li><strong>Pass limits:</strong> Exceeding consecutive or total pass limits results in forfeit.</li>
     <li><strong>System errors:</strong> Deterministic invariant violations terminate the match with an unrecoverable error event.</li>
-    <li><strong>Important:</strong> Empty deck alone is not an automatic loss in canonical v1.0.</li>
+    <li><strong>Important:</strong> Empty deck alone is not an automatic loss in canonical v1.1.0.</li>
   </ul>
 </section>
 
@@ -94,7 +94,7 @@ stateDiagram-v2
 <section class="card">
   <h2>Competitive Model (Glicko-2)</h2>
   <ul class="quick-list">
-    <li><strong>Ratings System:</strong> v1.0 implements a full Glicko-2 matchmaking system. (<a href="{{ '/competitive/' | relative_url }}">See Competitive Play</a>)</li>
+    <li><strong>Ratings System:</strong> v1.1.0 implements a full Glicko-2 matchmaking system. (<a href="{{ '/competitive/' | relative_url }}">See Competitive Play</a>)</li>
     <li><strong>Ranked Lobbies:</strong> Public matches contribute to a global leaderboard with volatility and rating deviation tracking.</li>
     <li><strong>Cross-Platform Rankings:</strong> Rankings are unified across Web, CLI (Go), and Mobile clients.</li>
   </ul>
