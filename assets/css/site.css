@@ -209,13 +209,13 @@ a:hover {
 }
 
 .button-link.secondary {
-  border-color: var(--color-text-dim);
-  color: var(--color-text-dim);
+  border-color: var(--color-text-muted);
+  color: var(--color-text-muted);
   box-shadow: none;
 }
 
 .button-link.secondary:hover {
-  background: var(--color-text-dim);
+  background: var(--color-text-muted);
   color: #000;
 }
 
