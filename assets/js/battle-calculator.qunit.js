@@ -59,7 +59,7 @@
         overflow = Math.max(0, overflow - totalHeartShield);
 
         // Spade doubling happens AFTER Heart mitigation
-        if (attacker.suit === "S") overflow *= 2;
+        if (attacker.suit === "S" && overflow > 0) overflow *= 2;
       }
 
       return overflow;
