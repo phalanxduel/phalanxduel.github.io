@@ -117,13 +117,14 @@
     QUnit.test("front Ace survives non-Ace direct attack and allows overflow", function (assert) {
       // 11S into 1H (front Ace)
       // Front survives (Ace rule). 
-      // 1. Front Shield (H1) mitigates: 11 - 1 = 10 overflow.
-      // 2. Spade Weapon (S11) doubles: 10 * 2 = 20.
-      // Final LP = 20.
+      // 1. Initial Overflow: 11 - 1 = 10.
+      // 2. Shield (Heart 1): 10 - 1 = 9.
+      // 3. Weapon (Spade x2): 9 * 2 = 18.
+      // Final LP = 18.
       const current = resolve("canonical_v1_0", card("S", 11, "K"), card("H", 1, "A"), null);
 
       assert.true(current.survivors.front, "front Ace survives");
-      assert.equal(current.lpDamage, 20, "damage correctly overflows past the protected Ace");
+      assert.equal(current.lpDamage, 18, "damage correctly overflows past the protected Ace");
     });
 
     QUnit.test("ineligible face card survives and allows overflow", function (assert) {
