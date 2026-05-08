@@ -24,7 +24,7 @@ description: "Current project phase, stability, and what to expect from Phalanx:
 <section class="card">
   <h2>Production Stability</h2>
   <p>Matches are backed by a persistent action ledger, ensuring your tactical progress is preserved even across server restarts or connection drops.</p>
-  <p><a href="{{ '/CHANGELOG.html' | relative_url }}">View the latest release notes in the Changelog.</a></p>
+  <p><a href="{{ '/CHANGELOG/' | relative_url }}">View the latest release notes in the Changelog.</a></p>
 </section>
 
 <section class="card">

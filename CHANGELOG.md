@@ -1,3 +1,8 @@
+---
+title: Changelog
+permalink: /CHANGELOG/
+---
+
 # Changelog
 
 All notable changes to the Phalanx Duel website and simulation engine will be documented in this file.
