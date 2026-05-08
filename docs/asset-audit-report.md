@@ -1,4 +1,4 @@
-# Asset Synchronization Audit Report
+# Asset Synchronization Audit Report (v1.1.0)
 
 This report tracks the status of assets ported from the `game` directory to the `site` directory based on the `comprehensive-asset-inventory.md`.
 

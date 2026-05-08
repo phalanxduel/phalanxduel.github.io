@@ -6,11 +6,11 @@ mermaid: true
 
 # Technical Details
 
-<p class="small-note">This page summarizes the canonical v1.0 technical model in player-readable form. Implementation-grade details live in the Phalanx Duel game repository.</p>
+<p class="small-note">This page summarizes the canonical v1.1.0 technical model in player-readable form. Implementation-grade details live in the Phalanx Duel game repository.</p>
 
 <section class="card">
   <h2>Turn Sequence</h2>
-  <p>Canonical v1.0 executes a deterministic 7-phase turn lifecycle. Attack declaration and combat resolution happen inside that lifecycle, not as a standalone loop.</p>
+  <p>Canonical v1.1.0 executes a deterministic 7-phase turn lifecycle. Attack declaration and combat resolution happen inside that lifecycle, not as a standalone loop.</p>
   <div class="mermaid diagram">
 flowchart LR
   A[StartTurn] --> B[AttackPhase]

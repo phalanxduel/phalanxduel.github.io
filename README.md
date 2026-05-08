@@ -1,12 +1,19 @@
-# Phalanx: Duel Pages Site
+# Phalanx: Duel Pages Site (v1.1.0)
 
-This directory is the `gh-pages` worktree for the Phalanx: Duel website.
+This repository is the `gh-pages` worktree for the Phalanx: Duel website. It features a modern, modular architecture for simulation-driven tutorials and a centralized media asset registry.
+
+## Key Architectural Modules
+
+- **Tutorial Progression Engine**: Orchestrates the 0->1 player journey using `PedagogicalAdapter` and `ProgressionManager`.
+- **Canonical Asset Registry**: Centralized management of media in `_data/assets.yml`.
+- **Modular Combat Lab**: Decoupled simulation logic (`PhxBattle`) as an ES module for 100% testability.
+- **Ray-Traced Visuals**: High-fidelity `.webm` assets generated directly from the game engine.
 
 ## Local Preview
 
 1. `cd site`
 2. `bin/dev`
-3. Open `http://127.0.0.1:4000/`
+3. Open `http://127.0.0.1:4001/`
 
 `bin/dev` will install gems via Bundler if needed, then run Jekyll with livereload.
 
@@ -14,7 +21,7 @@ Manual commands:
 
 1. `bundle install`
 2. `bundle exec jekyll build`
-3. `bundle exec jekyll serve --livereload --host 127.0.0.1 --port 4000`
+3. `bundle exec jekyll serve --livereload --host 127.0.0.1 --port 4001`
 
 Alternative local server script:
 

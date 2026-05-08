@@ -40,7 +40,7 @@ variants:
               value: "♣ Club + ♠ Spade"
               href: "/learn/rules/"
             - label: "Simulation"
-              value: "Battle Lab"
+              value: "Combat Lab"
               href: "/tools/battle-calculator/"
           footer: "Red defends the line. Blue breaks it."
 

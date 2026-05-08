@@ -1,0 +1,7 @@
+version: "1.1.0"
+revision: 1
+build: 110
+last_updated: "2026-05-08"
+status: "Stable (Production)"
+identity: "Vector Brutalism"
+engine_compatibility: "v1.0.0+"

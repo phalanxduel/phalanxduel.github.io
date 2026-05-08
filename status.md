@@ -7,7 +7,7 @@ description: "Current project phase, stability, and what to expect from Phalanx:
 
 <section class="card">
   <h2>Current Phase</h2>
-  <p><strong>v1.0.0 Stable (Production).</strong> The core game engine is battle-tested and production-ready. We are now focused on ecosystem expansion and cross-platform competitive play.</p>
+  <p><strong>v1.1.0 Stable (Production).</strong> The core game engine is battle-tested and production-ready. This version introduces the Tutorial Progression Engine and high-fidelity ray-traced visuals.</p>
 </section>
 
 <section class="card">
@@ -16,7 +16,7 @@ description: "Current project phase, stability, and what to expect from Phalanx:
     <li>Full deterministic combat lifecycle (Deployment through EndTurn).</li>
     <li><strong>Beta:</strong> Glicko-2 ranked matchmaking and public lobby system. (<a href="{{ '/competitive/' | relative_url }}">See Competitive Play</a>)</li>
     <li>Resilient state rehydration and session re-entry.</li>
-    <li>High-fidelity in-game video tutorials.</li>
+    <li>High-fidelity in-game video tutorials and pedagogical briefings.</li>
     <li>Official Golang terminal client and TypeScript SDK.</li>
   </ul>
 </section>
@@ -24,7 +24,7 @@ description: "Current project phase, stability, and what to expect from Phalanx:
 <section class="card">
   <h2>Production Stability</h2>
   <p>Matches are backed by a persistent action ledger, ensuring your tactical progress is preserved even across server restarts or connection drops.</p>
-  <p><a href="https://github.com/phalanxduel/phalanxduel/blob/main/CHANGELOG.md" target="_blank" rel="noopener noreferrer">View the latest release notes in the Changelog.</a></p>
+  <p><a href="{{ '/CHANGELOG.html' | relative_url }}">View the latest release notes in the Changelog.</a></p>
 </section>
 
 <section class="card">
