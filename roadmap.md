@@ -1,6 +1,6 @@
 ---
 title: Roadmap
-description: "High-level roadmap for the Phalanx: Duel v1.0 era and beyond."
+description: "High-level roadmap for the Phalanx: Duel v1.1.0 era and beyond."
 ---
 
 # Roadmap
@@ -46,7 +46,7 @@ description: "High-level roadmap for the Phalanx: Duel v1.0 era and beyond."
   <h2>How This Connects to Delivery</h2>
   <ul class="quick-list">
     <li><a href="{{ '/status/' | relative_url }}">Current status and technical specifications</a></li>
-    <li><a href="https://github.com/phalanxduel/phalanxduel/blob/main/CHANGELOG.md" target="_blank" rel="noopener noreferrer">Latest release notes</a></li>
+    <li><a href="{{ '/CHANGELOG/' | relative_url }}">Latest release notes</a></li>
     <li><a href="{{ '/contribute/' | relative_url }}">Ways to get involved</a></li>
   </ul>
 </section>

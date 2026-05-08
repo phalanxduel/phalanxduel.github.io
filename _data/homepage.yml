@@ -6,14 +6,14 @@ active_variant: "embed_conversion_v1"
 
 variants:
   tactical_v1:
-    name: "Tactical Overthrow v1.0"
+    name: "Tactical Overthrow v1.1.0"
     sections:
       - type: "hero"
         class: "hero"
         aria_labelledby: "hero-title"
         title_id: "hero-title"
         heading: "The Definitive Tactical Duel."
-        body: "Phalanx Duel v1.0 is here. A deterministic tactical battle on a 4x2 grid. No luck. No boosters. Full cross-platform matchmaking and competitive Glicko rankings. Red protects. Blue attacks. Master the cascade."
+        body: "Phalanx Duel v1.1.0 is here. A deterministic tactical battle on a 4x2 grid. No luck. No boosters. Full cross-platform matchmaking and competitive Glicko rankings. Red protects. Blue attacks. Master the cascade."
         proof_points:
           - "Deterministic: 0% RNG"
           - "Open: Standard 52-Card Deck"
@@ -112,14 +112,14 @@ variants:
         closing_microcopy: "Free. Fast. Fair."
 
   embed_conversion_v1:
-    name: "Vector Command v1.0"
+    name: "Vector Command v1.1.0"
     sections:
       - type: "hero"
         class: "hero"
         aria_labelledby: "hero-title"
         title_id: "hero-title"
         heading: "Initialize Global Combat."
-        body: "Phalanx Duel v1.0 is officially active. Deterministic tactical battle on a 4x2 grid. Zero RNG. Full cross-platform competition. Red protects. Blue attacks. Execute the briefing."
+        body: "Phalanx Duel v1.1.0 is officially active. Deterministic tactical battle on a 4x2 grid. Zero RNG. Full cross-platform competition. Red protects. Blue attacks. Execute the briefing."
         proof_points:
           - "Vector: 0% RNG"
           - "Open: Standard Deck"

@@ -5,7 +5,7 @@ description: "The core mechanics of Phalanx Duel. Red protects, Blue attacks. Ma
 
 # Tactical Briefing: The Grid System
 
-<p class="small-note">This is an authoritative summary of Phalanx Duel v1.0. No luck. No RNG. Just geometric consequence.</p>
+<p class="small-note">This is an authoritative summary of Phalanx Duel v1.1.0. No luck. No RNG. Just geometric consequence.</p>
 
 <section class="hero" style="padding: 4rem 0;">
   <div class="hero-layout">

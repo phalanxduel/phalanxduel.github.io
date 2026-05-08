@@ -4,7 +4,7 @@ This document outlines the required visual assets (screenshots/videos) for the t
 
 ## Global Conventions
 - **Resolution:** 1920x1080 (16:9)
-- **Theme:** Canonical v1.0 / Dark Mode
+- **Theme:** Canonical v1.1.0 / Dark Mode
 - **Naming Convention:** `tutorial-phase-[x]-[type]-[description].png/mp4`
 
 ---

@@ -59,12 +59,12 @@ battle_calculator: true
         </div>
         
         <div id="rules-help-panel" style="display: none; background: var(--color-surface-up); border: 1px solid var(--color-offense); padding: 1rem; margin-bottom: 1.5rem; font-family: var(--font-mono); font-size: 0.7rem; line-height: 1.4;">
-          <p style="margin-top: 0;"><strong style="color: var(--color-offense);">Canonical v1.0:</strong> Direct 0% RNG. Enforces Classic Ace/Face card invulnerability rules and strict Shield-before-Weapon resolution order.</p>
+          <p style="margin-top: 0;"><strong style="color: var(--color-offense);">Canonical v1.1.0:</strong> Direct 0% RNG. Enforces Classic Ace/Face card invulnerability rules and strict Shield-before-Weapon resolution order.</p>
           <p style="margin-bottom: 0;"><strong style="color: var(--color-text-dim);">Legacy Prototype:</strong> The original carryover math. No special protection for Aces or Face cards. Used for historical regression testing.</p>
         </div>
 
         <select id="battle-mode" aria-label="Rules mode" style="width: 100%; background: transparent; color: var(--color-text-dim); border: 1px solid var(--color-border-up); font-family: var(--font-mono); font-size: 0.7rem; padding: 0.5rem;">
-          <option value="canonical_v1_0">Canonical v1.0 Rules</option>
+          <option value="canonical_v1_0">Canonical v1.1.0 Rules</option>
           <option value="legacy_reference">Legacy Prototype</option>
         </select>
       </div>
