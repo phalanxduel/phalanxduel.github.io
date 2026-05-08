@@ -196,17 +196,17 @@ function resolveCanonical(attacker, front, back) {
     if (overflow > 0) {
       const beforeBackStep = overflow;
       
-      // Club doubles once if back target exists
-      if (back && attacker.suit === "C") {
-        overflow *= 2;
-        log.push("Club bonus: carryover doubled.");
-      }
-
-      // Diamond shield applies after Club doubling
+      // Diamond shield applies BEFORE Club doubling at the card boundary
       if (frontDiamondShield > 0) {
         const absorbed = Math.min(overflow, frontDiamondShield);
         overflow -= absorbed;
         log.push("Diamond shield: absorbed " + absorbed + ".");
+      }
+
+      // Club doubles once if back target exists
+      if (back && attacker.suit === "C") {
+        overflow *= 2;
+        log.push("Club bonus: carryover doubled.");
       }
 
       if (back) {
@@ -263,17 +263,18 @@ function resolveCanonical(attacker, front, back) {
   if (lpDamage > 0) {
     const beforeLp = lpDamage;
     
-    // Spade doubling happens BEFORE Heart mitigation
-    if (attacker.suit === "S") {
-      lpDamage *= 2;
-      log.push("Spade bonus: LP damage doubled.");
-    }
-
+    // Heart shield happens BEFORE Spade doubling at the player boundary
     const totalHeartShield = frontHeartShield + backHeartShield;
     if (totalHeartShield > 0) {
       const absorbed = Math.min(lpDamage, totalHeartShield);
       lpDamage -= absorbed;
       log.push("Heart shield: absorbed " + absorbed + ".");
+    }
+
+    // Spade doubling happens AFTER Heart mitigation
+    if (attacker.suit === "S") {
+      lpDamage *= 2;
+      log.push("Spade bonus: LP damage doubled.");
     }
 
     addStep(progression, "Boundary (Card->Player)", beforeLp, lpDamage, "Suit effects evaluated");
