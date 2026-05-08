@@ -33,4 +33,4 @@ This occurs when damage moves from the **Back Row** card to the opponent's **Lif
 *   **The Hidden Heart:** A Heart in the Back Row is an insurance policy. It only triggers if the opponent breaks your Front Row and your Back Row. 
 *   **The Club Setup:** Because Clubs double carryover *after* Diamond mitigation, they are most effective against non-Diamond Front Rows.
 
-**Tactical Exercise:** Use the [Combat Simulator]({{ '/tools/battle-calculator/' | relative_url }}) to recreate a "Double Cascade"—using a Club attacker to break a Diamond Front Row and a Heart Back Row. Observe the exact moment the math shifts.
+**Tactical Exercise:** Use the [Combat Lab]({{ '/tools/battle-calculator/' | relative_url }}) to recreate a "Double Cascade"—using a Club attacker to break a Diamond Front Row and a Heart Back Row. Observe the exact moment the math shifts.

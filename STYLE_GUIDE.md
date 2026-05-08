@@ -1,4 +1,4 @@
-# PHALANX DUEL: TACTICAL STYLE GUIDE (v1.1)
+# PHALANX DUEL: TACTICAL STYLE GUIDE (v1.2)
 
 This document defines the visual and structural language of the Phalanx Duel ecosystem. It ensures that the **"Vector Brutalism"** aesthetic—inspired by Tron and 80s Star Wars arcade graphics—is applied consistently across both the website and the game client.
 
@@ -13,7 +13,15 @@ Phalanx Duel is a game of deterministic consequences. The visual style reflects 
 
 ---
 
-## 2. TYPOGRAPHY SYSTEM (OPEN SOURCE)
+## 2. COMPONENT: THE ASSET HUD
+Used for tutorial videos and pedagogical demonstrations.
+*   **Frame:** `2px solid var(--color-offense)` for offensive demos, `var(--color-defense)` for defensive demos.
+*   **Overlay:** Top-left corner must feature a `LIVE_FEED_XX` or `TACTICAL_HUD` tag in monospace.
+*   **Fallbacks:** Missing assets must use a dashed wireframe placeholder with a `// SIGNAL_LOST` marker.
+
+---
+
+## 3. TYPOGRAPHY SYSTEM (OPEN SOURCE)
 We use a two-font system to separate "Narrative" from "Data."
 
 ### **Primary Display & UI: Inter**

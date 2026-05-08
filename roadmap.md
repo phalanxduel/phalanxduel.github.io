@@ -6,21 +6,21 @@ description: "High-level roadmap for the Phalanx: Duel v1.0 era and beyond."
 # Roadmap
 
 <section class="card">
-  <h2>🏆 v1.0.0 Milestone (Achieved)</h2>
+  <h2>🏆 v1.1.0 Milestone (Achieved)</h2>
   <ul class="quick-list">
-    <li><strong>Deterministic Core:</strong> Fully verified 0% RNG engine.</li>
-    <li><strong>Matchmaking:</strong> Glicko-2 ratings and public lobbies are live.</li>
-    <li><strong>Tutorials:</strong> Phase-specific tactical briefing overlays integrated into the client.</li>
-    <li><strong>Persistence:</strong> State rehydration and reconnect are production-hardened.</li>
+    <li><strong>Pedagogical Engine:</strong> Introduced multi-stage tutorial progression (Foundations -> Mastery).</li>
+    <li><strong>Canonical Assets:</strong> Centralized media registry with high-fidelity ray-traced visuals.</li>
+    <li><strong>Modular Engine:</strong> Simulation logic decoupled from UI and DOM for 100% testability.</li>
+    <li><strong>GitHub Open Source:</strong> Improved community discoverability and issue reporting paths.</li>
   </ul>
 </section>
 
 <section class="card">
-  <h2>🚀 Now (v1.1 Stabilization)</h2>
+  <h2>🚀 Now (v1.2 Stabilization)</h2>
   <ul class="quick-list">
+    <li><strong>Spectator Mode:</strong> Architecting real-time match observation and event broadcasting.</li>
     <li><strong>UI Hardening:</strong> Improved deterministic ID traceability for better automation.</li>
     <li><strong>Observability:</strong> Gameplay telemetry and root-span correlation for deep-match analysis.</li>
-    <li><strong>Ecosystem:</strong> Maintaining official Go and TypeScript SDKs for bot developers.</li>
   </ul>
 </section>
 

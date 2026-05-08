@@ -11,12 +11,12 @@ description: "What Phalanx: Duel is, who it is for, and how the game is being de
 </section>
 
 <section class="card">
-  <h2>The v1.0 Standard</h2>
+  <h2>The v1.1.0 Standard</h2>
   <ul class="quick-list">
     <li><strong>Zero RNG:</strong> Every outcome is determined by player choice and deterministic rules.</li>
+    <li><strong>High Fidelity:</strong> In-game tutorials powered by the canonical combat engine and ray-traced visuals.</li>
     <li><strong>Cross-Platform:</strong> Play on the web (all screens), in your terminal with our Golang client, or via native mobile operatives (SwiftUI in-progress).</li>
     <li><strong>Ranked Competition (Beta):</strong> Global Glicko-2 matchmaking and public lobby system.</li>
-    <li><strong>Open Ecosystem:</strong> Official SDKs in Go and TypeScript for developers to build bots and custom clients.</li>
   </ul>
 </section>
 
@@ -31,7 +31,7 @@ description: "What Phalanx: Duel is, who it is for, and how the game is being de
 
 <section class="card">
   <h2>Production State</h2>
-  <p>Phalanx: Duel has reached <strong>v1.0.0 Stable</strong>. The core engine is production-ready, persistent, and highly observable.</p>
+  <p>Phalanx: Duel has reached <strong>v1.1.0 Stable</strong>. The core engine is production-ready, persistent, and highly observable.</p>
   <p><a href="{{ '/status/' | relative_url }}">See current status and technical specifications.</a></p>
 </section>
 

@@ -8,19 +8,17 @@ To decouple the canonical combat resolution engine (the "Kernel") from the pedag
 
 ## 2. Refactoring Strategy
 
-### Phase A: Kernel Extraction
-- Create `PhxKernel.resolve(input)` that returns the *raw result* (lpDamage, healths, status).
-- Remove string-based logging from the Kernel.
+### Phase A: Kernel Extraction (COMPLETED)
+- Create `PhxBattle.resolve(input)` as a decoupled ES module.
+- Isolate raw results (lpDamage, healths, survivors) from pedagogical narratives.
 
-### Phase B: Educational Decorator
-- Create `PhxTutorial.explain(input)` that:
-    - Calls `PhxKernel.resolve(input)`.
-    - Generates a structured **Progression Log** (a series of state snapshots: `stage`, `before`, `after`, `suitEffectTriggered`).
-    - This log is the source for the UI tooltips and the "Cascade Visualizer."
+### Phase B: Educational Decorator (COMPLETED)
+- Implemented `PedagogicalAdapter` to ingest raw results and generate level-specific narrative tokens.
+- Introduced `ProgressionLog` in the engine to provide state snapshots for the UI.
 
-### Phase C: UI Binding
-- `battle-calculator.js` will now maintain a state-based renderer.
-- `BattleCalculatorUI.render(explanation)` will render individual frames of the Target Chain, allowing students to click "Next Step" to see damage move through the column boundaries.
+### Phase C: UI Binding (COMPLETED)
+- `SimulationPresenter` handles the transformation of results into a data-driven view-model.
+- `BattleCalculator` (Combat Lab) uses a state-based renderer for the Cascade Log.
 
 ## 3. Tutorial Tier Integration
 
