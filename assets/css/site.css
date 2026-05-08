@@ -21,6 +21,7 @@
 
   --color-text: #e0e0e0;
   --color-text-muted: #999999;
+  --color-muted: #999999; /* Required for a11y contract */
   --color-text-dim: #767676;
 
   /* Semantic aliases */
