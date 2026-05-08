@@ -29,38 +29,42 @@
       {% endif %}
     </div>
 
-    {% if section.asset_id %}
-      <div class="hero-asset-container" style="border: 2px solid var(--color-offense); box-shadow: var(--glow-offense); background: #000; position: relative;">
-        {% include render-asset.html id=section.asset_id %}
-        <div style="position: absolute; top: -10px; left: 20px; background: var(--color-bg); padding: 0 10px; font-family: var(--font-mono); font-size: 0.6rem; color: var(--color-offense);">LIVE_FEED_01</div>
-      </div>
-    {% elsif section.preview_panel %}
-      <aside class="hero-preview" aria-label="{{ section.preview_panel.label }}">
-        <p class="hero-preview-label" style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--color-text-dim); margin-bottom: 2rem; border-bottom: 1px solid var(--grid-line-bold); padding-bottom: 0.5rem;">// {{ section.preview_panel.label }}</p>
-        <h2 style="font-size: 2.5rem; line-height: 1; margin-bottom: 1rem;">{{ section.preview_panel.heading }}</h2>
-        {% if section.preview_panel.subheading %}<p style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--color-text-dim); margin-bottom: 2.5rem;">{{ section.preview_panel.subheading }}</p>{% endif %}
-        
-        {% if section.preview_panel.rows and section.preview_panel.rows.size > 0 %}
-          <ul class="hero-preview-list" style="list-style: none; padding: 0; margin-bottom: 3rem;">
-            {% for row in section.preview_panel.rows %}
-              <li style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--grid-line); padding: 1rem 0; font-family: var(--font-mono); font-size: 0.85rem;">
-                <span style="color: var(--color-text-dim); text-transform: uppercase;">{{ row.label }}</span>
-                <strong style="color: #fff;">
-                  {% if row.href %}
-                    <a href="{{ row.href | relative_url }}" {% if row.external %}target="_blank" rel="noopener noreferrer"{% endif %} style="text-decoration: none; border-bottom: 1px solid var(--color-offense);">{{ row.value }}</a>
-                  {% else %}
-                    {{ row.value }}
-                  {% endif %}
-                </strong>
-              </li>
-            {% endfor %}
-          </ul>
-        {% endif %}
-        
-        {% if section.preview_panel.footer %}
-          <p class="hero-preview-footer" style="font-family: var(--font-mono); font-size: 0.7rem; text-transform: uppercase; color: var(--color-offense); letter-spacing: 0.1em;">{{ section.preview_panel.footer }}</p>
-        {% endif %}
-      </aside>
-    {% endif %}
+    <div class="hero-visual">
+      {% if section.asset_id %}
+        <div class="hero-asset-container" style="border: 2px solid var(--color-offense); box-shadow: var(--glow-offense); background: #000; position: relative; margin-bottom: 2rem;">
+          {% include render-asset.html id=section.asset_id %}
+          <div style="position: absolute; top: -10px; left: 20px; background: var(--color-bg); padding: 0 10px; font-family: var(--font-mono); font-size: 0.6rem; color: var(--color-offense);">LIVE_FEED_01</div>
+        </div>
+      {% endif %}
+
+      {% if section.preview_panel %}
+        <aside class="hero-preview" aria-label="{{ section.preview_panel.label }}">
+          <p class="hero-preview-label" style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--color-text-dim); margin-bottom: 2rem; border-bottom: 1px solid var(--grid-line-bold); padding-bottom: 0.5rem;">// {{ section.preview_panel.label }}</p>
+          <h2 style="font-size: 2.5rem; line-height: 1; margin-bottom: 1rem;">{{ section.preview_panel.heading }}</h2>
+          {% if section.preview_panel.subheading %}<p style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--color-text-dim); margin-bottom: 2.5rem;">{{ section.preview_panel.subheading }}</p>{% endif %}
+          
+          {% if section.preview_panel.rows and section.preview_panel.rows.size > 0 %}
+            <ul class="hero-preview-list" style="list-style: none; padding: 0; margin-bottom: 3rem;">
+              {% for row in section.preview_panel.rows %}
+                <li style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--grid-line); padding: 1rem 0; font-family: var(--font-mono); font-size: 0.85rem;">
+                  <span style="color: var(--color-text-dim); text-transform: uppercase;">{{ row.label }}</span>
+                  <strong style="color: #fff;">
+                    {% if row.href %}
+                      <a href="{{ row.href | relative_url }}" {% if row.external %}target="_blank" rel="noopener noreferrer"{% endif %} style="text-decoration: none; border-bottom: 1px solid var(--color-offense);">{{ row.value }}</a>
+                    {% else %}
+                      {{ row.value }}
+                    {% endif %}
+                  </strong>
+                </li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+          
+          {% if section.preview_panel.footer %}
+            <p class="hero-preview-footer" style="font-family: var(--font-mono); font-size: 0.7rem; text-transform: uppercase; color: var(--color-offense); letter-spacing: 0.1em;">{{ section.preview_panel.footer }}</p>
+          {% endif %}
+        </aside>
+      {% endif %}
+    </div>
   </div>
 </section>
