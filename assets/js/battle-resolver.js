@@ -170,13 +170,15 @@ function resolveCanonical(attacker, front, back) {
         frontDestroyed = true;
         if (front.suit === "D") frontDiamondShield = front.value;
         if (front.suit === "H") frontHeartShield = front.value;
+      } else if (isAce(front)) {
+        frontHealth = front.value;
+        overflow = clampToZero(overflow - 1); // Ace absorbs exactly 1
+        frontAceProtected = true;
+        log.push(eligibility.reason + " (Survives, 1 damage absorbed, attack continues).");
       } else {
         frontHealth = front.value;
-        overflow = clampToZero(overflow - front.value);
-        if (isAce(front)) frontAceProtected = true;
-        if (front.suit === "D") frontDiamondShield = front.value;
-        if (front.suit === "H") frontHeartShield = front.value;
-        log.push(eligibility.reason + " (Survives, damage overflows).");
+        overflow = 0; // Attack stops on rank-mismatch survival for Face Cards
+        log.push(eligibility.reason + " (Survives, stops attack).");
       }
     }
     addStep(progression, "After Front Defender", before, overflow, front.suit + " " + front.value + " in front");
@@ -228,20 +230,19 @@ function resolveCanonical(attacker, front, back) {
             overflow = clampToZero(overflow - back.value);
             backDestroyed = true;
             if (back.suit === "H") backHeartShield = back.value;
+          } else if (isAce(back)) {
+            backHealth = back.value;
+            overflow = clampToZero(overflow - 1); // Ace absorbs exactly 1
+            backAceProtected = true;
+            log.push(eligibility.reason + " (Survives, 1 damage absorbed, attack continues).");
           } else {
             backHealth = back.value;
-            overflow = clampToZero(overflow - back.value);
-            if (isAce(back)) backAceProtected = true;
-            if (back.suit === "H") backHeartShield = back.value;
-            log.push(eligibility.reason + " (Survives, damage overflows).");
+            overflow = 0; // Attack stops on rank-mismatch survival for Face Cards
+            log.push(eligibility.reason + " (Survives, stops attack).");
           }
         }
         addStep(progression, "After Back Defender", before, overflow, back.suit + " " + back.value + " in back");
       }
-    } else {
-      // No overflow from front, but still check if we need to record the boundary if we evaluate it
-      // Actually, if overflow is 0, the boundary logic doesn't trigger bonuses. 
-      // But for consistency we might want to show it.
     }
   } else {
     // No back defender
@@ -264,9 +265,10 @@ function resolveCanonical(attacker, front, back) {
     const beforeLp = lpDamage;
     
     // Heart shield happens BEFORE Spade doubling at the player boundary
-    const totalHeartShield = frontHeartShield + backHeartShield;
-    if (totalHeartShield > 0) {
-      const absorbed = Math.min(lpDamage, totalHeartShield);
+    // Rule 9.3: Only the final destroyed card before player provides a shield.
+    const finalHeartShield = backDestroyed ? backHeartShield : (frontDestroyed ? frontHeartShield : 0);
+    if (finalHeartShield > 0) {
+      const absorbed = Math.min(lpDamage, finalHeartShield);
       lpDamage -= absorbed;
       log.push("Heart shield: absorbed " + absorbed + ".");
     }

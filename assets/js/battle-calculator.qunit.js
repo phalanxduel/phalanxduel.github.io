@@ -29,12 +29,29 @@
       let overflow = attacker.value;
       
       // Stage 1: Front Rank
-      overflow = Math.max(0, overflow - front.value);
-      let frontDiamondShield = (front.suit === "D") ? front.value : 0;
-      let frontHeartShield = (front.suit === "H") ? front.value : 0;
+      // Matrix tests use number cards, but we add Ace handling here for correctness.
+      let frontDestroyed = false;
+      let frontDiamondShield = 0;
+      let frontHeartShield = 0;
+
+      if (overflow >= front.value) {
+        if (front.rank === "A" && attacker.rank !== "A") {
+          // Ace survives non-Ace attack: absorbs 1
+          overflow = Math.max(0, overflow - 1);
+        } else {
+          // Standard destruction
+          frontDestroyed = true;
+          overflow = Math.max(0, overflow - front.value);
+          if (front.suit === "D") frontDiamondShield = front.value;
+          if (front.suit === "H") frontHeartShield = front.value;
+        }
+      } else {
+        overflow = 0; // Standard block
+      }
 
       // Stage 2: Back Rank
       let backHeartShield = 0;
+      let backDestroyed = false;
       if (back) {
         if (overflow > 0) {
           // DIAMOND mitigation happens BEFORE Club doubling at the card boundary
@@ -44,8 +61,17 @@
           if (attacker.suit === "C") overflow *= 2;
           
           // Back card takes remaining energy
-          overflow = Math.max(0, overflow - back.value);
-          if (back.suit === "H") backHeartShield = back.value;
+          if (overflow >= back.value) {
+            if (back.rank === "A" && attacker.rank !== "A") {
+              overflow = Math.max(0, overflow - 1);
+            } else {
+              backDestroyed = true;
+              overflow = Math.max(0, overflow - back.value);
+              if (back.suit === "H") backHeartShield = back.value;
+            }
+          } else {
+            overflow = 0;
+          }
         }
       } else {
         // No back card: Diamond shield still applies to breach
@@ -55,8 +81,9 @@
       // Stage 3: Player LP
       if (overflow > 0) {
         // HEART shield happens BEFORE Spade doubling at the player boundary
-        const totalHeartShield = frontHeartShield + backHeartShield;
-        overflow = Math.max(0, overflow - totalHeartShield);
+        // Rule 9.3: Only the final destroyed card before player provides a shield.
+        const finalHeartShield = backDestroyed ? backHeartShield : (frontDestroyed ? frontHeartShield : 0);
+        overflow = Math.max(0, overflow - finalHeartShield);
 
         // Spade doubling happens AFTER Heart mitigation
         if (attacker.suit === "S" && overflow > 0) overflow *= 2;
@@ -114,17 +141,17 @@
       assert.equal(last.after, result.lpDamage, "final progression matches LP damage");
     });
 
-    QUnit.test("front Ace survives non-Ace direct attack and allows overflow", function (assert) {
+    QUnit.test("front Ace survives non-Ace direct attack and PASSES overflow", function (assert) {
       // 11S into 1H (front Ace)
       // Front survives (Ace rule). 
       // 1. Initial Overflow: 11 - 1 = 10.
-      // 2. Shield (Heart 1): 10 - 1 = 9.
-      // 3. Weapon (Spade x2): 9 * 2 = 18.
-      // Final LP = 18.
+      // 2. Shield: 0 (Ace survived, no shield).
+      // 3. Weapon (Spade x2): 10 * 2 = 20.
+      // Final LP = 20.
       const current = resolve("canonical_v1_0", card("S", 11, "K"), card("H", 1, "A"), null);
 
       assert.true(current.survivors.front, "front Ace survives");
-      assert.equal(current.lpDamage, 18, "damage correctly overflows past the protected Ace");
+      assert.equal(current.lpDamage, 20, "damage PASSES through the protected Ace (absorbing only 1 point)");
     });
 
     QUnit.test("ineligible face card survives and allows overflow", function (assert) {

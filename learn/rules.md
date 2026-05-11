@@ -73,9 +73,10 @@ description: "The core mechanics of Phalanx Duel. Red protects, Blue attacks. Ma
   <article class="card">
     <h2>4. Special Eligibility</h2>
     <ul class="quick-list">
-      <li><strong>Aces:</strong> A front-rank Ace can only be destroyed by an Ace attack. However, it still takes damage and allows overflow to pass through to the back rank or player.</li>
-      <li><strong>Face Cards:</strong> Can only be destroyed by face cards of equal or lower rank (J < Q < K). Like Aces, they still allow carryover damage to flow even if they survive.</li>
-      <li><strong>Deterministic:</strong> Identical inputs always produce identical outcomes.</li>
+      <li><strong>Aces:</strong> A front-rank Ace can only be destroyed by an Ace attack. If the attacker is not an Ace, the Ace survives but <strong>only absorbs 1 point of damage</strong>; the rest of the attack overflows to the next target.</li>
+      <li><strong>Face Cards:</strong> Can only be destroyed by face cards of equal or higher rank (J < Q < K). If the attacker is ineligible, the Face Card survives and <strong>halts all carryover damage</strong>.</li>
+      <li><strong>Suit Shields:</strong> Diamond and Heart shields are <strong>Boundary Effects</strong>. They only trigger if the card providing the shield is <strong>destroyed</strong> during the resolution.</li>
+      <li><strong>Hearts Do Not Stack:</strong> Only the final destroyed card before damage hits the player can provide a Heart shield.</li>
     </ul>
   </article>
 </section>
