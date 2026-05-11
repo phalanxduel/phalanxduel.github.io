@@ -67,9 +67,9 @@ permalink: /guide/
   <article class="card">
     <h2>5. Special Operatives</h2>
     <ul class="quick-list">
-      <li><strong>Ace:</strong> Front-rank Ace is only destroyable by another Ace. Overflow damage still passes through.</li>
-      <li><strong>Face Cards:</strong> Can only be destroyed by Face Cards of equal or lower rank (J < Q < K).</li>
-      <li><strong>Logic:</strong> Rank 10 cannot destroy a Jack, but it still deals damage to it and passes carryover.</li>
+      <li><strong>Ace:</strong> Front-rank Ace is only destroyable by another Ace. If it survives, it absorbs 1 damage and <strong>allows the rest to overflow</strong>.</li>
+      <li><strong>Face Cards:</strong> Can only be destroyed by Face Cards of equal or higher rank (J < Q < K). If it survives, it <strong>halts all carryover damage</strong>.</li>
+      <li><strong>Opaque Defense:</strong> Unlike standard cards or Aces, an ineligible Face Card blocks 100% of the remaining attack.</li>
     </ul>
   </article>
 
