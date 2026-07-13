@@ -1,6 +1,6 @@
 ---
 title: FAQ
-description: Frequently asked questions about v1.1.0, matchmaking, cross-platform play, and the Go client.
+description: Frequently asked questions about v1.4.0, matchmaking, deterministic combat proof, and supported clients.
 ---
 
 # Frequently Asked Questions
@@ -14,12 +14,12 @@ description: Frequently asked questions about v1.1.0, matchmaking, cross-platfor
 
   <article>
     <h3>How does matchmaking work?</h3>
-    <p>Phalanx Duel v1.1.0 uses a Glicko-2 ratings system to ensure balanced tactical engagements in public lobbies. Your rank is unified across all devices.</p>
+    <p>Phalanx Duel v1.4.0 uses a Glicko-2 ratings system for public-lobby competition. Matchmaking remains Beta while the player population and balance evidence grow.</p>
   </article>
 
   <article>
     <h3>Are there Jokers?</h3>
-    <p>No. Jokers are excluded from v1.1.0 rules. Optional expansion concepts are currently on the long-term roadmap.</p>
+    <p>No. Jokers are excluded from the v1.4.0 competitive rules. Optional expansion concepts remain outside the proved 52-card domain.</p>
   </article>
 </section>
 
@@ -40,7 +40,7 @@ description: Frequently asked questions about v1.1.0, matchmaking, cross-platfor
   <h2>Development</h2>
   <article>
     <h3>Is the engine stable?</h3>
-    <p><strong>v1.1.0 Stable (Production).</strong> The core engine is battle-tested and ready for global competition.</p>
+    <p><strong>v1.4.0 Stable (Production).</strong> The deployed engine is versioned, replay-verifiable, and independently checked over its declared combat domain.</p>
   </article>
 
   <article>

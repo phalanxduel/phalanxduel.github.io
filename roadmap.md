@@ -1,26 +1,26 @@
 ---
 title: Roadmap
-description: "High-level roadmap for the Phalanx: Duel v1.1.0 era and beyond."
+description: "High-level roadmap following the Phalanx: Duel v1.4.0 production release."
 ---
 
 # Roadmap
 
 <section class="card">
-  <h2>🏆 v1.1.0 Milestone (Achieved)</h2>
+  <h2>🏆 v1.4.0 Milestone (Live)</h2>
   <ul class="quick-list">
-    <li><strong>Pedagogical Engine:</strong> Introduced multi-stage tutorial progression (Foundations -> Mastery).</li>
-    <li><strong>Canonical Assets:</strong> Centralized media registry with high-fidelity ray-traced visuals.</li>
-    <li><strong>Modular Engine:</strong> Simulation logic decoupled from UI and DOM for 100% testability.</li>
-    <li><strong>GitHub Open Source:</strong> Improved community discoverability and issue reporting paths.</li>
+    <li><strong>Explainable Combat:</strong> Authoritative arithmetic witnesses power narration, previews, event details, and post-match proof.</li>
+    <li><strong>Scientific Assurance:</strong> Independent combat checks, liveness properties, replay integrity, and observer-safe projections.</li>
+    <li><strong>Presentation Choreography:</strong> Narration, phase, combat-effect, and game-over transitions now have deterministic ownership.</li>
+    <li><strong>Advanced Bots:</strong> Deterministic MCTS strategy and benchmark tooling are available.</li>
   </ul>
 </section>
 
 <section class="card">
-  <h2>🚀 Now (v1.2 Stabilization)</h2>
+  <h2>🚀 Now (Post-v1.4 Validation)</h2>
   <ul class="quick-list">
-    <li><strong>Spectator Mode:</strong> Architecting real-time match observation and event broadcasting.</li>
-    <li><strong>UI Hardening:</strong> Improved deterministic ID traceability for better automation.</li>
-    <li><strong>Observability:</strong> Gameplay telemetry and root-span correlation for deep-match analysis.</li>
+    <li><strong>Balance Evidence:</strong> Expand reproducible bot and population experiments without overstating formal proof.</li>
+    <li><strong>Accessibility:</strong> Continue reduced-motion, responsive narration, and keyboard/screen-reader refinement.</li>
+    <li><strong>Operational Clarity:</strong> Keep production-only release and health evidence synchronized across public documentation.</li>
   </ul>
 </section>
 
@@ -28,7 +28,7 @@ description: "High-level roadmap for the Phalanx: Duel v1.1.0 era and beyond."
   <h2>📡 Next (Expansion)</h2>
   <ul class="quick-list">
     <li><strong>Native Mobile:</strong> Hardening SwiftUI/Android wrappers for cross-platform play.</li>
-    <li><strong>Advanced Bots:</strong> Strategic AI heuristics beyond basic deterministic rules.</li>
+    <li><strong>Bot Research:</strong> Compare deterministic MCTS profiles and publish bounded evidence.</li>
     <li><strong>Tournament Support:</strong> Native bracket rehydration for structured competitive events.</li>
   </ul>
 </section>

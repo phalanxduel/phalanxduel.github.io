@@ -8,12 +8,12 @@ description: "How to fund the development of the Phalanx Duel ecosystem and rule
 Phalanx: Duel is built on a foundation of open standards and community-driven development. We are committed to keeping the core engine free, fast, and fair.
 
 <section class="card">
-  <h2>The v1.1.0 Era</h2>
-  <p>With the release of v1.1.0 Stable, Phalanx: Duel has proven its core tactical engine. Your support now helps scale the platform and expand the competitive ecosystem across all platforms.</p>
+  <h2>The v1.4.0 Era</h2>
+  <p>With v1.4.0 live, Phalanx: Duel now exposes its combat math and the evidence behind its deterministic claims. Support helps expand playtesting, accessibility, balance research, and the competitive ecosystem.</p>
 </section>
 
 <section class="card">
-  <h2>What Support Funds (v1.1.0 Era)</h2>
+  <h2>What Support Funds (v1.4.0 Era)</h2>
   <ul class="quick-list">
     <li><strong>Server Infrastructure:</strong> High-performance regional lobbies and persistent action ledgers.</li>
     <li><strong>Client Development:</strong> Completing the native mobile operatives and terminal client.</li>

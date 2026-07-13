@@ -33,8 +33,9 @@ module.exports = [
     },
   },
   {
-    files: ["assets/js/battle-resolver.js"],
+    files: ["assets/js/battle-resolver.js", "assets/js/battle-calculator.js"],
     languageOptions: {
+      sourceType: "module",
       globals: {
         module: "readonly",
       },

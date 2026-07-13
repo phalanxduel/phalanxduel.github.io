@@ -5,6 +5,15 @@ permalink: /CHANGELOG/
 
 # Changelog
 
+## [1.4.0] - 2026-07-13
+
+### Changed
+
+- Synchronized public status, rules, lifecycle, roadmap, and release language with the deployed Phalanx Duel v1.4.0 build and competitive rules spec v3.0.
+- Updated the Combat Lab to corrected v3.0 Club and Diamond boundary scope while preserving historical mode identifiers as compatibility aliases.
+- Added player-readable combat formulas, calculation-provenance context, and scientific assurance boundaries.
+- Removed staging as a supported public environment; production is the canonical deployment target.
+
 All notable changes to the Phalanx Duel website and simulation engine will be documented in this file.
 
 ## [1.1.0] - 2026-05-08

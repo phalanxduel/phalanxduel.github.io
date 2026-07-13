@@ -93,9 +93,6 @@ function resolveLegacy(attacker, front, back) {
   }
 
   let backHealth = null;
-  let lastDestroyedCard = null;
-  if (front && frontHealth <= 0) lastDestroyedCard = front;
-
   damage = overflow;
   if (back) {
     const before = damage;
@@ -105,8 +102,6 @@ function resolveLegacy(attacker, front, back) {
     damage -= back.value;
     damage = clampToZero(damage);
     addStep(progression, "After Back Defender", before, damage, back.suit + " " + back.value + " in back");
-
-    if (backHealth <= 0) lastDestroyedCard = back;
 
     if (back.suit === "H" && backHealth <= 0) {
       const heartBefore = damage;
@@ -205,8 +200,9 @@ function resolveCanonical(attacker, front, back) {
         log.push("Diamond shield: absorbed " + absorbed + ".");
       }
 
-      // Club doubles once if back target exists
-      if (back && attacker.suit === "C") {
+      // Competitive v3.0: Club doubles only after an actual front-card
+      // destruction and only when a back-card boundary exists.
+      if (front && frontDestroyed && back && attacker.suit === "C") {
         overflow *= 2;
         log.push("Club bonus: carryover doubled.");
       }
@@ -245,15 +241,9 @@ function resolveCanonical(attacker, front, back) {
       }
     }
   } else {
-    // No back defender
+    // No back defender. Competitive v3.0 scopes the Diamond shield to a
+    // Card->Card boundary, so it does not apply on a direct player path.
     if (overflow > 0) {
-      // If there was no back defender, we still apply Diamond shield to the overflow targeting LP
-      if (frontDiamondShield > 0) {
-        const absorbed = Math.min(overflow, frontDiamondShield);
-        overflow -= absorbed;
-        log.push("Diamond shield (no back): absorbed " + absorbed + ".");
-      }
-
       log.push("No back defender: remaining damage targets LP.");
       addStep(progression, "No Back Defender", overflow, overflow, "Remaining overflow goes to LP");
     }
@@ -285,7 +275,7 @@ function resolveCanonical(attacker, front, back) {
   addStep(progression, "Damage To Player LP", lpDamage, lpDamage, "Final LP damage");
 
   return {
-    mode: "canonical_v1_0",
+    mode: "current_v3_0",
     lpDamage: lpDamage,
     frontHealth: frontHealth,
     backHealth: backHealth,
@@ -302,14 +292,14 @@ export function resolveBattle(input) {
   const attacker = input && input.attacker;
   const front = input && input.front ? input.front : null;
   const back = input && input.back ? input.back : null;
-  const mode = (input && input.mode) || "canonical_v1_0";
+  const mode = (input && input.mode) || "current_v3_0";
 
   if (!attacker || typeof attacker.value !== "number") {
     throw new Error("resolveBattle requires an attacker card with numeric value");
   }
 
-  const resolvedMode = mode === "intro_rules" ? "canonical_v1_0" : mode;
-  const core = resolvedMode === "canonical_v1_0"
+  const resolvedMode = mode === "intro_rules" || mode === "canonical_v1_0" ? "current_v3_0" : mode;
+  const core = resolvedMode === "current_v3_0"
     ? resolveCanonical(attacker, front, back)
     : resolveLegacy(attacker, front, back);
 

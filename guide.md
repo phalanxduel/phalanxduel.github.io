@@ -4,7 +4,7 @@ description: Essential briefing for Phalanx Duel operatives. Setup, turn flow, a
 permalink: /guide/
 ---
 
-# Quick Players Guide (v1.1.0)
+# Quick Players Guide (v1.4.0)
 
 <p class="small-note">This is the authoritative quick-start guide for Phalanx Duel. For deep tactical analysis, see the <a href="{{ '/learn/rules/' | relative_url }}">Full Tactical Briefing</a>.</p>
 
