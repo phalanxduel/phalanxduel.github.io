@@ -6,6 +6,7 @@ RSpec.describe "Built site output" do
     expect(SITE_DIR.join("learn/rules/index.html")).to exist
     expect(SITE_DIR.join("learn/getting-started/index.html")).to exist
     expect(SITE_DIR.join("learn/first-match/index.html")).to exist
+    expect(SITE_DIR.join("learn/gameplay-assurance/index.html")).to exist
     expect(SITE_DIR.join("tools/battle-calculator/index.html")).to exist
   end
 
@@ -13,7 +14,7 @@ RSpec.describe "Built site output" do
     doc = parse_site_html("index.html")
 
     expect(doc.at_css("h1")&.text).to include("Initialize Global Combat.")
-    expect(doc.text).to include("Red protects. Blue attacks. Execute the briefing.")
+    expect(doc.text).to include("Phalanx Duel v1.4.0 is live in production.")
     expect(doc.text).to include("Formation is Destiny")
     expect(doc.text).to include("Read the Rules")
     expect(doc.text).to include("Combat Lab")
