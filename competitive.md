@@ -1,11 +1,11 @@
 ---
 title: Competitive Play
-description: "Phalanx Duel v1.1.0 global ladder, Glicko-2 ratings, and tournament ecosystem."
+description: "Phalanx Duel v1.4.0 global ladder, Glicko-2 ratings, and tournament ecosystem."
 ---
 
 # Competitive Play (The Ladder)
 
-Phalanx Duel v1.1.0 introduces a production-grade competitive ecosystem designed for deterministic tactical combat across all platforms. While the core game engine is v1.1.0, the **Ladder and Matchmaking system is currently in Beta**—it has been thoroughly tested in development but is now ready to be put through its paces by the community.
+Phalanx Duel v1.4.0 runs a production competitive ecosystem designed for deterministic tactical combat across supported clients. The **Ladder and Matchmaking system remains Beta** while population and balance evidence grows.
 
 <section class="card">
   <h2>1. Global Rankings (Glicko-2)</h2>
@@ -20,7 +20,7 @@ Phalanx Duel v1.1.0 introduces a production-grade competitive ecosystem designed
 
 <section class="card">
   <h2>2. In-Game Briefings</h2>
-  <p>Phalanx Duel v1.1.0 features high-fidelity video briefings generated directly from the combat engine. These tutorials provide phase-specific intelligence on complex tactical maneuvers.</p>
+  <p>Phalanx Duel v1.4.0 combines high-fidelity briefings with engine-authored combat narration and arithmetic proof, providing phase-specific intelligence without asking the client to rederive outcomes.</p>
   <p><a href="{{ '/learn/getting-started/' | relative_url }}">Launch Tactical Briefings</a></p>
 </section>
 

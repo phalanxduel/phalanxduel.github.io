@@ -1,12 +1,12 @@
 ---
 title: Quick Reference
-description: Printable one-page reference for canonical Phalanx Duel v1.1.0 setup, turn flow, and suit timing.
+description: Printable one-page reference for Phalanx Duel v1.4.0 setup, turn flow, and suit timing.
 layout: default
 ---
 
-# Quick Reference (v1.1.0)
+# Quick Reference (v1.4.0)
 
-<p class="small-note">Use this page at the table. Use <a href="{{ '/learn/rules/' | relative_url }}">Rules v1.1.0 Summary</a> for fuller explanations and <a href="{{ '/mastery/mastery/' | relative_url }}">Suits & Strategy</a> for mastery patterns.</p>
+<p class="small-note">Use this page at the table. Use the <a href="{{ '/learn/rules/' | relative_url }}">v1.4.0 / rules v3.0 summary</a> for fuller explanations and <a href="{{ '/mastery/mastery/' | relative_url }}">Suits & Strategy</a> for mastery patterns.</p>
 
 <div class="grid-2">
   <div class="card">

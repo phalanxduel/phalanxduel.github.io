@@ -17,7 +17,7 @@ While suits provide basic defense, they also trigger offensive modifiers that sh
 ## 2. Rule Variations: Legacy vs. Canonical
 You can toggle the Simulation Environment in the Combat Lab to see the evolution of the engine:
 - **Legacy Prototype:** The original combat math. No protection for special cards—every card is vulnerable. Used for historical regression.
-- **Canonical v1.1.0:** The modern competitive standard. Introduces advanced card protections (see below).
+- **Current v1.4.0 / Rules v3.0:** The deployed competitive standard with corrected boundary scope and advanced card eligibility (see below).
 
 ## 3. Elite Combat Rules (Canonical Only)
 In the Canonical format, specific cards are resistant to destruction:
@@ -30,4 +30,4 @@ In the Canonical format, specific cards are resistant to destruction:
 
 ### [Refine Skills in Combat Lab]({{ '/tools/battle-calculator/' | relative_url }})
 
-*Experiment with these rules by switching between 'Legacy Prototype' and 'Canonical v1.1.0' modes. Observe how Spade attacks behave differently and verify Ace resilience.*
+*Experiment with these rules by switching between 'Legacy Prototype' and 'Current v1.4.0 Rules' modes. Observe the versioned boundary differences and verify Ace resilience.*

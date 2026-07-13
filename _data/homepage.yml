@@ -6,14 +6,14 @@ active_variant: "embed_conversion_v1"
 
 variants:
   tactical_v1:
-    name: "Tactical Overthrow v1.1.0"
+    name: "Tactical Overthrow v1.4.0"
     sections:
       - type: "hero"
         class: "hero"
         aria_labelledby: "hero-title"
         title_id: "hero-title"
         heading: "The Definitive Tactical Duel."
-        body: "Phalanx Duel v1.1.0 is here. A deterministic tactical battle on a 4x2 grid. No luck. No boosters. Full cross-platform matchmaking and competitive Glicko rankings. Red protects. Blue attacks. Master the cascade."
+        body: "Phalanx Duel v1.4.0 is live. A deterministic tactical battle on a 4x2 grid with authoritative combat mathematics, replay-verifiable outcomes, and cinematic explanations of every breach. Red protects. Blue attacks. Master the cascade."
         proof_points:
           - "Deterministic: 0% RNG"
           - "Open: Standard 52-Card Deck"
@@ -112,14 +112,14 @@ variants:
         closing_microcopy: "Free. Fast. Fair."
 
   embed_conversion_v1:
-    name: "Vector Command v1.1.0"
+    name: "Vector Command v1.4.0"
     sections:
       - type: "hero"
         class: "hero"
         aria_labelledby: "hero-title"
         title_id: "hero-title"
         heading: "Initialize Global Combat."
-        body: "Phalanx Duel v1.1.0 is officially active. Deterministic tactical battle on a 4x2 grid. Zero RNG. Full cross-platform competition. Red protects. Blue attacks. Execute the briefing."
+        body: "Phalanx Duel v1.4.0 is live in production. Deterministic tactical battle on a 4x2 grid, now with authoritative damage proofs, replay-verifiable outcomes, and tighter cinematic combat narration. Execute the briefing."
         proof_points:
           - "Vector: 0% RNG"
           - "Open: Standard Deck"
@@ -180,7 +180,7 @@ variants:
             body: "Your 4x2 grid is your survival. Every card is a tactical data-point. Deploy carefully to protect your line."
             asset_id: "tut-foundations-setup"
           - heading: "02. The Cascade"
-            body: "Damage flows front-to-back. Choose between **Classic Mode** (Equal/Greater attack) or **Cumulative Mode** (Carryover damage)."
+            body: "Damage flows front-to-back under versioned rules. Classic damage resets surviving cards; Cumulative damage preserves wounds between attacks."
             asset_id: "tut-foundations-cascade"
           - heading: "03. Determinism"
             body: "Identical inputs. Identical outcomes. Your victory is not a roll of the dice; it is mathematical inevitability."

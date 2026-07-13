@@ -22,7 +22,7 @@
 
     /**
      * Independent reference calculation for validation.
-     * Must mirror the canonical v1.1.0 logic discovered in battle-resolver.js.
+     * Independent expectation for the deployed game v1.4.0 / rules spec v3.0.
      * RESOLUTION ORDER: Shield (Mitigation) -> Weapon (Doubling) -> Clamp (Eligibility).
      */
     function calculateExpectedLP(attacker, front, back) {
@@ -57,8 +57,8 @@
           // DIAMOND mitigation happens BEFORE Club doubling at the card boundary
           overflow = Math.max(0, overflow - frontDiamondShield);
 
-          // Club doubling happens AFTER Diamond mitigation
-          if (attacker.suit === "C") overflow *= 2;
+          // Club requires a destroyed front card and a real next-card boundary.
+          if (attacker.suit === "C" && frontDestroyed) overflow *= 2;
           
           // Back card takes remaining energy
           if (overflow >= back.value) {
@@ -74,8 +74,7 @@
           }
         }
       } else {
-        // No back card: Diamond shield still applies to breach
-        overflow = Math.max(0, overflow - frontDiamondShield);
+        // No back card: there is no Card->Card boundary, so Diamond does not apply.
       }
 
       // Stage 3: Player LP
@@ -103,7 +102,7 @@
               const front = card(fSuit, cat.def);
               const back = card(bSuit, cat.def);
               
-              const result = resolve("canonical_v1_0", attacker, front, back);
+              const result = resolve("current_v3_0", attacker, front, back);
               const expectedLP = calculateExpectedLP(attacker, front, back);
               
               assert.equal(result.lpDamage, expectedLP, `Attacker ${attacker.suit}${attacker.value} vs ${front.suit}${front.value} / ${back.suit}${back.value} -> Expected ${expectedLP} LP damage`);
@@ -116,7 +115,7 @@
 
   QUnit.module("Battle Resolver - Edge Cases", function () {
     QUnit.test("low attacker into stronger defenders yields zero LP damage", function (assert) {
-      const modes = ["legacy_reference", "canonical_v1_0"];
+      const modes = ["legacy_reference", "current_v3_0"];
       modes.forEach(function (mode) {
         const result = resolve(mode, card("D", 1), card("C", 10), card("S", 10));
         assert.equal(result.lpDamage, 0, mode + " has no LP leakage");
@@ -124,7 +123,7 @@
     });
 
     QUnit.test("heart mitigation cannot push LP damage below zero", function (assert) {
-      const result = resolve("canonical_v1_0", card("D", 4, "4"), card("H", 3, "3"), null);
+      const result = resolve("current_v3_0", card("D", 4, "4"), card("H", 3, "3"), null);
       assert.equal(result.lpDamage, 0, "LP damage clamps to zero");
     });
 
@@ -148,7 +147,7 @@
       // 2. Shield: 0 (Ace survived, no shield).
       // 3. Weapon (Spade x2): 10 * 2 = 20.
       // Final LP = 20.
-      const current = resolve("canonical_v1_0", card("S", 11, "K"), card("H", 1, "A"), null);
+      const current = resolve("current_v3_0", card("S", 11, "K"), card("H", 1, "A"), null);
 
       assert.true(current.survivors.front, "front Ace survives");
       assert.equal(current.lpDamage, 20, "damage PASSES through the protected Ace (absorbing only 1 point)");
@@ -158,7 +157,7 @@
       // 11Q into 11K (front)
       // Front survives. Overflow = 11 - 11 = 0.
       // Result should be 0 LP damage but FRONT SURVIVES.
-      const result1 = resolve("canonical_v1_0", card("H", 11, "Q"), card("D", 11, "K"), null);
+      const result1 = resolve("current_v3_0", card("H", 11, "Q"), card("D", 11, "K"), null);
       
       // 11J (attacker) into 11K (front) with 10D (back)
       // Attacker is 11, Front is 11.
@@ -176,7 +175,7 @@
 
     QUnit.test("front Ace is discarded by direct Ace attack", function (assert) {
       const legacy = resolve("legacy_reference", card("H", 1, "A"), card("D", 1, "A"), card("C", 4, "4"));
-      const current = resolve("canonical_v1_0", card("H", 1, "A"), card("D", 1, "A"), card("C", 4, "4"));
+      const current = resolve("current_v3_0", card("H", 1, "A"), card("D", 1, "A"), card("C", 4, "4"));
 
       assert.notOk(legacy.survivors.front, "legacy: front Ace discarded by Ace");
       assert.notOk(current.survivors.front, "current: front Ace discarded by Ace");
@@ -184,23 +183,35 @@
       assert.notOk(current.specials.frontAceProtected, "current: no Ace protection");
     });
     QUnit.test("canonical: face-card destroy eligibility is enforced", function (assert) {
-      const queenIntoKing = resolve("canonical_v1_0", card("H", 11, "Q"), card("S", 11, "K"), null);
-      const kingIntoQueen = resolve("canonical_v1_0", card("H", 11, "K"), card("S", 11, "Q"), null);
+      const queenIntoKing = resolve("current_v3_0", card("H", 11, "Q"), card("S", 11, "K"), null);
+      const kingIntoQueen = resolve("current_v3_0", card("H", 11, "K"), card("S", 11, "Q"), null);
 
       assert.true(queenIntoKing.survivors.front, "queen cannot destroy king");
       assert.equal(queenIntoKing.frontHealth, 11, "ineligible face target remains at full value in classic mode");
       assert.notOk(kingIntoQueen.survivors.front, "king can destroy queen");
     });
 
-    QUnit.test("intro_rules mode aliases to canonical_v1_0", function (assert) {
+    QUnit.test("legacy mode names alias to current_v3_0", function (assert) {
       const aliased = resolve("intro_rules", card("D", 9, "9"), null, null);
-      assert.equal(aliased.mode, "canonical_v1_0", "legacy mode name remains a compatibility alias");
+      const v1Alias = resolve("canonical_v1_0", card("D", 9, "9"), null, null);
+      assert.equal(aliased.mode, "current_v3_0", "intro mode remains a compatibility alias");
+      assert.equal(v1Alias.mode, "current_v3_0", "v1 calculator mode remains a compatibility alias");
       assert.equal(aliased.lpDamage, 9, "alias resolves using canonical rules");
+    });
+
+    QUnit.test("v3 Club does not double across an empty front slot", function (assert) {
+      const result = resolve("current_v3_0", card("C", 8, "8"), null, card("D", 5, "5"));
+      assert.equal(result.lpDamage, 3, "back card receives base damage without an empty-front Club bonus");
+    });
+
+    QUnit.test("v3 Diamond does not shield a direct player path", function (assert) {
+      const result = resolve("current_v3_0", card("H", 8, "8"), card("D", 5, "5"), null);
+      assert.equal(result.lpDamage, 3, "destroyed Diamond only shields when a next card exists");
     });
   });
 
   QUnit.module("Battle Resolver - Permutations", function () {
-    const modes = ["legacy_reference", "canonical_v1_0"];
+    const modes = ["legacy_reference", "current_v3_0"];
     const attackers = ["D", "H", "C", "S"];
     const slotPermutations = [
       { front: null, back: null, label: "no defenders" },

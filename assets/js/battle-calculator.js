@@ -293,9 +293,9 @@ function init() {
   attackerSelect.value = "S-9";
   frontSelect.value = "D-3";
   backSelect.value = "H-2";
-  modeSelect.value = "canonical_v1_0";
+  modeSelect.value = "current_v3_0";
 
-  function runSimulation(event) {
+  function runSimulation() {
     const attacker = parseCard(attackerSelect.value);
     const front = parseCard(frontSelect.value);
     const back = parseCard(backSelect.value);

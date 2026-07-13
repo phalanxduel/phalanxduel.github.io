@@ -11,10 +11,11 @@ description: "What Phalanx: Duel is, who it is for, and how the game is being de
 </section>
 
 <section class="card">
-  <h2>The v1.1.0 Standard</h2>
+  <h2>The v1.4.0 Standard</h2>
   <ul class="quick-list">
     <li><strong>Zero RNG:</strong> Every outcome is determined by player choice and deterministic rules.</li>
-    <li><strong>High Fidelity:</strong> In-game tutorials powered by the canonical combat engine and ray-traced visuals.</li>
+    <li><strong>Explainable Combat:</strong> Engine-authored arithmetic provenance powers previews, narration, event displays, and post-match proof.</li>
+    <li><strong>Scientific Assurance:</strong> Rules are linked to independent reference checks, replay evidence, liveness properties, and observer-safe projections.</li>
     <li><strong>Cross-Platform:</strong> Play on the web (all screens), in your terminal with our Golang client, or via native mobile operatives (SwiftUI in-progress).</li>
     <li><strong>Ranked Competition (Beta):</strong> Global Glicko-2 matchmaking and public lobby system.</li>
   </ul>
@@ -31,7 +32,7 @@ description: "What Phalanx: Duel is, who it is for, and how the game is being de
 
 <section class="card">
   <h2>Production State</h2>
-  <p>Phalanx: Duel has reached <strong>v1.1.0 Stable</strong>. The core engine is production-ready, persistent, and highly observable.</p>
+  <p>Phalanx: Duel <strong>v1.4.0 Stable</strong> is live in production. The core engine is persistent, replay-verifiable, observable, and independently checked across its declared combat domain.</p>
   <p><a href="{{ '/status/' | relative_url }}">See current status and technical specifications.</a></p>
 </section>
 

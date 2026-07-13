@@ -1,4 +1,4 @@
-# Phalanx: Duel Pages Site (v1.1.0)
+# Phalanx: Duel Pages Site (v1.4.0)
 
 This repository is the `gh-pages` worktree for the Phalanx: Duel website. It features a modern, modular architecture for simulation-driven tutorials and a centralized media asset registry.
 
