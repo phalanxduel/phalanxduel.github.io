@@ -11,7 +11,7 @@ description: "What Phalanx: Duel is, who it is for, and how the game is being de
 </section>
 
 <section class="card">
-  <h2>The v1.4.0 Standard</h2>
+  <h2>The v1.5.0 Standard</h2>
   <ul class="quick-list">
     <li><strong>Zero RNG:</strong> Every outcome is determined by player choice and deterministic rules.</li>
     <li><strong>Explainable Combat:</strong> Engine-authored arithmetic provenance powers previews, narration, event displays, and post-match proof.</li>
