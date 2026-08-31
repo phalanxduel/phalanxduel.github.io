@@ -1,4 +1,4 @@
-# Phalanx: Duel Pages Site (v1.4.0)
+# Phalanx: Duel Pages Site (v1.5.0)
 
 This repository is the `gh-pages` worktree for the Phalanx: Duel website. It features a modern, modular architecture for simulation-driven tutorials and a centralized media asset registry.
 
@@ -104,6 +104,20 @@ Managed via `.tool-versions`:
 
 - Ruby `4.0.2`
 - Node.js `25.6.1`
+
+## Maintainer, Hiring, and Support
+
+Phalanx: Duel is maintained by [Mike Hall](https://www.just3ws.com/), a Principal Software Engineer and Systems Architect available for hire for legacy modernization, distributed systems architecture, platform resilience, OpenTelemetry, and AI/MCP engineering.
+
+- [Principal resume](https://www.just3ws.com/resumes/mike-hall-principal-software-engineer/)
+- [Advisory engagements](https://www.just3ws.com/engagements/)
+- [Contact Mike](https://www.just3ws.com/contact/)
+- [GitHub Sponsors](https://github.com/sponsors/just3ws)
+- [Buy Me a Coffee](https://buymeacoffee.com/just3ws)
+
+## Generated Assets Policy
+
+Only media required to build and serve the public site belongs in this repository, under `assets/`. Generated QA captures, full playthrough evidence, and presentation exports are excluded from Git and kept in external project storage. The game repository remains the canonical source for generated evidence and the site consumes only curated public assets.
 
 ## Historical Assets Policy
 
