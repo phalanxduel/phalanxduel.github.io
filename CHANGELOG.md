@@ -5,6 +5,13 @@ permalink: /CHANGELOG/
 
 # Changelog
 
+## [1.5.0] - 2026-07-22
+
+### Added
+
+- Documented the explainable combat, independent assurance, replay/liveness evidence, and stronger deterministic bot introduced by the current game release line.
+- Linked the public history narrative to the cross-repository continuity record.
+
 ## [1.4.0] - 2026-07-13
 
 ### Changed

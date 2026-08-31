@@ -13,7 +13,16 @@ description: "How Phalanx: Duel evolved from notebook sketches to modern digital
     <li><strong>July-August 2022:</strong> Legacy Ruby implementation explored combat logic and test-driven behavior.</li>
     <li><strong>February 2026:</strong> Modern TypeScript engine established with real-time multiplayer support.</li>
     <li><strong>April 27, 2026:</strong> <strong>v1.0.0 Stable Release.</strong> Global matchmaking, state persistence, and legal hardening.</li>
+    <li><strong>July 22, 2026:</strong> <strong>v1.5.0.</strong> The engine gained explainable combat mathematics, independent assurance checks, replay/liveness evidence, and a stronger tactical bot.</li>
+    <li><strong>August 2026:</strong> The project entered a maintenance and presentation phase: production remains the canonical runtime while the local harness can record complete, narrated games for teaching and demonstration.</li>
   </ul>
+</section>
+
+<section class="card">
+  <h2>From Game Idea to Living System</h2>
+  <p>The history is also a history of changing the medium. The Camp Tesomas notebook established the physical language: formations, four suit roles, and damage that could travel through a line. Friendly tabletop matches made those rules playable. The Ruby implementation turned the notebook into an executable experiment, where combat behavior could be tested and revised.</p>
+  <p>The current TypeScript system carries that same idea into a server-authoritative virtual tabletop. A web client, bot opponents, Go terminal client, persistent action ledger, replay checks, and OpenTelemetry diagnostics all consume the same deterministic state transitions. The result is not merely a digital adaptation: it is a continuously testable record of the original tabletop design.</p>
+  <p>For the artifact trail behind this narrative, see the <a href="https://github.com/phalanxduel/wiki/blob/master/Project-Timeline-and-Continuity.md">cross-repository project timeline</a>.</p>
 </section>
 
 <section class="hero">

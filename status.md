@@ -1,13 +1,13 @@
 ---
 title: Status
-description: "Current project phase, stability, and what to expect from Phalanx: Duel v1.4.0."
+description: "Current project phase, stability, and what to expect from Phalanx: Duel v1.5.0."
 ---
 
 # Project Status
 
 <section class="card">
   <h2>Current Phase</h2>
-  <p><strong>v1.4.0 Stable (Production).</strong> The deployed build reports schema version 1.4.0 and rules spec v3.0. This release adds authoritative combat mathematics, scientific gameplay assurance, corrected boundary semantics, and polished narration/effect/terminal choreography.</p>
+  <p><strong>v1.5.0 Stable (Production).</strong> The deployed build reports schema version 1.5.0 and rules spec v3.0. This release adds authoritative combat mathematics, scientific gameplay assurance, corrected boundary semantics, and polished narration/effect/terminal choreography.</p>
 </section>
 
 <section class="card">
