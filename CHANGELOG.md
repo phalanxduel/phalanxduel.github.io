@@ -5,7 +5,15 @@ permalink: /CHANGELOG/
 
 # Changelog
 
-## [1.5.0] - 2026-07-22
+## [1.5.0] - 2026-09-07
+
+### Added
+
+- Documented tournament operations suite (`bin/phx-tournament-top`, `bin/phx-tournament-check`, `bin/phx-top`).
+- Published canonical Full Stack Architecture & Operational Blueprint (`docs/architecture/FULL_STACK.md`).
+- Replay scrubber and historical match rewatch stabilization.
+
+## [1.5.0-rc1] - 2026-07-22
 
 ### Added
 
