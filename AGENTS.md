@@ -1,32 +1,19 @@
+---
+name: phalanxduel-site-instructions
+scope: repository
+audience: all coding agents
+canonical: true
+---
 
-<!-- BACKLOG.MD MCP GUIDELINES START -->
+# Agent Instructions
 
-<CRITICAL_INSTRUCTION>
+Use Backlog.md MCP for project planning and task management. Read the workflow
+overview before creating or executing a task; consult its task creation,
+execution, or finalization instructions as needed. Keep task dependencies in
+DAG order. The `backlog/` directory is the source of truth.
 
-## BACKLOG WORKFLOW INSTRUCTIONS
+Project-specific agent guidance:
 
-This project uses Backlog.md MCP for all task and project management activities.
-
-**CRITICAL GUIDANCE**
-
-- If your client supports MCP resources, read `backlog://workflow/overview` to understand when and how to use Backlog for this project.
-- If your client only supports tools or the above request fails, call `backlog.get_backlog_instructions()` to load the tool-oriented overview. Use the `instruction` selector when you need `task-creation`, `task-execution`, or `task-finalization`.
-
-- **First time working here?** Read the overview resource IMMEDIATELY to learn the workflow
-- **Already familiar?** You should have the overview cached ("## Backlog.md Overview (MCP)")
-- **When to read it**: BEFORE creating tasks, or when you're unsure whether to track work
-
-These guides cover:
-- Decision framework for when to create tasks
-- Search-first workflow to avoid duplicates
-- Links to detailed guides for task creation, execution, and finalization
-- MCP tools reference
-
-**Task Dependency Mandate:**
-When creating tasks in sequence, link them in their dependency order to allow for tasks to be completed with a full mapping of their dependency graph. Tasks must be linked as a Directed Acyclic Graph (DAG) to ensure dependencies are addressed in the correct sequence, minimizing back-tracking.
-
-You MUST read the overview resource to understand the complete workflow. The information is NOT summarized here.
-
-</CRITICAL_INSTRUCTION>
-
-<!-- BACKLOG.MD MCP GUIDELINES END -->
+- Issue tracking: [docs/agents/issue-tracker.md](docs/agents/issue-tracker.md)
+- Triage labels: [docs/agents/triage-labels.md](docs/agents/triage-labels.md)
+- Domain documentation: [docs/agents/domain.md](docs/agents/domain.md)
