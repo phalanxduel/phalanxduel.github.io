@@ -100,10 +100,10 @@ Manual accessibility checklist before publish:
 
 ## Runtime Tool Versions
 
-Managed via `.tool-versions`:
+Pinned once in `.tool-versions` for local mise use and GitHub Actions:
 
-- Ruby `4.0.2`
-- Node.js `25.6.1`
+- Ruby `4.0.9`
+- Node.js `26.13.0`
 
 ## Maintainer, Hiring, and Support
 

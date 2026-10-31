@@ -26,12 +26,12 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         with:
-          node-version: 25
+          node-version-file: .tool-versions
 
       - name: Setup Ruby
         uses: ruby/setup-ruby@c4e5b1316158f92e3d49443a9d58b31d25ac0f8f
         with:
-          ruby-version: 4.0.2
+          ruby-version: .tool-versions
 
           bundler-cache: false
 
