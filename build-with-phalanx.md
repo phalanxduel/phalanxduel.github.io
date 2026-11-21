@@ -17,6 +17,7 @@ description: "Technical overview and canonical documentation links for developer
 <section class="card">
   <h2>Canonical Developer Docs</h2>
   <ul class="quick-list">
+    <li><a href="{{ '/library/' | relative_url }}">Interactive Architecture &amp; Platform Library</a></li>
     <li><a href="https://github.com/phalanxduel/phalanxduel/blob/main/docs/architecture/principles.md" target="_blank" rel="noopener noreferrer">Architecture</a></li>
     <li><a href="https://github.com/phalanxduel/phalanxduel/blob/main/docs/architecture/site-flow.md" target="_blank" rel="noopener noreferrer">Site Flow</a></li>
     <li><a href="https://github.com/phalanxduel/phalanxduel/blob/main/docs/reference/client-compatibility.md" target="_blank" rel="noopener noreferrer">Client Compatibility</a></li>
