@@ -6,7 +6,7 @@ on:
 
 jobs:
   validate:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       # Repo policy requires all actions to be pinned to full commit SHAs.
       - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5

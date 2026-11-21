@@ -8,4 +8,5 @@ groma:
   code:
     - scanner: javascript
       file: assets/js/battle-calculator.qunit.js
+  group: Site Verification
 ---

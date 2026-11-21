@@ -8,4 +8,5 @@ groma:
   code:
     - scanner: javascript
       file: eslint.config.js
+  group: Site Verification
 ---

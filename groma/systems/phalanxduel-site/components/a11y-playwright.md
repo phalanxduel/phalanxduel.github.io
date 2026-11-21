@@ -8,4 +8,5 @@ groma:
   code:
     - scanner: javascript
       file: bin/a11y_playwright.cjs
+  group: Site Verification
 ---

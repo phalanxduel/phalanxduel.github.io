@@ -8,4 +8,5 @@ groma:
   code:
     - scanner: javascript
       file: bin/qunit_playwright.cjs
+  group: Site Verification
 ---

@@ -8,4 +8,5 @@ groma:
   code:
     - scanner: javascript
       file: assets/js/battle-resolver.js
+  group: Static Site
 ---
