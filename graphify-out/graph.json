@@ -2707,11 +2707,29 @@
       "source_location": "L1"
     },
     {
+      "id": "groma_actors_player",
+      "label": "player.md",
+      "_origin": "ast",
+      "community": 125,
+      "community_name": "explore-rules-and-calculate-combat.md",
+      "file_type": "document",
+      "frontmatter": {
+        "type": "C4 Actor",
+        "title": "Player",
+        "description": "Visitor or player learning rules and testing combat math",
+        "status": "stable"
+      },
+      "node_kind": "page",
+      "norm_label": "player.md",
+      "source_file": "groma/actors/player.md",
+      "source_location": "L1"
+    },
+    {
       "id": "groma_systems_phalanxduel_site_components_battle_calculator",
       "label": "components/battle-calculator.md",
       "_origin": "ast",
       "community": 125,
-      "community_name": "components/battle-calculator.md",
+      "community_name": "explore-rules-and-calculate-combat.md",
       "file_type": "document",
       "frontmatter": {
         "type": "C4 Component",
@@ -2722,6 +2740,75 @@
       "norm_label": "components/battle-calculator.md",
       "source_file": "groma/systems/phalanxduel-site/components/battle-calculator.md",
       "source_location": "L1"
+    },
+    {
+      "id": "groma_systems_phalanxduel_site_components_battle_resolver",
+      "label": "battle-resolver.md",
+      "_origin": "ast",
+      "community": 125,
+      "community_name": "explore-rules-and-calculate-combat.md",
+      "file_type": "document",
+      "frontmatter": {
+        "type": "C4 Component",
+        "title": "Battle resolver",
+        "status": "stable"
+      },
+      "node_kind": "page",
+      "norm_label": "battle-resolver.md",
+      "source_file": "groma/systems/phalanxduel-site/components/battle-resolver.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "groma_flows_explore_rules_and_calculate_combat",
+      "label": "explore-rules-and-calculate-combat.md",
+      "_origin": "ast",
+      "community": 125,
+      "community_name": "explore-rules-and-calculate-combat.md",
+      "file_type": "document",
+      "frontmatter": {
+        "type": "Groma Flow",
+        "title": "Explore rules and calculate combat"
+      },
+      "node_kind": "page",
+      "norm_label": "explore-rules-and-calculate-combat.md",
+      "source_file": "groma/flows/explore-rules-and-calculate-combat.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "groma_actors_player_relationships",
+      "label": "Relationships",
+      "_origin": "ast",
+      "community": 125,
+      "community_name": "explore-rules-and-calculate-combat.md",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "relationships",
+      "source_file": "groma/actors/player.md",
+      "source_location": "L12"
+    },
+    {
+      "id": "groma_flows_explore_rules_and_calculate_combat_steps",
+      "label": "Steps",
+      "_origin": "ast",
+      "community": 125,
+      "community_name": "explore-rules-and-calculate-combat.md",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "steps",
+      "source_file": "groma/flows/explore-rules-and-calculate-combat.md",
+      "source_location": "L10"
+    },
+    {
+      "id": "groma_systems_phalanxduel_site_components_battle_calculator_relationships",
+      "label": "Relationships",
+      "_origin": "ast",
+      "community": 125,
+      "community_name": "explore-rules-and-calculate-combat.md",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "relationships",
+      "source_file": "groma/systems/phalanxduel-site/components/battle-calculator.md",
+      "source_location": "L14"
     },
     {
       "id": "groma_systems_phalanxduel_site_components_battle_calculator_qunit",
@@ -2741,20 +2828,63 @@
       "source_location": "L1"
     },
     {
-      "id": "groma_systems_phalanxduel_site_components_battle_resolver",
-      "label": "battle-resolver.md",
+      "id": "docs_agents_ai_surface",
+      "label": "ai-surface.md",
       "_origin": "ast",
       "community": 127,
-      "community_name": "battle-resolver.md",
+      "community_name": "AI Surface & Multi-Agent Integration Guide",
       "file_type": "document",
-      "frontmatter": {
-        "type": "C4 Component",
-        "title": "Battle resolver",
-        "status": "stable"
-      },
       "node_kind": "page",
-      "norm_label": "battle-resolver.md",
-      "source_file": "groma/systems/phalanxduel-site/components/battle-resolver.md",
+      "norm_label": "ai-surface.md",
+      "source_file": "docs/agents/ai-surface.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "docs_agents_ai_surface_1_environment_posture_home_vs_work",
+      "label": "1. Environment Posture (Home vs. Work)",
+      "_origin": "ast",
+      "community": 127,
+      "community_name": "AI Surface & Multi-Agent Integration Guide",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "1. environment posture (home vs. work)",
+      "source_file": "docs/agents/ai-surface.md",
+      "source_location": "L5"
+    },
+    {
+      "id": "docs_agents_ai_surface_2_per_agent_integration_requirements",
+      "label": "2. Per-Agent Integration Requirements",
+      "_origin": "ast",
+      "community": 127,
+      "community_name": "AI Surface & Multi-Agent Integration Guide",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "2. per-agent integration requirements",
+      "source_file": "docs/agents/ai-surface.md",
+      "source_location": "L12"
+    },
+    {
+      "id": "docs_agents_ai_surface_3_shared_non_negotiable_rules",
+      "label": "3. Shared Non-Negotiable Rules",
+      "_origin": "ast",
+      "community": 127,
+      "community_name": "AI Surface & Multi-Agent Integration Guide",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "3. shared non-negotiable rules",
+      "source_file": "docs/agents/ai-surface.md",
+      "source_location": "L35"
+    },
+    {
+      "id": "docs_agents_ai_surface_ai_surface_multi_agent_integration_guide",
+      "label": "AI Surface & Multi-Agent Integration Guide",
+      "_origin": "ast",
+      "community": 127,
+      "community_name": "AI Surface & Multi-Agent Integration Guide",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "ai surface & multi-agent integration guide",
+      "source_file": "docs/agents/ai-surface.md",
       "source_location": "L1"
     },
     {
@@ -2775,6 +2905,24 @@
       "source_location": "L1"
     },
     {
+      "id": "groma_externals_goatcounter",
+      "label": "goatcounter.md",
+      "_origin": "ast",
+      "community": 129,
+      "community_name": "goatcounter-events.md",
+      "file_type": "document",
+      "frontmatter": {
+        "type": "C4 System",
+        "title": "GoatCounter",
+        "description": "Privacy-friendly web analytics service",
+        "status": "stable"
+      },
+      "node_kind": "page",
+      "norm_label": "goatcounter.md",
+      "source_file": "groma/externals/goatcounter.md",
+      "source_location": "L1"
+    },
+    {
       "id": "groma_systems_phalanxduel_site_components_goatcounter_events",
       "label": "goatcounter-events.md",
       "_origin": "ast",
@@ -2790,6 +2938,18 @@
       "norm_label": "goatcounter-events.md",
       "source_file": "groma/systems/phalanxduel-site/components/goatcounter-events.md",
       "source_location": "L1"
+    },
+    {
+      "id": "groma_systems_phalanxduel_site_components_goatcounter_events_relationships",
+      "label": "Relationships",
+      "_origin": "ast",
+      "community": 129,
+      "community_name": "goatcounter-events.md",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "relationships",
+      "source_file": "groma/systems/phalanxduel-site/components/goatcounter-events.md",
+      "source_location": "L14"
     },
     {
       "id": "agents_skills_improve_codebase_architecture_html_report_call_graph_collapse",
@@ -2982,6 +3142,24 @@
       "source_location": "L1"
     },
     {
+      "id": "groma_externals_phalanx_duel_game",
+      "label": "phalanx-duel-game.md",
+      "_origin": "ast",
+      "community": 132,
+      "community_name": "verify-reconnect.md",
+      "file_type": "document",
+      "frontmatter": {
+        "type": "C4 System",
+        "title": "Phalanx Duel Game",
+        "description": "Live server-authoritative game application",
+        "status": "stable"
+      },
+      "node_kind": "page",
+      "norm_label": "phalanx-duel-game.md",
+      "source_file": "groma/externals/phalanx-duel-game.md",
+      "source_location": "L1"
+    },
+    {
       "id": "groma_systems_phalanxduel_site_components_verify_reconnect",
       "label": "verify-reconnect.md",
       "_origin": "ast",
@@ -2999,6 +3177,18 @@
       "source_location": "L1"
     },
     {
+      "id": "groma_systems_phalanxduel_site_components_verify_reconnect_relationships",
+      "label": "Relationships",
+      "_origin": "ast",
+      "community": 132,
+      "community_name": "verify-reconnect.md",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "relationships",
+      "source_file": "groma/systems/phalanxduel-site/components/verify-reconnect.md",
+      "source_location": "L15"
+    },
+    {
       "id": "groma_systems_phalanxduel_site_system",
       "label": "system.md",
       "_origin": "ast",
@@ -3007,8 +3197,9 @@
       "file_type": "document",
       "frontmatter": {
         "type": "C4 System",
-        "title": "phalanxduel-site",
-        "status": "stable"
+        "title": "Phalanx Duel Site",
+        "status": "stable",
+        "description": "Public marketing, learning, and battle calculator site for Phalanx Duel"
       },
       "node_kind": "page",
       "norm_label": "system.md",
@@ -3041,6 +3232,122 @@
       "norm_label": "build_output_spec.rb",
       "source_file": "spec/site/build_output_spec.rb",
       "source_location": "L1"
+    },
+    {
+      "id": "backlog_tasks_task_019_add_rbs_4_2_boundary_contracts_sig_and_rails_c4_component_mapping_into_groma_architecture_json",
+      "label": "task-019 - Add-RBS-4.2-boundary-contracts-sig-and-Rails-C4-component-mapping-into-groma-architecture.json.md",
+      "_origin": "ast",
+      "community": 136,
+      "community_name": "task-019 - Add-RBS-4.2-boundary-contracts-sig-and-Rails-C4-component-mapping-into-groma-architecture.json.md",
+      "file_type": "document",
+      "frontmatter": {
+        "id": "TASK-019",
+        "title": "&gt;-",
+        "status": "To Do",
+        "assignee": "[]",
+        "created_date": "2026-11-14T22:48:00Z",
+        "dependencies": "[]",
+        "priority": "medium",
+        "ordinal": "8000"
+      },
+      "node_kind": "page",
+      "norm_label": "task-019 - add-rbs-4.2-boundary-contracts-sig-and-rails-c4-component-mapping-into-groma-architecture.json.md",
+      "source_file": "backlog/tasks/task-019 - Add-RBS-4.2-boundary-contracts-sig-and-Rails-C4-component-mapping-into-groma-architecture.json.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "backlog_tasks_task_019_add_rbs_4_2_boundary_contracts_sig_and_rails_c4_component_mapping_into_groma_architecture_json_acceptance_criteria",
+      "label": "Acceptance Criteria",
+      "_origin": "ast",
+      "community": 136,
+      "community_name": "task-019 - Add-RBS-4.2-boundary-contracts-sig-and-Rails-C4-component-mapping-into-groma-architecture.json.md",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "acceptance criteria",
+      "source_file": "backlog/tasks/task-019 - Add-RBS-4.2-boundary-contracts-sig-and-Rails-C4-component-mapping-into-groma-architecture.json.md",
+      "source_location": "L24"
+    },
+    {
+      "id": "backlog_tasks_task_019_add_rbs_4_2_boundary_contracts_sig_and_rails_c4_component_mapping_into_groma_architecture_json_definition_of_done",
+      "label": "Definition of Done",
+      "_origin": "ast",
+      "community": 136,
+      "community_name": "task-019 - Add-RBS-4.2-boundary-contracts-sig-and-Rails-C4-component-mapping-into-groma-architecture.json.md",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "definition of done",
+      "source_file": "backlog/tasks/task-019 - Add-RBS-4.2-boundary-contracts-sig-and-Rails-C4-component-mapping-into-groma-architecture.json.md",
+      "source_location": "L30"
+    },
+    {
+      "id": "backlog_tasks_task_019_add_rbs_4_2_boundary_contracts_sig_and_rails_c4_component_mapping_into_groma_architecture_json_description",
+      "label": "Description",
+      "_origin": "ast",
+      "community": 136,
+      "community_name": "task-019 - Add-RBS-4.2-boundary-contracts-sig-and-Rails-C4-component-mapping-into-groma-architecture.json.md",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "description",
+      "source_file": "backlog/tasks/task-019 - Add-RBS-4.2-boundary-contracts-sig-and-Rails-C4-component-mapping-into-groma-architecture.json.md",
+      "source_location": "L18"
+    },
+    {
+      "id": "groma_actors_maintainer",
+      "label": "maintainer.md",
+      "_origin": "ast",
+      "community": 137,
+      "community_name": "maintainer.md",
+      "file_type": "document",
+      "frontmatter": {
+        "type": "C4 Actor",
+        "title": "Maintainer",
+        "description": "Site maintainer validating and publishing updates",
+        "status": "stable"
+      },
+      "node_kind": "page",
+      "norm_label": "maintainer.md",
+      "source_file": "groma/actors/maintainer.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "groma_actors_maintainer_relationships",
+      "label": "Relationships",
+      "_origin": "ast",
+      "community": 137,
+      "community_name": "maintainer.md",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "relationships",
+      "source_file": "groma/actors/maintainer.md",
+      "source_location": "L12"
+    },
+    {
+      "id": "learn_tutorials",
+      "label": "tutorials.md",
+      "_origin": "ast",
+      "community": 138,
+      "community_name": "tutorials.md",
+      "file_type": "document",
+      "frontmatter": {
+        "title": "Video Tutorials &amp; Masterclass Series",
+        "description": "Watch the 22-episode Phalanx Duel video series \u2014 10 quick-start Shorts and 12 deep-dive tactical guides with full searchable transcripts."
+      },
+      "node_kind": "page",
+      "norm_label": "tutorials.md",
+      "source_file": "learn/tutorials.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "learn_tutorials_video_tutorials_amp_masterclass_series",
+      "label": "Video Tutorials &amp; Masterclass Series",
+      "_origin": "ast",
+      "community": 138,
+      "community_name": "tutorials.md",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "video tutorials &amp; masterclass series",
+      "source_file": "learn/tutorials.md",
+      "source_location": "L6"
     },
     {
       "id": "bin_smoke_playwright_chromium",
@@ -5560,7 +5867,7 @@
       "label": "system-cartography/SKILL.md",
       "_origin": "ast",
       "community": 30,
-      "community_name": "2. Standard Workflows by Application",
+      "community_name": "System Cartography & Schema Topology",
       "file_type": "document",
       "frontmatter": {
         "name": "system-cartography",
@@ -5576,7 +5883,7 @@
       "label": "1. Core Principles",
       "_origin": "ast",
       "community": 30,
-      "community_name": "2. Standard Workflows by Application",
+      "community_name": "System Cartography & Schema Topology",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "1. core principles",
@@ -5588,7 +5895,7 @@
       "label": "2. Standard Workflows by Application",
       "_origin": "ast",
       "community": 30,
-      "community_name": "2. Standard Workflows by Application",
+      "community_name": "System Cartography & Schema Topology",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "2. standard workflows by application",
@@ -5596,23 +5903,35 @@
       "source_location": "L36"
     },
     {
-      "id": "agents_skills_system_cartography_skill_3_system_map_documentation",
-      "label": "3. System Map Documentation",
+      "id": "agents_skills_system_cartography_skill_3_c4_architecture_ast_graph_integration_groma_md_graphify",
+      "label": "3. C4 Architecture & AST Graph Integration (`Groma.md` + `graphify`)",
       "_origin": "ast",
       "community": 30,
-      "community_name": "2. Standard Workflows by Application",
+      "community_name": "System Cartography & Schema Topology",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "3. system map documentation",
+      "norm_label": "3. c4 architecture & ast graph integration (`groma.md` + `graphify`)",
       "source_file": ".agents/skills/system-cartography/SKILL.md",
       "source_location": "L73"
+    },
+    {
+      "id": "agents_skills_system_cartography_skill_4_system_map_documentation",
+      "label": "4. System Map Documentation",
+      "_origin": "ast",
+      "community": 30,
+      "community_name": "System Cartography & Schema Topology",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "4. system map documentation",
+      "source_file": ".agents/skills/system-cartography/SKILL.md",
+      "source_location": "L81"
     },
     {
       "id": "agents_skills_system_cartography_skill_context_engine_my_context_engine",
       "label": "Context Engine (`~/my/context-engine`)",
       "_origin": "ast",
       "community": 30,
-      "community_name": "2. Standard Workflows by Application",
+      "community_name": "System Cartography & Schema Topology",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "context engine (`~/my/context-engine`)",
@@ -5624,7 +5943,7 @@
       "label": "Hallway (`~/github.com/just3ws/hallway`)",
       "_origin": "ast",
       "community": 30,
-      "community_name": "2. Standard Workflows by Application",
+      "community_name": "System Cartography & Schema Topology",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "hallway (`~/github.com/just3ws/hallway`)",
@@ -5636,7 +5955,7 @@
       "label": "System Cartography & Schema Topology",
       "_origin": "ast",
       "community": 30,
-      "community_name": "2. Standard Workflows by Application",
+      "community_name": "System Cartography & Schema Topology",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "system cartography & schema topology",
@@ -5648,7 +5967,7 @@
       "label": "WWWorkRemote (`~/github.com/wwworkremote/wwworkremote`)",
       "_origin": "ast",
       "community": 30,
-      "community_name": "2. Standard Workflows by Application",
+      "community_name": "System Cartography & Schema Topology",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "wwworkremote (`~/github.com/wwworkremote/wwworkremote`)",
@@ -5772,7 +6091,7 @@
       "node_kind": "heading",
       "norm_label": "challenge against the glossary",
       "source_file": ".agents/skills/grill-with-docs/SKILL.md",
-      "source_location": "L56"
+      "source_location": "L66"
     },
     {
       "id": "agents_skills_grill_with_docs_skill_cross_reference_with_code",
@@ -5784,7 +6103,7 @@
       "node_kind": "heading",
       "norm_label": "cross-reference with code",
       "source_file": ".agents/skills/grill-with-docs/SKILL.md",
-      "source_location": "L68"
+      "source_location": "L78"
     },
     {
       "id": "agents_skills_grill_with_docs_skill_discuss_concrete_scenarios",
@@ -5796,7 +6115,7 @@
       "node_kind": "heading",
       "norm_label": "discuss concrete scenarios",
       "source_file": ".agents/skills/grill-with-docs/SKILL.md",
-      "source_location": "L64"
+      "source_location": "L74"
     },
     {
       "id": "agents_skills_grill_with_docs_skill_during_the_session",
@@ -5808,19 +6127,19 @@
       "node_kind": "heading",
       "norm_label": "during the session",
       "source_file": ".agents/skills/grill-with-docs/SKILL.md",
-      "source_location": "L54"
+      "source_location": "L64"
     },
     {
-      "id": "agents_skills_grill_with_docs_skill_offer_adrs_sparingly",
-      "label": "Offer ADRs sparingly",
+      "id": "agents_skills_grill_with_docs_skill_offer_adrs_backlog_decisions_sparingly",
+      "label": "Offer ADRs / Backlog Decisions sparingly",
       "_origin": "ast",
       "community": 32,
       "community_name": "During the session",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "offer adrs sparingly",
+      "norm_label": "offer adrs / backlog decisions sparingly",
       "source_file": ".agents/skills/grill-with-docs/SKILL.md",
-      "source_location": "L78"
+      "source_location": "L88"
     },
     {
       "id": "agents_skills_grill_with_docs_skill_sharpen_fuzzy_language",
@@ -5832,7 +6151,7 @@
       "node_kind": "heading",
       "norm_label": "sharpen fuzzy language",
       "source_file": ".agents/skills/grill-with-docs/SKILL.md",
-      "source_location": "L60"
+      "source_location": "L70"
     },
     {
       "id": "agents_skills_grill_with_docs_skill_update_context_md_inline",
@@ -5844,7 +6163,7 @@
       "node_kind": "heading",
       "norm_label": "update context.md inline",
       "source_file": ".agents/skills/grill-with-docs/SKILL.md",
-      "source_location": "L72"
+      "source_location": "L82"
     },
     {
       "id": "agents_skills_ponytail_skill",
@@ -12420,7 +12739,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": ".agents/skills/grill-with-docs/SKILL.md",
-      "source_location": "L54",
+      "source_location": "L64",
       "weight": 1.0
     },
     {
@@ -12442,7 +12761,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": ".agents/skills/grill-with-docs/SKILL.md",
-      "source_location": "L56",
+      "source_location": "L66",
       "weight": 1.0
     },
     {
@@ -12453,7 +12772,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": ".agents/skills/grill-with-docs/SKILL.md",
-      "source_location": "L60",
+      "source_location": "L70",
       "weight": 1.0
     },
     {
@@ -12464,7 +12783,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": ".agents/skills/grill-with-docs/SKILL.md",
-      "source_location": "L64",
+      "source_location": "L74",
       "weight": 1.0
     },
     {
@@ -12475,7 +12794,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": ".agents/skills/grill-with-docs/SKILL.md",
-      "source_location": "L68",
+      "source_location": "L78",
       "weight": 1.0
     },
     {
@@ -12486,18 +12805,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": ".agents/skills/grill-with-docs/SKILL.md",
-      "source_location": "L72",
+      "source_location": "L82",
       "weight": 1.0
     },
     {
       "source": "agents_skills_grill_with_docs_skill_during_the_session",
-      "target": "agents_skills_grill_with_docs_skill_offer_adrs_sparingly",
+      "target": "agents_skills_grill_with_docs_skill_offer_adrs_backlog_decisions_sparingly",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": ".agents/skills/grill-with-docs/SKILL.md",
-      "source_location": "L78",
+      "source_location": "L88",
       "weight": 1.0
     },
     {
@@ -13624,13 +13943,24 @@
     },
     {
       "source": "agents_skills_system_cartography_skill_system_cartography_schema_topology",
-      "target": "agents_skills_system_cartography_skill_3_system_map_documentation",
+      "target": "agents_skills_system_cartography_skill_3_c4_architecture_ast_graph_integration_groma_md_graphify",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": ".agents/skills/system-cartography/SKILL.md",
       "source_location": "L73",
+      "weight": 1.0
+    },
+    {
+      "source": "agents_skills_system_cartography_skill_system_cartography_schema_topology",
+      "target": "agents_skills_system_cartography_skill_4_system_map_documentation",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".agents/skills/system-cartography/SKILL.md",
+      "source_location": "L81",
       "weight": 1.0
     },
     {
@@ -15988,6 +16318,39 @@
       "weight": 1.0
     },
     {
+      "source": "backlog_tasks_task_019_add_rbs_4_2_boundary_contracts_sig_and_rails_c4_component_mapping_into_groma_architecture_json",
+      "target": "backlog_tasks_task_019_add_rbs_4_2_boundary_contracts_sig_and_rails_c4_component_mapping_into_groma_architecture_json_description",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backlog/tasks/task-019 - Add-RBS-4.2-boundary-contracts-sig-and-Rails-C4-component-mapping-into-groma-architecture.json.md",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "backlog_tasks_task_019_add_rbs_4_2_boundary_contracts_sig_and_rails_c4_component_mapping_into_groma_architecture_json",
+      "target": "backlog_tasks_task_019_add_rbs_4_2_boundary_contracts_sig_and_rails_c4_component_mapping_into_groma_architecture_json_acceptance_criteria",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backlog/tasks/task-019 - Add-RBS-4.2-boundary-contracts-sig-and-Rails-C4-component-mapping-into-groma-architecture.json.md",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "backlog_tasks_task_019_add_rbs_4_2_boundary_contracts_sig_and_rails_c4_component_mapping_into_groma_architecture_json",
+      "target": "backlog_tasks_task_019_add_rbs_4_2_boundary_contracts_sig_and_rails_c4_component_mapping_into_groma_architecture_json_definition_of_done",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backlog/tasks/task-019 - Add-RBS-4.2-boundary-contracts-sig-and-Rails-C4-component-mapping-into-groma-architecture.json.md",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
       "source": "battle_calculator_tests",
       "target": "battle_calculator_tests_battle_calculator_unit_tests",
       "relation": "contains",
@@ -16802,6 +17165,50 @@
       "weight": 1.0
     },
     {
+      "source": "docs_agents_ai_surface",
+      "target": "docs_agents_ai_surface_ai_surface_multi_agent_integration_guide",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/agents/ai-surface.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_agents_ai_surface_ai_surface_multi_agent_integration_guide",
+      "target": "docs_agents_ai_surface_2_per_agent_integration_requirements",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/agents/ai-surface.md",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_agents_ai_surface_ai_surface_multi_agent_integration_guide",
+      "target": "docs_agents_ai_surface_3_shared_non_negotiable_rules",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/agents/ai-surface.md",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_agents_ai_surface_ai_surface_multi_agent_integration_guide",
+      "target": "docs_agents_ai_surface_1_environment_posture_home_vs_work",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/agents/ai-surface.md",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
       "source": "docs_agents_domain",
       "target": "docs_agents_domain_domain_docs",
       "relation": "contains",
@@ -17484,6 +17891,39 @@
       "weight": 1.0
     },
     {
+      "source": "groma_actors_maintainer",
+      "target": "groma_actors_maintainer_relationships",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "groma/actors/maintainer.md",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "groma_actors_player",
+      "target": "groma_actors_player_relationships",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "groma/actors/player.md",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "groma_flows_explore_rules_and_calculate_combat",
+      "target": "groma_flows_explore_rules_and_calculate_combat_steps",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "groma/flows/explore-rules-and-calculate-combat.md",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
       "source": "groma_index",
       "target": "groma_index_contents",
       "relation": "contains",
@@ -17492,6 +17932,39 @@
       "confidence_score": 1.0,
       "source_file": "groma/index.md",
       "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "groma_systems_phalanxduel_site_components_battle_calculator",
+      "target": "groma_systems_phalanxduel_site_components_battle_calculator_relationships",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "groma/systems/phalanxduel-site/components/battle-calculator.md",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "groma_systems_phalanxduel_site_components_goatcounter_events",
+      "target": "groma_systems_phalanxduel_site_components_goatcounter_events_relationships",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "groma/systems/phalanxduel-site/components/goatcounter-events.md",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "groma_systems_phalanxduel_site_components_verify_reconnect",
+      "target": "groma_systems_phalanxduel_site_components_verify_reconnect_relationships",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "groma/systems/phalanxduel-site/components/verify-reconnect.md",
+      "source_location": "L15",
       "weight": 1.0
     },
     {
@@ -17998,6 +18471,17 @@
       "confidence_score": 1.0,
       "source_file": "learn/tactical-depth.md",
       "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "learn_tutorials",
+      "target": "learn_tutorials_video_tutorials_amp_masterclass_series",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "learn/tutorials.md",
+      "source_location": "L6",
       "weight": 1.0
     },
     {
@@ -19097,7 +19581,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": ".agents/skills/grill-with-docs/SKILL.md",
-      "source_location": "L74",
+      "source_location": "L84",
       "weight": 1.0
     },
     {
@@ -19108,7 +19592,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": ".agents/skills/grill-with-docs/SKILL.md",
-      "source_location": "L86",
+      "source_location": "L97",
       "weight": 1.0
     },
     {
@@ -19376,6 +19860,39 @@
       "weight": 1.0
     },
     {
+      "source": "groma_flows_explore_rules_and_calculate_combat",
+      "target": "groma_actors_player",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "groma/flows/explore-rules-and-calculate-combat.md",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "groma_flows_explore_rules_and_calculate_combat",
+      "target": "groma_systems_phalanxduel_site_components_battle_calculator",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "groma/flows/explore-rules-and-calculate-combat.md",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "groma_flows_explore_rules_and_calculate_combat",
+      "target": "groma_systems_phalanxduel_site_components_battle_resolver",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "groma/flows/explore-rules-and-calculate-combat.md",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
       "source": "groma_index",
       "target": "groma_project",
       "relation": "references",
@@ -19383,7 +19900,29 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "groma/index.md",
-      "source_location": "L7",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "groma_systems_phalanxduel_site_components_goatcounter_events",
+      "target": "groma_externals_goatcounter",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "groma/systems/phalanxduel-site/components/goatcounter-events.md",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "groma_systems_phalanxduel_site_components_verify_reconnect",
+      "target": "groma_externals_phalanx_duel_game",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "groma/systems/phalanxduel-site/components/verify-reconnect.md",
+      "source_location": "L19",
       "weight": 1.0
     },
     {
@@ -19412,5 +19951,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "1c5fffc69a643fc5898cba5eb7d45733515c9278"
+  "built_at_commit": "13fc830d8f15c84d41dd7819a469697cf2a7dd82"
 }

@@ -29,7 +29,7 @@
   "27": "2. Asset Generation Requests (For Game AI)",
   "28": "Official Game Formats",
   "29": "Dependency categories",
-  "30": "2. Standard Workflows by Application",
+  "30": "System Cartography & Schema Topology",
   "31": "task-005 - Site-Transformation-Tactical-Brutalism-Suit-Truth.md",
   "32": "During the session",
   "33": "/ponytail — Reducing Premature Technical Debt",
@@ -124,9 +124,9 @@
   "122": "scratch.md",
   "123": "validate_semantic_output.rb",
   "124": "a11y-playwright.md",
-  "125": "components/battle-calculator.md",
+  "125": "explore-rules-and-calculate-combat.md",
   "126": "battle-calculator-qunit.md",
-  "127": "battle-resolver.md",
+  "127": "AI Surface & Multi-Agent Integration Guide",
   "128": "eslint-config.md",
   "129": "goatcounter-events.md",
   "130": "qunit-playwright.md",
@@ -134,5 +134,8 @@
   "132": "verify-reconnect.md",
   "133": "system.md",
   "134": "index.md",
-  "135": "build_output_spec.rb"
+  "135": "build_output_spec.rb",
+  "136": "task-019 - Add-RBS-4.2-boundary-contracts-sig-and-Rails-C4-component-mapping-into-groma-architecture.json.md",
+  "137": "maintainer.md",
+  "138": "tutorials.md"
 }

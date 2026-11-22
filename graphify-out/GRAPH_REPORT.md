@@ -1,16 +1,16 @@
-# Graph Report - site  (2026-11-14)
+# Graph Report - site  (2026-11-22)
 
 ## Corpus Check
-- 152 files · ~4,592,719 words
+- 160 files · ~4,629,865 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 854 nodes · 784 edges · 136 communities (84 shown, 32 thin omitted)
+- 877 nodes · 804 edges · 139 communities (87 shown, 36 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 2 edges (avg confidence: 0.85)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `1c5fffc6`
+- Built from commit: `13fc830d`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -45,7 +45,7 @@
 - 2. Asset Generation Requests (For Game AI)
 - Official Game Formats
 - Dependency categories
-- 2. Standard Workflows by Application
+- System Cartography & Schema Topology
 - task-005 - Site-Transformation-Tactical-Brutalism-Suit-Truth.md
 - During the session
 - /ponytail — Reducing Premature Technical Debt
@@ -131,6 +131,13 @@
 - support.md
 - technical-details.md
 - tools/battle-calculator.md
+- explore-rules-and-calculate-combat.md
+- AI Surface & Multi-Agent Integration Guide
+- goatcounter-events.md
+- verify-reconnect.md
+- task-019 - Add-RBS-4.2-boundary-contracts-sig-and-Rails-C4-component-mapping-into-groma-architecture.json.md
+- maintainer.md
+- tutorials.md
 
 ## God Nodes (most connected - your core abstractions)
 1. `What You Must Do When Invoked` - 12 edges
@@ -150,7 +157,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (136 total, 32 thin omitted)
+## Communities (139 total, 36 thin omitted)
 
 ### Community 0 - "Process"
 Cohesion: 0.07
@@ -272,9 +279,9 @@ Nodes (7): Core System: Phalanx, Official Game Formats, Openness and Governance,
 Cohesion: 0.25
 Nodes (8): 1. In-process, 2. Local-substitutable, 3. Remote but owned (Ports & Adapters), 4. True external (Mock), Deepening, Dependency categories, Seam discipline, Testing strategy: replace, don't layer
 
-### Community 30 - "2. Standard Workflows by Application"
-Cohesion: 0.25
-Nodes (7): 1. Core Principles, 2. Standard Workflows by Application, 3. System Map Documentation, Context Engine (`~/my/context-engine`), Hallway (`~/github.com/just3ws/hallway`), System Cartography & Schema Topology, WWWorkRemote (`~/github.com/wwworkremote/wwworkremote`)
+### Community 30 - "System Cartography & Schema Topology"
+Cohesion: 0.22
+Nodes (8): 1. Core Principles, 2. Standard Workflows by Application, 3. C4 Architecture & AST Graph Integration (`Groma.md` + `graphify`), 4. System Map Documentation, Context Engine (`~/my/context-engine`), Hallway (`~/github.com/just3ws/hallway`), System Cartography & Schema Topology, WWWorkRemote (`~/github.com/wwworkremote/wwworkremote`)
 
 ### Community 31 - "task-005 - Site-Transformation-Tactical-Brutalism-Suit-Truth.md"
 Cohesion: 0.25
@@ -282,7 +289,7 @@ Nodes (7): Acceptance Criteria, Definition of Done, Description, Final Summary, 
 
 ### Community 32 - "During the session"
 Cohesion: 0.29
-Nodes (7): Challenge against the glossary, Cross-reference with code, Discuss concrete scenarios, During the session, Offer ADRs sparingly, Sharpen fuzzy language, Update CONTEXT.md inline
+Nodes (7): Challenge against the glossary, Cross-reference with code, Discuss concrete scenarios, During the session, Offer ADRs / Backlog Decisions sparingly, Sharpen fuzzy language, Update CONTEXT.md inline
 
 ### Community 33 - "/ponytail — Reducing Premature Technical Debt"
 Cohesion: 0.29
@@ -488,10 +495,22 @@ Nodes (3): { chromium }, fail(), main()
 Cohesion: 0.50
 Nodes (3): How to Playtest, Playtesting and Feedback, Submitting Feedback
 
+### Community 125 - "explore-rules-and-calculate-combat.md"
+Cohesion: 0.29
+Nodes (3): Relationships, Steps, Relationships
+
+### Community 127 - "AI Surface & Multi-Agent Integration Guide"
+Cohesion: 0.40
+Nodes (4): 1. Environment Posture (Home vs. Work), 2. Per-Agent Integration Requirements, 3. Shared Non-Negotiable Rules, AI Surface & Multi-Agent Integration Guide
+
+### Community 136 - "task-019 - Add-RBS-4.2-boundary-contracts-sig-and-Rails-C4-component-mapping-into-groma-architecture.json.md"
+Cohesion: 0.50
+Nodes (3): Acceptance Criteria, Definition of Done, Description
+
 ## Knowledge Gaps
-- **504 isolated node(s):** `Phalanx`, `Phalanx::ExpectedBattleState`, `suits`, `ranks`, `suitSymbol` (+499 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 609 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **32 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **518 isolated node(s):** `Phalanx`, `Phalanx::ExpectedBattleState`, `suits`, `ranks`, `suitSymbol` (+513 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 625 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **36 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
@@ -503,7 +522,7 @@ _Questions this graph is uniquely positioned to answer:_
 - **Why does `During the session` connect `During the session` to `CONTEXT.md Format`?**
   _High betweenness centrality (0.001) - this node is a cross-community bridge._
 - **What connects `Phalanx`, `Phalanx::ExpectedBattleState`, `suits` to the rest of the system?**
-  _504 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _518 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Process` be split into smaller, more focused modules?**
   _Cohesion score 0.06666666666666667 - nodes in this community are weakly interconnected._
 - **Should `setup-matt-pocock-skills/SKILL.md` be split into smaller, more focused modules?**
