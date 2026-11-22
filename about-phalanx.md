@@ -46,6 +46,7 @@ description: "What Phalanx: Duel is, who it is for, and how the game is being de
   <h2>Primary Resources</h2>
   <ul class="quick-list">
     <li><a href="{{ '/learn/first-match/' | relative_url }}">Step-by-Step Tutorial</a></li>
+    <li><a href="{{ '/learn/tutorials/' | relative_url }}">Video Tutorials &amp; Transcripts (22 Episodes)</a></li>
     <li><a href="{{ '/tools/battle-calculator/' | relative_url }}">Battle Calculator</a></li>
     <li><a href="{{ '/learn/getting-started/' | relative_url }}">Quick Start Guide</a></li>
     <li><a href="{{ '/learn/rules/' | relative_url }}">Rules Summary</a></li>
