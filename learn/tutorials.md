@@ -6,7 +6,7 @@ description: "Watch the 22-episode Phalanx Duel video series — 10 quick-start 
 # Video Tutorials &amp; Masterclass Series
 
 <p class="small-note">
-  {{ site.data.tutorials.total_episodes }} episodes across {{ site.data.tutorials.seasons | size }} seasons — {{ site.data.tutorials.shorts_count }} quick-start Shorts (9:16) and {{ site.data.tutorials.longform_count }} deep-dive guides (16:9). Every episode includes a complete searchable transcript and companion guide.
+  {{ site.data.tutorials.total_episodes }} episodes across {{ site.data.tutorials.seasons | size }} seasons - {{ site.data.tutorials.shorts_count }} quick-start Shorts (9:16) and {{ site.data.tutorials.longform_count }} deep-dive guides (16:9). Every episode includes a complete searchable transcript and companion guide, published to the <a href="https://www.youtube.com/playlist?list=PLHenvAZhJjHo" target="_blank" rel="noopener noreferrer">official Phalanx Duel YouTube playlist</a> on <a href="https://www.youtube.com/@just3ws-mike" target="_blank" rel="noopener noreferrer">@just3ws-mike</a>.
 </p>
 
 <section class="card" aria-labelledby="series-overview-heading">

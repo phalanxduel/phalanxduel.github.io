@@ -47,6 +47,9 @@ description: "What Phalanx: Duel is, who it is for, and how the game is being de
   <ul class="quick-list">
     <li><a href="{{ '/learn/first-match/' | relative_url }}">Step-by-Step Tutorial</a></li>
     <li><a href="{{ '/learn/tutorials/' | relative_url }}">Video Tutorials &amp; Transcripts (22 Episodes)</a></li>
+    <li><a href="https://www.youtube.com/playlist?list=PLHenvAZhJjHo" target="_blank" rel="noopener noreferrer">Official YouTube Series Playlist (@just3ws-mike)</a></li>
+    <li><a href="https://github.com/phalanxduel/phalanxduel" target="_blank" rel="noopener noreferrer">Source Code on GitHub</a></li>
+    <li><a href="https://www.patreon.com/c/just3ws" target="_blank" rel="noopener noreferrer">Patreon &amp; Hallway Track Community Chat</a></li>
     <li><a href="{{ '/tools/battle-calculator/' | relative_url }}">Battle Calculator</a></li>
     <li><a href="{{ '/learn/getting-started/' | relative_url }}">Quick Start Guide</a></li>
     <li><a href="{{ '/learn/rules/' | relative_url }}">Rules Summary</a></li>

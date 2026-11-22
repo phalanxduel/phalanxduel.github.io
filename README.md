@@ -112,6 +112,8 @@ Phalanx: Duel is maintained by [Mike Hall](https://www.just3ws.com/), a Principa
 - [Principal resume](https://www.just3ws.com/resumes/mike-hall-principal-software-engineer/)
 - [Advisory engagements](https://www.just3ws.com/engagements/)
 - [Contact Mike](https://www.just3ws.com/contact/)
+- [YouTube Channel (`@just3ws-mike`)](https://www.youtube.com/@just3ws-mike) & [Phalanx Duel Playlist](https://www.youtube.com/playlist?list=PLHenvAZhJjHo)
+- [Patreon & Hallway Track Chat](https://www.patreon.com/c/just3ws)
 - [GitHub Sponsors](https://github.com/sponsors/just3ws)
 - [Buy Me a Coffee](https://buymeacoffee.com/just3ws)
 

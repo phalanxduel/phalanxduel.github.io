@@ -35,8 +35,11 @@ Phalanx: Duel is built on a foundation of open standards and community-driven de
   <h2>Direct Support</h2>
   <p>Phalanx: Duel is maintained out of pocket. If you find the game, engine, or documentation useful, a small contribution helps keep hosting and verification infrastructure running.</p>
   <ul class="quick-list">
+    <li><a href="https://www.patreon.com/c/just3ws" target="_blank" rel="noopener noreferrer">Join Studio Notes &amp; Hallway Track on Patreon</a></li>
     <li><a href="https://github.com/sponsors/just3ws" target="_blank" rel="noopener noreferrer">Sponsor Mike on GitHub</a></li>
     <li><a href="https://buymeacoffee.com/just3ws" target="_blank" rel="noopener noreferrer">Buy Mike a coffee</a></li>
+    <li><a href="https://www.just3ws.com/support/" target="_blank" rel="noopener noreferrer">Explore all projects &amp; support options on just3ws.com</a></li>
+    <li><a href="https://www.youtube.com/playlist?list=PLHenvAZhJjHo" target="_blank" rel="noopener noreferrer">Watch the Phalanx Duel YouTube playlist on @just3ws-mike</a></li>
   </ul>
 </section>
 
