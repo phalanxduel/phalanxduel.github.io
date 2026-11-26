@@ -135,7 +135,7 @@ stateDiagram-v2
   <ul class="quick-list">
     <li><a href="{{ '/library/architecture/' | relative_url }}">Interactive C4 Architecture Map (Groma)</a> — Drill down through systems, containers, and components.</li>
     <li><a href="{{ '/library/' | relative_url }}">Architecture &amp; Visual Library</a> — Database ERD, infrastructure topology, package DAG, and Fastify API directory.</li>
-    <li><a href="{{ '/learn/tutorials/' | relative_url }}">Video Tutorials &amp; Transcripts (22 Episodes)</a> — Complete dark-mode video walkthroughs with searchable transcripts.</li>
+    <li><a href="{{ '/learn/tutorials/' | relative_url }}">Video Tutorials &amp; Transcripts (33 Episodes)</a> — Complete dark-mode video walkthroughs with searchable transcripts.</li>
     <li><a href="{{ '/build-with-phalanx/' | relative_url }}">Build With Phalanx</a> — Developer docs, ADRs, and integration guides.</li>
   </ul>
 </section>

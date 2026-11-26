@@ -19,7 +19,7 @@ description: "Technical overview and canonical documentation links for developer
   <ul class="quick-list">
     <li><a href="{{ '/library/' | relative_url }}">Interactive Architecture &amp; Platform Library</a> (ERD, Topology, Package DAG, API Directory)</li>
     <li><a href="{{ '/library/architecture/' | relative_url }}">Interactive C4 Architecture Map (Groma)</a> (System, container, and component explorer)</li>
-    <li><a href="{{ '/learn/tutorials/' | relative_url }}">Video Tutorials &amp; Transcripts (22 Episodes)</a></li>
+    <li><a href="{{ '/learn/tutorials/' | relative_url }}">Video Tutorials &amp; Transcripts (33 Episodes)</a></li>
     <li><a href="https://github.com/phalanxduel/phalanxduel/blob/main/docs/adr/README.md" target="_blank" rel="noopener noreferrer">Architectural Decision Records (ADRs)</a></li>
     <li><a href="https://github.com/phalanxduel/phalanxduel/blob/main/docs/architecture/principles.md" target="_blank" rel="noopener noreferrer">Architecture Principles</a></li>
     <li><a href="https://github.com/phalanxduel/phalanxduel/blob/main/docs/architecture/site-flow.md" target="_blank" rel="noopener noreferrer">Site Flow</a></li>

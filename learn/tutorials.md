@@ -1,6 +1,6 @@
 ---
 title: Video Tutorials & Masterclass Series
-description: "Watch the 22-episode Phalanx Duel video series — 10 quick-start Shorts and 12 deep-dive tactical guides with full searchable transcripts."
+description: "Watch the 33-episode Phalanx Duel video series — 16 quick-start Shorts and 17 deep-dive guides covering gameplay, suits, tournaments, architecture, and contributing with full searchable transcripts."
 ---
 
 # Video Tutorials &amp; Masterclass Series
