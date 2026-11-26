@@ -1,7 +1,7 @@
-version: "1.5.0"
+version: "1.6.0"
 revision: 0
-build: 140
-last_updated: "2026-09-07"
+build: 141
+last_updated: "2026-11-25"
 status: "Stable (Production)"
 identity: "Vector Brutalism"
-engine_compatibility: "v1.5.0 / rules spec v3.0"
+engine_compatibility: "v1.6.0 / rules spec v3.0"
