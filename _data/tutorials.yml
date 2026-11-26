@@ -59,7 +59,7 @@ seasons:
         format_label: "Short (9:16)"
         duration_label: "20s"
         summary: "Use the combat log to read the suit rules that fired on a resolved attack."
-        companion_url: "/suits-strategy/"
+        companion_url: "/mastery/mastery/"
         youtube_id: ""
         transcript:
           - "Read the suits on both cards before you attack. They matter when damage crosses the boundary that suit affects."

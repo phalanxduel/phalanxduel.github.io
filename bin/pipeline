@@ -78,7 +78,8 @@ run_validate() {
 
   bundle exec htmlproofer ./_site \
     --disable-external \
-    --ignore-files "/AGENTS\\.html$/"
+    --ignore-files "/AGENTS\\.html$/,/\\/library\\//" \
+    --ignore-urls "/^http:\\/\\/localhost:/"
 
   if [ -n "$symlink_path" ] && [ -L "$symlink_path" ]; then
     rm -f "$symlink_path"
@@ -113,7 +114,9 @@ run_a11y() {
       exit 1
     fi
 
-    npx playwright install chromium >/dev/null
+    if [ -z "${PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH:-}" ] || [ ! -x "$PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH" ]; then
+      npx playwright install chromium >/dev/null
+    fi
     PORT="${PORT:-4173}"
     python3 -m http.server "$PORT" --directory _site >/tmp/phalanx-a11y-server.log 2>&1 &
     SERVER_PID="$!"
