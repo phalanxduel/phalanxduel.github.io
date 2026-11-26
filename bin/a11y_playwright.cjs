@@ -106,7 +106,10 @@ async function runBrowserA11yAudit(routes) {
     await checkCssContrastContract(css);
   }
 
-  const browser = await chromium.launch();
+  const browser = await chromium.launch({
+    headless: true,
+    executablePath: process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH || undefined,
+  });
   const context = await browser.newContext();
   const baseUrl = process.env.A11Y_BASE_URL || 'http://localhost:4000';
   const axeFailures = [];

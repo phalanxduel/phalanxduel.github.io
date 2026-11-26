@@ -8,6 +8,8 @@ jobs:
   validate:
     runs-on: ubuntu-24.04
     timeout-minutes: 15
+    env:
+      PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH: /usr/bin/google-chrome
     steps:
       # Repo policy requires all actions to be pinned to full commit SHAs.
       - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
@@ -31,10 +33,10 @@ jobs:
           bundle lock --add-platform x86_64-linux
           bundle install --jobs 4
 
-      - name: Install Playwright Chromium
+      - name: Install Node dependencies
         run: |
           npm ci
-          DEBIAN_FRONTEND=noninteractive NEEDRESTART_MODE=a npx playwright install --with-deps --only-shell chromium
+          test -x "$PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH" || npx playwright install chromium
 
       - name: Build Jekyll output
         run: ./bin/pipeline build
