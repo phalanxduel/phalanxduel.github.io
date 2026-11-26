@@ -35,7 +35,7 @@ description: "Watch the 33-episode Phalanx Duel video series — 16 quick-start 
     {% endfor %}
   </nav>
   <div role="group" aria-label="Filter episodes by format" style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem;">
-    <button type="button" class="tutorial-filter-btn" data-filter="all" aria-pressed="true" style="font-family: var(--font-mono); font-size: 0.75rem; padding: 0.4rem 0.85rem; background: var(--color-offense); color: #fff; border: 1px solid var(--color-offense); cursor: pointer;">All ({{ site.data.tutorials.total_episodes }})</button>
+    <button type="button" class="tutorial-filter-btn" data-filter="all" aria-pressed="true" style="font-family: var(--font-mono); font-size: 0.75rem; font-weight: 700; padding: 0.4rem 0.85rem; background: var(--color-gold); color: #000; border: 1px solid var(--color-gold); cursor: pointer;">All ({{ site.data.tutorials.total_episodes }})</button>
     <button type="button" class="tutorial-filter-btn" data-filter="9:16" aria-pressed="false" style="font-family: var(--font-mono); font-size: 0.75rem; padding: 0.4rem 0.85rem; background: var(--color-surface); color: var(--color-text); border: 1px solid var(--color-border-up); cursor: pointer;">Shorts 9:16 ({{ site.data.tutorials.shorts_count }})</button>
     <button type="button" class="tutorial-filter-btn" data-filter="16:9" aria-pressed="false" style="font-family: var(--font-mono); font-size: 0.75rem; padding: 0.4rem 0.85rem; background: var(--color-surface); color: var(--color-text); border: 1px solid var(--color-border-up); cursor: pointer;">Deep Dives 16:9 ({{ site.data.tutorials.longform_count }})</button>
   </div>
@@ -109,9 +109,10 @@ description: "Watch the 33-episode Phalanx Duel video series — 16 quick-start 
         buttons.forEach(function(b) {
           var active = b === btn;
           b.setAttribute('aria-pressed', String(active));
-          b.style.background = active ? 'var(--color-offense)' : 'var(--color-surface)';
-          b.style.borderColor = active ? 'var(--color-offense)' : 'var(--color-border-up)';
-          b.style.color = active ? '#fff' : 'var(--color-text)';
+          b.style.background = active ? 'var(--color-gold)' : 'var(--color-surface)';
+          b.style.borderColor = active ? 'var(--color-gold)' : 'var(--color-border-up)';
+          b.style.color = active ? '#000' : 'var(--color-text)';
+          b.style.fontWeight = active ? '700' : '400';
         });
         episodes.forEach(function(ep) {
           var match = filter === 'all' || ep.getAttribute('data-format') === filter;
