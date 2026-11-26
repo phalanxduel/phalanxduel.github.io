@@ -95,7 +95,7 @@ description: "Watch the 22-episode Phalanx Duel video series — 10 quick-start 
 
 <section class="card" style="margin-top: 2rem;">
   <h2>Continue Learning</h2>
-  <p>Pair these tutorials with the <a href="{{ '/tools/battle-calculator/' | relative_url }}">Interactive Combat Lab</a>, the <a href="{{ '/library/' | relative_url }}">Architecture &amp; Visual Library</a>, or jump directly into a training match at <a href="{{ '/play/' | relative_url }}">play.phalanxduel.com</a>.</p>
+  <p>Pair these tutorials with the <a href="{{ '/tools/battle-calculator/' | relative_url }}">Interactive Combat Lab</a>, the <a href="{{ '/library/' | relative_url }}">Architecture &amp; Visual Library</a>, the <a href="{{ '/library/architecture/' | relative_url }}">Interactive C4 Architecture Map</a>, or jump directly into a training match at <a href="{{ '/play/' | relative_url }}">play.phalanxduel.com</a>.</p>
 </section>
 
 <script>
