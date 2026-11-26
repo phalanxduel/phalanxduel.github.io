@@ -1,13 +1,13 @@
 ---
 title: Status
-description: "Current project phase, stability, and what to expect from Phalanx: Duel v1.5.0."
+description: "Current project phase, stability, and what to expect from Phalanx: Duel."
 ---
 
 # Project Status
 
 <section class="card">
   <h2>Current Phase</h2>
-  <p><strong>v1.5.0 Stable (Production).</strong> The deployed build reports schema version 1.5.0 and rules spec v3.0. This release adds authoritative combat mathematics, scientific gameplay assurance, corrected boundary semantics, and polished narration/effect/terminal choreography.</p>
+  <p><strong>v{{ site.data.meta.version }} Stable (Production).</strong> The deployed build reports schema version {{ site.data.meta.version }} and rules spec v3.0. This release delivers adversarial MCTS v2 bots, a 0px-shift playing-card-ratio arena, Broadcast Spectator mode, LAN HTTP tournament play, the <code>sp-mcts</code> ladder, Go <code>duel-cli</code> v{{ site.data.meta.version }}, an interactive Groma C4 architecture map, and a 33-episode video tutorial catalog.</p>
 </section>
 
 <section class="card">

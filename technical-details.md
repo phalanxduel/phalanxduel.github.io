@@ -6,7 +6,7 @@ mermaid: true
 
 # Technical Details
 
-<p class="small-note">This page summarizes game v1.4.0 and competitive rules spec v3.0 in player-readable form. Implementation-grade details live in the Phalanx Duel game repository.</p>
+<p class="small-note">This page summarizes game v{{ site.data.meta.version }} and competitive rules spec v3.0 in player-readable form. Implementation-grade details live in the Phalanx Duel game repository.</p>
 
 <section class="card">
   <h2>Turn Sequence</h2>
@@ -97,7 +97,7 @@ stateDiagram-v2
 <section class="card">
   <h2>Competitive Model (Glicko-2)</h2>
   <ul class="quick-list">
-    <li><strong>Ratings System:</strong> v1.4.0 includes the Glicko-2 matchmaking and ladder surface. (<a href="{{ '/competitive/' | relative_url }}">See Competitive Play</a>)</li>
+    <li><strong>Ratings System:</strong> v{{ site.data.meta.version }} includes Elo and Glicko-2 matchmaking across four ladder categories (PvP, Easy, Medium, and Expert MCTS). (<a href="{{ '/competitive/' | relative_url }}">See Competitive Play</a>)</li>
     <li><strong>Ranked Lobbies:</strong> Public matches contribute to a global leaderboard with volatility and rating deviation tracking.</li>
     <li><strong>Cross-Platform Rankings:</strong> Rankings are unified across Web, CLI (Go), and Mobile clients.</li>
   </ul>

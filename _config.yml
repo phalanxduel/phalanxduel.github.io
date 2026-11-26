@@ -12,3 +12,15 @@ defaults:
       path: ""
     values:
       layout: default
+exclude:
+  - graphify-out
+  - groma
+  - backlog
+  - spec
+  - node_modules
+  - Gemfile
+  - Gemfile.lock
+  - Rakefile
+  - package.json
+  - package-lock.json
+  - AGENTS.md

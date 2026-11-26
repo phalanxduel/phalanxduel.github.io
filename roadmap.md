@@ -1,12 +1,12 @@
 ---
 title: Roadmap
-description: "High-level roadmap following the Phalanx: Duel v1.4.0 production release."
+description: "High-level roadmap for Phalanx: Duel."
 ---
 
 # Roadmap
 
 <section class="card">
-  <h2>🏆 v1.4.0 Milestone (Live)</h2>
+  <h2>🏆 v{{ site.data.meta.version }} Milestone (Live)</h2>
   <ul class="quick-list">
     <li><strong>Explainable Combat:</strong> Authoritative arithmetic witnesses power narration, previews, event details, and post-match proof.</li>
     <li><strong>Scientific Assurance:</strong> Independent combat checks, liveness properties, replay integrity, and observer-safe projections.</li>

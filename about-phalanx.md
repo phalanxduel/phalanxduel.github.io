@@ -11,7 +11,7 @@ description: "What Phalanx: Duel is, who it is for, and how the game is being de
 </section>
 
 <section class="card">
-  <h2>The v1.5.0 Standard</h2>
+  <h2>The v{{ site.data.meta.version }} Standard</h2>
   <ul class="quick-list">
     <li><strong>Deterministic replay:</strong> Configured inputs and action sequences produce reproducible outcomes that can be verified independently.</li>
     <li><strong>Explainable Combat:</strong> Engine-authored arithmetic provenance powers previews, narration, event displays, and post-match proof.</li>
@@ -32,7 +32,7 @@ description: "What Phalanx: Duel is, who it is for, and how the game is being de
 
 <section class="card">
   <h2>Production State</h2>
-  <p>Phalanx: Duel <strong>v1.5.0 Stable</strong> is live in production. The core engine is persistent, replay-verifiable, observable, and independently checked across its declared combat domain.</p>
+  <p>Phalanx: Duel <strong>v{{ site.data.meta.version }} Stable</strong> is live in production. The core engine is persistent, replay-verifiable, observable, and independently checked across its declared combat domain.</p>
   <p><a href="{{ '/status/' | relative_url }}">See current status and technical specifications.</a></p>
 </section>
 
@@ -46,7 +46,8 @@ description: "What Phalanx: Duel is, who it is for, and how the game is being de
   <h2>Primary Resources</h2>
   <ul class="quick-list">
     <li><a href="{{ '/learn/first-match/' | relative_url }}">Step-by-Step Tutorial</a></li>
-    <li><a href="{{ '/learn/tutorials/' | relative_url }}">Video Tutorials &amp; Transcripts (22 Episodes)</a></li>
+    <li><a href="{{ '/learn/tutorials/' | relative_url }}">Video Tutorials &amp; Transcripts (33 Episodes)</a></li>
+    <li><a href="{{ '/library/architecture/' | relative_url }}">Interactive C4 Architecture Map (Groma)</a></li>
     <li><a href="https://www.youtube.com/playlist?list=PLHenvAZhJjHo" target="_blank" rel="noopener noreferrer">Official YouTube Series Playlist (@just3ws-mike)</a></li>
     <li><a href="https://github.com/phalanxduel/phalanxduel" target="_blank" rel="noopener noreferrer">Source Code on GitHub</a></li>
     <li><a href="https://www.patreon.com/c/just3ws" target="_blank" rel="noopener noreferrer">Patreon &amp; Hallway Track Community Chat</a></li>

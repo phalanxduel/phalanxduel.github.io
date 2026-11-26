@@ -5,6 +5,14 @@ permalink: /CHANGELOG/
 
 # Changelog
 
+## [1.6.0] - 2026-11-25
+
+### Added
+
+- Published the **Interactive Groma C4 Architecture Map** (`/library/architecture/`) and synced the refreshed Architecture & Visual Library SPA (`/library/`).
+- Expanded the **Video Tutorials & Masterclass Series** (`/learn/tutorials/`) to **33 episodes across 8 seasons** (adding Season 7: Game Theory & The Four Suits, and Season 8: Tabletop, Architecture, Scientific Assurance, AI/MCP, Contributing & Sponsoring) with `requiredRuleIds` telemetry gates and searchable transcripts.
+- Synchronized active site status, guide, FAQ, quick-reference, and technical pages to `site.data.meta.version` (`v1.6.0`).
+
 ## [1.5.0] - 2026-09-07
 
 ### Added

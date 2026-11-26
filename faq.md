@@ -1,6 +1,6 @@
 ---
 title: FAQ
-description: Frequently asked questions about v1.4.0, matchmaking, deterministic combat proof, and supported clients.
+description: Frequently asked questions about Phalanx Duel, matchmaking, deterministic combat proof, and supported clients.
 ---
 
 # Frequently Asked Questions
@@ -14,12 +14,12 @@ description: Frequently asked questions about v1.4.0, matchmaking, deterministic
 
   <article>
     <h3>How does matchmaking work?</h3>
-    <p>Phalanx Duel v1.4.0 uses a Glicko-2 ratings system for public-lobby competition. Matchmaking remains Beta while the player population and balance evidence grow.</p>
+    <p>Phalanx Duel v{{ site.data.meta.version }} uses Elo and Glicko-2 ratings across four ladder categories (PvP, Easy, Medium, and Expert MCTS). Matchmaking remains Beta while the player population and balance evidence grow.</p>
   </article>
 
   <article>
     <h3>Are there Jokers?</h3>
-    <p>No. Jokers are excluded from the v1.4.0 competitive rules. Optional expansion concepts remain outside the proved 52-card domain.</p>
+    <p>No. Jokers are excluded from the v{{ site.data.meta.version }} competitive rules. Optional expansion concepts remain outside the proved 52-card domain.</p>
   </article>
 </section>
 
@@ -32,7 +32,7 @@ description: Frequently asked questions about v1.4.0, matchmaking, deterministic
 
   <article>
     <h3>What is the Go client?</h3>
-    <p>It is our official terminal-based operative. Perfect for developers, command-line enthusiasts, or playing on lower-powered hardware.</p>
+    <p>It is our official terminal-based operative (<code>duel-cli</code>). Perfect for developers, command-line enthusiasts, or playing on lower-powered hardware.</p>
   </article>
 </section>
 
@@ -40,7 +40,7 @@ description: Frequently asked questions about v1.4.0, matchmaking, deterministic
   <h2>Development</h2>
   <article>
     <h3>Is the engine stable?</h3>
-    <p><strong>v1.4.0 Stable (Production).</strong> The deployed engine is versioned, replay-verifiable, and independently checked over its declared combat domain.</p>
+    <p><strong>v{{ site.data.meta.version }} Stable (Production).</strong> The deployed engine is versioned, replay-verifiable, and independently checked over its declared combat domain.</p>
   </article>
 
   <article>

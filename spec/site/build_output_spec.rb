@@ -1,4 +1,5 @@
 require "spec_helper"
+require "yaml"
 
 RSpec.describe "Built site output" do
   it "has generated key pages" do
@@ -12,9 +13,10 @@ RSpec.describe "Built site output" do
 
   it "renders the homepage conversion headline and primary CTAs" do
     doc = parse_site_html("index.html")
+    meta_version = YAML.safe_load_file(ROOT_DIR.join("_data/meta.yml"))["version"]
 
     expect(doc.at_css("h1")&.text).to include("Initialize Global Combat.")
-    expect(doc.text).to include("Phalanx Duel v1.4.0 is live in production.")
+    expect(doc.text).to include("Phalanx Duel v#{meta_version} is live in production.")
     expect(doc.text).to include("Formation is Destiny")
     expect(doc.text).to include("Read the Rules")
     expect(doc.text).to include("Combat Lab")

@@ -1,11 +1,11 @@
 ---
 title: Gameplay Assurance
-description: "How Phalanx Duel v1.4.0 makes deterministic combat explainable, independently checkable, and replay-verifiable."
+description: "How Phalanx Duel makes deterministic combat explainable, independently checkable, and replay-verifiable."
 ---
 
 # Gameplay Assurance
 
-Phalanx Duel v1.4.0 treats correctness as a chain: a versioned rule, an authoritative implementation, and evidence that can be inspected independently. Determinism means identical inputs produce identical outputs; it does not, by itself, prove that the rule is correct.
+Phalanx Duel v{{ site.data.meta.version }} treats correctness as a chain: a versioned rule, an authoritative implementation, and evidence that can be inspected independently. Determinism means identical inputs produce identical outputs; it does not, by itself, prove that the rule is correct.
 
 ## The Damage Witness
 
