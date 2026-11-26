@@ -20,7 +20,7 @@ seasons:
         duration_label: "25s"
         summary: "Deploy a card, finish a formation, attack a column, and read the result."
         companion_url: "/learn/getting-started/"
-        youtube_id: ""
+        youtube_id: "Lktn0-bre5g"
         transcript:
           - "Select a card from your hand, then click an open position. The card is face-up as soon as it reaches the battlefield."
           - "Each column has a front and a back position. Quick Deploy fills the rest of your formation so you can start attacking."
@@ -33,7 +33,7 @@ seasons:
         duration_label: "30s"
         summary: "Master formation-first deployment in Phalanx Duel: how hidden hands become a public 2x4 battlefield, why front-rank vs back-rank column placement matters, and when to use Quick Deploy."
         companion_url: "/learn/foundations/"
-        youtube_id: ""
+        youtube_id: "_7OLhDb4McQ"
         transcript:
           - "Quick Start opens a practice match with your hand along the bottom and both battlefields above it."
           - "Click a card. The highlighted spaces are legal deployment targets. Your opponent can see the formation as you build it, while unused cards stay in your hand."
@@ -47,7 +47,7 @@ seasons:
         duration_label: "20s"
         summary: "See how column combat cascades in Phalanx Duel: front-rank attackers strike the opposing front card, excess damage spills into the back card, and any remaining overkill can reach enemy Life Points."
         companion_url: "/learn/rules/"
-        youtube_id: ""
+        youtube_id: "YAnBdzdvQxQ"
         transcript:
           - "Select a front card to read the matching enemy lane. The preview highlights the target before you commit."
           - "Watch the front defender fall. Damage that gets through that first card can reach the back card or the enemy player."
@@ -60,7 +60,7 @@ seasons:
         duration_label: "20s"
         summary: "Use the combat log to read the suit rules that fired on a resolved attack."
         companion_url: "/mastery/mastery/"
-        youtube_id: ""
+        youtube_id: "KS5A69rM3Tk"
         transcript:
           - "Read the suits on both cards before you attack. They matter when damage crosses the boundary that suit affects."
           - "Analyst shows which suit rules fired on this attack. Diamonds and clubs affect carryover to the back row. Hearts and spades affect damage headed to life points. Read the boundary and the numbers in the resolved log."
@@ -72,7 +72,7 @@ seasons:
         duration_label: "31s"
         summary: "Pass, attack again, then fill a legal reinforcement slot."
         companion_url: "/learn/rules/"
-        youtube_id: ""
+        youtube_id: "c8y8SkhMlvk"
         transcript:
           - "Deploy into the front rank and complete your formation. In Classic combat, compare attacker and defender ranks across each lane before you commit."
           - "When you need to keep your formation intact, open the command drawer and press Pass. Repeated passes can cost the match."
@@ -91,7 +91,7 @@ seasons:
         duration_label: "22s"
         summary: "Create a Phalanx Duel account, choose an operative gamertag, confirm your signed-in lobby header, and open Settings."
         companion_url: "/learn/getting-started/"
-        youtube_id: ""
+        youtube_id: "Fax9WCreY8c"
         transcript:
           - "Authorize opens the account panel. Switch to Register to claim your operative gamertag, email, and password. Your gamertag gets a unique numeric suffix so your identity stays consistent across matches and ladders."
           - "Submit the form to sign in immediately. Your gamertag and live Elo rating appear in the lobby header, and every completed match now counts toward your profile history, achievements, and ranked ladders."
@@ -104,7 +104,7 @@ seasons:
         duration_label: "23s"
         summary: "Find the card back in Settings, complete a match, and equip the unlocked skin."
         companion_url: "/learn/first-match/"
-        youtube_id: ""
+        youtube_id: "_Silz_TvaCA"
         transcript:
           - "Open Settings and scroll to Card Signal Loadout. Each preview shows the card back your opponent will see."
           - "The card indicates whether the skin is equipped, available to equip, or locked. Read the unlock requirement directly beneath the preview."
@@ -117,7 +117,7 @@ seasons:
         duration_label: "33s"
         summary: "Use the board and engagement log to inspect the arithmetic behind a real attack."
         companion_url: "/tools/battle-calculator/"
-        youtube_id: ""
+        youtube_id: "b5JYEdbTmlw"
         transcript:
           - "The board shows each formation. The life-point and card counters above it show what each player has left."
           - "After attacking, open Analyst in the engagement log. Each line comes from the resolved attack, including the starting power, the boundary rules that fired, and any damage that reached life points."
@@ -135,7 +135,7 @@ seasons:
         duration_label: "22s"
         summary: "Compare Classic mode (between-turn damage reset) vs Cumulative mode (persistent chip damage) plus custom starting Life Points."
         companion_url: "/learn/rules/"
-        youtube_id: ""
+        youtube_id: "DmdoO1k01z0"
         transcript:
           - "Open Advanced to choose Classic or Cumulative combat rules and set your starting life points before you launch a match."
           - "Here is an attack that leaves the defender in place. In Classic play the surviving card returns to full strength, so a chip attack does not wear the card down."
@@ -148,7 +148,7 @@ seasons:
         duration_label: "21s"
         summary: "Create an invitation, join from a second browser, and refresh to recover the same match."
         companion_url: "/learn/first-match/"
-        youtube_id: ""
+        youtube_id: "56IffXxKVbM"
         transcript:
           - "Enter a name and choose Private Match. The waiting screen gives you an invite link and a match code."
           - "A second browser joins using the same match code. Both players now share the arena and see each other’s starting formation."
@@ -161,7 +161,7 @@ seasons:
         duration_label: "22s"
         summary: "Find the solo match choices, launch a heuristic opponent, and resolve a practice attack."
         companion_url: "/learn/foundations/"
-        youtube_id: ""
+        youtube_id: "aS5Q8geLxgo"
         transcript:
           - "Solo Operations offers Quick Start and different computer opponents. Quick Start uses the random bot."
           - "Bot Medium opens a match against the heuristic opponent. Fill your formation, then watch the bot’s reply."
@@ -174,7 +174,7 @@ seasons:
         duration_label: "22s"
         summary: "Find the MCTS difficulty choices, start a Hard match, and inspect its opening combat."
         companion_url: "/learn/tactical-depth/"
-        youtube_id: ""
+        youtube_id: "KqK9tf2cYy8"
         transcript:
           - "The browser offers Easy, Medium, and Hard MCTS settings. They use the same board and rules, with different search budgets."
           - "Choose Hard, complete your opening formation, then assess both front ranks. The rules are the same, even when the opponent’s decisions change."
@@ -192,7 +192,7 @@ seasons:
         duration_label: "30s"
         summary: "Explore the Global Ladder, understand how Elo, Glicko-2 Rating Deviation (RD), confidence tiers, and rolling 90-day seasons work, and compare PvP, Easy, Medium, and Expert MCTS ladders."
         companion_url: "/competitive/"
-        youtube_id: ""
+        youtube_id: "vzGigTVqByc"
         transcript:
           - "Open Global Ladder from the lobby. Phalanx Duel tracks both classic Elo and Glicko-2 ratings over a rolling seasonal window, with separate rankings for PvP and each AI tier."
           - "Select vs AI Easy to view its isolated ladder. Alongside your Elo score, the server tracks Glicko-2 Rating Deviation — or RD — which starts wide while you are Provisional and narrows toward Established as you play more matches."
@@ -205,7 +205,7 @@ seasons:
         duration_label: "15s"
         summary: "Open a player profile, find a completed match, and browse the achievement gallery."
         companion_url: "/competitive/"
-        youtube_id: ""
+        youtube_id: "MucIU1Hq2G8"
         transcript:
           - "Open your profile from the signed-in header. Recent Engagements lists your completed games and gives you a direct link to each replay."
           - "The achievement gallery lists the milestones you can earn. Some rewards require specific actions in a match."
@@ -217,7 +217,7 @@ seasons:
         duration_label: "30s"
         summary: "Open a completed match, advance the reconstructed board, and copy a link to the current step."
         companion_url: "/learn/gameplay-assurance/"
-        youtube_id: ""
+        youtube_id: "U1u8AwF_OmI"
         transcript:
           - "Every completed duel can be rewatched from Match History, any player profile, or Spectator History. Rewatch deterministically reconstructs the entire match from its append-only action ledger and verifies each turn's hash chain."
           - "Step forward or back one action at a time with Next and Prev, hit Play with adjustable playback speed, or drag the timeline scrubber to jump straight to any pivotal combat exchange."
@@ -235,7 +235,7 @@ seasons:
         duration_label: "17s"
         summary: "Open the delayed spectator view and find the live director and play-by-play."
         companion_url: "/competitive/"
-        youtube_id: ""
+        youtube_id: "yg8-nTqxdd8"
         transcript:
           - "Open the watch link to enter the spectator stream. The stream uses delayed frames, so it trails the players’ live boards."
           - "Spectators get the play-by-play and board state. They cannot select cards or make moves, and the players’ private hand identities are hidden."
@@ -247,7 +247,7 @@ seasons:
         duration_label: "25s"
         summary: "Overview of local LAN tournament play on play.lan.phalanxduel.com: create a private venue table, seat your opponent via invite code, and make an opening move with spectator-ready deterministic replay."
         companion_url: "/competitive/"
-        youtube_id: ""
+        youtube_id: "g_kIYFa4FP4"
         transcript:
           - "In local LAN tournament mode, players connect to play dot lan dot phalanx duel dot com on the venue network. Open the table URL, create a private match, and share the invite code."
           - "Your opponent joins with the invite link or match code, while venue displays can follow live matches in spectator mode. Check both names and wait for the board before you start."
@@ -260,7 +260,7 @@ seasons:
         duration_label: "26s"
         summary: "Overview of local LAN tournament hosting on lan.phalanxduel.com: verify game server health, load the Admin Cockpit operator portal, and test player invite creation before opening venue tables."
         companion_url: "/build-with-phalanx/"
-        youtube_id: ""
+        youtube_id: "4dv7ViR10ZY"
         transcript:
           - "Hosting a local LAN tournament on lan dot phalanx duel dot com starts with preflight. Probe the game server health endpoint to confirm an HTTP 200 and an ok status on the venue host."
           - "Open the Admin Cockpit at admin dot lan dot phalanx duel dot com and verify the operator sign-in loads. Tournament staff monitor active tables, match telemetry, and integrity from this portal."
@@ -273,7 +273,7 @@ seasons:
         duration_label: "26s"
         summary: "Join the browser match with the interactive Go client and deploy a card visible to the browser player."
         companion_url: "/build-with-phalanx/"
-        youtube_id: ""
+        youtube_id: "em4h4DQrDUw"
         transcript:
           - "Install the Go client with Homebrew or go install, then launch duel-cli. You can create a match, challenge Random, Heuristic, or MCTS bots, or jump straight into a table with dash name and dash join flags."
           - "Enter the invite code created by the browser player. The Go client speaks the exact same authoritative WebSocket protocol, rendering live turn state, suit glyphs, and both battlefields in your terminal."
@@ -291,7 +291,7 @@ seasons:
         duration_label: "25s"
         summary: "Inspect a defensive formation, preview a lane, then compare the forecast with the combat log."
         companion_url: "/learn/tactical-depth/"
-        youtube_id: ""
+        youtube_id: "RCFCAqMH9Sk"
         transcript:
           - "Look at the two cards in each column as a pair. The front card attacks and defends first, and the back card is the second line of defense."
           - "Select an attacker so you can evaluate the lane straight across. Check the rank and suit of both defenders before you decide whether to resolve the attack."
@@ -304,7 +304,7 @@ seasons:
         duration_label: "20s"
         summary: "Find Pass, observe the opponent response, and take your next attack."
         companion_url: "/learn/analytical-mastery/"
-        youtube_id: ""
+        youtube_id: "1-eyVc2Edwc"
         transcript:
           - "Passing is a tactical option when you want to keep your current formation in place. Open the command drawer to see it."
           - "Press Pass to let the other player act. When play comes back to you, read the board again before choosing a lane."
