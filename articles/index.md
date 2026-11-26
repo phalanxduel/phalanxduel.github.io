@@ -9,7 +9,7 @@ permalink: /articles/
 
 *By [Mike Hall](https://www.just3ws.com/) · Engine `v1.6.0` · Rules Spec `v3.0` · Published November 26, 2026*
 
-This five-part series documents Phalanx Duel from tabletop concept to production multiplayer platform — connecting the rules, live architecture diagrams, engineering discipline, and 33-episode video curriculum across [phalanxduel.com](https://phalanxduel.com) and [just3ws.com](https://www.just3ws.com).
+This five-part series documents Phalanx Duel from tabletop concept to production multiplayer platform - connecting the rules, live architecture diagrams, engineering discipline, and 33-episode video curriculum across [phalanxduel.com](https://phalanxduel.com) and [just3ws.com](https://www.just3ws.com).
 
 ## Series Map & Canonical Ownership
 

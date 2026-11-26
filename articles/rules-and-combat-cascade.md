@@ -55,8 +55,8 @@ Test any exact matchup interactively in the [Combat Lab (Battle Calculator)](/to
 
 ## Classic vs. Cumulative Modes & Pass Economy
 
-- **Classic Mode (Default):** Surviving cards reset damage between turns—creating crisp per-turn arithmetic and rewarding high-burst column breaks.
-- **Cumulative Mode:** Damage persists on surviving cards across turns—turning chip damage into attrition traps.
+- **Classic Mode (Default):** Surviving cards reset damage between turns - creating crisp per-turn arithmetic and rewarding high-burst column breaks.
+- **Cumulative Mode:** Damage persists on surviving cards across turns - turning chip damage into attrition traps.
 - **Pass & Liveness Policy:** Passing preserves formation tempo, but consecutive passes are bounded by the canonical turn-boundary liveness rule (`system:draw`) so matches cannot stall indefinitely.
 
 ## Watch the Rules & Strategy Videos
@@ -75,4 +75,4 @@ Test any exact matchup interactively in the [Combat Lab (Battle Calculator)](/to
 
 ---
 
-**Series Navigation:** [← Part 1: Game & Concepts](/articles/what-is-phalanx-duel/) · **Part 2 (Current)** · [Next: Part 3 — Living Architecture & Diagrams →](/articles/living-architecture-and-diagrams/)
+**Series Navigation:** [← Part 1: Game & Concepts](/articles/what-is-phalanx-duel/) · **Part 2 (Current)** · [Next: Part 3 - Living Architecture & Diagrams →](/articles/living-architecture-and-diagrams/)
