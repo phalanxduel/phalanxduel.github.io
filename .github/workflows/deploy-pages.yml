@@ -18,6 +18,7 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-24.04
+    timeout-minutes: 15
     steps:
       # Repo policy requires all actions to be pinned to full commit SHAs.
       - name: Checkout
@@ -41,7 +42,7 @@ jobs:
           bundle lock --add-platform x86_64-linux
           bundle install --jobs 4
           npm ci
-          npx playwright install --with-deps chromium
+          DEBIAN_FRONTEND=noninteractive NEEDRESTART_MODE=a npx playwright install --with-deps --only-shell chromium
 
       - name: Build Jekyll output
         run: ./bin/pipeline build

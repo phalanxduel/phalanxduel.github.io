@@ -7,6 +7,7 @@ on:
 jobs:
   validate:
     runs-on: ubuntu-24.04
+    timeout-minutes: 15
     steps:
       # Repo policy requires all actions to be pinned to full commit SHAs.
       - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
@@ -33,7 +34,7 @@ jobs:
       - name: Install Playwright Chromium
         run: |
           npm ci
-          npx playwright install --with-deps chromium
+          DEBIAN_FRONTEND=noninteractive NEEDRESTART_MODE=a npx playwright install --with-deps --only-shell chromium
 
       - name: Build Jekyll output
         run: ./bin/pipeline build
