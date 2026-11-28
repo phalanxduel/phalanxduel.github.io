@@ -26,10 +26,10 @@ Instead of hand-editing brittle screencasts that fall out of date on the next UI
 
 ## Featured Published Episodes (Accounts, Cosmetics, Profiles & Tournaments)
 
-- **[Sign Up, Gamertags & Account Management](https://youtu.be/Fax9WCreY8c)** (Ep. 06)
-- **[Cardbacks & Cosmetics: Neon Relay, Dual Loop & Obsidian Heraldry](https://youtu.be/_Silz_TvaCA)** (Ep. 07)
-- **[Profiles, Match History & Rarity Achievements](https://youtu.be/MucIU1Hq2G8)** (Ep. 14)
-- **[How to Play in a Local / LAN Tournament](https://youtu.be/g_kIYFa4FP4)** (Ep. 17)
+- **[Sign Up, Gamertags & Account Management](https://youtu.be/Sao2I-__G10)** (Ep. 06)
+- **[Unlock and Equip the Dual Loop Card Back](https://youtu.be/yi4hy9ooSPU)** (Ep. 07)
+- **[Find Your Match History and Achievements](https://youtu.be/SsEbO-zg9bw)** (Ep. 14)
+- **[Rehearse a Tournament Table](/learn/tutorials/#season-5)** (Ep. 17 - queued for publication)
 
 Watch all 8 seasons (33 episodes) with full transcripts on the **[Video Tutorials Hub](/learn/tutorials/)**.
 

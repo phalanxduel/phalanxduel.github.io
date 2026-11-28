@@ -31,8 +31,7 @@ That constraint shaped every concept in the modern `v1.6.0` platform:
 
 Every video below was captured directly from live Phalanx Duel builds and published through the `@just3ws-mike` media pipeline:
 
-- **[What Is Phalanx Duel? (60-Second Overview)](https://youtu.be/Lktn0-bre5g)** - The 2×4 battlefield, objective, and turn rhythm in under a minute.
-- **[Your First Attack in Phalanx Duel](https://youtu.be/ygf_GOylEQc)** - Opening deployment, Quick Deploy, and reading your first resolved attack.
+- **[Your First Attack in Phalanx Duel](https://youtu.be/ygf_GOylEQc)** (Ep. 01) - Opening deployment, Quick Deploy, and reading your first resolved attack.
 - **[Phalanx Duel: Make the Rules Legible (SCMC Demo)](https://youtu.be/eH6VQa2Od3E)** - Automated rules engine and combat demonstration prepared for Software Craftsmanship McHenry County (SCMC).
 - **[Early Version Walkthrough with Conrad Hall](https://youtu.be/CdYwA0SG34M)** - A look back at an early playable build and how the core loop held up from day one.
 

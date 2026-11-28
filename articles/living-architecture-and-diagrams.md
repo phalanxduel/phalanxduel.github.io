@@ -67,9 +67,9 @@ The zero-dependency checker `./bin/check-diagram-freshness` in the wiki reposito
 
 ## Watch Architecture & Verification in Action
 
-- **[Reading the HUD, Combat Math Inspector & Narration Settings](https://youtu.be/b5JYEdbTmlw)** (Ep. 08) - How engine combat math projects cleanly to the UI.
-- **[Deterministic Replays & Cryptographic Hash-Chain Verification](https://youtu.be/U1u8AwF_OmI)** (Ep. 15) - Proving every turn state hash against the append-only ledger.
-- **[Spectator Mode: Watch Links, Delay & Fair-Play Redaction](https://youtu.be/yg8-nTqxdd8)** (Ep. 16) - Server-side viewer projection enforcing Fog of War.
+- **[Read the HUD and Inspect Combat Math](https://youtu.be/Yg8hvQxMFYU)** (Ep. 08) - How engine combat math projects cleanly to the UI.
+- **[How to Rewatch Matches, Scrub Turns & Share Replay Links](https://youtu.be/FtxsBV0n9FA)** (Ep. 15) - Proving every turn state hash against the append-only ledger.
+- **[Watch a Duel from Spectator Mode](/learn/tutorials/#season-5)** (Ep. 16 - queued for publication) - Server-side viewer projection enforcing Fog of War.
 
 ## Canonical Sources & Attribution
 

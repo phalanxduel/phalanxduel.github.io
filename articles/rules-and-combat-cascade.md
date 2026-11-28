@@ -61,13 +61,13 @@ Test any exact matchup interactively in the [Combat Lab (Battle Calculator)](/to
 
 ## Watch the Rules & Strategy Videos
 
-- **[Formation-First Deployment & Quick Deploy](https://youtu.be/_7OLhDb4McQ)** (Ep. 02)
-- **[Combat Cascade & Column Overkill Explained](https://youtu.be/YAnBdzdvQxQ)** (Ep. 03)
-- **[The Four Suit Boundaries (Diamonds, Hearts, Clubs, Spades)](https://youtu.be/KS5A69rM3Tk)** (Ep. 04)
-- **[Aces, Face Cards, Pass, Reinforce & Victory Conditions](https://youtu.be/c8y8SkhMlvk)** (Ep. 05)
-- **[Classic vs. Cumulative Damage Modes](https://youtu.be/DmdoO1k01z0)** (Ep. 09)
-- **[Advanced Strategy: Column Architecture & Suit Synergy](https://youtu.be/RCFCAqMH9Sk)** (Ep. 20)
-- **[Pro Tip: Tempo, Pass Economy & Face-Card Traps](https://youtu.be/1-eyVc2Edwc)** (Ep. 21)
+- **[Formation-First Deployment & Quick Deploy](/learn/tutorials/#season-1)** (Ep. 02 - queued for publication)
+- **[Combat Cascade & Column Overkill Explained](https://youtu.be/cIgBZrdDVE0)** (Ep. 03)
+- **[Suit Boundaries in Combat](https://youtu.be/9gJ-stFf0O8)** (Ep. 04)
+- **[Passing and Reinforcing in Phalanx Duel](https://youtu.be/199z_P2031Q)** (Ep. 05)
+- **[Classic vs Cumulative Damage Modes](https://youtu.be/4x4c_e0p10I)** (Ep. 09)
+- **[Read a Column Before You Attack](/learn/tutorials/#season-6)** (Ep. 20 - queued for publication)
+- **[Pass a Turn and Read the Reply](/learn/tutorials/#season-6)** (Ep. 21 - queued for publication)
 
 ## Canonical Sources & Attribution
 

@@ -27,12 +27,12 @@ canonical_url: https://www.just3ws.com/2026/11/26/phalanx-duel-series-part-4-eng
 ## Watch the Platform & Multiplayer Videos
 
 - **[Phalanx Duel Game Development (Ramblin' & Amblin')](https://youtu.be/D7yTXxoNGLw)** - Behind-the-scenes engineering walkthrough.
-- **[1v1 Live PvP: Creating, Joining & Auto-Reconnecting Matches](https://youtu.be/56IffXxKVbM)** (Ep. 10)
-- **[1vBot Training Ladder: Scout, Grunt & Soldier](https://youtu.be/aS5Q8geLxgo)** (Ep. 11)
-- **[Mastering Specialist Bots & MCTS](https://youtu.be/KqK9tf2cYy8)** (Ep. 12)
-- **[Understanding Your Ranking, Elo Categories & Seasonal Ladders](https://youtu.be/vzGigTVqByc)** (Ep. 13)
-- **[Playing from the Terminal with Go `duel-cli`](https://youtu.be/em4h4DQrDUw)** (Ep. 19)
-- **[Hosting & Directing a Local Tournament (Admin Portal & Runbook)](https://youtu.be/4dv7ViR10ZY)** (Ep. 18)
+- **[Create, Join, and Reconnect to a Private Duel](https://youtu.be/gP3FiiiWxIE)** (Ep. 10)
+- **[Find Your First Practice Bot](https://youtu.be/vQ7Mko4HIXw)** (Ep. 11)
+- **[Choose an MCTS Bot Difficulty](https://youtu.be/TSp0Y2MUwL8)** (Ep. 12)
+- **[Global Ladder: Elo, Glicko-2, Rating Deviation & Seasons](https://youtu.be/33vPLRXX8D4)** (Ep. 13)
+- **[Cross-Platform Play: Browser Duel from the Go CLI](/learn/tutorials/#season-5)** (Ep. 19 - queued for publication)
+- **[Tournament Host Preflight](/learn/tutorials/#season-5)** (Ep. 18 - queued for publication)
 
 ## Canonical Sources & Attribution
 
