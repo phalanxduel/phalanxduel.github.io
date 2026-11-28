@@ -125,11 +125,11 @@ variants:
           - "Open: Standard Deck"
           - "Tactical: 4x2 Grid"
         ctas:
-          - label: "Enter the Duel"
+          - label: "Play Now"
             href: "#play-the-duel"
             style: "primary"
-          - label: "Read the Rules"
-            href: "/guide"
+          - label: "Learn in 5 Minutes"
+            href: "/learn/getting-started/"
             style: "secondary"
         asset_id: "mkt-hero-breach"
         friction_line: "No account required. Logic is the only weapon."
@@ -149,14 +149,37 @@ variants:
               href: "/tools/battle-calculator/"
           footer: "Red defends the line. Blue breaks it."
 
+      - type: "onboarding_choices"
+        class: "card"
+        section_id: "choose-your-path"
+        heading: "Choose Your Path"
+        body: "Phalanx Duel works wherever you like to play. Pick the one that fits you."
+        cards:
+          - heading: "Play in Your Browser"
+            body: "Free, no signup. Start a practice match against a bot in seconds, or share a link with a friend."
+            cta:
+              label: "Start a Match"
+              href: "/play/"
+          - heading: "Play With a Deck of Cards"
+            body: "All you need is a standard 52-card deck. Print the 2-page quickstart and suit cards and play face to face."
+            cta:
+              label: "See the Tabletop Rules"
+              href: "/learn/rules/"
+          - heading: "Build or Bring an AI Agent"
+            body: "A Go CLI, REST and WebSocket SDKs, and an MCP server let you write clients and pit agents against the engine."
+            cta:
+              label: "Build With Phalanx"
+              href: "/build-with-phalanx/"
+        helper_line: "New here? The 5-minute Getting Started guide and a 25-second intro video get you playing fast."
+
       - type: "cascade_visualizer"
         section_id: "the-math"
 
       - type: "card"
         class: "card"
         section_id: "play-the-duel"
-        heading: "Command Console"
-        body: "Initialize a duel directly from this terminal. Zero setup. Full tactical depth."
+        heading: "Try It Right Here"
+        body: "Start a practice match without leaving this page. No setup, no account."
         embed:
           enabled: true
           src: "https://play.phalanxduel.com/"
@@ -166,15 +189,15 @@ variants:
           allow: "clipboard-write; fullscreen"
           loading: "lazy"
         ctas:
-          - label: "Expand to Full Screen &rarr;"
+          - label: "Open Full Screen &rarr;"
             href: "/play/"
             style: "secondary"
 
       - type: "feature_showcase"
         class: "card"
         section_id: "the-killzone"
-        heading: "Geometric Pressure."
-        intro: "We stripped away the RNG. What remains is a pure system of kinetic energy and structural integrity."
+        heading: "Why It Works"
+        intro: "No dice, no shuffled draws in combat. What remains is formation, timing and arithmetic you can check."
         features:
           - heading: "01. Formation"
             body: "Your 4x2 grid is your survival. Every card is a tactical data-point. Deploy carefully to protect your line."
@@ -197,7 +220,7 @@ variants:
         class: "two-col"
         section_id: "cross-platform"
         cards:
-          - heading: "Terminal Operative"
+          - heading: "Play From the Terminal"
             body: "Battle from any command line. Our official Golang client provides a high-performance terminal experience with full session re-entry and OTel observability."
             cta:
               label: "Get the Go SDK"
@@ -226,8 +249,8 @@ variants:
       - type: "card"
         class: "card"
         section_id: "feedback"
-        heading: "Submit Debrief"
-        body: "Phalanx Duel is in active playtesting. Your tactical feedback is critical to the system's evolution."
+        heading: "Help Improve the Game"
+        body: "Phalanx Duel is in active playtesting. Your feedback shapes how the game evolves."
         bullets:
           - "Found a bug in the cascade math?"
           - "Discovered a dominant strategy?"
@@ -245,9 +268,9 @@ variants:
         class: "card"
         section_id: "final-strike"
         heading: "Ready to Duel?"
-        body: "Initialize match. Share link. Start the duel in seconds."
+        body: "Start a match, share the link, and play in seconds."
         ctas:
-          - label: "Start Match"
+          - label: "Play Now"
             href: "/play/"
             style: "primary"
             external: false
