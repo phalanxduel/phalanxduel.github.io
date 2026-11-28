@@ -37,6 +37,7 @@ Implementation-grade sources:
 - [Combat Reference Proof Boundary](https://github.com/phalanxduel/phalanxduel/blob/main/docs/quality/combat-reference-proof.md)
 - [Canonical Rules](https://github.com/phalanxduel/phalanxduel/blob/main/docs/gameplay/rules.md)
 - [Formal TLA+ Specification (`PhalanxDuelV3.tla`)](https://github.com/phalanxduel/phalanxduel/blob/main/docs/formal/PhalanxDuelV3.tla)
+- [Unbounded Z3 SMT-LIB2 Proofs (`phalanx_duel_proofs.smt2` — 8/8 Q.E.D. over $\mathbb{Z}$)](https://github.com/phalanxduel/phalanxduel/blob/main/docs/formal/phalanx_duel_proofs.smt2)
 - [Formal Mathematical & Algorithmic Specification (PDF)]({{ '/assets/pdf/phalanx-duel-formal-specification.pdf' | relative_url }})
 
 ## Single-Source Architecture & Assurance Diagrams
