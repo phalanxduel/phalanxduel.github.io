@@ -36,9 +36,10 @@ Implementation-grade sources:
 - [Gameplay Assurance Charter](https://github.com/phalanxduel/phalanxduel/blob/main/docs/reference/gameplay-assurance.md)
 - [Combat Reference Proof Boundary](https://github.com/phalanxduel/phalanxduel/blob/main/docs/quality/combat-reference-proof.md)
 - [Canonical Rules](https://github.com/phalanxduel/phalanxduel/blob/main/docs/gameplay/rules.md)
+- [Formal Mathematical &amp; Algorithmic Specification (Interactive Web Edition)]({{ '/learn/formal-specification/' | relative_url }})
 - [Formal TLA+ Specification (`PhalanxDuelV3.tla`)](https://github.com/phalanxduel/phalanxduel/blob/main/docs/formal/PhalanxDuelV3.tla)
-- [Unbounded Z3 SMT-LIB2 Proofs (`phalanx_duel_proofs.smt2` — 8/8 Q.E.D. over $\mathbb{Z}$)](https://github.com/phalanxduel/phalanxduel/blob/main/docs/formal/phalanx_duel_proofs.smt2)
-- [Formal Mathematical & Algorithmic Specification (PDF)]({{ '/assets/pdf/phalanx-duel-formal-specification.pdf' | relative_url }})
+- [Unbounded Z3 SMT-LIB2 Proofs (`phalanx_duel_proofs.smt2` — 8/8 Q.E.D. over ℤ)](https://github.com/phalanxduel/phalanxduel/blob/main/docs/formal/phalanx_duel_proofs.smt2)
+- [Formal Mathematical &amp; Algorithmic Specification (PDF)]({{ '/assets/pdf/phalanx-duel-formal-specification.pdf' | relative_url }})
 
 ## Single-Source Architecture & Assurance Diagrams
 
@@ -53,7 +54,7 @@ Implementation-grade sources:
 </figure>
 
 <div class="cta-row">
-  <a class="button-link primary" href="{{ '/tools/battle-calculator/' | relative_url }}">Explore the Combat Lab</a>
+  <a class="button-link primary" href="{{ '/learn/formal-specification/' | relative_url }}">Read Formal Spec (Web)</a>
+  <a class="button-link" href="{{ '/tools/battle-calculator/' | relative_url }}">Explore the Combat Lab</a>
   <a class="button-link" href="{{ '/assets/pdf/phalanx-duel-formal-specification.pdf' | relative_url }}">Formal Spec (PDF)</a>
-  <a class="button-link" href="{{ '/technical-details/' | relative_url }}">Technical Details</a>
 </div>

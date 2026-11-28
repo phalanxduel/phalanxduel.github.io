@@ -89,9 +89,9 @@ description: "The core mechanics of Phalanx Duel. Red shields, Blue attacks. Mas
     <figcaption>Deterministic 8-phase Turn Lifecycle and Classic v3.0 Column Cascade.</figcaption>
   </figure>
   <div class="cta-row">
-    <a class="button-link primary" href="{{ '/assets/pdf/phalanx-duel-face-to-face-quickstart.pdf' | relative_url }}">2-Page Tabletop Quickstart (PDF)</a>
-    <a class="button-link" href="{{ '/assets/pdf/phalanx-duel-suit-reference-cards.pdf' | relative_url }}">Poker-Sized Reference Cards (PDF)</a>
-    <a class="button-link" href="{{ '/assets/pdf/phalanx-duel-formal-specification.pdf' | relative_url }}">Formal Math Specification (PDF)</a>
+    <a class="button-link primary" href="{{ '/learn/formal-specification/' | relative_url }}">Formal Math Spec (Web)</a>
+    <a class="button-link" href="{{ '/assets/pdf/phalanx-duel-face-to-face-quickstart.pdf' | relative_url }}">2-Page Quickstart (PDF)</a>
+    <a class="button-link" href="{{ '/assets/pdf/phalanx-duel-suit-reference-cards.pdf' | relative_url }}">Poker Reference Cards (PDF)</a>
   </div>
 </section>
 
