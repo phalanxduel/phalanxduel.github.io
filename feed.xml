@@ -1,0 +1,39 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>{{ site.title | xml_escape }}</title>
+  <subtitle>{{ site.description | xml_escape }}</subtitle>
+  <link href="{{ '/feed.xml' | absolute_url }}" rel="self" type="application/atom+xml"/>
+  <link href="{{ '/' | absolute_url }}" rel="alternate" type="text/html"/>
+  <id>{{ '/' | absolute_url }}</id>
+  <updated>{{ site.time | date_to_xmlschema }}</updated>
+  <author>
+    <name>Mike Hall</name>
+    <uri>https://www.just3ws.com/</uri>
+  </author>
+{% assign article_pages = site.pages | where: "article", true | sort: "url" %}
+{% for post in article_pages %}
+  <entry>
+    <title>{{ post.title | xml_escape }}</title>
+    <link href="{{ post.url | absolute_url }}" rel="alternate" type="text/html"/>
+    <id>{{ post.url | absolute_url }}</id>
+    <updated>{{ post.date_modified | default: post.date_published | default: "2026-11-26" }}T00:00:00Z</updated>
+    <summary>{{ post.description | default: site.description | xml_escape }}</summary>
+  </entry>
+{% endfor %}
+{% for season in site.data.tutorials.seasons %}
+{% for ep in season.episodes %}
+{% if ep.youtube_id != "" %}
+  <entry>
+    <title>Episode {{ ep.episode_number }}: {{ ep.title | xml_escape }}</title>
+    <link href="https://youtu.be/{{ ep.youtube_id }}" rel="alternate" type="text/html"/>
+    <id>{{ '/learn/tutorials/' | absolute_url }}#{{ ep.id }}</id>
+    <updated>{{ site.time | date_to_xmlschema }}</updated>
+    <summary>{{ ep.summary | xml_escape }}</summary>
+  </entry>
+{% endif %}
+{% endfor %}
+{% endfor %}
+</feed>

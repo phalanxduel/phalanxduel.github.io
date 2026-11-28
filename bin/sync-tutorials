@@ -1,0 +1,102 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+# Syncs published guide-20261126 YouTube IDs from local media-pipeline into
+# _data/tutorials.yml and articles/*.md. Safe to run repeatedly (idempotent).
+#
+# Usage:
+#   ./bin/sync-tutorials          # apply updates
+#   ./bin/sync-tutorials --check  # dry-run, exit 1 if drift detected
+
+require "json"
+require "open3"
+require "pathname"
+
+ROOT = Pathname.new(__dir__).parent
+TUTORIALS_YML = ROOT.join("_data/tutorials.yml")
+MEDIA_PIPELINE_DIR = Pathname.new(ENV.fetch("MEDIA_PIPELINE_DIR", File.expand_path("~/github.com/just3ws/media-pipeline")))
+CHECK_ONLY = ARGV.include?("--check")
+
+abort("media-pipeline not found at #{MEDIA_PIPELINE_DIR}") unless MEDIA_PIPELINE_DIR.directory?
+
+ruby_query = <<~RUBY
+  rows = MediaAsset.where("filename LIKE ?", "ep-%guide-20261126%").where(status: "processed").where.not(video_id: [nil, ""]).order(:id)
+  puts JSON.generate(rows.map { |a| { filename: a.filename, video_id: a.video_id } })
+RUBY
+
+stdout, stderr, status = Open3.capture3(
+  "bundle", "exec", "rails", "runner", ruby_query,
+  chdir: MEDIA_PIPELINE_DIR.to_s
+)
+abort("Failed to query media-pipeline:\n#{stderr}") unless status.success?
+
+published = {}
+JSON.parse(stdout).each do |row|
+  ep_id = row.fetch("filename").sub(/-guide-20261126\.mp4\z/, "")
+  published[ep_id] = row.fetch("video_id")
+end
+
+yml = TUTORIALS_YML.read
+updated_eps = []
+
+new_yml = yml.gsub(/(-\s+id:\s*"([^"]+)"[\s\S]*?youtube_id:\s*)"([^"]*)"/) do |match|
+  prefix = Regexp.last_match(1)
+  ep_id = Regexp.last_match(2)
+  current_id = Regexp.last_match(3)
+  new_id = published[ep_id]
+
+  if new_id && new_id != current_id
+    updated_eps << [ep_id, current_id, new_id]
+    %(#{prefix}"#{new_id}")
+  else
+    match
+  end
+end
+
+# Also promote queued episode links in articles/*.md when newly published
+article_updates = []
+ep_num_to_id = {}
+published.each do |ep_id, vid|
+  m = ep_id.match(/\Aep-(\d+)-/)
+  ep_num_to_id[m[1]] = vid if m
+end
+
+Dir.glob(ROOT.join("articles/*.md")).sort.each do |path|
+  text = File.read(path)
+  changed = false
+  new_text = text.gsub(%r{- \*\*\[([^\]]+)\]\(/learn/tutorials/#season-\d+\)\*\* \(Ep\. (\d+) - queued for publication\)}) do |match|
+    title = Regexp.last_match(1)
+    ep_num = Regexp.last_match(2)
+    vid = ep_num_to_id[ep_num]
+    if vid
+      changed = true
+      "- **[#{title}](https://youtu.be/#{vid})** (Ep. #{ep_num})"
+    else
+      match
+    end
+  end
+  article_updates << [path, new_text] if changed
+end
+
+puts "Published guide-20261126 videos in media-pipeline: #{published.size}/33"
+
+if updated_eps.empty? && article_updates.empty?
+  puts "Site tutorials and articles are already in sync."
+  exit 0
+end
+
+updated_eps.each do |ep_id, old_id, new_id|
+  puts "  _data/tutorials.yml: #{ep_id} (#{old_id.empty? ? 'queued' : old_id} -> #{new_id})"
+end
+article_updates.each do |path, _|
+  puts "  #{Pathname.new(path).relative_path_from(ROOT)}: promoted queued episode link(s)"
+end
+
+if CHECK_ONLY
+  warn "Drift detected (re-run without --check to apply)."
+  exit 1
+end
+
+TUTORIALS_YML.write(new_yml) unless updated_eps.empty?
+article_updates.each { |path, content| File.write(path, content) }
+puts "Synced successfully."

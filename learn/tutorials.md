@@ -98,6 +98,37 @@ description: "Watch the 33-episode Phalanx Duel video series — 16 quick-start 
   <p>Pair these tutorials with the <a href="{{ '/tools/battle-calculator/' | relative_url }}">Interactive Combat Lab</a>, the <a href="{{ '/library/' | relative_url }}">Architecture &amp; Visual Library</a>, the <a href="{{ '/library/architecture/' | relative_url }}">Interactive C4 Architecture Map</a>, or jump directly into a training match at <a href="{{ '/play/' | relative_url }}">play.phalanxduel.com</a>.</p>
 </section>
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": {{ site.data.tutorials.series_title | jsonify }},
+  "itemListElement": [
+    {% assign first_video = true %}
+    {% for season in site.data.tutorials.seasons %}
+      {% for ep in season.episodes %}
+        {% if ep.youtube_id != "" %}
+          {% unless first_video %},{% endunless %}
+          {% assign first_video = false %}
+    {
+      "@type": "VideoObject",
+      "position": {{ ep.episode_number }},
+      "name": {{ ep.title | jsonify }},
+      "description": {{ ep.summary | jsonify }},
+      "thumbnailUrl": "https://i.ytimg.com/vi/{{ ep.youtube_id }}/hqdefault.jpg",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/{{ ep.youtube_id }}",
+      "contentUrl": "https://www.youtube.com/watch?v={{ ep.youtube_id }}",
+      "uploadDate": "2026-11-27T00:00:00Z",
+      "duration": "PT{{ ep.duration_label | upcase }}",
+      "transcript": {{ ep.transcript | join: " " | jsonify }}
+    }
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
+  ]
+}
+</script>
+
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     var buttons = document.querySelectorAll('.tutorial-filter-btn');

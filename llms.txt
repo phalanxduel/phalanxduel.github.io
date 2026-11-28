@@ -1,0 +1,38 @@
+---
+layout: null
+---
+# Phalanx Duel
+
+> Zero-RNG, deterministic 2-player tactical card game playable in the browser, via Go CLI, over MCP for AI agents, or face-to-face with any standard 52-card deck. Open source under AGPL-3.0.
+
+## Play & Interactive Tools
+- [Play Live in Browser (No Signup Required)](https://play.phalanxduel.com)
+- [Interactive Combat Lab / Battle Calculator]({{ '/tools/battle-calculator/' | absolute_url }})
+- [Video Tutorials & Masterclass Series (33 Episodes + Full Transcripts)]({{ '/learn/tutorials/' | absolute_url }})
+- [Official YouTube Playlist (@just3ws-mike)](https://www.youtube.com/playlist?list={{ site.data.tutorials.playlist_id }})
+
+## Rules, Strategy & Tabletop
+- [Getting Started]({{ '/learn/getting-started/' | absolute_url }})
+- [Canonical Rules v3.0]({{ '/learn/rules/' | absolute_url }})
+- [Tactical Depth & Suit Mastery]({{ '/mastery/mastery/' | absolute_url }})
+- [Face-to-Face Tabletop Quickstart & Print Kit]({{ '/learn/foundations/' | absolute_url }})
+
+## Formal Verification & Architecture
+- [Formal Mathematical Specification & Z3 SMT-LIB2 Proofs (8/8 Q.E.D.)]({{ '/learn/formal-spec/' | absolute_url }})
+- [Scientific Gameplay Assurance (2.35M-Case Exhaustive Combat Proof)]({{ '/learn/gameplay-assurance/' | absolute_url }})
+- [Interactive C4 Architecture Map (Groma)]({{ '/library/architecture/' | absolute_url }})
+- [Architecture & Visual Library]({{ '/library/' | absolute_url }})
+- [Build With Phalanx (Go CLI, REST/WebSocket SDKs, MCP Server)]({{ '/build-with-phalanx/' | absolute_url }})
+
+## 5-Part Article Series
+- [Series Index]({{ '/articles/' | absolute_url }})
+- [Part 1: What Is Phalanx Duel?]({{ '/articles/what-is-phalanx-duel/' | absolute_url }})
+- [Part 2: Canonical Rules & Combat Cascade]({{ '/articles/rules-and-combat-cascade/' | absolute_url }})
+- [Part 3: Living Architecture & Diagrams]({{ '/articles/living-architecture-and-diagrams/' | absolute_url }})
+- [Part 4: Engineering Process & Multi-Client Platform]({{ '/articles/engineering-process/' | absolute_url }})
+- [Part 5: Automated Video Curriculum & Media Pipeline]({{ '/articles/video-curriculum-and-media-pipeline/' | absolute_url }})
+
+## Feeds & Source
+- [Atom Feed]({{ '/feed.xml' | absolute_url }})
+- [Sitemap]({{ '/sitemap.xml' | absolute_url }})
+- [GitHub Repository (AGPL-3.0)](https://github.com/phalanxduel/phalanxduel)
