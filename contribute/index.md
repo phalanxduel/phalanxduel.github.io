@@ -5,9 +5,9 @@ description: "How to help build the engine, docs, tools, and community."
 
 # Contributing to Phalanx Duel
 
-Phalanx is an open tactical system. The engine is open-source, the canonical rules are public, and we rely on community contributors to improve the game, the tools, and the documentation.
+Phalanx Duel is open source. The engine, the canonical rules, and this site are all public, and the project relies on contributors to improve the game, the tools, and the docs.
 
-We have explicit pathways for different types of contributors.
+Here are the ways to help.
 
 ## 1. Engine & Rules (Developers)
 If you want to work on the core server-authoritative engine, deterministic logic, or canonical rules specification:
@@ -25,7 +25,7 @@ You do not need to write code to contribute. We need players to test the game an
 *   **What we need:** Reproducible bug reports, balance proposals backed by actual match data, and feedback on the new-player experience.
 
 ## 4. Documentation & Examples (Writers)
-If you have a talent for clear, concise explanation, we need help refining our onboarding guides and creating tactical examples.
+If you explain things clearly, we need help improving the guides and writing worked examples.
 *   **Where to go:** The [Site Repository (GitHub)](https://github.com/phalanxduel/phalanxduel.github.io)
 *   **What we need:** Better diagrams, clearer explanations of edge cases, and new "scenario study" examples for the Mastery section.
 

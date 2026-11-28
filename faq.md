@@ -6,10 +6,10 @@ description: Frequently asked questions about Phalanx Duel, matchmaking, determi
 # Frequently Asked Questions
 
 <section class="card">
-  <h2>The System</h2>
+  <h2>The Basics</h2>
   <article>
-    <h3>Is there any RNG (Luck)?</h3>
-    <p>No. Phalanx Duel is 100% deterministic. If you replay a match with the same inputs, you will get the exact same outcome every time. Victory is purely tactical.</p>
+    <h3>Is there any luck in combat?</h3>
+    <p>No. Every attack resolves by fixed arithmetic. If you replay a match with the same setup and the same moves, it ends the same way every time.</p>
   </article>
 
   <article>
@@ -27,12 +27,12 @@ description: Frequently asked questions about Phalanx Duel, matchmaking, determi
   <h2>Platforms</h2>
   <article>
     <h3>Can I play on my phone?</h3>
-    <p>Yes. The web client is fully responsive. We are also developing native SwiftUI and Android operatives for the most high-performance mobile experience.</p>
+    <p>Yes. The web client is fully responsive. Native SwiftUI and Android clients are in development.</p>
   </article>
 
   <article>
     <h3>What is the Go client?</h3>
-    <p>It is our official terminal-based operative (<code>duel-cli</code>). Perfect for developers, command-line enthusiasts, or playing on lower-powered hardware.</p>
+    <p>It is the official terminal client (<code>duel-cli</code>). It suits developers, command-line fans, and lower-powered hardware.</p>
   </article>
 </section>
 
@@ -45,6 +45,6 @@ description: Frequently asked questions about Phalanx Duel, matchmaking, determi
 
   <article>
     <h3>How can I contribute?</h3>
-    <p>We are open source. Visit our <a href="{{ '/contribute/' | relative_url }}">Contribution Page</a> to learn how to help with code, design, or playtesting.</p>
+    <p>Phalanx Duel is open source. Visit the <a href="{{ '/contribute/' | relative_url }}">Contribution Page</a> to see how to help with code, design, docs, or playtesting.</p>
   </article>
 </section>

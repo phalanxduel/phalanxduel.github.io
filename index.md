@@ -1,5 +1,5 @@
 ---
-title: Phalanx Duel, a Zero-RNG Tactical Card Game
+title: Phalanx Duel, a Free Two-Player Card Game With No Luck
 description: "Phalanx Duel is a free two-player tactical card game with zero randomness. Play in your browser, with a standard 52-card deck, from a Go CLI, or over MCP."
 ---
 <!-- 

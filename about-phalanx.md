@@ -7,15 +7,15 @@ description: "What Phalanx: Duel is, who it is for, and how the game is being de
 
 <section class="card">
   <h2>What It Is</h2>
-  <p>Phalanx: Duel is a tactical two-player card duel built on standard playing cards and formalized into a deterministic digital game engine. It is a pure test of skill, positioning, and mathematical consequence.</p>
+  <p>Phalanx: Duel is a tactical two-player card duel built on standard playing cards and formalized into a deterministic digital game engine. It tests positioning and planning, not luck.</p>
 </section>
 
 <section class="card">
-  <h2>The v{{ site.data.meta.version }} Standard</h2>
+  <h2>What v{{ site.data.meta.version }} Includes</h2>
   <ul class="quick-list">
     <li><strong>Deterministic replay:</strong> Configured inputs and action sequences produce reproducible outcomes that can be verified independently.</li>
     <li><strong>Explainable Combat:</strong> Engine-authored arithmetic provenance powers previews, narration, event displays, and post-match proof.</li>
-    <li><strong>Scientific Assurance:</strong> Rules are linked to independent reference checks, replay evidence, liveness properties, and observer-safe projections.</li>
+    <li><strong>Verified rules:</strong> Rules are linked to independent reference checks, replay evidence, liveness properties, and observer-safe projections.</li>
     <li><strong>Multiple clients:</strong> Play in the browser, use the Go terminal client, or connect through supported agent/API clients. Native wrappers remain experimental.</li>
     <li><strong>Ranked Competition (Beta):</strong> Global Glicko-2 matchmaking and public lobby system.</li>
   </ul>
@@ -24,14 +24,14 @@ description: "What Phalanx: Duel is, who it is for, and how the game is being de
 <section class="card">
   <h2>Who It Is For</h2>
   <ul class="quick-list">
-    <li><strong>Tacticians:</strong> Players who enjoy deep, deterministic head-to-head combat.</li>
-    <li><strong>Developers:</strong> Engineers who care about actor-based architecture and state rehydration.</li>
-    <li><strong>Competitors:</strong> Players looking for a fair, ratings-driven tactical ladder.</li>
+    <li><strong>Strategy players:</strong> People who enjoy deep, head-to-head games where skill decides the result.</li>
+    <li><strong>Developers:</strong> People who like seeing how a server-authoritative, replay-verifiable game is built.</li>
+    <li><strong>Competitors:</strong> Players looking for a fair, rated ladder.</li>
   </ul>
 </section>
 
 <section class="card">
-  <h2>Production State</h2>
+  <h2>Where It Stands</h2>
   <p>Phalanx: Duel <strong>v{{ site.data.meta.version }} Stable</strong> is live in production. The core engine is persistent, replay-verifiable, observable, and independently checked across its declared combat domain.</p>
   <p><a href="{{ '/status/' | relative_url }}">See current status and technical specifications.</a></p>
 </section>

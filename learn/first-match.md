@@ -1,64 +1,63 @@
 ---
 title: First Match Walkthrough
-description: "A step-by-step example of playing your first match in Phalanx Duel."
+description: "A step-by-step example of a first Phalanx Duel match: set up your formation, attack a column, and see how damage cascades."
 ---
 
-# Your First Match (0 to 1)
+# Your First Match
 
-Welcome to the Phalanx Duel battlefield. This walkthrough will show you what actually happens during your first few turns.
+Here is what happens in a typical first match, one step at a time. It takes about five minutes to read, and less to play.
 
-## The Objective
+## The Goal
 
-Your goal is simple: Reduce your opponent's Core (LP) to 0, or neutralize all of their deployed units. 
+Reduce your opponent's Life Points (LP) to 0, or destroy all of their deployed cards.
 
-## Step 1: Initialization
+## Step 1: Set up your formation
 
-Both players receive a **Hand of 12 cards**.
-*   Players alternate deploying one card at a time onto their **4x2 grid**.
-*   Build a wall of defense while positioning high-value cards for tactical advantage.
-*   Once all 8 slots are occupied, you will have exactly 4 cards remaining in your hand.
+Both players start with a **hand of 12 cards**.
+
+*   Players take turns deploying one card at a time onto their **4x2 grid**: four columns, each with a front and a back position.
+*   Build a solid front rank, and think about where your strongest cards will do the most good.
+*   Once all 8 slots are filled, you will have exactly 4 cards left in your hand.
 
 {% include render-asset.html id="tut-foundations-setup" %}
 
-*Pro Tip: Do not place your highest value card in the front rank where it is vulnerable. Position it in the back rank to create a second-wave attack vector.*
+*Tip: Your highest card is not always best in front. Held in the back rank, it can become a second wave once the front card falls.*
 
-## Step 2: Combat Engagement
+## Step 2: Attack a column
 
-Turns alternate. During your turn, you will declare an attack.
+Players alternate turns. On your turn, you attack.
 
-1.  **Select Attacker:** Choose a card in your **Front Rank**.
-2.  **Target Column:** You target an entire column, not an individual card.
+1.  **Pick an attacker.** Choose a card in your **front rank**.
+2.  **Pick a target column.** You target a whole column, not a single card.
 
 {% include render-asset.html id="tut-foundations-cascade" %}
 
-**Example Engagement:**
-*   You attack with a **10 of Spades** in your front rank.
-*   You target an enemy column. They have a **3 of Hearts** in the front and a **4 of Clubs** in the back.
+**An example attack**
 
-**The Cascade:**
-*   Your 10 hits their 3 of Hearts. The 3 is neutralized (10 > 3).
-*   Remaining energy is 7 (10 - 3 = 7).
-*   That 7 "carries over" and hits their 4 of Clubs. The 4 is neutralized (7 > 4).
-*   Remaining energy is 3 (7 - 4 = 3).
-*   Because the column is breached, that 3 damage hits the opponent's **Core (LP)**. 
+*   You attack with a **10 of Spades**.
+*   You target a column holding a **3 of Hearts** in front and a **4 of Clubs** behind it.
 
-Because your attacker was a **Spade**, that final Core damage is doubled! The opponent loses 6 LP.
+**How the damage cascades**
 
-## Step 3: Reinforcement
+*   Your 10 hits the 3 of Hearts. The 3 is destroyed, leaving 7 damage.
+*   That 7 carries over to the 4 of Clubs. The 4 is destroyed, leaving 3 damage.
+*   With the column cleared, the remaining 3 damage reaches your opponent's **Life Points**.
 
-After combat resolves, the defending column is breached. The opponent must use their **Reinforcement Phase** to deploy new cards from their hand into the empty slots.
+Because your attacker was a **Spade**, the damage that reaches Life Points is doubled. Your opponent loses 6 LP.
+
+## Step 3: Reinforce
+
+After combat, the defender's column has gaps. On their turn, they can **reinforce** by placing cards from their hand into the empty slots.
 
 {% include render-asset.html id="tut-reinforce-basics" fallback="/assets/images/tutorial/qa-reinforce.png" %}
 
-*   If they cannot fill the front rank, they leave a massive vector open for your next strike.
-*   At the end of the turn, players draw back up to their Hand Limit (4 cards).
+*   If they can't refill the front rank, that column stays open for your next attack.
+*   At the end of each turn, players draw back up to a hand of 4.
 
-## System Ready
+## That's the loop
 
-That is the core loop: Initialize, Attack, Resolve the Cascade, Reinforce. 
+Deploy, attack, watch the cascade, reinforce. As you play, you will see how the four suits change the math at specific moments. You can learn those as you go.
 
-As you play, you will discover how Suit Boundaries (Shields and Weapons) create dramatic tactical shifts. But for now, you are ready to engage.
+[Play Your First Match]({{ '/play/' | relative_url }})
 
-[Initialize Your First Match Now]({{ '/play/' | relative_url }})
-
-After a few matches, consult the [Road to Champion]({{ '/improve/road-to-champion/' | relative_url }}) guide to level up your strategic depth.
+After a few matches, the [Road to Champion]({{ '/improve/road-to-champion/' | relative_url }}) guide covers what to work on next.

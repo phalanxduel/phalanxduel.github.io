@@ -2,7 +2,7 @@
 <section class="{{ section.class | default: 'hero' }}" aria-labelledby="{{ section.title_id }}">
   <div class="container hero-layout">
     <div class="hero-copy">
-      {% if section.eyebrow %}<p class="hero-eyebrow" style="font-family: var(--font-mono); color: var(--color-offense); letter-spacing: 0.2em; font-size: 0.8rem; text-transform: uppercase;">// {{ section.eyebrow }}</p>{% endif %}
+      {% if section.eyebrow %}<p class="hero-eyebrow" style="font-family: var(--font-mono); color: var(--color-offense); letter-spacing: 0.2em; font-size: 0.8rem; text-transform: uppercase;">{{ section.eyebrow }}</p>{% endif %}
       <h1 id="{{ section.title_id }}">{{ section.heading }}</h1>
       <p style="font-size: 1.2rem; color: var(--color-text-dim); margin-bottom: 3rem; max-width: 40rem;">{{ section.body }}</p>
       
@@ -39,7 +39,7 @@
 
       {% if section.preview_panel %}
         <aside class="hero-preview" aria-label="{{ section.preview_panel.label }}">
-          <p class="hero-preview-label" style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--color-text-dim); margin-bottom: 2rem; border-bottom: 1px solid var(--grid-line-bold); padding-bottom: 0.5rem;">// {{ section.preview_panel.label }}</p>
+          <p class="hero-preview-label" style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--color-text-dim); margin-bottom: 2rem; border-bottom: 1px solid var(--grid-line-bold); padding-bottom: 0.5rem;">{{ section.preview_panel.label }}</p>
           <h2 style="font-size: 2.5rem; line-height: 1; margin-bottom: 1rem;">{{ section.preview_panel.heading }}</h2>
           {% if section.preview_panel.subheading %}<p style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--color-text-dim); margin-bottom: 2.5rem;">{{ section.preview_panel.subheading }}</p>{% endif %}
           

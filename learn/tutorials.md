@@ -1,9 +1,9 @@
 ---
-title: Video Tutorials & Masterclass Series
+title: Video Tutorials
 description: "Watch the 33-episode Phalanx Duel video series — 16 quick-start Shorts and 17 deep-dive guides covering gameplay, suits, tournaments, architecture, and contributing with full searchable transcripts."
 ---
 
-# Video Tutorials &amp; Masterclass Series
+# Video Tutorials
 
 <p class="small-note">
   {{ site.data.tutorials.total_episodes }} episodes across {{ site.data.tutorials.seasons | size }} seasons - {{ site.data.tutorials.shorts_count }} quick-start Shorts (9:16) and {{ site.data.tutorials.longform_count }} deep-dive guides (16:9). Every episode includes a complete searchable transcript and companion guide, published to the <a href="https://www.youtube.com/playlist?list=PLHenvAZhJjHo" target="_blank" rel="noopener noreferrer">official Phalanx Duel YouTube playlist</a> on <a href="https://www.youtube.com/@just3ws-mike" target="_blank" rel="noopener noreferrer">@just3ws-mike</a>.
@@ -54,7 +54,7 @@ description: "Watch the 33-episode Phalanx Duel video series — 16 quick-start 
         {% if ep.youtube_id != "" %}
         <span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--color-offense); border: 1px solid var(--color-offense); padding: 0.15rem 0.5rem;">ON YOUTUBE</span>
         {% else %}
-        <span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--color-text-muted); border: 1px solid var(--color-border-up); padding: 0.15rem 0.5rem;">QUEUED FOR PUBLICATION</span>
+        <span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--color-text-muted); border: 1px solid var(--color-border-up); padding: 0.15rem 0.5rem;">COMING SOON</span>
         {% endif %}
       </div>
 

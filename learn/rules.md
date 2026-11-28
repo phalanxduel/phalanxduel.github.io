@@ -1,9 +1,9 @@
 ---
-title: Tactical Briefing
-description: "The core mechanics of Phalanx Duel. Red shields, Blue attacks. Master the grid."
+title: Rules Summary
+description: "A plain-language summary of Phalanx Duel Classic v3.0: the 4x2 grid, the four suits, the damage cascade, and special cards."
 ---
 
-# Tactical Briefing: The Grid System
+# Rules Summary
 
 <p class="small-note">Player-readable summary for Phalanx Duel Classic v3.0. The normative authority remains the versioned rules document in the game repository.</p>
 
@@ -11,15 +11,15 @@ description: "The core mechanics of Phalanx Duel. Red shields, Blue attacks. Mas
   <div class="hero-layout">
     <div class="hero-copy">
       <h2>1. The Battlefield</h2>
-      <p>The game is played on a <strong>4x2 grid</strong>. Every column is a lane. Every slot is a tactical decision.</p>
+      <p>The game is played on a <strong>4x2 grid</strong>. Every column is a lane, and every slot is a decision.</p>
       <ul class="proof-points">
         <li><strong>Front Rank:</strong> The first line of contact.</li>
         <li><strong>Back Rank:</strong> The reserve line / secondary shield.</li>
-        <li><strong>The Player:</strong> The final target behind the lines.</li>
+        <li><strong>Life Points:</strong> The final target, behind both ranks.</li>
       </ul>
     </div>
     <div class="hero-preview">
-      <h3 style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--color-offense);">// FORMATION LOGIC</h3>
+      <h3 style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--color-offense);">Suit colors</h3>
       <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-top: 1.5rem;">
         <div style="border: 1px solid var(--color-defense); padding: 1rem; text-align: center;">
           <span class="suit-red" style="font-weight: 900;">RED</span><br>
@@ -35,7 +35,7 @@ description: "The core mechanics of Phalanx Duel. Red shields, Blue attacks. Mas
 </section>
 
 <section class="card">
-  <h2>2. Suit Roles (The Combat Engine)</h2>
+  <h2>2. How the Suits Work</h2>
   <p>Suits are timing rules, not passive keywords. Each fires only at the boundary it names, and only when the card carrying it is the one destroyed (shields) or the one attacking (weapons).</p>
 
   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2rem; margin-top: 2rem;">
@@ -82,8 +82,8 @@ description: "The core mechanics of Phalanx Duel. Red shields, Blue attacks. Mas
 </section>
 
 <section class="card">
-  <h2>5. Turn Lifecycle &amp; Tabletop Print Kit</h2>
-  <p>Every rule above compiles from the same canonical source into build-time diagrams and printable face-to-face tabletop handouts:</p>
+  <h2>5. Turn Lifecycle and Tabletop Print Kit</h2>
+  <p>The rules above come from one canonical source, which also generates the diagrams and printable tabletop handouts below:</p>
   <figure style="margin: 1.5rem 0;">
     <img src="{{ '/assets/diagrams/turn-lifecycle-and-cascade.svg' | relative_url }}" alt="Deterministic 8-phase turn lifecycle and Classic v3.0 column cascade suit boundary diagram" loading="lazy" style="max-width: 100%; height: auto;">
     <figcaption>Deterministic 8-phase Turn Lifecycle and Classic v3.0 Column Cascade.</figcaption>

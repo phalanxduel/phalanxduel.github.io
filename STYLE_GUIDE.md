@@ -82,11 +82,48 @@ The grid is the primary UI element.
 
 ---
 
-## 7. VOICE & TONE: DETERMINISTIC
-The system speaks like a tactical computer.
-*   **Bad:** "You hit for 5 damage! Nice!"
-*   **Good:** `// ATTACK_BREACHED_FRONT_RANK. CARRYOVER: 05.`
-*   **Avoid:** Casuality or slang. The computer is neutral and precise.
+## 7. VOICE & TONE: THE DESIGNER AT THE TABLE
+
+The visual style is Vector Brutalism. The writing is not. Site copy, docs, tutorials, and video narration sound like a smart, friendly game designer explaining a tight system to someone they would like to play with. The model is the welcome note on the homepage ("a strategic card game I invented with a plain deck of playing cards and some friends").
+
+### Principles
+
+1. **Say what it is, then what to do.** Lead with a plain sentence about the thing, then the next step.
+2. **Plain words first.** If a regular card-game player would not use the word, don't.
+3. **Show the math.** Prefer a worked example ("10 hits a 3, leaving 7") to an adjective ("devastating").
+4. **Be honest about status.** Say "early access", "beta", and "in progress" when they are true.
+5. **Dry, not loud.** A little wit is welcome. No exclamation marks, no hype, no emoji in body copy.
+6. **Respect the reader's time.** Short sentences. One idea per paragraph.
+7. **Claims need evidence.** Do not describe features or effects the game does not have.
+
+### Word list
+
+| Avoid | Use |
+|-------|-----|
+| operative, operator | player, you |
+| briefing, directive, debrief | guide, summary, feedback |
+| initialize, execute, engage (as hype) | start, play |
+| killzone, strike, breach (as flavor) | attack, break through |
+| Core | Life Points (LP) |
+| tactical data-point, kinetic energy | card, damage |
+| mathematically inevitable | predictable, checkable |
+| ray-traced, cinematic (for combat) | leave out |
+
+Rule terms stay: deploy, front rank, back rank, column, carryover, cascade, reinforce, pass.
+
+### Patterns
+
+*   **Headlines:** a plain statement or a short instruction. "Pick how you want to play." Not "Initialize Global Combat."
+*   **Buttons:** verb first. "Play Now", "Learn in 5 Minutes", "Report a Bug".
+*   **Labels:** sentence case. No `//` prefixes or SCREAMING_SNAKE labels in page copy.
+*   **Examples:**
+    *   **Bad:** "Execute the briefing and breach the enemy core."
+    *   **Good:** "Pick a front card, choose a column, and see how much damage reaches Life Points."
+
+### The one exception: engine log lines
+
+The in-game engine log and developer telemetry stay terse and neutral, because they are data, not prose:
+`ATTACK_BREACHED_FRONT_RANK. CARRYOVER: 05.` Never use that register for marketing or teaching copy.
 
 ---
 

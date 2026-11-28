@@ -5,7 +5,7 @@ description: Overview of the Phalanx tactical system, with Phalanx Duel as the c
 
 # The Phalanx System
 
-Phalanx is an open tactical card system built around formation combat, deterministic resolution, and cross-format design. Phalanx Duel is the canonical competitive format.
+Phalanx is an open card-game system built around formation combat, predictable resolution, and several play formats. Phalanx Duel is the canonical competitive format.
 
 ## Core System: Phalanx
 
@@ -22,10 +22,10 @@ The Phalanx system is deployed through specialized formats, each tailored for di
 
 ### Phalanx: Duel
 
-**Phalanx: Duel** is the beating heart of the Phalanx ecosystem. It is the head-to-head competitive format and the canonical basis for **Official Phalanx Ranked** play.
+**Phalanx: Duel** is the main format of the Phalanx system. It is the head-to-head competitive format and the canonical basis for **Official Phalanx Ranked** play.
 
 - **Structure:** Two-player tactical column battle.
-- **Canonical Rules:** Game v1.4.0 defaults to competitive rules spec v3.0 with an 8-phase lifecycle, arithmetic provenance, and replay-verifiable outcomes.
+- **Canonical Rules:** Game v{{ site.data.meta.version }} defaults to competitive rules spec v3.0 with an 8-phase lifecycle, arithmetic provenance, and replay-verifiable outcomes.
 - **Classic Defaults:** 4 columns x 2 ranks, hand size 4, initial draw 12.
 - **Official Ranked:** Phalanx: Duel is the only format certified for Official Phalanx Ranked systems.
 

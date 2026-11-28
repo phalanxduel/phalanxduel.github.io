@@ -89,7 +89,7 @@ seasons:
         format: "9:16"
         format_label: "Short (9:16)"
         duration_label: "22s"
-        summary: "Create a Phalanx Duel account, choose an operative gamertag, confirm your signed-in lobby header, and open Settings."
+        summary: "Create a Phalanx Duel account, choose a gamertag, confirm your signed-in lobby header, and open Settings."
         companion_url: "/learn/getting-started/"
         youtube_id: "Sao2I-__G10"
         transcript:

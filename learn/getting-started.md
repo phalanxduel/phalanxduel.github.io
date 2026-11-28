@@ -61,7 +61,7 @@ Suits are timing rules, not passive bonuses. Each one triggers only at the bound
 | ♣ Clubs | Weapon | A Club attacker doubles its carryover once, the first time it passes from one card to another. |
 | ♠ Spades | Weapon | A Spade attacker doubles carryover the moment it passes into Life Points. |
 
-Aces and face cards have extra eligibility limits. See the [Tactical Briefing]({{ '/learn/rules/' | relative_url }}) for the full summary, and note that the versioned rules document in the game repository is the normative authority.
+Aces and face cards have extra eligibility limits. See the [Rules Summary]({{ '/learn/rules/' | relative_url }}) for the full summary, and note that the versioned rules document in the game repository is the normative authority.
 
 ## Learn the Interface
 
