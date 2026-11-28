@@ -81,6 +81,20 @@ description: "The core mechanics of Phalanx Duel. Red shields, Blue attacks. Mas
   </article>
 </section>
 
+<section class="card">
+  <h2>5. Turn Lifecycle &amp; Tabletop Print Kit</h2>
+  <p>Every rule above compiles from the same canonical source into build-time diagrams and printable face-to-face tabletop handouts:</p>
+  <figure style="margin: 1.5rem 0;">
+    <img src="{{ '/assets/diagrams/turn-lifecycle-and-cascade.svg' | relative_url }}" alt="Deterministic 8-phase turn lifecycle and Classic v3.0 column cascade suit boundary diagram" loading="lazy" style="max-width: 100%; height: auto;">
+    <figcaption>Deterministic 8-phase Turn Lifecycle and Classic v3.0 Column Cascade.</figcaption>
+  </figure>
+  <div class="cta-row">
+    <a class="button-link primary" href="{{ '/assets/pdf/phalanx-duel-face-to-face-quickstart.pdf' | relative_url }}">2-Page Tabletop Quickstart (PDF)</a>
+    <a class="button-link" href="{{ '/assets/pdf/phalanx-duel-suit-reference-cards.pdf' | relative_url }}">Poker-Sized Reference Cards (PDF)</a>
+    <a class="button-link" href="{{ '/assets/pdf/phalanx-duel-formal-specification.pdf' | relative_url }}">Formal Math Specification (PDF)</a>
+  </div>
+</section>
+
 <div class="cta-row" style="margin-top: 4rem;">
   <a class="button-link primary" href="{{ '/guide' | relative_url }}">Quick Players Guide &rarr;</a>
   <a class="button-link" href="{{ '/tools/battle-calculator/' | relative_url }}">Enter the Combat Lab</a>

@@ -36,8 +36,23 @@ Implementation-grade sources:
 - [Gameplay Assurance Charter](https://github.com/phalanxduel/phalanxduel/blob/main/docs/reference/gameplay-assurance.md)
 - [Combat Reference Proof Boundary](https://github.com/phalanxduel/phalanxduel/blob/main/docs/quality/combat-reference-proof.md)
 - [Canonical Rules](https://github.com/phalanxduel/phalanxduel/blob/main/docs/gameplay/rules.md)
+- [Formal TLA+ Specification (`PhalanxDuelV3.tla`)](https://github.com/phalanxduel/phalanxduel/blob/main/docs/formal/PhalanxDuelV3.tla)
+- [Formal Mathematical & Algorithmic Specification (PDF)]({{ '/assets/pdf/phalanx-duel-formal-specification.pdf' | relative_url }})
+
+## Single-Source Architecture & Assurance Diagrams
+
+<figure>
+  <img src="{{ '/assets/diagrams/authority-ledger-and-fog-of-war.svg' | relative_url }}" alt="Server-authoritative action ledger, Fog-of-War projection functor, MCP surface, and replay verification chain" loading="lazy" style="max-width: 100%; height: auto;">
+  <figcaption>Server-authoritative action ledger, Fog-of-War projection boundary, and offline replay verification.</figcaption>
+</figure>
+
+<figure>
+  <img src="{{ '/assets/diagrams/observability-and-truth-gate.svg' | relative_url }}" alt="Truth Gate QA assurance pyramid and OpenTelemetry to OpenObserve and Jaeger telemetry pipeline" loading="lazy" style="max-width: 100%; height: auto;">
+  <figcaption>Truth Gate QA assurance stack and OpenTelemetry observability pipeline.</figcaption>
+</figure>
 
 <div class="cta-row">
   <a class="button-link primary" href="{{ '/tools/battle-calculator/' | relative_url }}">Explore the Combat Lab</a>
+  <a class="button-link" href="{{ '/assets/pdf/phalanx-duel-formal-specification.pdf' | relative_url }}">Formal Spec (PDF)</a>
   <a class="button-link" href="{{ '/technical-details/' | relative_url }}">Technical Details</a>
 </div>
