@@ -118,8 +118,8 @@ variants:
         class: "hero"
         aria_labelledby: "hero-title"
         title_id: "hero-title"
-        heading: "Initialize Global Combat."
-        body: "Phalanx Duel v1.6.0 is live in production. Deterministic tactical battle on a 4x2 grid, now with authoritative damage proofs, replay-verifiable outcomes, and tighter cinematic combat narration. Execute the briefing."
+        heading: "A Tactical Card Duel With Zero Luck."
+        body: "Phalanx Duel is a free two-player card game played on a 4x2 grid. Every attack resolves by fixed arithmetic, so you can predict a strike before you make it. Play in your browser, with a standard 52-card deck, or from the terminal."
         proof_points:
           - "Vector: 0% RNG"
           - "Open: Standard Deck"
@@ -136,7 +136,7 @@ variants:
         preview_panel:
           label: "TACTICAL_HUD"
           heading: "Formation is Destiny"
-          subheading: "Ray-traced combat. Zero luck."
+          subheading: "Predictable combat. Zero luck."
           rows:
             - label: "Defense"
               value: "♥ Heart + ♦ Diamond"
@@ -164,7 +164,7 @@ variants:
           aspect_ratio: "16/9"
           sandbox: "allow-scripts allow-same-origin allow-forms allow-popups allow-downloads"
           allow: "clipboard-write; fullscreen"
-          loading: "eager"
+          loading: "lazy"
         ctas:
           - label: "Expand to Full Screen &rarr;"
             href: "/play/"

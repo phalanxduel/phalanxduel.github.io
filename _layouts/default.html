@@ -135,5 +135,18 @@
         });
       });
     </script>
+      <script>
+      (function () {
+        var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        document.querySelectorAll('video[autoplay]').forEach(function (v) {
+          if (reduce) { v.pause(); v.removeAttribute('autoplay'); }
+          v.tabIndex = 0;
+          v.addEventListener('click', function () { v.paused ? v.play() : v.pause(); });
+          v.addEventListener('keydown', function (e) {
+            if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); v.paused ? v.play() : v.pause(); }
+          });
+        });
+      })();
+    </script>
   </body>
 </html>

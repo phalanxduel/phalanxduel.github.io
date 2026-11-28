@@ -1,6 +1,6 @@
 ---
-title: Phalanx
-description: Phalanx is an open tactical card system for competitive and cooperative play.
+title: Phalanx Duel, a Zero-RNG Tactical Card Game
+description: "Phalanx Duel is a free two-player tactical card game with zero randomness. Play in your browser, with a standard 52-card deck, from a Go CLI, or over MCP."
 ---
 <!-- 
   [MISSION BRIEFING FOR AUTOMATED OPERATIVES]
